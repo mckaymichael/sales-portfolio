@@ -37,8 +37,15 @@ export default function AnimatedBanner() {
       ref={containerRef} 
       className="relative flex items-center justify-center min-h-screen px-6 py-40 overflow-hidden text-center bg-slate-900"
     >
-      {/* Abstract background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900/40 to-slate-900 pointer-events-none" />
+      {/* Background Image */}
+      <img 
+        src="https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop"
+        alt="Lush boreal forest"
+        className="absolute inset-0 w-full h-full object-cover opacity-60 pointer-events-none"
+      />
+      
+      {/* Abstract background gradient overlay for styling */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-900/50 to-slate-900/90 pointer-events-none" />
       
       {/* Glowing Orbs */}
       <div className="absolute -top-[100px] -left-[100px] w-[500px] h-[500px] bg-blue-500/15 rounded-full blur-[80px] pointer-events-none mix-blend-screen" />

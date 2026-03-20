@@ -2,6 +2,9 @@
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function AnimatedBanner() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -9,6 +12,8 @@ export default function AnimatedBanner() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
   const actionsRef = useRef<HTMLDivElement>(null);
+  const bgImageRef = useRef<HTMLImageElement>(null);
+  const grainRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -27,6 +32,30 @@ export default function AnimatedBanner() {
         .to(descRef.current, { y: 0, opacity: 1, duration: 0.8 }, 0.6)
         .to(actionsRef.current, { y: 0, opacity: 1, duration: 0.8 }, 0.8);
 
+      // Scroll-based blur and parallax animation for background image
+      if (bgImageRef.current && containerRef.current && grainRef.current) {
+        // Slightly scale image to prevent edges from showing during parallax
+        gsap.set(bgImageRef.current, { scale: 1.2 });
+        
+        const scrollTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 1, // Smooth scrubbing
+          }
+        });
+
+        scrollTl.to(bgImageRef.current, {
+          yPercent: 20, // Parallax down
+          filter: 'blur(20px)', // ~80% blur effect visually
+          ease: 'none', // Linear ease is best for scrubbing
+        }, 0).to(grainRef.current, {
+          opacity: 0.85, // Bring in a strong grain texture for highly visible frosted glass effect
+          ease: 'none',
+        }, 0);
+      }
+
     }, containerRef); // Scope selections to the container
 
     return () => ctx.revert(); // Cleanup on unmount
@@ -39,9 +68,17 @@ export default function AnimatedBanner() {
     >
       {/* Background Image */}
       <img 
-        src="https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop"
-        alt="Lush boreal forest"
-        className="absolute inset-0 w-full h-full object-cover opacity-60 pointer-events-none"
+        ref={bgImageRef}
+        src="https://images.unsplash.com/photo-1758770154446-60fefe41f14a?auto=format&fit=crop&q=80&w=2000"
+        alt="Lush boreal forest clearing"
+        className="absolute inset-0 w-full h-full object-cover opacity-60 pointer-events-none filter blur-0"
+      />
+      
+      {/* Grain Overlay */}
+      <div 
+        ref={grainRef}
+        className="absolute inset-0 opacity-0 pointer-events-none mix-blend-overlay"
+        style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.85\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")' }}
       />
       
       {/* Abstract background gradient overlay for styling */}

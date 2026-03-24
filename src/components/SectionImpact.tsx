@@ -76,7 +76,7 @@ export function SectionImpact() {
           {/* Image 1: hscc.jpg (Center-Top align) */}
           <div className="lg:w-[20%] relative rounded-default overflow-hidden shadow-lg h-[400px] lg:h-[80%] lg:mt-10 group">
             <Image
-              src="/hscc.jpg"
+              src="/events/hscc.jpg"
               alt="Enactus Presentation"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -86,7 +86,7 @@ export function SectionImpact() {
           {/* Image 2: lumora.jpg (Bottom align) */}
           <div className="lg:w-[20%] relative rounded-default overflow-hidden shadow-lg h-[400px] lg:h-[75%] lg:self-end group">
             <Image
-              src="/lumora.jpg"
+              src="/events/lumora.jpg"
               alt="Lumora Project"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -96,7 +96,7 @@ export function SectionImpact() {
           {/* Image 3: ecometer.jpg (Top align, tallest) */}
           <div className="lg:w-[20%] relative rounded-default overflow-hidden shadow-lg h-[400px] lg:h-full group">
             <Image
-              src="/ecometer.jpg"
+              src="/events/ecometer.jpg"
               alt="EcoMeter Project"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-110"

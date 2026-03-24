@@ -40,7 +40,7 @@ export function SectionRoot() {
           
           {/* Block 1: Wide Headline (6x6) */}
           <div className="bento-item lg:col-start-1 lg:row-start-1 lg:col-span-6 lg:row-span-6 relative rounded-default overflow-hidden group shadow-lg">
-             <ImageWrapper src="/nature-photos/blur-effect/117.jpg" alt="Nature Larch" fill className="absolute inset-0 object-cover object-bottom transition-transform duration-700 group-hover:scale-105" />
+             <ImageWrapper src="/nature/blur/nature-blur-5.jpg" alt="Nature Larch" fill className="absolute inset-0 object-cover object-bottom transition-transform duration-700 group-hover:scale-105" />
              <div className="absolute inset-0 bg-black/30 z-10 flex flex-col justify-end p-8 md:p-10">
                 <h2 className="text-3xl md:text-5xl text-white font-header font-bold mb-4 tracking-tight leading-tight">
                   Love for Nature and<br />Drive to do Good Deeds
@@ -60,12 +60,12 @@ export function SectionRoot() {
 
           {/* Block 3: Waterfall vertical (3x6) */}
           <div className="bento-item lg:col-start-10 lg:row-start-1 lg:col-span-3 lg:row-span-6 relative rounded-default overflow-hidden shadow-lg">
-             <ImageWrapper src="/nature-photos/111.jpg" alt="Waterfall" fill className="absolute inset-0 object-cover" />
+             <ImageWrapper src="/nature/nature-15.jpg" alt="Waterfall" fill className="absolute inset-0 object-cover" />
           </div>
 
           {/* Block 6: Foggy Forest (3x6) */}
           <div className="bento-item lg:col-start-7 lg:row-start-4 lg:col-span-3 lg:row-span-6 relative rounded-default overflow-hidden shadow-lg">
-             <ImageWrapper src="/nature-photos/141.jpg" alt="Foggy Forest" fill className="absolute inset-0 object-cover" />
+             <ImageWrapper src="/nature/nature-35.jpg" alt="Foggy Forest" fill className="absolute inset-0 object-cover" />
           </div>
 
           {/* Block 4: My Why (3x4) */}
@@ -88,12 +88,12 @@ export function SectionRoot() {
 
           {/* Block 8: Coastal Arch (3x4) */}
           <div className="bento-item lg:col-start-4 lg:row-start-9 lg:col-span-3 lg:row-span-4 relative rounded-default overflow-hidden shadow-lg">
-             <ImageWrapper src="/nature-photos/71.jpg" alt="Coastal Arch" fill className="absolute inset-0 object-cover" />
+             <ImageWrapper src="/nature/nature-98.jpg" alt="Coastal Arch" fill className="absolute inset-0 object-cover" />
           </div>
 
           {/* Block 10: Climate Change (3x6) */}
           <div className="bento-item lg:col-start-10 lg:row-start-7 lg:col-span-3 lg:row-span-6 relative rounded-default overflow-hidden shadow-xl group">
-             <ImageWrapper src="/nature-photos/blur-effect/122.jpg" alt="Burned Forest" fill className="absolute inset-0 object-cover opacity-60 transition-transform duration-700 group-hover:scale-105" />
+             <ImageWrapper src="/nature/blur/nature-blur-10.jpg" alt="Burned Forest" fill className="absolute inset-0 object-cover opacity-60 transition-transform duration-700 group-hover:scale-105" />
              <div className="absolute inset-0 bg-black/40 z-10 p-8 flex flex-col justify-between">
                 <h3 className="font-header text-xl md:text-2xl font-bold text-white tracking-tight leading-tight">
                   Climate Change<br />Affected me,<br />Personally.

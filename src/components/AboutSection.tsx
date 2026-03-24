@@ -99,7 +99,7 @@ export function AboutSection() {
         {/* Right Column: Image */}
         <div className="about-image relative rounded-default overflow-hidden shadow-xl aspect-[4/5] lg:aspect-auto h-full min-h-[500px]">
           <Image
-            src="/me.jpg"
+            src="/events/me.jpg"
             alt="Michael McKay"
             fill
             className="object-cover"

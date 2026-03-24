@@ -47,7 +47,7 @@ export function SectionHero() {
       {/* Full Viewport Background Image */}
       <div className="absolute inset-0 z-0">
         <ImageWrapper 
-          src="/nature-photos/blur-effect/118.jpg" 
+          src="/nature/blur/nature-blur-6.jpg" 
           alt="Refined Hero Background" 
           fill
           priority

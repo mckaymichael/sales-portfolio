@@ -12,7 +12,7 @@ export function SectionContact() {
         {/* Left Side: Image Content Area */}
         <div className="relative w-full md:w-[55%] h-[50dvh] md:h-full group rounded-[2rem] overflow-hidden shadow-2xl">
           <Image
-            src="/nature-photos/blur-effect/133_0031_47.jpg"
+            src="/nature/blur/nature-blur-45.jpg"
             alt="Generalist"
             fill
             className="object-cover opacity-80 transition-transform duration-[3000ms] group-hover:scale-110"

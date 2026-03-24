@@ -12,7 +12,7 @@ const TESTIMONIALS = [
     quote: "Michael was one of the most engaged students I've had in the Bachelor of Creative Industries program. In my innovation and entrepreneurship class, he consistently asked sharp, practical questions that helped create a better learning environment for all of us. What sets Michael apart is his focus on application. His team's business pitch to a panel of industry experts was amazing. Instead of just learning the theory, he worked on building something real. Michael is down to earth, hard-working and has a genuine ability to lead and gets things done. He would be a huge asset to any organization and I wouldn't hesitate to recommend him!",
     name: "Danielle Rockel",
     title: "Strategy Advisor and Instructor",
-    background: "/nature-photos/blur-effect/133_0015_87.jpg",
+    background: "/nature/blur/nature-blur-29.jpg",
     avatar: "/portraits/danielle.png" // Currently missing but path reserved
   },
   {
@@ -20,7 +20,7 @@ const TESTIMONIALS = [
     quote: "Michael seems to genuinely care about his classmates' success. He give tons of feedback to others and offers advice (and photography service!) that is actually useful. He's also a sponge for knowledge, whether it's through books, podcasts, events, etc. \n\nAlso: He's super punctual. People notice that stuff.",
     name: "Jayme Cochrane",
     title: "Creative Technologist and BCI Program Head",
-    background: "/nature-photos/blur-effect/13_0009_6.jpg",
+    background: "/nature/blur/nature-blur-63.jpg",
     avatar: "/portraits/jayme.png"
   },
   {
@@ -28,7 +28,7 @@ const TESTIMONIALS = [
     quote: "Michael makes an effort to talk to everyone and connect with them, I think that makes him stand out.",
     name: "Rawan Aladdin",
     title: "BCI Student",
-    background: "/nature-photos/blur-effect/13_0011_4.jpg",
+    background: "/nature/blur/nature-blur-65.jpg",
     avatar: "/portraits/rawan.png"
   }
 ];

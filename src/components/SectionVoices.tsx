@@ -72,7 +72,7 @@ export function SectionVoices() {
   return (
     <section 
       ref={container} 
-      className="h-screen w-full p-4 relative bg-surface overflow-hidden"
+      className="min-h-[850px] md:h-screen w-full p-4 relative bg-surface overflow-hidden"
     >
       {/* Outer Card Frame with 16px gap (p-4) */}
       <div className="w-full h-full relative rounded-default overflow-hidden shadow-2xl bg-[#1E1B18] text-white">
@@ -85,7 +85,7 @@ export function SectionVoices() {
           {TESTIMONIALS.map((t, idx) => (
             <div 
               key={t.id}
-              className="voice-slide relative flex-shrink-0 w-full h-full p-8 md:p-16 lg:p-24 flex flex-col"
+              className="voice-slide relative flex-shrink-0 w-full h-full p-8 md:p-16 lg:p-24 flex flex-col pt-20 md:pt-24 lg:pt-32"
             >
               {/* Individual Blurred Background */}
               <div className="absolute inset-0 z-0 overflow-hidden">
@@ -101,11 +101,11 @@ export function SectionVoices() {
 
               {/* Slide Content */}
               <div className="relative z-10 flex-1 flex flex-col justify-start">
-                <p className="animate-content font-header font-bold text-xs uppercase tracking-[0.3em] mb-12 opacity-80">
+                <p className="animate-content font-header font-bold text-[10px] md:text-xs uppercase tracking-[0.3em] mb-8 md:mb-12 opacity-80">
                   Voices of Impact
                 </p>
                 
-                <h3 className="animate-content font-body text-xl md:text-2xl lg:text-3xl italic leading-relaxed max-w-4xl mb-16 select-none whitespace-pre-line tracking-tight">
+                <h3 className="animate-content font-body text-lg md:text-xl lg:text-3xl italic leading-snug md:leading-relaxed max-w-4xl mb-12 md:mb-16 select-none whitespace-pre-line tracking-tight">
                   &ldquo;{t.quote}&rdquo;
                 </h3>
               </div>

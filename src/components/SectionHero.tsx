@@ -56,17 +56,17 @@ export function SectionHero() {
       </div>
 
       {/* Header Navigation Array - Clean Transparent Header */}
-      <header className="hero-nav absolute top-0 left-0 w-full p-8 lg:px-16 flex justify-between items-center z-50 text-white bg-transparent">
-        <div className="text-2xl font-header tracking-[0.2em] font-bold uppercase">
+      <header className="hero-nav absolute top-0 left-0 w-full p-6 md:p-8 lg:px-16 flex justify-between items-center z-50 text-white bg-transparent">
+        <div className="text-xl md:text-2xl font-header tracking-[0.2em] font-bold uppercase truncate pr-4">
           Michael McKay
         </div>
-        <div className="flex items-center gap-12">
+        <div className="flex items-center gap-6 md:gap-12">
           <nav className="hidden lg:flex gap-10 text-xs font-header font-bold tracking-[0.2em] uppercase">
             <button onClick={handleScrollToWork} className="hover:text-primary-container transition-colors">My Impact</button>
             <button className="hover:text-primary-container transition-colors">Love of Nature</button>
             <button className="hover:text-primary-container transition-colors">About Me</button>
           </nav>
-          <button className="btn-outlined-dark">
+          <button className="hidden sm:block btn-outlined-dark">
             Download Resume
           </button>
         </div>

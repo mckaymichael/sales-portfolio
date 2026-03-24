@@ -31,11 +31,11 @@ export function SectionRoot() {
   );
 
   return (
-    <section ref={container} id="me-plus-nature" className="h-screen bg-surface relative overflow-hidden p-4">
+    <section ref={container} id="me-plus-nature" className="min-h-screen md:h-screen bg-surface relative overflow-hidden p-4">
       <div className="h-full w-full mx-auto">
         <div 
           ref={gridRef}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 lg:grid-rows-12 h-full gap-4 text-on-surface"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 lg:grid-rows-12 h-auto md:h-full gap-4 text-on-surface"
         >
           
           {/* Block 1: Wide Headline (6x6) */}

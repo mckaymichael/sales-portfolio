@@ -94,7 +94,7 @@ export function SectionImpact() {
           </div>
 
           {/* Image 3: ecometer.jpg (Top align, tallest) */}
-          <div className="lg:w-[20%] relative rounded-default overflow-hidden shadow-lg h:[400px] lg:h-full group">
+          <div className="lg:w-[20%] relative rounded-default overflow-hidden shadow-lg h-[400px] lg:h-full group">
             <Image
               src="/ecometer.jpg"
               alt="EcoMeter Project"

@@ -1,22 +1,56 @@
 /* Custom styles and overrides for the Sales Portfolio */
 
-:root {
-  --color-primary: #6D390E;
-  --color-primary-container: #8A5024;
-  --color-secondary: #2C4035;
-  --color-secondary-dark: #2C2926;
-  --color-surface: #FFF8F3;
-  --color-surface-container-low: #F9F2EC;
-  --color-surface-container-lowest: #FFFFFF;
-  --color-surface-variant: #E8E1DB;
-  --color-on-surface: #1E1B18;
-  --color-on-primary: #FFFFFF;
-  --color-outline-variant: #D7C2B7;
-  --color-tertiary-fixed: #F5DFC9;
-  --color-on-tertiary-fixed: #25190C;
+/* CRITICAL: Premium Custom Cursor */
+* {
+    cursor: none !important;
 }
 
-html, body {
+#custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 28px;
+    height: 28px;
+    pointer-events: none;
+    z-index: 9999;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.05s ease;
+    rotate: -30deg;
+    transform-origin: top left;
+}
+
+#custom-cursor.active {
+    opacity: 1;
+}
+
+#custom-cursor img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+:root {
+    --color-primary: #6D390E;
+    --color-primary-container: #8A5024;
+    --color-secondary: #2C4035;
+    --color-secondary-dark: #2C2926;
+    --color-surface: #FFF8F3;
+    --color-surface-container-low: #F9F2EC;
+    --color-surface-container-lowest: #FFFFFF;
+    --color-surface-variant: #E8E1DB;
+    --color-on-surface: #1E1B18;
+    --color-on-primary: #FFFFFF;
+    --color-outline-variant: #D7C2B7;
+    --color-tertiary-fixed: #F5DFC9;
+    --color-on-tertiary-fixed: #25190C;
+}
+
+html,
+body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -25,7 +59,20 @@ html, body {
     color: var(--color-on-surface);
 }
 
-h1, h2, h3, h4, h5, h6 {
+img {
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     letter-spacing: -0.02em;
 }
 
@@ -59,10 +106,12 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     display: inline-block;
 }
+
 .btn-primary:hover {
     background-color: #33302C;
     transform: scale(1.05);
 }
+
 .btn-primary:active {
     transform: scale(0.95);
 }
@@ -80,6 +129,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
+
 .btn-secondary:hover {
     background-color: #33302C;
     color: white;
@@ -102,6 +152,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 10px;
     transition: all 0.3s ease;
 }
+
 .btn-outlined:hover {
     background-color: #33302C;
     color: white;
@@ -125,6 +176,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 10px;
     transition: all 0.3s ease;
 }
+
 .btn-outlined-dark:hover {
     background-color: #33302C;
     color: white;

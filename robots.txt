@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /assets/nature/
+Disallow: /assets/nature/blur/
+Noindex: /assets/nature/
+Noimageindex: /assets/nature/

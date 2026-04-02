@@ -70,23 +70,28 @@
         <section id="hero" class="relative min-h-[100dvh] w-full flex flex-col items-center justify-center overflow-hidden bg-secondary">
             <!-- Background Image -->
             <div class="absolute inset-0 z-0">
-                <img src="assets/portraits/michael.png" alt="Hero Background" class="w-full h-full object-cover">
+                <img src="assets/portraits/michael.png" alt="Hero Background" class="w-full h-full object-cover object-top">
             </div>
+
+            <!-- Header Overlay Gradient -->
+            <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black/60 to-transparent z-40 pointer-events-none"></div>
 
             <!-- Header Navigation -->
             <header class="hero-nav absolute top-0 left-0 w-full p-6 md:p-8 lg:px-16 flex justify-between items-center z-50 text-white bg-transparent">
-                <div class="text-xl md:text-2xl font-header tracking-[0.2em] font-bold uppercase truncate pr-4">
+                <div class="text-xl md:text-2xl font-header tracking-[0.2em] font-bold uppercase truncate">
                     Michael McKay
                 </div>
-                <div class="flex items-center gap-6 md:gap-12">
-                    <nav class="hidden lg:flex gap-10 text-xs font-header font-bold tracking-[0.2em] uppercase">
-                        <a href="impact.html" class="hover:text-primary-container transition-colors">My Impact</a>
-                        <a href="gallery.html" class="hover:text-primary-container transition-colors">Nature Gallery</a>
-                        <a href="about.html" class="hover:text-primary-container transition-colors">About Me</a>
-                    </nav>
-                    <button class="hidden sm:block btn-outlined-dark">
+                
+                <nav class="hidden lg:flex gap-10 text-xs font-header font-bold tracking-[0.2em] uppercase">
+                    <a href="impact.html" class="hover:text-primary-container transition-colors">My Impact</a>
+                    <a href="gallery.html" class="hover:text-primary-container transition-colors">Nature Gallery</a>
+                    <a href="about.html" class="hover:text-primary-container transition-colors">About Me</a>
+                </nav>
+
+                <div class="flex items-center">
+                    <a href="assets/resume.pdf" class="hidden sm:block btn-primary">
                         Download Resume
-                    </button>
+                    </a>
                 </div>
             </header>
 
@@ -104,143 +109,62 @@
                     <a href="impact.html" class="btn-primary">
                         See My Impact
                     </a>
-                    <button class="btn-outlined-dark">
+                    <a href="assets/resume.pdf" class="btn-secondary">
                         Download Resume
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION: BENTO GRID (Me + Nature) -->
-        <section id="me-plus-nature" class="min-h-screen md:h-screen bg-surface relative overflow-hidden p-4">
-            <div class="h-full w-full mx-auto">
-                <div id="bento-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 lg:grid-rows-12 h-auto md:h-full gap-4 text-on-surface">
-                    
-                    <!-- Block 1: Wide Headline -->
-                    <div class="bento-item lg:col-start-1 lg:row-start-1 lg:col-span-6 lg:row-span-6 relative rounded-default overflow-hidden group shadow-lg">
-                        <img src="assets/nature/blur/nature-blur-5.jpg" alt="Nature Larch" class="absolute inset-0 w-full h-full object-cover object-bottom transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-black/30 z-10 flex flex-col justify-end p-8 md:p-10">
-                            <h2 class="text-3xl md:text-5xl text-white font-header font-bold mb-4 tracking-tight leading-tight">
-                                Love for Nature and<br />Drive to do Good Deeds
-                            </h2>
-                            <p class="font-body text-white/90 text-base md:text-lg leading-relaxed max-w-xl">
-                                I have always been passionate about nature. My photography has been my catalyst for expressing that love and admiration. For a long time I thought I was supposed to use my photography to speak the message of preserving our planet. Through this process, I realized I could impact more people with storytelling, being a leader, and going beyond just taking photos.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Block 2: Secret of happiness -->
-                    <div class="bento-item lg:col-start-7 lg:row-start-1 lg:col-span-3 lg:row-span-3 bg-secondary-dark rounded-default p-6 flex flex-col items-center justify-center text-center shadow-lg">
-                        <p class="font-body italic text-lg md:text-xl text-white/90 leading-snug">
-                            "The secret of happiness: Find something more important than you are and dedicate your life to it."
-                        </p>
-                    </div>
-
-                    <!-- Block 3: Waterfall vertical -->
-                    <div class="bento-item lg:col-start-10 lg:row-start-1 lg:col-span-3 lg:row-span-6 relative rounded-default overflow-hidden shadow-lg">
-                        <img src="assets/nature/nature-15.jpg" alt="Waterfall" class="absolute inset-0 w-full h-full object-cover">
-                    </div>
-
-                    <!-- Block 6: Foggy Forest -->
-                    <div class="bento-item lg:col-start-7 lg:row-start-4 lg:col-span-3 lg:row-span-6 relative rounded-default overflow-hidden shadow-lg">
-                        <img src="assets/nature/nature-35.jpg" alt="Foggy Forest" class="absolute inset-0 w-full h-full object-cover">
-                    </div>
-
-                    <!-- Block 4: My Why -->
-                    <div class="bento-item lg:col-start-1 lg:row-start-7 lg:col-span-3 lg:row-span-4 bg-secondary rounded-default p-8 flex flex-col justify-center shadow-lg">
-                        <h3 class="font-header text-xl font-bold text-white mb-4 tracking-tight">My Why</h3>
-                        <p class="font-body text-base md:text-lg text-white/80 leading-relaxed">
-                            I want to have a social impact on the world. I want to lead a team of people that will help contribute to preserving this world; and most importantly, one day, I hope to inspire my children and that they will look up to me as someone not afraid of big challenges.
-                        </p>
-                    </div>
-
-                    <!-- Block 5: Award label -->
-                    <div class="bento-item lg:col-start-4 lg:row-start-7 lg:col-span-3 lg:row-span-2 bg-surface-variant rounded-default p-6 flex items-center gap-4 shadow-lg">
-                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                            <i class="ph-bold ph-trophy text-primary text-2xl"></i>
-                        </div>
-                        <p class="font-header font-bold text-base text-primary tracking-tight leading-tight uppercase">
-                            Award Winning<br />Landscape Photographer
-                        </p>
-                    </div>
-
-                    <!-- Block 8: Coastal Arch -->
-                    <div class="bento-item lg:col-start-4 lg:row-start-9 lg:col-span-3 lg:row-span-4 relative rounded-default overflow-hidden shadow-lg">
-                        <img src="assets/nature/nature-98.jpg" alt="Coastal Arch" class="absolute inset-0 w-full h-full object-cover">
-                    </div>
-
-                    <!-- Block 10: Climate Change -->
-                    <div class="bento-item lg:col-start-10 lg:row-start-7 lg:col-span-3 lg:row-span-6 relative rounded-default overflow-hidden shadow-xl group">
-                        <img src="assets/nature/blur/nature-blur-10.jpg" alt="Burned Forest" class="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-black/40 z-10 p-8 flex flex-col justify-between">
-                            <h3 class="font-header text-xl md:text-2xl font-bold text-white tracking-tight leading-tight">
-                                Climate Change<br />Affected me,<br />Personally.
-                            </h3>
-                            <a href="#" class="font-body text-white/90 text-sm md:text-base hover:underline decoration-white/40 underline-offset-8 mt-auto italic">
-                                Read about one of the fastest spreading fires ever recorded in British Columbia
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Block 9: Dire need -->
-                    <div class="bento-item lg:col-start-7 lg:row-start-10 lg:col-span-3 lg:row-span-3 bg-secondary-dark rounded-default p-8 flex flex-col justify-center shadow-lg">
-                        <p class="font-body text-white/90 text-lg leading-relaxed">
-                            There is a dire need for humanity to preserve our planet. I want to contribute to helping.
-                        </p>
-                    </div>
-
-                    <!-- Block 7: Force of good -->
-                    <div class="bento-item lg:col-start-1 lg:row-start-11 lg:col-span-3 lg:row-span-2 bg-secondary-dark rounded-default p-4 flex flex-col items-center justify-center text-center shadow-lg">
-                        <p class="font-body italic text-lg text-white/80">
-                            "Use business as a force of good"
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION: ABOUT -->
-        <section id="about" class="py-24 px-4 bg-surface flex items-center justify-center overflow-hidden">
-            <div class="max-w-[1400px] w-full grid grid-cols-1 lg:grid-cols-2 gap-4">
-                
-                <!-- Left Column -->
-                <div class="flex flex-col gap-4 about-content">
-                    <!-- Main Text Content -->
-                    <div class="bg-[#E8E1DB]/50 p-10 md:p-12 rounded-default border border-[#534434]/5 shadow-sm">
-                        <h2 class="font-header font-bold text-4xl md:text-5xl text-on-surface mb-8 tracking-tight">
-                            The Patience to Build Myself
-                        </h2>
-                        <div class="space-y-6 font-body text-on-surface/80 text-lg leading-relaxed max-w-2xl">
-                            <p>
-                                One of the biggest challenges in life for most people is performing at their
-                                very best. How would you define it? For me, right now, it's about the
-                                process of becoming. I am the best that I can be at this moment.
-                            </p>
-                            <p>
-                                I'm building the skills necessary to become influential and leadership
-                                material. These are my natural strengths that I embrace and polish every day.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Strengths Grid -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-                        <div class="strength-card border border-[#534434]/20 bg-[#E8E1DB] text-[#534434] py-8 px-4 text-sm font-bold tracking-tight uppercase flex items-center justify-center rounded-[4px] shadow-sm text-center transition-colors hover:bg-[#E8E1DB]/80">Connectedness</div>
-                        <div class="strength-card border border-[#534434]/20 bg-[#E8E1DB] text-[#534434] py-8 px-4 text-sm font-bold tracking-tight uppercase flex items-center justify-center rounded-[4px] shadow-sm text-center transition-colors hover:bg-[#E8E1DB]/80">Intellection</div>
-                        <div class="strength-card border border-[#534434]/20 bg-[#E8E1DB] text-[#534434] py-8 px-4 text-sm font-bold tracking-tight uppercase flex items-center justify-center rounded-[4px] shadow-sm text-center transition-colors hover:bg-[#E8E1DB]/80">Adaptability</div>
-                        <div class="strength-card border border-[#534434]/20 bg-[#E8E1DB] text-[#534434] py-8 px-4 text-sm font-bold tracking-tight uppercase flex items-center justify-center rounded-[4px] shadow-sm text-center transition-colors hover:bg-[#E8E1DB]/80">Learner</div>
-                        <div class="strength-card border border-[#534434]/20 bg-[#E8E1DB] text-[#534434] py-8 px-4 text-sm font-bold tracking-tight uppercase flex items-center justify-center rounded-[4px] shadow-sm text-center transition-colors hover:bg-[#E8E1DB]/80">Belief</div>
-                        <div class="strength-card border border-[#534434]/20 bg-[#E8E1DB] text-[#534434] py-8 px-4 text-sm font-bold tracking-tight uppercase flex items-center justify-center rounded-[4px] shadow-sm text-center transition-colors hover:bg-[#E8E1DB]/80">Sales</div>
-                    </div>
-                </div>
-
-                <!-- Right Column: Image -->
-                <div class="about-image relative rounded-default overflow-hidden shadow-xl aspect-[4/5] lg:aspect-auto h-full min-h-[500px]">
-                    <img src="assets/events/me.jpg" alt="Michael McKay" class="w-full h-full object-cover">
-                    <!-- Overlay Button -->
-                    <a href="about.html" class="absolute bottom-4 right-4 btn-secondary z-20">
-                        Learn About Me
                     </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SECTION: CORE COMPETENCIES -->
+        <section id="competencies" class="py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-surface-variant/20 overflow-hidden">
+            <div class="max-w-[1400px] mx-auto">
+                <div class="mb-20 md:mb-28">
+                    <h2 class="font-serif text-4xl md:text-6xl text-on-surface italic leading-tight max-w-3xl">
+                        Bringing Skills to Help You Grow.
+                    </h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
+                    <!-- Competency 1 -->
+                    <div class="strength-card flex flex-col items-start gap-8">
+                        <div class="w-16 h-16 rounded-xl bg-primary/5 flex items-center justify-center text-primary">
+                            <i class="ph ph-blueprint text-4xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-header font-bold text-2xl mb-4 text-on-surface tracking-tight">Web Dev & Design</h3>
+                            <p class="font-body text-balance text-lg text-on-surface/70 leading-relaxed">
+                                I use my <span class="font-bold text-on-surface">Diploma in New Media Design and Web Development</span> to build digital environments that turn climate-tech leads into long-term partners.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Competency 2 -->
+                    <div class="strength-card flex flex-col items-start gap-8">
+                        <div class="w-16 h-16 rounded-xl bg-primary/5 flex items-center justify-center text-primary">
+                            <i class="ph ph-rocket-launch text-4xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-header font-bold text-2xl mb-4 text-on-surface tracking-tight">Strategic Marketing</h3>
+                            <p class="font-body text-balance text-lg text-on-surface/70 leading-relaxed">
+                                I leverage my past experience working at <span class="font-bold text-on-surface">Jelly Marketing</span> to lead targeted campaigns that grow environmental impact through storytelling.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Competency 3 -->
+                    <div class="strength-card flex flex-col items-start gap-8">
+                        <div class="w-16 h-16 rounded-xl bg-primary/5 flex items-center justify-center text-primary">
+                            <i class="ph ph-chart-line-up text-4xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-header font-bold text-2xl mb-4 text-on-surface tracking-tight">Business Growth</h3>
+                            <p class="font-body text-balance text-lg text-on-surface/70 leading-relaxed">
+                                I use my <span class="font-bold text-on-surface">Bachelor of Creative Industries</span> to build scalable revenue models. I'm one of only 16 students in Western Canada who possess this degree.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

@@ -8,10 +8,10 @@
     --color-secondary-dark: #2C2926;
     --color-surface: #FFF8F3;
     --color-surface-container-low: #F9F2EC;
-    --color-surface-container-lowest: #FFFFFF;
+    --color-surface-container-lowest: #FDFBF9;
     --color-surface-variant: #E8E1DB;
     --color-on-surface: #1E1B18;
-    --color-on-primary: #FFFFFF;
+    --color-on-primary: #FDFBF9;
     --color-outline-variant: #D7C2B7;
     --color-tertiary-fixed: #F5DFC9;
     --color-on-tertiary-fixed: #25190C;
@@ -62,7 +62,7 @@ h6 {
 /* Button Styles & Hover Interaction */
 .btn-primary {
     background-color: #6D390E;
-    color: white;
+    color: #FDFBF9;
     font-family: 'Figtree', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
@@ -95,13 +95,13 @@ h6 {
     padding: 10px 32px;
     border-radius: 4px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px -1px rgba(0, 0, 0, 0.1);
 }
 
 .btn-secondary:hover {
     background-color: #33302C;
-    color: white;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    color: #FDFBF9;
+    box-shadow: 0 10px 20px -3px rgba(0, 0, 0, 0.1);
 }
 
 .btn-outlined {
@@ -123,9 +123,9 @@ h6 {
 
 .btn-outlined:hover {
     background-color: #33302C;
-    color: white;
+    color: #FDFBF9;
     border-color: #33302C;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px -3px rgba(0, 0, 0, 0.1);
 }
 
 .btn-outlined-dark {
@@ -147,9 +147,9 @@ h6 {
 
 .btn-outlined-dark:hover {
     background-color: #33302C;
-    color: white;
+    color: #FDFBF9;
     border-color: #33302C;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px -3px rgba(0, 0, 0, 0.1);
 }
 
 /* Specific component styles */
@@ -158,7 +158,7 @@ h6 {
 }
 
 .text-shadow-xl {
-    text-shadow: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+    text-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.04);
 }
 
 /* Animations */

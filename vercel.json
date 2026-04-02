@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "name": "sales-portfolio",
+  "cleanUrls": true,
+  "framework": null,
+  "outputDirectory": "."
+}

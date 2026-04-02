@@ -1,0 +1,145 @@
+/* Custom styles and overrides for the Sales Portfolio */
+
+:root {
+  --color-primary: #6D390E;
+  --color-primary-container: #8A5024;
+  --color-secondary: #2C4035;
+  --color-secondary-dark: #2C2926;
+  --color-surface: #FFF8F3;
+  --color-surface-container-low: #F9F2EC;
+  --color-surface-container-lowest: #FFFFFF;
+  --color-surface-variant: #E8E1DB;
+  --color-on-surface: #1E1B18;
+  --color-on-primary: #FFFFFF;
+  --color-outline-variant: #D7C2B7;
+  --color-tertiary-fixed: #F5DFC9;
+  --color-on-tertiary-fixed: #25190C;
+}
+
+body {
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.02em;
+}
+
+/* Editorial Typography Utilities */
+.display-lg {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+}
+
+.label-sm {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+/* Button Styles & Hover Interaction */
+.btn-primary {
+    background-color: #6D390E;
+    color: white;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    padding: 10px 24px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    display: inline-block;
+}
+.btn-primary:hover {
+    background-color: #33302C;
+    transform: scale(1.05);
+}
+.btn-primary:active {
+    transform: scale(0.95);
+}
+
+.btn-secondary {
+    background-color: #EEE7E1;
+    color: var(--color-on-surface);
+    font-family: 'Figtree', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    padding: 10px 32px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+.btn-secondary:hover {
+    background-color: #33302C;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outlined {
+    border: 1px solid #534434;
+    color: #534434;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    padding: 10px 32px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+.btn-outlined:hover {
+    background-color: #33302C;
+    color: white;
+    border-color: #33302C;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outlined-dark {
+    border: 1px solid #8F7F75;
+    color: #8F7F75;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    padding: 10px 32px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+.btn-outlined-dark:hover {
+    background-color: #33302C;
+    color: white;
+    border-color: #33302C;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific component styles */
+.rounded-default {
+    border-radius: 4px;
+}
+
+.text-shadow-xl {
+    text-shadow: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Animations */
+.voice-slide {
+    width: 100%;
+}

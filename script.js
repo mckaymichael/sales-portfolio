@@ -161,6 +161,50 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
+    // --- MOBILE MENU LOGIC (Animated Accordion) ---
+    const btn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+    const iconClosed = document.getElementById('icon-menu-closed');
+    const iconOpen = document.getElementById('icon-menu-open');
+    const siteNav = menu ? menu.closest('nav') : null;
+
+    if (btn && menu) {
+        btn.addEventListener('click', () => {
+            const isClosed = menu.classList.contains('max-h-0');
+            if (isClosed) {
+                // Open menu smoothly
+                menu.classList.remove('max-h-0');
+                menu.classList.add('max-h-[500px]');
+                iconClosed.classList.add('hidden');
+                iconClosed.classList.remove('block');
+                iconOpen.classList.remove('hidden');
+                iconOpen.classList.add('block');
+            } else {
+                // Close menu smoothly
+                menu.classList.add('max-h-0');
+                menu.classList.remove('max-h-[500px]');
+                iconOpen.classList.add('hidden');
+                iconOpen.classList.remove('block');
+                iconClosed.classList.remove('hidden');
+                iconClosed.classList.add('block');
+            }
+        });
+    }
+
+    // Scroll Logic for the standard nav
+    if (siteNav && siteNav.classList.contains('bg-transparent')) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                siteNav.classList.remove('bg-transparent', 'text-[#FDFBF9]');
+                siteNav.classList.add('bg-[#FFF8F3]', 'text-gray-900', 'shadow-sm', 'border-b', 'border-[#D7C2B7]');
+            } else {
+                siteNav.classList.remove('bg-[#FFF8F3]', 'text-gray-900', 'shadow-sm', 'border-b', 'border-[#D7C2B7]');
+                siteNav.classList.add('bg-transparent', 'text-[#FDFBF9]');
+            }
+        });
+    }
+
+
     // --- SMOOTH SCROLL FOR ANCHORS ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {

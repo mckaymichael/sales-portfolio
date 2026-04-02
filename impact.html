@@ -70,22 +70,60 @@
     <!-- Header Overlay Gradient -->
     <div class="fixed top-0 left-0 w-full h-32 bg-gradient-to-b from-black/5 to-transparent z-40 pointer-events-none"></div>
 
-    <!-- Header Navigation -->
-    <header class="fixed top-0 left-0 w-full p-6 md:p-8 lg:px-16 flex justify-between items-center z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30">
-        <a href="index.html" class="text-xl md:text-2xl font-header tracking-[0.2em] font-bold uppercase text-primary">
+    <!-- Standard Responsive Header Container -->
+<div class="fixed top-0 left-0 w-full z-50">
+  <nav class="bg-[#FFF8F3] text-gray-900 shadow-sm border-b border-[#D7C2B7] transition-colors duration-300">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+        
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center relative z-20">
+          <a href="index.html" class="text-xl md:text-2xl font-header font-bold uppercase tracking-[0.2em] hover:opacity-80 transition-opacity">
             Michael McKay
-        </a>
-        <nav class="hidden lg:flex gap-10 text-xs font-header font-bold tracking-[0.2em] uppercase text-secondary">
-            <a href="impact.html" class="text-primary">My Impact</a>
-            <a href="gallery.html" class="hover:text-primary transition-colors">Nature Gallery</a>
-            <a href="about.html" class="hover:text-primary transition-colors">About Me</a>
-        </nav>
-        <div class="flex items-center">
-            <a href="assets/files/Good Choice.pdf" download="Good Choice.pdf" class="hidden sm:block btn-primary">
-                Download Resume
-            </a>
+          </a>
         </div>
-    </header>
+        
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
+          <a href="impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm bg-gray-100/20">My Impact</a>
+          <a href="gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm hover:bg-gray-100/20">Nature Gallery</a>
+          <a href="about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm hover:bg-gray-100/20">About Me</a>
+          <a href="assets/files/Good Choice.pdf" download="Good Choice.pdf" class="ml-4 btn-primary relative">
+            Resume
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="flex items-center lg:hidden relative z-20">
+          <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-100/20 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition-colors" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <!-- Icon when menu is closed. -->
+            <svg id="icon-menu-closed" class="block h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <!-- Icon when menu is open. -->
+            <svg id="icon-menu-open" class="hidden h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- Mobile Menu, using max-h for accordion animation -->
+    <div class="lg:hidden absolute top-20 left-0 w-full bg-[#FFF8F3] shadow-xl border-t border-[#D7C2B7] overflow-hidden max-h-0 transition-all duration-300 ease-in-out" id="mobile-menu">
+      <div class="px-6 pt-4 pb-8 space-y-2">
+        <a href="impact.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm">My Impact</a>
+        <a href="gallery.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm">Nature Gallery</a>
+        <a href="about.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm">About Me</a>
+        <a href="assets/files/Good Choice.pdf" download="Good Choice.pdf" class="btn-primary block w-full text-center mt-6">
+          Download Resume
+        </a>
+      </div>
+    </div>
+  </nav>
+</div>
 
     <main class="pt-32 pb-24 px-4 min-h-screen">
         <div id="section-impact" class="max-w-[1200px] mx-auto">
@@ -132,7 +170,7 @@
                 <!-- HSCC -->
                 <a href="projects/hscc.html" class="group bg-surface-container-low p-8 rounded-default border border-outline-variant/30 shadow-sm transition-all hover:shadow-xl hover:-translate-y-2">
                     <div class="w-full aspect-[16/9] rounded-default overflow-hidden mb-8 bg-secondary">
-                        <img src="assets/projects/hscc/hscc.jpg" alt="High School Case Competition" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="assets/projects/high-school-case-comp/hscc.jpg" alt="High School Case Competition" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
                     <h3 class="font-header font-bold text-2xl mb-4 text-on-surface group-hover:text-primary transition-colors">High School Case Competition</h3>
                     <p class="font-body text-on-surface/70 text-lg leading-relaxed mb-6">
@@ -148,16 +186,30 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-secondary-dark text-white py-20 px-4">
-        <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
-            <div class="text-center md:text-left">
+        <footer class="bg-secondary-dark text-white py-20 px-4">
+        <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-center md:items-start text-center md:text-left">
+            <div>
                 <h2 class="font-header font-bold text-2xl tracking-[0.2em] uppercase mb-4">Michael McKay</h2>
                 <p class="font-body italic text-white/60">Using business as a force of good.</p>
             </div>
-            <div class="flex gap-8 text-xs font-header font-bold uppercase tracking-widest">
-                <a href="index.html" class="hover:text-primary-container transition-colors">Home</a>
-                <a href="impact.html" class="hover:text-primary-container transition-colors">Impact</a>
-                <a href="gallery.html" class="hover:text-primary-container transition-colors">Gallery</a>
+            
+            <div class="flex flex-col gap-4">
+                <h3 class="font-header text-xs font-bold uppercase tracking-widest opacity-60">Navigate</h3>
+                <div class="flex flex-wrap justify-center md:justify-start gap-x-8 gap-y-3 text-[10px] md:text-xs font-header font-bold uppercase tracking-widest">
+                    <a href="index.html" class="hover:text-primary-container transition-colors">Home</a>
+                    <a href="about.html" class="hover:text-primary-container transition-colors">About</a>
+                    <a href="impact.html" class="hover:text-primary-container transition-colors">Impact</a>
+                    <a href="gallery.html" class="hover:text-primary-container transition-colors">Gallery</a>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <h3 class="font-header text-xs font-bold uppercase tracking-widest opacity-60">Connect</h3>
+                <div class="flex flex-wrap justify-center md:justify-start gap-x-8 gap-y-3 text-[10px] md:text-xs font-header font-bold uppercase tracking-widest">
+                    <a href="mailto:mckaymichaelk@gmail.com" class="hover:text-primary-container transition-colors">Email</a>
+                    <a href="https://linkedin.com/in/michaelkmckay" target="_blank" class="hover:text-primary-container transition-colors">LinkedIn</a>
+                    <a href="tel:6048259224" class="hover:text-primary-container transition-colors">Phone</a>
+                </div>
             </div>
         </div>
     </footer>

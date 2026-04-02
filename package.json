@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "dev": "echo 'Static site, use Live Server or python -m http.server'",
+    "build": "echo 'Skipping build for static site'",
+    "start": "echo 'Static site, serve index.html directly'",
+    "lint": "echo 'No lint needed for static site'"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

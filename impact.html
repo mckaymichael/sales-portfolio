@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Impact | Michael McKay</title>
+    <meta name="description" content="Showcasing social and environmental impact through Enactus BCIT student-led businesses.">
+    
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6D390E',
+                        'primary-container': '#8A5024',
+                        secondary: '#2C4035',
+                        'secondary-dark': '#2C2926',
+                        surface: '#FFF8F3',
+                        'surface-container-low': '#F9F2EC',
+                        'surface-container-lowest': '#FFFFFF',
+                        'surface-variant': '#E8E1DB',
+                        'on-surface': '#1E1B18',
+                        'on-primary': '#FFFFFF',
+                        'outline-variant': '#D7C2B7',
+                        'tertiary-fixed': '#F5DFC9',
+                        'on-tertiary-fixed': '#25190C',
+                    },
+                    fontFamily: {
+                        sans: ['Figtree', 'sans-serif'],
+                        serif: ['Unna', 'serif'],
+                        header: ['Figtree', 'sans-serif'],
+                        body: ['Unna', 'serif'],
+                    },
+                    borderRadius: {
+                        'default': '4px',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-surface text-on-surface font-body antialiased">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 w-full p-6 md:p-8 lg:px-16 flex justify-between items-center z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30">
+        <a href="index.html" class="text-xl md:text-2xl font-header tracking-[0.2em] font-bold uppercase text-primary">
+            Michael McKay
+        </a>
+        <nav class="hidden lg:flex gap-10 text-xs font-header font-bold tracking-[0.2em] uppercase text-secondary">
+            <a href="impact.html" class="text-primary">My Impact</a>
+            <a href="gallery.html" class="hover:text-primary transition-colors">Nature Gallery</a>
+            <a href="about.html" class="hover:text-primary transition-colors">About Me</a>
+        </nav>
+        <button class="hidden sm:block btn-outlined border-primary text-primary">
+            Download Resume
+        </button>
+    </header>
+
+    <main class="pt-32 pb-24 px-4 min-h-screen">
+        <div class="max-w-[1200px] mx-auto">
+            <div class="mb-20">
+                <h1 class="font-header font-bold text-5xl md:text-6xl text-on-surface mb-8 tracking-tight">
+                    Helping BCIT Student-Led <br/>Businesses Solve Global Issues
+                </h1>
+                <p class="font-body text-xl md:text-2xl text-on-surface/80 leading-relaxed max-w-4xl">
+                    I Lead Sponsorship Strategy at Enactus BCIT. Our club is a breeding ground for innovative ideas that address the 17 UN Sustainability Development Goals. This is where the two worlds of sustainable futures and business collide.
+                </p>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- EcoMeter -->
+                <a href="projects/ecometer.html" class="group bg-surface-container-low p-8 rounded-default border border-outline-variant/30 shadow-sm transition-all hover:shadow-xl hover:-translate-y-2">
+                    <div class="w-full aspect-[16/9] rounded-default overflow-hidden mb-8 bg-secondary">
+                        <img src="assets/events/ecometer.jpg" alt="EcoMeter" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <h3 class="font-header font-bold text-2xl mb-4 text-on-surface group-hover:text-primary transition-colors">EcoMeter</h3>
+                    <p class="font-body text-on-surface/70 text-lg leading-relaxed mb-6">
+                        An innovative solution for measuring and managing environmental performance.
+                    </p>
+                    <div class="flex items-center gap-2 text-primary font-header font-bold text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
+                        View Project <i class="ph ph-arrow-right"></i>
+                    </div>
+                </a>
+
+                <!-- Lumóra -->
+                <a href="projects/lumora.html" class="group bg-surface-container-low p-8 rounded-default border border-outline-variant/30 shadow-sm transition-all hover:shadow-xl hover:-translate-y-2">
+                    <div class="w-full aspect-[16/9] rounded-default overflow-hidden mb-8 bg-secondary">
+                        <img src="assets/events/lumora.jpg" alt="Lumóra" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <h3 class="font-header font-bold text-2xl mb-4 text-on-surface group-hover:text-primary transition-colors">Lumóra</h3>
+                    <p class="font-body text-on-surface/70 text-lg leading-relaxed mb-6">
+                        Bringing light to the future with sustainable lighting solutions.
+                    </p>
+                    <div class="flex items-center gap-2 text-primary font-header font-bold text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
+                        View Project <i class="ph ph-arrow-right"></i>
+                    </div>
+                </a>
+
+                <!-- HSCC -->
+                <a href="projects/hscc.html" class="group bg-surface-container-low p-8 rounded-default border border-outline-variant/30 shadow-sm transition-all hover:shadow-xl hover:-translate-y-2">
+                    <div class="w-full aspect-[16/9] rounded-default overflow-hidden mb-8 bg-secondary">
+                        <img src="assets/events/hscc.jpg" alt="High School Case Competition" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <h3 class="font-header font-bold text-2xl mb-4 text-on-surface group-hover:text-primary transition-colors">High School Case Competition</h3>
+                    <p class="font-body text-on-surface/70 text-lg leading-relaxed mb-6">
+                        Inspiring the next generation of social entrepreneurs through competition.
+                    </p>
+                    <div class="flex items-center gap-2 text-primary font-header font-bold text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
+                        View Project <i class="ph ph-arrow-right"></i>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-secondary-dark text-white py-20 px-4">
+        <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="text-center md:text-left">
+                <h2 class="font-header font-bold text-2xl tracking-[0.2em] uppercase mb-4">Michael McKay</h2>
+                <p class="font-body italic text-white/60">Using business as a force of good.</p>
+            </div>
+            <div class="flex gap-8 text-xs font-header font-bold uppercase tracking-widest">
+                <a href="index.html" class="hover:text-primary-container transition-colors">Home</a>
+                <a href="impact.html" class="hover:text-primary-container transition-colors">Impact</a>
+                <a href="gallery.html" class="hover:text-primary-container transition-colors">Gallery</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

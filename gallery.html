@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Gallery | Michael McKay</title>
+    <meta name="description" content="A curated gallery of nature and landscape photography by Michael McKay. expressing a love for the environment.">
+    
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6D390E',
+                        'primary-container': '#8A5024',
+                        secondary: '#2C4035',
+                        'secondary-dark': '#2C2926',
+                        surface: '#FFF8F3',
+                        'surface-container-low': '#F9F2EC',
+                        'surface-container-lowest': '#FFFFFF',
+                        'surface-variant': '#E8E1DB',
+                        'on-surface': '#1E1B18',
+                        'on-primary': '#FFFFFF',
+                        'outline-variant': '#D7C2B7',
+                        'tertiary-fixed': '#F5DFC9',
+                        'on-tertiary-fixed': '#25190C',
+                    },
+                    fontFamily: {
+                        sans: ['Figtree', 'sans-serif'],
+                        serif: ['Unna', 'serif'],
+                        header: ['Figtree', 'sans-serif'],
+                        body: ['Unna', 'serif'],
+                    },
+                    borderRadius: {
+                        'default': '4px',
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-surface text-on-surface font-body antialiased">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 w-full p-6 md:p-8 lg:px-16 flex justify-between items-center z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30">
+        <a href="index.html" class="text-xl md:text-2xl font-header tracking-[0.2em] font-bold uppercase text-primary">
+            Michael McKay
+        </a>
+        <nav class="hidden lg:flex gap-10 text-xs font-header font-bold tracking-[0.2em] uppercase text-secondary">
+            <a href="impact.html" class="hover:text-primary transition-colors">My Impact</a>
+            <a href="gallery.html" class="text-primary">Nature Gallery</a>
+            <a href="about.html" class="hover:text-primary transition-colors">About Me</a>
+        </nav>
+        <button class="hidden sm:block btn-outlined border-primary text-primary">
+            Download Resume
+        </button>
+    </header>
+
+    <main class="pt-32 pb-24 px-4 min-h-screen">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="text-center mb-16">
+                <h1 class="font-header font-bold text-5xl md:text-6xl text-on-surface mb-6 tracking-tight">Expressing the message <br/>of preserving our planet</h1>
+                <p class="font-body text-xl text-on-surface/60 max-w-2xl mx-auto italic leading-relaxed">
+                    Photography has been my catalyst for expressing love and admiration for the natural world.
+                </p>
+            </div>
+
+            <!-- Mosaic Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 auto-rows-[250px] md:auto-rows-[300px] gap-4">
+                
+                <!-- Main Featured Item -->
+                <div class="col-span-2 row-span-2 rounded-default overflow-hidden bg-secondary shadow-lg group">
+                    <img src="assets/nature/nature-1.jpg" alt="Nature" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+
+                <!-- Vertical Items -->
+                <div class="col-span-1 row-span-2 rounded-default overflow-hidden bg-secondary shadow-lg group">
+                    <img src="assets/nature/nature-15.jpg" alt="Nature" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+
+                <!-- Small Items -->
+                <div class="col-span-1 row-span-1 rounded-default overflow-hidden bg-secondary shadow-lg group">
+                    <img src="assets/nature/nature-10.jpg" alt="Nature" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="col-span-1 row-span-1 rounded-default overflow-hidden bg-secondary shadow-lg group">
+                    <img src="assets/nature/nature-35.jpg" alt="Nature" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+
+                <!-- Row Items -->
+                <div class="col-span-2 row-span-1 rounded-default overflow-hidden bg-secondary shadow-lg group">
+                    <img src="assets/nature/nature-100.jpg" alt="Nature" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+
+                <!-- More Mosaic Items -->
+                <div class="col-span-1 row-span-2 rounded-default overflow-hidden bg-secondary shadow-lg group">
+                    <img src="assets/nature/nature-110.jpg" alt="Nature" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="col-span-1 row-span-1 rounded-default overflow-hidden bg-secondary shadow-lg group">
+                    <img src="assets/nature/nature-28.jpg" alt="Nature" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="col-span-2 row-span-2 rounded-default overflow-hidden bg-secondary shadow-lg group">
+                    <img src="assets/nature/nature-34.jpg" alt="Nature" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="col-span-1 row-span-1 rounded-default overflow-hidden bg-secondary shadow-lg group">
+                    <img src="assets/nature/nature-49.jpg" alt="Nature" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                 <div class="col-span-1 row-span-1 rounded-default overflow-hidden bg-secondary shadow-lg group">
+                    <img src="assets/nature/nature-8.jpg" alt="Nature" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-secondary-dark text-white py-20 px-4">
+        <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="text-center md:text-left">
+                <h2 class="font-header font-bold text-2xl tracking-[0.2em] uppercase mb-4">Michael McKay</h2>
+                <p class="font-body italic text-white/60">Using business as a force of good.</p>
+            </div>
+            <div class="flex gap-8 text-xs font-header font-bold uppercase tracking-widest">
+                <a href="index.html" class="hover:text-primary-container transition-colors">Home</a>
+                <a href="impact.html" class="hover:text-primary-container transition-colors">Impact</a>
+                <a href="gallery.html" class="hover:text-primary-container transition-colors">Gallery</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

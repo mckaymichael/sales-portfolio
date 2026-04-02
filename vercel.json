@@ -1,11 +1,7 @@
 {
   "version": 2,
   "name": "sales-portfolio",
-  "build": {
-    "env": {
-      "NODE_ENV": "production"
-    }
-  },
+  "framework": null,
   "buildCommand": null,
   "installCommand": null,
   "outputDirectory": ".",

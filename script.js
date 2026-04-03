@@ -19,18 +19,18 @@ document.addEventListener('DOMContentLoaded', () => {
     heroTl.to('.hero-text', {
         y: 0,
         opacity: 1,
-        duration: 1.2,
+        duration: 5,
         stagger: 0.2,
         ease: "power3.out",
-        delay: 0.2
+        delay: 10
     });
     
     gsap.to('.hero-nav', {
         y: 0,
         opacity: 1,
-        duration: 1,
+        duration: 5,
         ease: "power2.out",
-        delay: 0.8
+        delay: 13
     });
 
     // --- BENTO GRID ANIMATIONS ---

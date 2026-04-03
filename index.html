@@ -70,9 +70,11 @@
         
         <!-- SECTION: HERO -->
         <section id="hero" class="relative min-h-[100dvh] w-full flex flex-col items-center justify-center overflow-hidden bg-secondary">
-            <!-- Background Image -->
+            <!-- Background Video -->
             <div class="absolute inset-0 z-0">
-                <img src="assets/portraits/michael.png" alt="Hero Background" class="w-full h-full object-cover object-top">
+                <video class="w-full h-full object-cover object-top" autoplay muted playsinline>
+                    <source src="assets/video/walking-in-forest.mp4" type="video/mp4">
+                </video>
             </div>
 
             <!-- Header Overlay Gradient -->
@@ -80,7 +82,7 @@
 
             <!-- Standard Responsive Header Container -->
 <div class="fixed top-0 left-0 w-full z-50">
-  <nav class="bg-transparent text-[#FDFBF9] transition-colors duration-300">
+  <nav class="bg-transparent text-[#FDFBF9] transition-colors duration-300 hero-nav">
     <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-20 items-center">
         

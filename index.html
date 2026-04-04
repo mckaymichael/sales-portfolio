@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,6 +56,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
     
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    
     <link rel="stylesheet" href="style.css">
     <style type="text/css">
         /* Prevent CLS for GSAP animations */
@@ -71,9 +74,9 @@
         <!-- SECTION: HERO -->
         <section id="hero" class="relative min-h-[100dvh] w-full flex flex-col items-center justify-center overflow-hidden bg-secondary">
             <!-- Background Video -->
-            <div class="absolute inset-0 z-0">
-                <video class="w-full h-full object-cover object-top" autoplay muted playsinline>
-                    <source src="assets/video/walking-in-forest.mp4" type="video/mp4">
+            <div class="absolute inset-x-0 h-[120%] -top-[10%] z-0">
+                <video id="hero-video" class="w-full h-full object-cover object-top" autoplay muted playsinline>
+                    <source src="assets/video/walking-in-forest-v2.mp4" type="video/mp4">
                 </video>
             </div>
 
@@ -137,12 +140,12 @@
 
             <div class="max-w-[1200px] w-full mx-auto px-6 text-center relative z-10 flex flex-col justify-center items-center mt-24">
                 <h1 class="hero-text display-lg text-white mb-10 tracking-tight leading-[1.1]">
-                    Helping Climate-Focused<br />
-                    Companies Grow
+                    Scale Your Corporate, Social, and Environmental Impact
+                    Without Slowing Business Growth
                 </h1>
                 
                 <p class="hero-text text-lg md:text-xl text-white/90 leading-relaxed max-w-[70ch] mb-16 font-body">
-                    I bring a mix of B2B & B2C sales, partnership development, and creative design to teams fighting climate change. My job is to secure the funding, build the relationships, and handle the execution so your company can scale its impact.
+                    I combine sales, marketing, and creative design to help you secure funding, build lasting partnerships, and drive strategic growth.
                 </p>
                 
                 <div class="hero-text flex flex-col sm:flex-row items-center gap-8">
@@ -173,9 +176,9 @@
                             <i class="ph ph-blueprint text-4xl"></i>
                         </div>
                         <div>
-                            <h3 class="font-header font-bold text-2xl mb-4 text-on-surface tracking-tight">Web Dev & Design</h3>
+                            <h3 class="font-header font-bold text-2xl mb-4 text-on-surface tracking-tight">Creative Problem Solving</h3>
                             <p class="font-body text-balance text-lg text-on-surface/70 leading-relaxed">
-                                I use my <span class="font-bold text-on-surface">Diploma in New Media Design and Web Development</span> to build digital environments that turn climate-tech leads into long-term partners.
+                                I design digital experiences that clearly communicate your mission and convert leads into lasting partners. My foundation in New Media Design allows me to build these assets efficiently from the ground up.
                             </p>
                         </div>
                     </div>
@@ -186,9 +189,9 @@
                             <i class="ph ph-rocket-launch text-4xl"></i>
                         </div>
                         <div>
-                            <h3 class="font-header font-bold text-2xl mb-4 text-on-surface tracking-tight">Strategic Marketing</h3>
+                            <h3 class="font-header font-bold text-2xl mb-4 text-on-surface tracking-tight">Strategic Growth & Marketing</h3>
                             <p class="font-body text-balance text-lg text-on-surface/70 leading-relaxed">
-                                I leverage my past experience working at <span class="font-bold text-on-surface">Jelly Marketing</span> to lead targeted campaigns that grow environmental impact through storytelling.
+                                I execute targeted campaigns and marketing strategies that amplify your environmental impact. My agency experience ensures your value proposition reaches the exact audience you need.
                             </p>
                         </div>
                     </div>
@@ -199,9 +202,9 @@
                             <i class="ph ph-chart-line-up text-4xl"></i>
                         </div>
                         <div>
-                            <h3 class="font-header font-bold text-2xl mb-4 text-on-surface tracking-tight">Business Growth</h3>
+                            <h3 class="font-header font-bold text-2xl mb-4 text-on-surface tracking-tight">Business Development & Sales</h3>
                             <p class="font-body text-balance text-lg text-on-surface/70 leading-relaxed">
-                                I use my <span class="font-bold text-on-surface">Bachelor of Creative Industries</span> to build scalable revenue models. I'm one of only 16 students in Western Canada who possess this degree.
+                                Backed by a Bachelor of Creative Industries and top 10% performance as a B2C sales representative, I focus on building scalable revenue models and fostering the core relationships your company needs to thrive.
                             </p>
                         </div>
                     </div>
@@ -209,63 +212,83 @@
             </div>
         </section>
 
-        <!-- SECTION: IMPACT -->
         <section id="section-impact" class="w-full bg-surface py-24 px-4 md:py-32 overflow-hidden">
             <div class="max-w-[1400px] mx-auto w-full">
                 
-                <!-- Header Section -->
-                <div class="impact-title text-center mb-16 max-w-[800px] mx-auto">
-                    <h2 class="font-header font-bold text-4xl md:text-5xl lg:text-6xl text-on-surface leading-tight tracking-tight">
-                        Helping BCIT Student-Led Businesses Solve Global Issues
-                    </h2>
+                <!-- Header: Title + Button -->
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-8 lg:gap-20">
+                    <div class="max-w-2xl">
+                        <h2 class="font-header font-bold text-4xl md:text-5xl lg:text-5xl text-on-surface leading-tight tracking-tight mb-8">
+                            Hands-On Experience Building Sustainable Initiatives
+                        </h2>
+                        <p class="font-body text-xl text-on-surface/70 leading-relaxed max-w-xl">
+                            I gained practical consulting experience by leading the sponsorship strategy at Enactus BCIT, helping student-led social enterprises directly address UN SDG goals while building strategic partnerships.
+                        </p>
+                    </div>
+                    <a href="impact.html" class="btn-primary flex items-center gap-3 px-8 py-4 rounded-full font-header font-bold uppercase tracking-widest text-xs transition-transform hover:scale-105 active:scale-95 self-end mb-2">
+                        See All Impact Projects
+                        <i class="ph ph-arrow-up-right text-lg"></i>
+                    </a>
                 </div>
 
-                <!-- The Row -->
-                <div class="impact-row flex flex-col lg:flex-row gap-4 items-stretch lg:h-[600px]">
+                <!-- Projects Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     
-                    <!-- Left Card: Sponsorship Strategy -->
-                    <div class="lg:w-[40%] bg-[#241508] p-10 md:p-14 rounded-default text-[#EEE7E1] flex flex-col justify-between shadow-xl">
-                        <div>
-                            <h3 class="font-header font-bold text-3xl md:text-4xl mb-8 tracking-tight leading-tight">
-                                I Lead Sponsorship Strategy at Enactus BCIT
-                            </h3>
-                            <div class="space-y-6 font-body text-[#EEE7E1]/80 text-lg leading-relaxed">
-                                <p>
-                                    Enactus has a special place in my heart. Our club at BCIT is a breeding ground for innovative ideas
-                                    that address the 17 UN Sustainability Development Goals. This is where the two worlds
-                                    of sustainable futures and business collide.
-                                </p>
-                                <p>
-                                    It has sparked my great interest in fundraising, partnership building, and making a social impact,
-                                    all with sustainability in mind.
-                                </p>
+                    <!-- Card 1: HSCC -->
+                    <a href="impact.html" class="project-card h-[500px] group">
+                        <img src="assets/projects/high-school-case-comp/hscc.jpg" alt="Enactus Presentation" class="object-cover">
+                        <div class="project-card-info">
+                            <div class="sdg-badges opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                <div class="sdg-badge" style="background-color: var(--sdg-4);">4</div>
+                            </div>
+                            <div class="project-card-title-row">
+                                <h3 class="project-card-title text-2xl md:text-3xl pr-8">Enactus High School Case Competition</h3>
+                                <div class="project-card-arrow opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                    <i class="ph ph-arrow-up-right"></i>
+                                </div>
                             </div>
                         </div>
-                        <a href="impact.html" class="btn-outlined border-[#EEE7E1]/30 text-[#EEE7E1] mt-10 hover:bg-[#EEE7E1] hover:text-[#241508] self-start py-4 px-10 rounded-[4px] font-header font-bold uppercase tracking-widest text-xs transition-all duration-300">
-                            Explore my Enactus Projects
-                        </a>
-                    </div>
+                    </a>
 
-                    <!-- Image 1 -->
-                    <div class="lg:w-[20%] relative rounded-default overflow-hidden shadow-lg h-[400px] lg:h-[80%] lg:mt-10 group">
-                        <img src="assets/projects/high-school-case-comp/hscc.jpg" alt="Enactus Presentation" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
+                    <!-- Card 2: EcoMeter -->
+                    <a href="impact.html" class="project-card h-[500px] group">
+                        <img src="assets/projects/ecometer/ecometer.jpg" alt="EcoMeter Project" class="object-cover">
+                        <div class="project-card-info">
+                            <div class="sdg-badges opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                <div class="sdg-badge" style="background-color: var(--sdg-11);">11</div>
+                                <div class="sdg-badge" style="background-color: var(--sdg-13);">13</div>
+                            </div>
+                            <div class="project-card-title-row">
+                                <h3 class="project-card-title text-2xl md:text-3xl pr-8">EcoMeter: Sustainability Tracking</h3>
+                                <div class="project-card-arrow opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                    <i class="ph ph-arrow-up-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
 
-                    <!-- Image 2 -->
-                    <div class="lg:w-[20%] relative rounded-default overflow-hidden shadow-lg h-[400px] lg:h-[75%] lg:self-end group">
-                        <img src="assets/projects/lumora/lumora.jpg" alt="Lumora Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-
-                    <!-- Image 3 -->
-                    <div class="lg:w-[20%] relative rounded-default overflow-hidden shadow-lg h-[400px] lg:h-full group">
-                        <img src="assets/projects/ecometer/ecometer.jpg" alt="EcoMeter Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
+                    <!-- Card 3: Lumora -->
+                    <a href="impact.html" class="project-card h-[500px] group">
+                        <img src="assets/projects/lumora/lumora.jpg" alt="Lumora Project" class="object-cover">
+                        <div class="project-card-info">
+                            <div class="sdg-badges opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                <div class="sdg-badge" style="background-color: var(--sdg-11);">11</div>
+                                <div class="sdg-badge" style="background-color: var(--sdg-12);">12</div>
+                            </div>
+                            <div class="project-card-title-row">
+                                <h3 class="project-card-title text-2xl md:text-3xl pr-8">Lumora: Human-Centric Lighting</h3>
+                                <div class="project-card-arrow opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                    <i class="ph ph-arrow-up-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- SECTION: VOICES (Carousel) -->
-        <section id="voices" class="min-h-[850px] md:h-screen w-full p-4 relative bg-surface overflow-hidden">
+        <section id="voices" class="min-h-[850px] md:h-screen-fit w-full p-4 relative bg-surface overflow-hidden">
             <div class="w-full h-full relative rounded-default overflow-hidden shadow-2xl bg-[#1E1B18] text-white">
                 
                 <!-- Sliding Container -->
@@ -362,7 +385,7 @@ Also: He's super punctual. People notice that stuff.&rdquo;
 
         <!-- FOOTER -->
         <footer class="w-full relative bg-[#1A0A00] overflow-hidden flex flex-col">
-            <div class="min-h-screen md:h-screen w-full p-4 relative">
+            <div class="h-screen-fit w-full p-4 relative">
                 <div class="w-full h-full relative flex flex-col md:flex-row gap-12 lg:gap-20">
                     
                     <!-- Left Side: Image Content Area -->
@@ -372,7 +395,7 @@ Also: He's super punctual. People notice that stuff.&rdquo;
                         
                         <div class="relative z-10 p-8 md:p-14 lg:p-16 h-full flex flex-col justify-end">
                             <h2 class="font-header font-bold text-3xl md:text-5xl lg:text-7xl leading-[1.1] mb-8 md:mb-12 max-w-2xl text-shadow-xl select-none text-[#F5F2ED]">
-                                I'm a Generalist<br />and I know it.
+                                A Versatile<br />Mindset Ready<br />to Drive Impact.
                             </h2>
                             
                             <div class="grid grid-cols-2 sm:flex sm:flex-wrap gap-3 md:gap-4 mt-auto">
@@ -414,17 +437,17 @@ Also: He's super punctual. People notice that stuff.&rdquo;
                         <div class="space-y-6 lg:space-y-8">
                             <div class="p-8 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/20">
                                 <h4 class="font-header font-bold text-xl md:text-2xl tracking-tight mb-3">Business Development Representative</h4>
-                                <p class="font-body text-base md:text-lg opacity-60 leading-relaxed italic">A leader that combines creativity with business strategy.</p>
+                                <p class="font-body text-base md:text-lg opacity-60 leading-relaxed italic">Ready to turn social impact goals into scalable, revenue-generating realities.</p>
                             </div>
                             
                             <div class="p-8 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/20">
-                                <h4 class="font-header font-bold text-xl md:text-2xl tracking-tight mb-3">Partnerships Coordinator</h4>
-                                <p class="font-body text-base md:text-lg opacity-60 leading-relaxed italic">A fighter that takes your sustainability goals to the next level.</p>
+                                <h4 class="font-header font-bold text-xl md:text-2xl tracking-tight mb-3">Growth & Impact Consultant</h4>
+                                <p class="font-body text-base md:text-lg opacity-60 leading-relaxed italic">Focused on solving complex organizational problems with creative, sustainable strategies.</p>
                             </div>
                             
                             <div class="p-8 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/20">
-                                <h4 class="font-header font-bold text-xl md:text-2xl tracking-tight mb-3">Marketing Coordinator</h4>
-                                <p class="font-body text-base md:text-lg opacity-60 leading-relaxed italic">A creative strategist that will expand your reach and drive revenue.</p>
+                                <h4 class="font-header font-bold text-xl md:text-2xl tracking-tight mb-3">Sustainability Consultant</h4>
+                                <p class="font-body text-base md:text-lg opacity-60 leading-relaxed italic">Eager to learn, adapt, and help your team expand its reach while scaling its positive environmental impact.</p>
                             </div>
                         </div>
                     </div>

@@ -1,6 +1,24 @@
 // GSAP Initialization
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
+// Initialize Lenis Smooth Scroll
+const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    wheelMultiplier: 1.1,
+    smoothWheel: true,
+});
+
+// Link Lenis to ScrollTrigger
+lenis.on('scroll', ScrollTrigger.update);
+
+gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
+
+
 
 // Image Protection: Disable right-click on all images
 document.addEventListener('contextmenu', (e) => {
@@ -14,23 +32,50 @@ document.addEventListener('DOMContentLoaded', () => {
     
     
     // --- HERO ANIMATIONS ---
+    const isMobile = window.innerWidth < 768;
+    const heroTextDelay = isMobile ? 4 : 10;
+    const heroNavDelay = isMobile ? 7 : 13;
+    const animDuration = 5;
+
+    // Handle Mobile Video Seeking
+    const heroVideo = document.getElementById('hero-video');
+    if (isMobile && heroVideo) {
+        heroVideo.addEventListener('loadedmetadata', () => {
+            // Seek to the last 7 seconds
+            const startTime = Math.max(0, heroVideo.duration - 7);
+            heroVideo.currentTime = startTime;
+        });
+    }
+
     const heroTl = gsap.timeline();
     
     heroTl.to('.hero-text', {
         y: 0,
         opacity: 1,
-        duration: 5,
+        duration: animDuration,
         stagger: 0.2,
         ease: "power3.out",
-        delay: 10
+        delay: heroTextDelay
     });
     
     gsap.to('.hero-nav', {
         y: 0,
         opacity: 1,
-        duration: 5,
+        duration: animDuration,
         ease: "power2.out",
-        delay: 13
+        delay: heroNavDelay
+    });
+    
+    // --- HERO PARALLAX ---
+    gsap.to('#hero-video', {
+        scrollTrigger: {
+            trigger: '#hero',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true
+        },
+        y: '15%',
+        ease: 'none'
     });
 
     // --- BENTO GRID ANIMATIONS ---
@@ -82,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- IMPACT SECTION ANIMATIONS ---
-    gsap.to(".impact-row > *", {
+    gsap.to(".project-card", {
         scrollTrigger: {
             trigger: "#section-impact",
             start: "top 75%",
@@ -92,17 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
         duration: 1,
         stagger: 0.15,
         ease: "power3.out",
-    });
-
-    gsap.to(".impact-title", {
-        scrollTrigger: {
-            trigger: "#section-impact",
-            start: "top 80%",
-        },
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power2.out",
     });
 
     // --- GALLERY FLOATING ANIMATION ---

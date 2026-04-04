@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TREFDP7M2T"></script>
@@ -65,11 +65,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
     
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    
     <link rel="stylesheet" href="style.css">
     <style type="text/css">
-        .impact-title, .impact-row > * {
+        .impact-title, .project-card {
             opacity: 0;
-            transform: translateY(20px);
         }
     </style>
 </head>
@@ -148,7 +150,7 @@
             <div class="impact-row grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- EcoMeter -->
-                <a href="projects/ecometer.html" class="group bg-surface-container-low p-8 rounded-default border border-outline-variant/30 shadow-sm transition-all hover:shadow-xl hover:-translate-y-2">
+                <a href="projects/ecometer.html" class="project-card group bg-surface-container-low p-8 rounded-default border border-outline-variant/30 shadow-sm transition-all hover:shadow-xl hover:-translate-y-2">
                     <div class="w-full aspect-[16/9] rounded-default overflow-hidden mb-8 bg-secondary">
                         <img src="assets/projects/ecometer/ecometer.jpg" alt="EcoMeter" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
@@ -162,7 +164,7 @@
                 </a>
 
                 <!-- Lumóra -->
-                <a href="projects/lumora.html" class="group bg-surface-container-low p-8 rounded-default border border-outline-variant/30 shadow-sm transition-all hover:shadow-xl hover:-translate-y-2">
+                <a href="projects/lumora.html" class="project-card group bg-surface-container-low p-8 rounded-default border border-outline-variant/30 shadow-sm transition-all hover:shadow-xl hover:-translate-y-2">
                     <div class="w-full aspect-[16/9] rounded-default overflow-hidden mb-8 bg-secondary">
                         <img src="assets/projects/lumora/lumora.jpg" alt="Lumóra" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
@@ -176,7 +178,7 @@
                 </a>
 
                 <!-- HSCC -->
-                <a href="projects/hscc.html" class="group bg-surface-container-low p-8 rounded-default border border-outline-variant/30 shadow-sm transition-all hover:shadow-xl hover:-translate-y-2">
+                <a href="projects/hscc.html" class="project-card group bg-surface-container-low p-8 rounded-default border border-outline-variant/30 shadow-sm transition-all hover:shadow-xl hover:-translate-y-2">
                     <div class="w-full aspect-[16/9] rounded-default overflow-hidden mb-8 bg-secondary">
                         <img src="assets/projects/high-school-case-comp/hscc.jpg" alt="High School Case Competition" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>

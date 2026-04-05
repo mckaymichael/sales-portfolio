@@ -11,9 +11,8 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | Michael McKay</title>
-    <meta name="description" content="Learn more about Michael McKay - his story, philosophy, and drive for climate impact.">
-    <meta name="robots" content="noindex, noimageindex">
+    <title>About | Michael McKay</title>
+    <meta name="description" content="The process of becoming. Michael McKay - business student, social impact leader, and lifelong reader.">
     
     <!-- Tailwind Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -61,210 +60,396 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
     <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/api/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/api/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     
     <!-- Lenis Smooth Scroll -->
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     
     <link rel="stylesheet" href="style.css">
-    <style type="text/css">
-        /* Prevent CLS for GSAP animations */
-        .strength-card, .about-content, .about-image, .bento-item {
-            opacity: 0;
-        }
+    <style>
+        .editorial-reveal { opacity: 0; transform: translateY(30px); }
+        .book-item:hover .book-number { color: var(--tw-primary); }
     </style>
 </head>
-<body class="bg-surface text-on-surface font-body antialiased">
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-primary/10">
 
     <!-- Header Overlay Gradient -->
     <div class="fixed top-0 left-0 w-full h-32 bg-gradient-to-b from-black/5 to-transparent z-40 pointer-events-none"></div>
 
-    <!-- Standard Responsive Header Container -->
-<div class="fixed top-0 left-0 w-full z-50">
-  <nav class="bg-[#FFF8F3] text-gray-900 shadow-sm border-b border-[#D7C2B7] transition-colors duration-300">
-    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-20 items-center">
-        
-        <!-- Logo -->
-        <div class="flex-shrink-0 flex items-center relative z-20">
-          <a href="index.html" class="text-xl md:text-2xl font-header font-bold uppercase tracking-[0.2em] hover:opacity-80 transition-opacity">
-            Michael McKay
-          </a>
+    <div class="fixed top-0 left-0 w-full z-50">
+      <nav class="bg-surface text-on-surface shadow-sm border-b border-outline-variant transition-colors duration-300">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between h-20 items-center">
+            <div class="flex-shrink-0 flex items-center relative z-20">
+              <a href="index.html" class="text-xl md:text-2xl font-header font-bold uppercase tracking-[0.2em] hover:opacity-80 transition-opacity">
+                Michael McKay
+              </a>
+            </div>
+            <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
+              <a href="impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm hover:bg-gray-100/20">My Impact</a>
+              <a href="gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm hover:bg-gray-100/20">Nature Gallery</a>
+              <a href="about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm bg-gray-100/20">About Me</a>
+              <a href="assets/files/Good Choice.pdf" download="Good Choice.pdf" class="ml-4 btn-primary relative">Resume</a>
+            </div>
+          </div>
         </div>
-        
-        <!-- Desktop Nav -->
-        <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
-          <a href="impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm hover:bg-gray-100/20">My Impact</a>
-          <a href="gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm hover:bg-gray-100/20">Nature Gallery</a>
-          <a href="about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm bg-gray-100/20">About Me</a>
-          <a href="assets/files/Good Choice.pdf" download="Good Choice.pdf" class="ml-4 btn-primary relative">
-            Resume
-          </a>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <div class="flex items-center lg:hidden relative z-20">
-          <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-100/20 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition-colors" aria-controls="mobile-menu" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <!-- Icon when menu is closed. -->
-            <svg id="icon-menu-closed" class="block h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-            <!-- Icon when menu is open. -->
-            <svg id="icon-menu-open" class="hidden h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-        
-      </div>
+      </nav>
     </div>
 
-    <!-- Mobile Menu, using max-h for accordion animation -->
-    <div class="lg:hidden absolute top-20 left-0 w-full bg-[#FFF8F3] shadow-xl border-t border-[#D7C2B7] overflow-hidden max-h-0 transition-all duration-300 ease-in-out" id="mobile-menu">
-      <div class="px-6 pt-4 pb-8 space-y-2">
-        <a href="impact.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm">My Impact</a>
-        <a href="gallery.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm">Nature Gallery</a>
-        <a href="about.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm">About Me</a>
-        <a href="assets/files/Good Choice.pdf" download="Good Choice.pdf" class="btn-primary block w-full text-center mt-6">
-          Download Resume
-        </a>
-      </div>
-    </div>
-  </nav>
-</div>
-
-    <main id="about" class="pt-32 pb-24 px-4 min-h-screen">
-        <div class="max-w-[1200px] mx-auto mb-20">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                
-                <!-- Left: Content -->
-                <div class="about-content flex flex-col gap-8">
-                    <h1 class="font-header font-bold text-5xl md:text-6xl text-on-surface tracking-tight leading-tight">
-                        The Patience to <br/>Build Myself
+    <main class="pt-32 min-h-screen">
+        <!-- HERO / VIDEO -->
+        <section class="max-w-[1400px] mx-auto px-4 mb-24 md:mb-40">
+            <div class="w-full aspect-video md:aspect-[21/9] bg-black relative rounded-[1px] overflow-hidden mb-12 shadow-[0_0_1px_rgba(0,0,0,0.1)]">
+                <video src="assets/video/landscape-me.mp4" autoplay loop muted playsinline class="w-full h-full object-cover opacity-80"></video>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex flex-col justify-end p-8 md:p-16">
+                     <h1 class="font-header font-bold text-5xl md:text-8xl text-white uppercase tracking-tight leading-tight">
+                        The Process <br/>of Becoming
                     </h1>
-                    
-                    <div class="space-y-6 text-lg md:text-xl text-on-surface/80 leading-relaxed font-body">
-                        <p>
-                            One of the biggest challenges in life for most people is performing at their very best. How would you define it? For me, right now, it's about the process of becoming. I am the best that I can be at this moment.
-                        </p>
-                        <p>
-                            I'm building the skills necessary to become influential and leadership material. These are my natural strengths that I embrace and polish every day.
-                        </p>
-                        <p>
-                            I have always been passionate about nature. My photography has been my catalyst for expressing that love and admiration. For a long time I thought I was supposed to use my photography to speak the message of preserving our planet.
-                        </p>
-                        <p>
-                            Through this process, I realized I could impact more people with storytelling, being a leader, and going beyond just taking photos.
-                        </p>
-                    </div>
-
-                    <!-- Strengths Grid -->
-                    <div class="flex flex-wrap gap-3 pt-8">
-                        <div class="strength-card px-4 py-2 border border-outline-variant/40 text-center rounded-sm font-header font-bold text-[10px] uppercase tracking-widest text-on-surface/80">Connectedness</div>
-                        <div class="strength-card px-4 py-2 border border-outline-variant/40 text-center rounded-sm font-header font-bold text-[10px] uppercase tracking-widest text-on-surface/80">Intellection</div>
-                        <div class="strength-card px-4 py-2 border border-outline-variant/40 text-center rounded-sm font-header font-bold text-[10px] uppercase tracking-widest text-on-surface/80">Adaptability</div>
-                        <div class="strength-card px-4 py-2 border border-outline-variant/40 text-center rounded-sm font-header font-bold text-[10px] uppercase tracking-widest text-on-surface/80">Learner</div>
-                        <div class="strength-card px-4 py-2 border border-outline-variant/40 text-center rounded-sm font-header font-bold text-[10px] uppercase tracking-widest text-on-surface/80">Belief</div>
-                        <div class="strength-card px-4 py-2 border border-outline-variant/40 text-center rounded-sm font-header font-bold text-[10px] uppercase tracking-widest text-on-surface/80">Sales</div>
-                    </div>
-                </div>
-
-                <!-- Right: Image -->
-                <div class="about-image relative rounded-[1px] overflow-hidden aspect-[3/4]">
-                    <img src="assets/portraits/me.jpg" alt="Michael McKay" class="w-full h-full object-cover object-top">
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- SECTION: BENTO GRID (Me + Nature) -->
-        <section id="me-plus-nature" class="py-20 bg-surface relative overflow-hidden">
-            <div class="max-w-[1400px] mx-auto px-4">
-                <div id="bento-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-1 md:gap-2 text-on-surface">
-                    
-                    <!-- Block 1: Wide Headline -->
-                    <div class="bento-item lg:col-span-8 lg:row-span-6 relative rounded-[1px] overflow-hidden group min-h-[400px]">
-                        <img src="assets/nature/nature-14.jpg" alt="Nature" class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-black/40 z-10 flex flex-col justify-end p-8 md:p-12">
-                            <h2 class="text-3xl md:text-5xl text-white font-header font-bold mb-4 tracking-tight leading-tight">
-                                Love for Nature and<br />Drive to do Good Deeds
-                            </h2>
-                            <p class="font-body text-white/90 text-lg md:text-xl leading-relaxed max-w-2xl">
-                                I have always been passionate about nature. My photography has been my catalyst for expressing that love and admiration. I realized I could impact more people with storytelling, being a leader, and going beyond just taking photos.
+        <!-- INTRODUCTION / PHILOSOPHY -->
+        <section class="max-w-[1200px] mx-auto px-4 mb-32 md:mb-48 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+            <div class="lg:col-span-8">
+                <div class="prose prose-xl prose-p:font-body text-on-surface/80 leading-relaxed font-body">
+                    <h2 class="font-header font-bold text-[12px] uppercase tracking-[0.3em] font-bold text-primary mb-12">Biography</h2>
+                    <p class="first-letter:text-8xl first-letter:font-bold first-letter:text-primary first-letter:mr-4 first-letter:float-left first-letter:leading-[0.8] mb-12 text-2xl md:text-3xl italic font-serif leading-snug text-on-surface">
+                        I am a driven and adaptable business student with a passion for innovation and social impact. My experience in Enactus BCIT has taught me the value of teamwork, problem-solving, and community engagement. I am a quick learner with a strong work ethic and a proven ability to contribute to meaningful projects. Life scares me, but a fast heart rate never hurt anyone, right?
+                    </p>
+                    <p class="text-xl md:text-2xl mt-12 mb-12 opacity-90">
+                        One of the biggest challenges in life for most people is performing at their very best. How would you define it? For me, right now, it's about the process of becoming. I am the best that I can be at this moment. I'm building the skills necessary to become influential and leadership material.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- STRENGTHS DOSSIER -->
+            <div class="lg:col-span-4 border-l border-outline-variant/30 pl-8 lg:pl-12 flex flex-col gap-12">
+                <div>
+                     <h4 class="font-header text-[10px] uppercase tracking-widest font-bold text-primary mb-6">Core Values</h4>
+                     <p class="font-body text-xl italic text-on-surface/80">"Using business as a force for good."</p>
+                </div>
+
+                <div>
+                    <h4 class="font-header text-[10px] uppercase tracking-widest font-bold text-primary mb-6">Natural Strengths</h4>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center gap-3 border-b border-outline-variant/20 pb-3">
+                            <span class="font-header font-bold text-xs uppercase tracking-widest min-w-[100px]">Connectedness</span>
+                            <div class="h-1 flex-grow bg-primary/10 rounded-full overflow-hidden"><div class="h-full bg-primary w-[95%]"></div></div>
+                        </div>
+                        <div class="flex items-center gap-3 border-b border-outline-variant/20 pb-3">
+                            <span class="font-header font-bold text-xs uppercase tracking-widest min-w-[100px]">Intellection</span>
+                            <div class="h-1 flex-grow bg-primary/10 rounded-full overflow-hidden"><div class="h-full bg-primary w-[90%]"></div></div>
+                        </div>
+                        <div class="flex items-center gap-3 border-b border-outline-variant/20 pb-3">
+                            <span class="font-header font-bold text-xs uppercase tracking-widest min-w-[100px]">Adaptability</span>
+                            <div class="h-1 flex-grow bg-primary/10 rounded-full overflow-hidden"><div class="h-full bg-primary w-[98%]"></div></div>
+                        </div>
+                        <div class="flex items-center gap-3 border-b border-outline-variant/20 pb-3">
+                            <span class="font-header font-bold text-xs uppercase tracking-widest min-w-[100px]">Learner</span>
+                            <div class="h-1 flex-grow bg-primary/10 rounded-full overflow-hidden"><div class="h-full bg-primary w-[95%]"></div></div>
+                        </div>
+                        <div class="flex items-center gap-3 border-b border-outline-variant/20 pb-3">
+                            <span class="font-header font-bold text-xs uppercase tracking-widest min-w-[100px]">Belief</span>
+                            <div class="h-1 flex-grow bg-primary/10 rounded-full overflow-hidden"><div class="h-full bg-primary w-[85%]"></div></div>
+                        </div>
+                    </div>
+                    <a href="assets/files/McKay-Michael-All_34.pdf" target="_blank" class="inline-block mt-8 text-[10px] font-header font-bold uppercase tracking-widest text-primary border-b border-primary hover:border-transparent transition-all">Download Full CliftonStrengths Report</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- THE PHILOSOPHY OF PRESENCE -->
+        <section class="w-full bg-secondary-dark py-24 md:py-40 text-white relative overflow-hidden mb-32 md:mb-48">
+            <div class="max-w-[1000px] mx-auto px-4 text-center relative z-10 transition-all duration-1000 editorial-reveal" id="scroll-presence">
+                <h2 class="font-header text-[12px] uppercase tracking-[0.3em] font-bold text-primary-container mb-8">The Philosophy of Presence</h2>
+                <p class="font-serif text-3xl md:text-5xl italic leading-tight mb-12">
+                   You can't truly connect with someone if you're not present in the moment.
+                </p>
+                <div class="max-w-2xl mx-auto space-y-6 text-xl md:text-2xl text-white/70 font-body leading-relaxed">
+                    <p>
+                        I removed all of my social media accounts. I believe in connections and community, but I also believe in the power of being present and engaged in the moment. I am a big believer in the idea that you can't truly connect with someone if you're not present in the moment.
+                    </p>
+                    <p>
+                        I also believe that it's important to be intentional about the connections you make. That's why I chose LinkedIn as my primary (and only) social media platform. All the others tried too hard to distract me and pull me away from what matters most. I'm not saying that social media is bad, but I think it's important to be mindful of how we use it.
+                    </p>
+                </div>
+                <div class="mt-16">
+                     <a href="https://linkedin.com/in/michaelkmckay" target="_blank" class="inline-flex items-center gap-3 text-white font-header font-bold text-xs uppercase tracking-[0.2em] hover:gap-6 transition-all">
+                        Connect with me <span class="block w-12 h-[1px] bg-white"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="absolute inset-x-0 bottom-0 top-0 z-0 overflow-hidden opacity-20 pointer-events-none">
+                <img src="assets/nature/nature-14.jpg" class="w-full h-full object-cover blur-2xl scale-110">
+            </div>
+        </section>
+
+        <!-- THE LIBRARY (ESSAY + BOOK LIST) -->
+        <section class="max-w-[1400px] mx-auto px-4 mb-32 md:mb-48">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+                
+                <!-- FEATURED ESSAY -->
+                <div class="lg:col-span-12 mb-16 lg:mb-24">
+                    <h2 class="font-header font-bold text-[12px] uppercase tracking-[0.3em] font-bold text-primary mb-12">The 26-Book Challenge</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-start">
+                        <div class="prose prose-lg md:prose-xl text-on-surface/80 leading-relaxed font-body">
+                            <p class="first-letter:text-7xl first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left first-letter:leading-[0.8] mb-8">
+                                In January of 2025, I was unemployed, and had been unemployed for over 7 months. I felt stuck with no ambition. I lost hope of finding a career.
+                            </p>
+                            <p class="mb-8">
+                                With the new year sparking a desire in me to improve, I set a challenge: To become a reader. I used to read all the time as a kid and I was longing for stories, wisdom, and a reason to learn. So I promised to read one book every two weeks.
+                            </p>
+                        </div>
+                        <div class="prose prose-lg md:prose-xl text-on-surface/80 leading-relaxed font-body">
+                            <p class="mb-8 italic font-serif text-2xl text-on-surface">
+                                All-in-all, reading has sparked growth in me. It made me more patient and capable of doing boring things without getting distracted.
+                            </p>
+                            <p>
+                                Most importantly, I learned that I'm not on Earth to live a life for me. I'm here for other people. I'm here to serve. The more grateful I become and the more humility I have, the happier I am.
                             </p>
                         </div>
                     </div>
 
-                    <!-- Block 2: Secret of happiness -->
-                    <div class="bento-item lg:col-span-4 lg:row-span-3 bg-secondary-dark rounded-[1px] p-8 flex flex-col items-center justify-center text-center min-h-[200px]">
-                        <p class="font-body italic text-xl md:text-2xl text-white/90 leading-snug">
-                            "The secret of happiness: Find something more important than you are and dedicate your life to it."
-                        </p>
-                    </div>
-
-                    <!-- Block 3: Vertical Waterfall -->
-                    <div class="bento-item md:col-span-1 lg:col-span-4 lg:row-span-6 relative rounded-[1px] overflow-hidden aspect-[3/4] lg:aspect-auto">
-                        <img src="assets/nature/nature-15.jpg" alt="Waterfall" class="absolute inset-0 w-full h-full object-cover">
-                    </div>
-
-                    <!-- Block 4: My Why -->
-                    <div class="bento-item lg:col-span-4 lg:row-span-3 bg-secondary rounded-[1px] p-8 flex flex-col justify-center min-h-[250px]">
-                        <h3 class="font-header text-xl font-bold text-white mb-4 tracking-tight uppercase tracking-widest">My Why</h3>
-                        <p class="font-body text-lg text-white/80 leading-relaxed">
-                            I want to have a social impact on the world. I hope to inspire my children and that they will look up to me as someone not afraid of big challenges.
-                        </p>
-                    </div>
-
-                    <!-- Block 5: Award label -->
-                    <div class="bento-item lg:col-span-4 lg:row-span-2 bg-surface-variant rounded-[1px] p-6 flex items-center gap-6">
-                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                            <i class="ph ph-trophy text-primary text-3xl"></i>
+                    <!-- IMPACT BOOKS -->
+                    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-surface-variant/30 p-8 border-l-4 border-primary rounded-[1px]">
+                             <h4 class="font-header font-bold text-xs uppercase tracking-widest text-primary mb-2">Most Impactful</h4>
+                             <p class="font-serif italic text-2xl text-on-surface mb-2 leading-tight">Inner Excellence by Jim Murphy</p>
+                             <p class="font-body text-lg opacity-70">"Love, Courage, & Wisdom. Live for something greater than yourself."</p>
                         </div>
-                        <p class="font-header font-bold text-base text-primary tracking-tight leading-tight uppercase">
-                            Award Winning<br />Landscape Photographer
-                        </p>
-                    </div>
-
-                    <!-- Block 6: Foggy Forest -->
-                    <div class="bento-item md:col-span-1 lg:col-span-4 lg:row-span-4 relative rounded-[1px] overflow-hidden aspect-square">
-                        <img src="assets/nature/nature-35.jpg" alt="Foggy Forest" class="absolute inset-0 w-full h-full object-cover">
-                    </div>
-
-                    <!-- Block 7: Climate Change -->
-                    <div class="bento-item lg:col-span-4 lg:row-span-4 relative rounded-[1px] overflow-hidden group min-h-[300px]">
-                        <img src="assets/nature/nature-28.jpg" alt="Nature" class="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-black/50 z-10 p-8 flex flex-col justify-between">
-                            <h3 class="font-header text-xl md:text-2xl font-bold text-white tracking-tight leading-tight uppercase">
-                                Climate Change<br />Affected me,<br />Personally.
-                            </h3>
-                            <a href="#" class="font-body text-white/90 text-sm md:text-base hover:underline decoration-white/40 underline-offset-8 mt-auto italic">
-                                Read about the fastest spreading fires ever recorded in BC
-                            </a>
+                        <div class="bg-surface-variant/30 p-8 border-l-4 border-primary rounded-[1px]">
+                             <h4 class="font-header font-bold text-xs uppercase tracking-widest text-primary mb-2">Most Impactful</h4>
+                             <p class="font-serif italic text-2xl text-on-surface mb-2 leading-tight">Walden by Henry D. Thoreau</p>
+                             <p class="font-body text-lg opacity-70">"Complex in writing but simple in principle. You'll find that less is more."</p>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Block 8: Dire Need & Force of Good -->
-                    <div class="bento-item lg:col-span-4 lg:row-span-2 bg-secondary-dark rounded-[1px] p-8 flex flex-col justify-center">
-                        <p class="font-body text-white/90 text-lg leading-relaxed">
-                            "Use business as a force of good"
-                        </p>
+                <!-- THE CATALOGUE (FULL WIDTH GRID SECTION) -->
+                <div class="lg:col-span-12 bg-surface-container-low p-6 md:p-12 lg:p-20 rounded-[1px]">
+                    <div class="flex justify-between items-end mb-12 pb-4 border-b border-outline-variant/40">
+                         <h3 class="font-header font-bold text-2xl lg:text-3xl uppercase tracking-tighter">Index of 2025</h3>
+                         <span class="font-header font-bold text-[10px] uppercase opacity-40">25 Volumes</span>
                     </div>
-
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 md:gap-x-12 lg:gap-x-16 gap-y-6">
+                        <ol class="contents">
+                            <!-- 01 -->
+                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=Letters+from+a+Stoic+Seneca" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">01</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Letters from a Stoic</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Seneca</span>
+                                </a>
+                            </li>
+                            <!-- 02 -->
+                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=Inner+Excellence+Jim+Murphy" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">02</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Inner Excellence</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Murphy</span>
+                                </a>
+                            </li>
+                            <!-- 03 -->
+                             <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=The+Design+of+Everyday+Things+Don+Norman" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">03</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">The Design of Everyday Things</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Norman</span>
+                                </a>
+                            </li>
+                            <!-- 04 -->
+                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=Fiber+Fueled+Will+Bulsiewicz" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">04</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Fiber Fueled</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Bulsiewicz</span>
+                                </a>
+                            </li>
+                            <!-- 05 -->
+                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=The+Psychology+of+Money+Morgan+Housel" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">05</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">The Psychology of Money</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Housel</span>
+                                </a>
+                            </li>
+                            <!-- 06 -->
+                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=The+4-Hour+Workweek+Tim+Ferriss" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">06</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">The 4-Hour Workweek</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Ferriss</span>
+                                </a>
+                            </li>
+                            <!-- 07 -->
+                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=The+Simple+Path+to+Wealth+JL+Collins" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">07</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">The Simple Path to Wealth</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Collins</span>
+                                </a>
+                            </li>
+                            <!-- 08 -->
+                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=Discipline+Equals+Freedom+Jocko+Willink" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">08</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Discipline Equals Freedom</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Willink</span>
+                                </a>
+                            </li>
+                            <!-- 09 -->
+                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=Blink+Malcolm+Gladwell" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">09</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Blink</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Gladwell</span>
+                                </a>
+                            </li>
+                            <!-- 10 -->
+                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=Mere+Christianity+CS+Lewis" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">10</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Mere Christianity</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Lewis</span>
+                                </a>
+                            </li>
+                            <!-- 11 -->
+                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=The+100+Startup+Chris+Guillebeau" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">11</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">The $100 Startup</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Guillebeau</span>
+                                </a>
+                            </li>
+                            <!-- 12 -->
+                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=How+to+Read+Churches+Denis+McNamara" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">12</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">How to Read Churches</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">McNamara</span>
+                                </a>
+                            </li>
+                            <!-- 13 -->
+                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=Orthodoxy+GK+Chesterton" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">13</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Orthodoxy</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Chesterton</span>
+                                </a>
+                            </li>
+                            <!-- 14 -->
+                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=Walden+Henry+David+Thoreau" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">14</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Walden</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Thoreau</span>
+                                </a>
+                            </li>
+                            <!-- 15 -->
+                             <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=Why+We+re+Catholic+Trent+Horn" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">15</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Why We're Catholic</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Horn</span>
+                                </a>
+                            </li>
+                            <!-- 16 -->
+                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=Tools+of+Titans+Tim+Ferriss" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">16</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Tools of Titans</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Ferriss</span>
+                                </a>
+                            </li>
+                            <!-- 17 -->
+                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=How+to+Avoid+a+Climate+Disaster+Bill+Gates" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">17</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">How to Avoid a Climate Disaster</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Gates</span>
+                                </a>
+                            </li>
+                            <!-- 18 -->
+                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=The+Agony+and+the+Ecstasy+Irving+Stone" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">18</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">The Agony and the Ecstasy</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Stone</span>
+                                </a>
+                            </li>
+                            <!-- 19 -->
+                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=Ecommerce+2023+Traver+Laudon" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">19</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Ecommerce 2023, 17e</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Laudon</span>
+                                </a>
+                            </li>
+                            <!-- 20 -->
+                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=Anything+You+Want+Derek+Sivers" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">20</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Anything You Want</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Sivers</span>
+                                </a>
+                            </li>
+                            <!-- 21 -->
+                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=Dragon+Keeper+Robin+Hobb" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">21</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Dragon Keeper</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Hobb</span>
+                                </a>
+                            </li>
+                            <!-- 22 -->
+                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=Human+Nature+Kate+Marvel" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">22</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Human Nature</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Marvel</span>
+                                </a>
+                            </li>
+                            <!-- 23 -->
+                             <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=The+Abolition+of+Man+CS+Lewis" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">23</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">The Abolition of Man</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Lewis</span>
+                                </a>
+                            </li>
+                            <!-- 24 -->
+                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=The+Great+Divorce+CS+Lewis" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">24</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">The Great Divorce</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Lewis</span>
+                                </a>
+                            </li>
+                            <!-- 25 -->
+                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
+                                <a href="https://www.amazon.com/s?k=Tao+Te+Ching+Stephen+Mitchell" target="_blank" class="flex gap-4 items-center group">
+                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">25</span>
+                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Tao Te Ching</span>
+                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Mitchell</span>
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- FOOTER -->
-        <footer class="bg-secondary-dark text-white py-20 px-4">
+    <footer class="bg-secondary-dark text-white py-20 px-4">
         <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-center md:items-start text-center md:text-left">
             <div>
                 <h2 class="font-header font-bold text-2xl tracking-[0.2em] uppercase mb-4">Michael McKay</h2>
                 <p class="font-body italic text-white/60">Using business as a force of good.</p>
             </div>
-            
             <div class="flex flex-col gap-4">
                 <h3 class="font-header text-xs font-bold uppercase tracking-widest opacity-60">Navigate</h3>
                 <div class="flex flex-wrap justify-center md:justify-start gap-x-8 gap-y-3 text-[10px] md:text-xs font-header font-bold uppercase tracking-widest">
@@ -274,7 +459,6 @@
                     <a href="gallery.html" class="hover:text-primary-container transition-colors">Gallery</a>
                 </div>
             </div>
-
             <div class="flex flex-col gap-4">
                 <h3 class="font-header text-xs font-bold uppercase tracking-widest opacity-60">Connect</h3>
                 <div class="flex flex-wrap justify-center md:justify-start gap-x-8 gap-y-3 text-[10px] md:text-xs font-header font-bold uppercase tracking-widest">
@@ -286,6 +470,29 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Init Lenis
+        const lenis = new Lenis();
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // GSAP Scroll Animations
+        gsap.registerPlugin(ScrollTrigger);
+        
+        gsap.to('#scroll-presence', {
+            scrollTrigger: {
+                trigger: '#scroll-presence',
+                start: 'top 80%',
+                once: true
+            },
+            opacity: 1,
+            y: 0,
+            duration: 1.2,
+            ease: 'power3.out'
+        });
+    </script>
 </body>
 </html>

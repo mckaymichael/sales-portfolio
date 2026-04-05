@@ -72,3 +72,111 @@ North Shuswap Storage Resort - https://northshuswapstorageresort.com/ - This is 
 *   **Vision Statement:** To stop plastic contamination where it begins by initially replacing agricultural plastics on farms, with the understanding that the long-term possibilities for a truly biodegradable plastic alternative are endless.
 *   **About the project (in depth):** Lumora gathers excess milk that farms are legally barred from selling and puts it through a chemical process that extracts casein proteins, leaving water and whey as byproducts. This creates a flexible fibre that can be spun into agricultural twine using existing textile machinery. They are currently finalizing R&D and product testing to ensure proper tensile strength and durability for farm use. The project is poised to take advantage of new legislative policies (like Bill C-59 and the Greening Government Strategy) that make corporate sustainability a compliance requirement rather than a branding choice.
 *   **Funding:** Lumora's go-to-market strategy requires an initial $80,000 in capital expenditure. This funding is needed to begin commercial production for a pilot plan in Abbotsford (producing 5 tons of fibre a year) through a combination of in-house manufacturing and licensing, which will allow them to operate at a 58% gross profit. *Note: The sources do not explicitly state if this $80,000 has been raised yet or where it is coming from.*
+
+**About me:**
+
+I am a driven and adaptable business student with a passion for innovation and social impact. My experience in Enactus BCIT has taught me the value of teamwork, problem-solving, and community engagement. I am a quick learner with a strong work ethic and a proven ability to contribute to meaningful projects. Life scares me, but a fast heart rate never hurt anyone, right?
+
+One of the biggest challenges in life for most people is performing at their very best. How would you define it? For me, right now, it's about the process of becoming. I am the best that I can be at this moment.
+
+I'm building the skills necessary to become influential and leadership material. These are my natural strengths that I embrace and polish every day.
+
+I have always been passionate about nature. My photography has been my catalyst for expressing that love and admiration. For a long time I thought I was supposed to use my photography to speak the message of preserving our planet.
+
+Through this process, I realized I could impact more people with storytelling, being a leader, and going beyond just taking photos.
+
+https://www.linkedin.com/in/michaelkmckay/ (for the about me section)
+
+I removed all of my social media accounts. I believe in connections and community, but I also believe in the power of being present and engaged in the moment. I am a big believer in the idea that you can't truly connect with someone if you're not present in the moment. I also believe that it's important to be intentional about the connections you make. That's why I chose LinkedIn as my primary social media platform. All the others tried too hard to distract me and pull me away from what matters most. I'm not saying that social media is bad, but I think it's important to be mindful of how we use it.
+
+..assets/files/McKay-Michael-All-34.pdf is my clifton strengths report. It's a good representation of my natural strengths and how I can use them to be successful in my career.
+
+I love books. Last year, I set a goal to read 1 book every 2 weeks and suceeded, totalling 26 books in a year. I've continued this trend into this year and am on track to read 26 books again. I primarily read business books, but I also enjoy reading books about history, philosophy, and psychology. I'm currently reading The Company - The rise and fall of the Hudson's Bay Company by Pierre Berton. I'm currently listening to the audiobook Project Hail Mary by Andy Weir. 
+
+My full list of books read in 2025
+
+1. Letters from a Stoic by Julian Glover, Robin Campbell, Seneca
+2. Inner Excellence by Jim Murphy (read this 2 times)
+3. The Design of Everyday Things by Don Norman
+4. Fiber Fueled by Will Bulsiewicz MD
+5. The Psychology of Money by Morgan Housel
+6. The 4-Hour Workweek by Tim Ferriss
+7. The Simple Path to Wealth by JL Collins
+8. Discipline Equals Freedom by Jocko Willink
+9. Blink: The Power of Thinking Without Thinking by Malcolm Gladwell
+10. Mere Christianity by CS Lewis
+11. The $100 Startup by Chris Guillebeau
+12. How to Read Churches by Denis R. McNamara
+13. Orthodoxy by G. K. Chesterton
+14. Walden by Henry D. Thoreau
+15. Why We're Catholic by Trent Horn
+16. Tools of Titans by Tim Ferriss
+17. How to Avoid a Climate Disaster by Bill Gates
+18. The Agony and the Ecstasy by Irving Stone
+19. Ecommerce 2023, 17e by Carol Guercio Traver, Kenneth C. Laudon
+20. Anything You Want by Derek Sivers
+21. Dragon Keeper by Robin Hobb
+22. Human Nature: Nine Ways to Feel About Our Changing Planet by Kate Marvel
+23. The Abolition of Man by CS Lewis
+24. The Great Divorce by CS Lewis
+25. Tao Te Ching by Lao Tzu, translated by Stephen Mitchell
+
+# How Reading Changed My Life, Expanded my World, and Made Me Selfless
+
+Warning⚠️ This is a long post (about 5-10 minutes) but I hope to inspire you to read books more. Here we go!
+
+In January of 2025, I was unemployed, and had been unemployed for over 7 months. I felt stuck with no ambition. I lost hope of finding a career in web development. 
+
+With the new year sparking a desire in me to improve, I set a challenge: To become a reader. 
+
+I used to read all the time as a kid and I was longing for stories, wisdom, and a reason to learn.
+
+So I promised to read one book every two weeks. It didn't matter if it was an audiobook, paperback, or digital. And it didn't matter if it was 40 pages, or 600 pages. A book was a book. I'm there to appreciate the efforts of the author. 
+
+I started off strong with a book I wanted to read but had been putting off. Blink, by Malcolm Gladwell. I listened to it and within two days, I was done. Wow, it was that easy?
+
+A few weeks go by and I finished two more books. I was finding my groove. I'd walk my dog for an hour and in ten days, I'd have listened to ten hours of audiobooks.
+
+I found that getting ahead allowed to me to be okay for busy times or when i was on activity-packed vacations.
+
+April roles around and I just completed Design of Everyday Things by Don Norman—a fantastic read by the way if you want to see creativity in the most inconspicuous items in your life. After finishing this, I had listened to roughly seven audiobooks and I was craving a real book. Something that would force me to sit down, and focus on one singular task for a certain length of time. And books are *boring.* All the more reason I wanted to read. I wanted to be excited about boring things again. 
+
+But it was hard. I picked up a 200-paged book called Walden by Henry D. Thoreau. It talks about a philoshopher who spent his days living on Walden Pond and living off his own land for 2 years. There were a lot of big words i didn't understand and that made it extremely difficult to push through this book. It set me back almost three months…
+
+Luckily I had gotten ahead and finished other books ahead of time or I moved on to other books while occasionally coming back to Walden. It was so hard to read that I decided to read a different book, Mere Christianity by CS Lewis. Walden was a major hurdle but I wanted to finish the book so badly that I buckled down and finally completed it. It became one of my favourites.
+
+From then on, paper books became my thing. Summer rolled around and I was reading constantly. I had instilled the habit and was falling in love with learning again.
+
+Every book I finished, another book had sneaked its way on my shelf. By the end of the year, I had 25 books I read, and another 25 books I still need to read! I’ve got my work cut out for me.
+
+The biggest book I read was while I was in school. I started up my studies again in the fall, this time for a degree in business. I wanted to learn what it meant to be valuable to people as a creative person. So back to BCIT I go. I read/listened front to back, a 700-page textbook about e-commerce. What a drag, but hey, I toughed it out and I learned a lot.
+
+I thought that when school started up, I would be hooped. “No more reading for me, I guess.” I said to myself. But it was September, I had 18 books under my belt. It didn't seem impossible to reach my goal if I just found a few smaller books or found time to listen.
+
+Then I picked up this 600-page book from Tim Ferriss called Tools of Titans. Like an idiot, it was the perfect book to read while putting in 60-80 hours a week of schooling 😮‍💨. Needless to say, it set me back and I wasn't getting through it. Not even a little. Over three months, I got through maybe 200 pages of that book.
+
+But as I was reading his book, I found within that book, another book that intrigued me called Anything You Want by Derek Sivers. It was short. Only 80 pages. I wanted a win. I ordered it, and read the whole thing in 3 hours. It was amazing. I bought 5 copies and gave them to a few high schools students I was mentoring at the time. 
+
+Winter break came and I didn't realize just how well I had done during school. I had read two books and two audiobooks. I was part way through Tools of Titans. I still had three weeks and only four books left to complete my challenge. It was still possible for me. 
+
+I finished Tools of Titans. It shook me. I cheered when I finished it. I called my girlfriend to celebrate it! It was a highlight of my year to have read an entire 600-page book without any distractions. 
+
+To finish off the year with my last three books, I had three days left. I decided that audiobooks would save me here. I have lots of driving so I'll bang them out in the car. I got a few short books from CS Lewis that are highly revered and listened to those. The Great Divorce I listened in the car with my girlfriend but we didn't finish it before the new year. 
+
+I could've finished it on my own and on time, but I realized something that stopped me from finishing the book and prioritizing the deadline. I had gotten my girlfriend, someone who doesn't read, to listen to an audiobook with me (she's into podcasts). I realized that my challenge to become a reader had inspired her to do the same. My consistency, my intent, my sharing of everything I learned. I spoke to her constantly about the books I was reading and she finally, at the end of 2025, listened to an audiobook with me. I couldn't be happier to have shared that experience with her.
+
+All-in-all, reading has sparked growth in me. When I look back at my life 20 years from now, I feel like I can confidently say that my life changed at 25. The year I decided to start reading again. I felt stuck but reading gave me small wins that I felt proud of. It made me more patient and capable of doing boring things without getting distracted. Most importantly, I learned that I'm not on Earth to live to a live for me. I'm here for other people. I'm here to serve. The more grateful I become and the more humility I have, the happier I am. It has taught me that happiness is never given directly to you. It's given indirectly through other qualities, such as gratitude and humility. 
+
+This year (2026) I want to be better with my reading. I can't read every book in the world. I'd be lucky to read 500-1000 books in my whole lifetime. I've decided that I'm going to take my time with the books I read from now on. I could finish a book in 2 weeks, yes, but did I learn everything I could from those books? Absolutely not. Read, study, take action. That's what I want to do to enrich the reading experience. I'm on my journey to becoming the best version of myself. 
+
+Before I give you the full list of books, I want to highlight some books that were very impactful in my life this year. 
+
+- Inner Excellence by Jim Murphy - I read this book twice. It was that good. Keywords: Love, Courage, & Wisdom. Live for something greater than yourself
+- The Great Divorce by CS Lewis - A conversation after death that makes you appreciate life
+- Tools of Titans by Tim Ferriss - This book is more valuable than gold
+- The 4-Hour Workweek by Tim Ferriss - This made me excited to build a career without feeling like my life would be trapped
+- Fiber Fueled by Will Bulsiewicz MD - This fixed my IBS
+- The Simple Path to Wealth by JL Collins - Anyone can become a millionaire after reading this, even a simpleton such as myself
+- Walden by Henry D. Thoreau - Complex in writing but simple in principle. You'll find that less is more. Even more than you'd ever imagine. I stopped listening to the news because of this book. And I've deleted all of my social media accounts (except LinkedIn)
+- The Agony and the Ecstasy by Irving Stone - Religion makes up our history. A story of Michelangelo, a famous artist that was inspired by God in his works. I learned to appreciate religion for every beautiful thing man has created because of it.
+- Anything You Want by Derek Sivers - A business is your own Utopia. You make the rules. You are in service of others, it’s not about you.

@@ -1,9 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TREFDP7M2T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TREFDP7M2T');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoMeter | Michael McKay</title>
+    <title>EcoMeter | Project Showcase</title>
+    <meta name="description" content="An in-depth look at EcoMeter, a sustainability consultancy and ranking system.">
     
     <!-- Tailwind Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -50,96 +59,224 @@
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    
     <link rel="stylesheet" href="../style.css">
 </head>
 <body class="bg-surface text-on-surface font-body antialiased">
 
+    <!-- Header Overlay Gradient -->
+    <div class="fixed top-0 left-0 w-full h-32 bg-gradient-to-b from-black/5 to-transparent z-40 pointer-events-none"></div>
+
     <!-- Standard Responsive Header Container -->
-<div class="fixed top-0 left-0 w-full z-50">
-  <nav class="bg-[#FFF8F3] text-gray-900 shadow-sm border-b border-[#D7C2B7] transition-colors duration-300">
-    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-20 items-center">
-        
-        <!-- Logo -->
-        <div class="flex-shrink-0 flex items-center relative z-20">
-          <a href="../index.html" class="text-xl md:text-2xl font-header font-bold uppercase tracking-[0.2em] hover:opacity-80 transition-opacity">
-            Michael McKay
-          </a>
-        </div>
-        
-        <!-- Desktop Nav -->
-        <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
-          <a href="../impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm hover:bg-gray-100/20">My Impact</a>
-          <a href="../gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm hover:bg-gray-100/20">Nature Gallery</a>
-          <a href="../about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm hover:bg-gray-100/20">About Me</a>
-          <a href="../assets/files/Good Choice.pdf" download="Good Choice.pdf" class="ml-4 btn-primary relative">
-            Resume
-          </a>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <div class="flex items-center lg:hidden relative z-20">
-          <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-100/20 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition-colors" aria-controls="mobile-menu" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <!-- Icon when menu is closed. -->
-            <svg id="icon-menu-closed" class="block h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-            <!-- Icon when menu is open. -->
-            <svg id="icon-menu-open" class="hidden h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-        
-      </div>
-    </div>
-
-    <!-- Mobile Menu, using max-h for accordion animation -->
-    <div class="lg:hidden absolute top-20 left-0 w-full bg-[#FFF8F3] shadow-xl border-t border-[#D7C2B7] overflow-hidden max-h-0 transition-all duration-300 ease-in-out" id="mobile-menu">
-      <div class="px-6 pt-4 pb-8 space-y-2">
-        <a href="../impact.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm">My Impact</a>
-        <a href="../gallery.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm">Nature Gallery</a>
-        <a href="../about.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm">About Me</a>
-        <a href="../assets/files/Good Choice.pdf" download="Good Choice.pdf" class="btn-primary block w-full text-center mt-6">
-          Download Resume
-        </a>
-      </div>
-    </div>
-  </nav>
-</div>
-
-    <main class="pt-32 pb-24 px-4 min-h-screen">
-        <div class="max-w-[1000px] mx-auto">
+    <div class="fixed top-0 left-0 w-full z-50">
+      <nav class="bg-[#FFF8F3] text-gray-900 shadow-sm border-b border-[#D7C2B7] transition-colors duration-300">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between h-20 items-center">
             
-            <a href="../impact.html" class="flex items-center gap-2 text-primary/60 hover:text-primary font-header font-bold text-xs uppercase tracking-widest mb-12 transition-all">
-                <i class="ph ph-arrow-left"></i> Back to My Impact
-            </a>
-
-            <div class="mb-16">
-                <h1 class="font-header font-bold text-5xl md:text-7xl text-on-surface mb-6 tracking-tight">EcoMeter</h1>
-                <p class="font-body text-2xl md:text-3xl text-on-surface/60 italic">Sustainable Measurement for a Greener Future</p>
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center relative z-20">
+              <a href="../index.html" class="text-xl md:text-2xl font-header font-bold uppercase tracking-[0.2em] hover:opacity-80 transition-opacity">
+                Michael McKay
+              </a>
+            </div>
+            
+            <!-- Desktop Nav -->
+            <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
+              <a href="../impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm bg-gray-100/20">My Impact</a>
+              <a href="../gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm hover:bg-gray-100/20">Nature Gallery</a>
+              <a href="../about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm hover:bg-gray-100/20">About Me</a>
+              <a href="../assets/files/Good Choice.pdf" download="Good Choice.pdf" class="ml-4 btn-primary relative">
+                Resume
+              </a>
             </div>
 
-            <div class="w-full aspect-video rounded-[2rem] overflow-hidden shadow-2xl mb-16">
-                <img src="../assets/projects/ecometer/ecometer.jpg" alt="EcoMeter Project" class="w-full h-full object-cover">
+            <!-- Mobile Menu Button -->
+            <div class="flex items-center lg:hidden relative z-20">
+              <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-100/20 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition-colors" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg id="icon-menu-closed" class="block h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg id="icon-menu-open" class="hidden h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
             </div>
-
-            <article class="prose prose-xl prose-stone max-w-none font-body text-xl text-on-surface/80 leading-relaxed space-y-8">
-                <p>
-                    EcoMeter is more than just a measurement tool; it’s a commitment to transparency and sustainability. As part of my role in leading sponsorship strategy, I have been focused on how we can tell the story of environmental data in a way that inspires action.
-                </p>
-                <div class="h-[2px] w-20 bg-primary/20"></div>
-                <p>
-                    More details about the technical implementation, social impact, and strategic growth of EcoMeter will be provided here.
-                </p>
-            </article>
-
+          </div>
         </div>
+
+        <div class="lg:hidden absolute top-20 left-0 w-full bg-[#FFF8F3] shadow-xl border-t border-[#D7C2B7] overflow-hidden max-h-0 transition-all duration-300 ease-in-out" id="mobile-menu">
+          <div class="px-6 pt-4 pb-8 space-y-2">
+            <a href="../impact.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm">My Impact</a>
+            <a href="../gallery.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm">Nature Gallery</a>
+            <a href="../about.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm">About Me</a>
+            <a href="../assets/files/Good Choice.pdf" download="Good Choice.pdf" class="btn-primary block w-full text-center mt-6">
+              Download Resume
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <main class="pt-32 pb-0 min-h-screen">
+        <!-- S1: Photo and Project Name -->
+        <section class="max-w-[1400px] mx-auto px-4 mb-20 md:mb-32">
+            <div class="w-full aspect-[16/9] md:aspect-[21/9] min-h-[50vh] bg-surface-variant relative rounded-[1px] overflow-hidden mb-12 shadow-[0_0_1px_rgba(0,0,0,0.1)]">
+                <img src="../assets/projects/ecometer/ecometer.jpg" alt="EcoMeter Project" class="w-full h-full object-cover object-top">
+            </div>
+            <div class="text-center px-4">
+                <h1 class="font-header font-bold text-6xl md:text-8xl tracking-tight text-on-surface uppercase pb-4">EcoMeter</h1>
+            </div>
+        </section>
+
+        <!-- The Problem Statement -->
+        <section class="max-w-[1000px] mx-auto px-4 mb-24 md:mb-32 text-center">
+            <h2 class="font-header text-[12px] uppercase tracking-[0.3em] font-bold text-primary mb-6">The Problem</h2>
+            <p class="font-serif text-3xl md:text-5xl leading-tight text-on-surface italic px-4">
+                Restaurants unknowingly bleed profits through unchecked operational waste, contributing directly to the environmental crisis of commercial landfill disposal.
+            </p>
+        </section>
+
+        <!-- S2: Caption / UVP / Credibility/Impact -->
+        <section class="max-w-[1400px] mx-auto px-4 mb-24 md:mb-40">
+            <div class="border-t border-b border-outline-variant/40 py-12 md:py-20 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+                <!-- Caption -->
+                <div class="flex flex-col gap-4">
+                    <h4 class="font-header text-[10px] uppercase tracking-widest font-bold text-primary">Project Abstract</h4>
+                    <p class="font-body text-lg md:text-xl text-on-surface/80 leading-relaxed italic">
+                        "Trust in EcoMeter today. Achieve zero waste tomorrow."
+                    </p>
+                </div>
+                <!-- UVP -->
+                <div class="flex flex-col gap-4 md:border-l md:border-outline-variant/30 md:pl-8">
+                    <h4 class="font-header text-[10px] uppercase tracking-widest font-bold text-primary">Unique Value Proposition</h4>
+                    <p class="font-header text-xl md:text-2xl font-bold tracking-tight text-on-surface leading-tight">
+                        Serving as both a sustainability consultancy and a public ranking system. We turn an environmental problem into a financial benefit by gathering operational waste data to pinpoint areas where restaurants can maximize savings.
+                    </p>
+                </div>
+                <!-- Credibility / Impact -->
+                <div class="flex flex-col gap-4 md:border-l md:border-outline-variant/30 md:pl-8">
+                    <h4 class="font-header text-[10px] uppercase tracking-widest font-bold text-primary">Impact Metrics & SDGs</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-block border border-outline-variant/60 text-on-surface/80 px-3 py-1.5 text-[10px] font-header font-bold uppercase tracking-widest rounded-sm">2% Cut in Food Cost</span>
+                        <span class="inline-block border border-outline-variant/60 text-on-surface/80 px-3 py-1.5 text-[10px] font-header font-bold uppercase tracking-widest rounded-sm">SDG 2: Zero Hunger</span>
+                        <span class="inline-block border border-outline-variant/60 text-on-surface/80 px-3 py-1.5 text-[10px] font-header font-bold uppercase tracking-widest rounded-sm">SDG 11: Sustainable Cities and Communities</span>
+                        <span class="inline-block border border-outline-variant/60 text-on-surface/80 px-3 py-1.5 text-[10px] font-header font-bold uppercase tracking-widest rounded-sm">SDG 12: Responsible Consumption and Production</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- S3: Photo -->
+        <section class="max-w-[1400px] mx-auto px-4 mb-24 md:mb-40">
+            <div class="w-full aspect-[16/9] md:aspect-[21/9] bg-secondary-dark relative rounded-[1px] overflow-hidden">
+                <!-- Placeholder nature photo -->
+                <img src="../assets/nature/nature-44.jpg" alt="Impact Photography" class="w-full h-full object-cover">
+            </div>
+        </section>
+
+        <!-- S4 & S5: Mission & Vision -->
+        <section class="max-w-[1200px] mx-auto px-4 mb-24 md:mb-40">
+            <!-- Mission -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center mb-24">
+                <div class="order-2 md:order-1">
+                    <div class="w-full aspect-square md:aspect-[3/4] rounded-[1px] overflow-hidden relative">
+                        <img src="../assets/nature/nature-26.jpg" alt="Mission Imagery" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 flex flex-col gap-6">
+                    <h2 class="font-header text-[12px] uppercase tracking-[0.3em] font-bold text-primary">The Mission</h2>
+                    <p class="font-serif text-3xl md:text-5xl italic leading-tight text-on-surface">
+                        To tackle waste in the food industry by proving that at EcoMeter we hate waste, and you should too. So, let's avoid it.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Vision -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
+                <div class="flex flex-col gap-6">
+                    <h2 class="font-header text-[12px] uppercase tracking-[0.3em] font-bold text-primary">The Vision</h2>
+                    <p class="font-body text-xl md:text-3xl leading-relaxed text-on-surface/80">
+                        To help society achieve zero waste tomorrow and to build partnerships between restaurants and nonprofits by 2027 to tackle the UN’s Zero Hunger goal.
+                    </p>
+                </div>
+                <div>
+                     <div class="w-full aspect-square md:aspect-[3/4] rounded-[1px] overflow-hidden relative">
+                        <img src="../assets/nature/nature-31.jpg" alt="Vision Imagery" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- S6: About the project -->
+        <section class="max-w-[800px] mx-auto px-4 mb-32 md:mb-48">
+            <div class="prose prose-lg prose-p:font-body md:prose-xl text-on-surface/80 leading-relaxed font-body">
+                <h2 class="font-header font-bold text-3xl md:text-5xl text-on-surface uppercase tracking-tight mb-12 pb-6 border-b border-outline-variant/30">About EcoMeter</h2>
+                
+                <p class="first-letter:text-7xl first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left first-letter:leading-[0.8]">
+                    EcoMeter conducts comprehensive two-week waste audits for local food and beverage providers. By meticulously tracking beginning inventory, incoming purchases, and ending inventory, we identify massive inefficiencies that quietly drain restaurant profits.
+                </p>
+                <p class="mt-8">
+                    During this audit, our team installs categorized bins and specialized scales directly on-site to accurately track spoilage, prep waste, and plate waste. We evaluate how locally a restaurant shops to mitigate community waste miles, and aggressively review packaging based on local Metro Vancouver recycling capabilities—looking past misleading manufacturer claims.
+                </p>
+                <p class="mt-8">
+                    Following the rigorous audit, restaurants are given a grace period to implement tangible sustainable practices and transition to green suppliers. Once complete, their verified EcoMeter score is made public through a customizable website widget, turning operational efficiency into a transparent, front-facing marketing asset for patrons who care about the environment.
+                </p>
+            </div>
+        </section>
+
+        <!-- S7: Funding (Self Sustaining model) -->
+        <section class="w-full bg-secondary-dark py-24 md:py-32 px-4 relative overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                 <img src="../assets/nature/blur/nature-blur-15.jpg" alt="" class="w-full h-full object-cover opacity-20">
+                 <div class="absolute inset-0 bg-black/60"></div>
+            </div>
+
+            <div class="max-w-[1000px] mx-auto relative z-10 text-white">
+                <div class="text-center mb-16">
+                    <h2 class="font-header font-bold text-4xl md:text-6xl tracking-tight mb-6">Fueling The Consultancy</h2>
+                    <p class="font-body text-xl md:text-2xl text-white/70 max-w-2xl mx-auto italic">
+                        To aggressively kick this non-profit entity off the ground, EcoMeter is targeting a highly efficient seed round before pivoting to complete self-sustainability.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white/5 border border-white/10 p-8 md:p-12 md:p-16 rounded-[1px] backdrop-blur-md">
+                    <div>
+                        <h3 class="font-header text-[12px] uppercase tracking-[0.2em] font-bold text-primary-container mb-6">Initial Capital Goal</h3>
+                        <p class="font-body text-lg text-white/80 leading-relaxed mb-6">
+                            Targeting enough to solidify initial hardware inventory and execute the first wave of highly visible consulting audits.
+                        </p>
+                        <h4 class="font-header font-bold text-3xl md:text-4xl text-white mb-2">$5,000</h4>
+                        <p class="font-header text-xs text-white/60 uppercase tracking-widest">Seed Funding Goal</p>
+                    </div>
+                    <div>
+                        <h3 class="font-header text-[12px] uppercase tracking-[0.2em] font-bold text-primary-container mb-6">Post-Funding Model</h3>
+                        <ul class="space-y-6 font-body text-lg text-white/80">
+                            <li class="flex gap-4 items-start"><i class="ph ph-check-circle text-primary-container mt-1.5 shrink-0"></i> <span class="leading-snug"><strong>$200 / Food Audit</strong> generated through operational consultancy.</span></li>
+                            <li class="flex gap-4 items-start"><i class="ph ph-check-circle text-primary-container mt-1.5 shrink-0"></i> <span class="leading-snug"><strong>$1,500 / Yr</strong> charged to green suppliers placed dynamically in EcoMeter's core recommendation engine.</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-16 text-center">
+                    <a href="https://eco-meter.ca/" target="_blank" class="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white text-black font-header font-bold uppercase tracking-widest text-sm hover:bg-surface-variant transition-colors rounded-[1px]">
+                        Visit EcoMeter <i class="ph ph-arrow-up-right text-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- FOOTER -->
-        <footer class="bg-secondary-dark text-white py-20 px-4">
+    <footer class="bg-secondary-dark text-white py-20 px-4">
         <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-center md:items-start text-center md:text-left">
             <div>
                 <h2 class="font-header font-bold text-2xl tracking-[0.2em] uppercase mb-4">Michael McKay</h2>
@@ -167,5 +304,6 @@
         </div>
     </footer>
 
+    <script src="../script.js"></script>
 </body>
 </html>

@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- IMPACT SECTION ANIMATIONS ---
-    if (document.querySelector('.project-card') && document.getElementById('section-impact')) {
+    if (document.querySelector('.editorial-card') && document.getElementById('section-impact')) {
         gsap.to(".impact-title", {
             scrollTrigger: {
                 trigger: "#section-impact",
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ease: "power3.out",
         });
 
-        gsap.to(".project-card", {
+        gsap.to(".editorial-card", {
             scrollTrigger: {
                 trigger: "#section-impact",
                 start: "top 75%",
@@ -167,21 +167,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- GALLERY ANIMATIONS ---
-    const galleryItems = gsap.utils.toArray(".gallery-item");
+    const galleryItems = document.querySelectorAll(".gallery-item");
     if (galleryItems.length > 0) {
-        galleryItems.forEach((item) => {
-            gsap.to(item, {
-                scrollTrigger: {
-                    trigger: item,
-                    start: "top 90%",
-                    toggleActions: "play none none none"
-                },
-                y: 0,
-                opacity: 1,
-                duration: 1,
-                ease: "power2.out"
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
             });
-        });
+        }, { rootMargin: "0px 0px 100px 0px" });
+
+        galleryItems.forEach(item => observer.observe(item));
     }
 
     // --- CAROUSEL LOGIC (SectionVoices) ---
@@ -362,4 +359,58 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    // --- AUTO SCROLL BUTTON LOGIC ---
+    const autoScrollBtn = document.getElementById('auto-scroll-btn');
+    if (autoScrollBtn) {
+        let isAutoScrolling = false;
+        let lastTime = 0;
+        let animationFrameId;
+
+        const iconPlay = document.getElementById('icon-play');
+        const iconPause = document.getElementById('icon-pause');
+
+        function autoScroll(timestamp) {
+            if (!isAutoScrolling) return;
+            
+            if (lastTime !== 0) {
+                const deltaTime = timestamp - lastTime;
+                // 150px per second -> 0.15px per millisecond
+                const scrollAmount = deltaTime * 0.15;
+                window.scrollBy(0, scrollAmount);
+                
+                // Stop if hitting the bottom
+                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                    toggleScroll();
+                    return;
+                }
+            }
+            
+            lastTime = timestamp;
+            animationFrameId = requestAnimationFrame(autoScroll);
+        }
+
+        function toggleScroll() {
+            isAutoScrolling = !isAutoScrolling;
+            if (isAutoScrolling) {
+                lastTime = 0;
+                iconPlay.classList.add('hidden');
+                iconPause.classList.remove('hidden');
+                animationFrameId = requestAnimationFrame(autoScroll);
+            } else {
+                iconPlay.classList.remove('hidden');
+                iconPause.classList.add('hidden');
+                cancelAnimationFrame(animationFrameId);
+            }
+        }
+
+        autoScrollBtn.addEventListener('click', toggleScroll);
+        
+        // Let the user interrupt by scrolling manually
+        ['wheel', 'touchstart'].forEach(evt => {
+            window.addEventListener(evt, () => {
+                if (isAutoScrolling) toggleScroll();
+            }, { passive: true });
+        });
+    }
 });

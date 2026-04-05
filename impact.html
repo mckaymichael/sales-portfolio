@@ -138,59 +138,245 @@
     <main class="pt-32 pb-24 px-4 min-h-screen">
         <div id="section-impact" class="max-w-[1200px] mx-auto">
             <div class="mb-20">
-                <h1 class="impact-title font-header font-bold text-5xl md:text-6xl text-on-surface mb-8 tracking-tight">
-                    Helping BCIT Student-Led <br/>Businesses Solve Global Issues
+                <h1 class="font-serif text-4xl md:text-6xl text-on-surface italic leading-tight mb-8">
+                    Helping BCIT Student-Led <br/>Businesses Solve Global Issues.
                 </h1>
                 <p class="impact-title font-body text-xl md:text-2xl text-on-surface/80 leading-relaxed max-w-4xl">
                     I Lead Sponsorship Strategy at Enactus BCIT. Our club is a breeding ground for innovative ideas that address the 17 UN Sustainability Development Goals. This is where the two worlds of sustainable futures and business collide.
                 </p>
             </div>
+            <!-- UN SDG Context -->
+            <div class="impact-row bg-secondary text-white p-8 md:p-12 border border-white/10 rounded-default mb-20 shadow-xl relative overflow-hidden">
+                <!-- Decorative Graphic -->
+                <div class="absolute -right-20 -top-20 opacity-10 pointer-events-none">
+                    <i class="ph-fill ph-globe-hemisphere-west text-[400px] text-white"></i>
+                </div>
+                
+                <h2 class="font-header font-bold text-2xl md:text-3xl text-white mb-6 relative z-10 tracking-tight">Why the Global Goals Matter</h2>
+                <p class="font-body text-lg md:text-xl text-white/80 leading-relaxed max-w-4xl mb-12 relative z-10">
+                    The 17 Sustainable Development Goals are a global call to action to end poverty, protect the planet, and ensure peace and prosperity by 2030. As of 2025, the world faces profound hurdles, making immediate, scalable social enterprises more critical than ever.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative z-10">
+                    <div class="space-y-3 border-t border-white/20 pt-6">
+                        <div class="text-4xl md:text-5xl font-header font-bold text-tertiary-fixed tracking-tight">35%</div>
+                        <h3 class="font-header font-bold text-xs uppercase tracking-widest text-white mb-4">Targets on Track</h3>
+                        <p class="font-body text-white/70 leading-relaxed text-lg">Only about a third of the UN's targets are currently making moderate global progress, requiring aggressive intervention.</p>
+                    </div>
+                    <div class="space-y-3 border-t border-white/20 pt-6">
+                        <div class="text-4xl md:text-5xl font-header font-bold text-tertiary-fixed tracking-tight">800M+</div>
+                        <h3 class="font-header font-bold text-xs uppercase tracking-widest text-white mb-4">Living in Poverty</h3>
+                        <p class="font-body text-white/70 leading-relaxed text-lg">More than 800 million citizens globally still live in extreme poverty worldwide, fueling our urgency to address SDG 2 and SDG 8.</p>
+                    </div>
+                    <div class="space-y-3 border-t border-white/20 pt-6">
+                        <div class="text-4xl md:text-5xl font-header font-bold text-tertiary-fixed tracking-tight">$4T</div>
+                        <h3 class="font-header font-bold text-xs uppercase tracking-widest text-white mb-4">Annual Financing Gap</h3>
+                        <p class="font-body text-white/70 leading-relaxed text-lg">Developing nations face a $4 Trillion annual shortfall to achieve these goals, highlighting the need for systemic corporate partnerships.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Title -->
+            <div class="impact-row mb-12">
+                <h2 class="font-header font-bold text-2xl md:text-3xl text-on-surface tracking-tight max-w-4xl">
+                    My Projects Proudly Address the Following SDGs:
+                </h2>
+            </div>
 
             <!-- Projects Grid -->
-            <div class="impact-row grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="impact-row grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                 
                 <!-- EcoMeter -->
-                <a href="projects/ecometer.html" class="project-card group bg-surface-container-low p-8 rounded-default border border-outline-variant/30 shadow-sm transition-all hover:shadow-xl hover:-translate-y-2">
-                    <div class="w-full aspect-[16/9] rounded-default overflow-hidden mb-8 bg-secondary">
-                        <img src="assets/projects/ecometer/ecometer.jpg" alt="EcoMeter" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <a href="projects/ecometer.html" class="editorial-card block w-full group h-full flex flex-col opacity-0 translate-y-8">
+                    <div class="w-full aspect-[4/3] rounded-sm overflow-hidden mb-6">
+                        <img src="assets/projects/ecometer/ecometer.jpg" alt="EcoMeter" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]">
                     </div>
-                    <h3 class="font-header font-bold text-2xl mb-4 text-on-surface group-hover:text-primary transition-colors">EcoMeter</h3>
-                    <p class="font-body text-on-surface/70 text-lg leading-relaxed mb-6">
-                        An innovative solution for measuring and managing environmental performance.
-                    </p>
-                    <div class="flex items-center gap-2 text-primary font-header font-bold text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
-                        View Project <i class="ph ph-arrow-right"></i>
+                    
+                    <div class="border-t border-outline-variant/50 pt-5 flex-grow flex flex-col">
+                        <h3 class="font-serif italic text-3xl md:text-4xl text-on-surface mb-6 group-hover:text-primary transition-colors tracking-tight leading-tight">
+                            EcoMeter
+                        </h3>
+                        
+                        <p class="font-body text-xl text-on-surface/70 leading-relaxed mb-8">
+                            "Trust in EcoMeter today. Achieve zero waste tomorrow."
+                        </p>
+
+                        <div class="flex flex-col gap-2 mb-8 mt-auto">
+                            <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-sm">SDG 2: Zero Hunger</span>
+                            <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-sm">SDG 11: Sustainable Cities</span>
+                            <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-sm">SDG 12: Responsible Consumption</span>
+                        </div>
+                        
+                        <div class="inline-flex items-center gap-3 text-primary font-header font-bold text-xs uppercase tracking-widest transition-all group-hover:gap-5">
+                            Read Article <span class="block w-8 h-[1px] bg-primary transition-all group-hover:w-12"></span>
+                        </div>
                     </div>
                 </a>
 
                 <!-- Lumóra -->
-                <a href="projects/lumora.html" class="project-card group bg-surface-container-low p-8 rounded-default border border-outline-variant/30 shadow-sm transition-all hover:shadow-xl hover:-translate-y-2">
-                    <div class="w-full aspect-[16/9] rounded-default overflow-hidden mb-8 bg-secondary">
-                        <img src="assets/projects/lumora/lumora.jpg" alt="Lumóra" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <a href="projects/lumora.html" class="editorial-card block w-full group h-full flex flex-col opacity-0 translate-y-8">
+                    <div class="w-full aspect-[4/3] rounded-sm overflow-hidden mb-6">
+                        <img src="assets/projects/lumora/lumora.jpg" alt="Lumóra" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]">
                     </div>
-                    <h3 class="font-header font-bold text-2xl mb-4 text-on-surface group-hover:text-primary transition-colors">Lumóra</h3>
-                    <p class="font-body text-on-surface/70 text-lg leading-relaxed mb-6">
-                        Bringing light to the future with sustainable lighting solutions.
-                    </p>
-                    <div class="flex items-center gap-2 text-primary font-header font-bold text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
-                        View Project <i class="ph ph-arrow-right"></i>
+                    
+                    <div class="border-t border-outline-variant/50 pt-5 flex-grow flex flex-col">
+                        <h3 class="font-serif italic text-3xl md:text-4xl text-on-surface mb-6 group-hover:text-primary transition-colors tracking-tight leading-tight">
+                            Lumóra
+                        </h3>
+                        
+                        <p class="font-body text-xl text-on-surface/70 leading-relaxed mb-8">
+                            Transforming unavoidable milk waste into a biodegradable fibre that works with nature rather than against it.
+                        </p>
+
+                        <div class="flex flex-col gap-2 mb-8 mt-auto">
+                            <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-sm">SDG 9: Industry & Innovation</span>
+                            <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-sm">SDG 12: Responsible Consumption</span>
+                            <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-sm">SDG 15: Life on Land</span>
+                        </div>
+                        
+                        <div class="inline-flex items-center gap-3 text-primary font-header font-bold text-xs uppercase tracking-widest transition-all group-hover:gap-5">
+                            Read Article <span class="block w-8 h-[1px] bg-primary transition-all group-hover:w-12"></span>
+                        </div>
                     </div>
                 </a>
 
                 <!-- HSCC -->
-                <a href="projects/hscc.html" class="project-card group bg-surface-container-low p-8 rounded-default border border-outline-variant/30 shadow-sm transition-all hover:shadow-xl hover:-translate-y-2">
-                    <div class="w-full aspect-[16/9] rounded-default overflow-hidden mb-8 bg-secondary">
-                        <img src="assets/projects/high-school-case-comp/hscc.jpg" alt="High School Case Competition" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <a href="projects/hscc.html" class="editorial-card block w-full group h-full flex flex-col opacity-0 translate-y-8">
+                    <div class="w-full aspect-[4/3] rounded-sm overflow-hidden mb-6">
+                        <img src="assets/projects/high-school-case-comp/hscc.jpg" alt="High School Case Competition" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]">
                     </div>
-                    <h3 class="font-header font-bold text-2xl mb-4 text-on-surface group-hover:text-primary transition-colors">High School Case Competition</h3>
-                    <p class="font-body text-on-surface/70 text-lg leading-relaxed mb-6">
-                        Inspiring the next generation of social entrepreneurs through competition.
-                    </p>
-                    <div class="flex items-center gap-2 text-primary font-header font-bold text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
-                        View Project <i class="ph ph-arrow-right"></i>
+                    
+                    <div class="border-t border-outline-variant/50 pt-5 flex-grow flex flex-col">
+                        <h3 class="font-serif italic text-3xl md:text-4xl text-on-surface mb-6 group-hover:text-primary transition-colors tracking-tight leading-tight">
+                            High School Case Competition
+                        </h3>
+                        
+                        <p class="font-body text-xl text-on-surface/70 leading-relaxed mb-8">
+                            Empowering aspiring business students with the foundation and experience to ignite entrepreneurial action.
+                        </p>
+
+                        <div class="flex flex-col gap-2 mb-8 mt-auto">
+                            <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-sm">SDG 4: Quality Education</span>
+                            <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-sm">SDG 17: Partnerships for the Goals</span>
+                        </div>
+                        
+                        <div class="inline-flex items-center gap-3 text-primary font-header font-bold text-xs uppercase tracking-widest transition-all group-hover:gap-5">
+                            Read Article <span class="block w-8 h-[1px] bg-primary transition-all group-hover:w-12"></span>
+                        </div>
                     </div>
                 </a>
 
+            </div>
+
+            <!-- Sponsor CTA -->
+            <div class="impact-row mt-24 bg-secondary text-white rounded-default p-8 md:p-12 shadow-xl flex flex-col items-center text-center max-w-4xl mx-auto border border-white/10 relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 opacity-10 pointer-events-none">
+                    <i class="ph-fill ph-handshake text-[250px]"></i>
+                </div>
+                <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-6 relative z-10">
+                    <i class="ph ph-handshake text-3xl"></i>
+                </div>
+                <h2 class="font-header font-bold text-3xl md:text-4xl mb-4 tracking-tight relative z-10">Join Our Mission</h2>
+                <p class="font-body text-xl text-white/80 leading-relaxed mb-8 max-w-2xl relative z-10">
+                    We are actively seeking corporate partners to sponsor Enactus BCIT. Help us empower student-led social enterprises to drive scalable impact and tackle global challenges.
+                </p>
+                <a href="mailto:mckaymichaelk@gmail.com?subject=Enactus Sponsorship Inquiry" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-primary text-white hover:bg-primary-container font-header font-bold uppercase tracking-widest text-xs transition-all hover:scale-105 active:scale-95 group rounded-sm relative z-10 focus:ring-4 focus:ring-primary/30">
+                    Inquire About Sponsorship
+                    <i class="ph ph-arrow-up-right text-lg transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 relative -top-[1px]"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Wildfire Feature Section -->
+        <div id="section-wildfire" class="max-w-[1200px] mx-auto mt-40">
+            <div class="mb-16 border-t border-outline-variant/30 pt-20">
+                <h2 class="font-header font-bold text-4xl md:text-5xl text-on-surface mb-6 tracking-tight">
+                    The Bush Creek East Wildfire of 2023
+                </h2>
+                <p class="font-body text-xl md:text-2xl text-on-surface/80 leading-relaxed max-w-4xl">
+                    Turning a devastating community tragedy into a message of resilience and support.
+                </p>
+            </div>
+
+            <!-- Feature Image -->
+            <div class="impact-row bg-surface-container-low p-4 md:p-8 rounded-default border border-outline-variant/30 shadow-sm mb-20">
+                <div class="mx-auto aspect-[4/3] max-h-[700px] bg-secondary rounded-default overflow-hidden mb-8 relative group">
+                    <img src="assets/nature/nature-49.jpg" alt="Shuswap Strong" title="Shuswap Strong" loading="lazy" class="w-full h-full object-cover transition-transform duration-1000">
+                </div>
+                <div class="max-w-4xl mx-auto text-center">
+                    <p class="font-body italic text-xl md:text-2xl text-on-surface/80 leading-relaxed">
+                        When I took this photo, titled "Shuswap Strong," it sparked in me a reality that natural disasters can affect anyone. That forest fires are no joke and more and more people are having to evacuate their homes each year. This image was dedicated to spreading that message. That is my impact.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Content Split -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                <!-- Artist Statement -->
+                <div class="impact-row lg:col-span-7">
+                    <h3 class="font-header font-bold text-3xl mb-8 tracking-tight text-on-surface">Shuswap Strong: Artist’s Statement</h3>
+                    <div class="font-body text-xl text-on-surface/80 leading-relaxed space-y-6">
+                        <p>Over the summer of 2023, my home was nearly burnt down by a vicious forest fire. The forest fire was considered one of the fastest spreading fires in BC history, growing 20 kilometres wide in just 12 hours. The residents of Shuswap Lake and Adams Lake were left fleeing their homes with the fire being less than 100 meters away before they realized it. My dad and my uncle have a business up in the Shuswap that was burned in half. It puts into perspective the selectiveness that a forest fire has. It hops, skips, bounces, dodges, and lands on whatever it feels like. No one knew if the town of Scotch Creek was going to be safe. Luckily, not all of it was burnt down. The fire was savage, and it made some residents turn savage too by using the distraction of the fire as an opportunity to steal from vacant homes and break into facilities such as my father's and my uncle’s.</p>
+                        
+                        <p>Despite the darkness of what happened, an incredible union was formed from the locals who decided to fight back against the raging fire. My uncle fought off the fire before the firefighters and helicopters could help and managed to stop some of the fire in its tracks, saving his and his neighbours' homes. Sparked by these heroic actions that occurred all over the town, the locals of Shuswap created the tag "#ShuswapStrong," which became the symbol of the heroes of our town and the inspiration for naming this photo.</p>
+                        
+                        <p>My photo was shot from my drone, near the end of the fire's rage. The shot is taken from above, looking straight down at the ground. When you look closely, the trees you see are the shadows of the trees still standing. This photo was taken in the morning while the sun was still low and cast these long silhouettes of the burnt-up forest near my dad’s burnt-down business. When I see this photo, I think of what my uncle did to save the homes of his neighbours. I think of the locals everywhere else that were brave enough to fight against this fire. And I think of the strength of the community and how everyone is doing their best to lift each other.</p>
+                        
+                        <p class="pt-6 border-t border-outline-variant/30 mt-8">
+                            <a href="https://www.cbc.ca/news/canada/british-columbia/wildfires-shuswap-kelowna-august-20-1.6941821" target="_blank" class="text-primary hover:text-primary-container font-header font-bold uppercase tracking-widest text-xs inline-flex items-center gap-2 transition-colors">Learn more about the story <i class="ph ph-arrow-up-right"></i></a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Awards & NSSR Sidebar -->
+                <div class="lg:col-span-5 space-y-12">
+                    <!-- Awards -->
+                    <div class="impact-row bg-surface-container-low p-8 rounded-default border border-outline-variant/30 shadow-sm">
+                        <h4 class="font-header font-bold text-xl mb-4 text-on-surface">Applied Arts Magazine Recognition</h4>
+                        <p class="font-body text-on-surface/70 mb-6 leading-relaxed">
+                            Shuswap Strong won me 2 photography awards, helping me spread the message of community and resilience. I was also interviewed by the Applied Arts Magazine about the experience.
+                        </p>
+                        <div class="flex flex-col gap-4 mt-2">
+                            <a href="https://www.appliedartsmag.com/blog/taking-the-pulse-with-michael-mckay-a18363/" target="_blank" class="group flex items-center gap-2 text-primary hover:text-primary-container font-header font-bold text-xs uppercase tracking-widest transition-all w-fit">
+                                Read Interview <i class="ph ph-arrow-up-right group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                            </a>
+                            <a href="https://www.appliedartsmag.com/winners/photography/shuswap-strong-w79/?year=2024" target="_blank" class="group flex items-center gap-2 text-primary hover:text-primary-container font-header font-bold text-xs uppercase tracking-widest transition-all w-fit">
+                                Nature/Landscape Award <i class="ph ph-arrow-up-right group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                            </a>
+                            <a href="https://www.appliedartsmag.com/winners/photography/shuswap-strong-w79/?year=2024" target="_blank" class="group flex items-center gap-2 text-primary hover:text-primary-container font-header font-bold text-xs uppercase tracking-widest transition-all w-fit">
+                                Young Blood Award <i class="ph ph-arrow-up-right group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- NSSR -->
+                    <div class="impact-row">
+                        <h4 class="font-header font-bold text-xl mb-4 text-on-surface">North Shuswap Storage Resort</h4>
+                        <p class="font-body text-on-surface/70 mb-6 leading-relaxed">
+                            This is my uncle and my dad's business that was burnt down in the fire. I designed their website and help maintain it regularly to aid in their recovery and operation.
+                        </p>
+                        <p class="font-body text-on-surface/70 mb-6 leading-relaxed">
+                            Thankfully, they had insurance to help them rebuild. Three years later and they are fully booked once again.
+                        </p>
+                        
+                        <!-- Mini masonry or grid for drone shots -->
+                        <div class="grid grid-cols-2 gap-2 mb-6">
+                            <div class="col-span-2 aspect-video bg-secondary rounded-[1px] overflow-hidden">
+                                <img src="assets/projects/nssr/DJI_0310.JPG" loading="lazy" alt="NSSR Devastation Aerial" class="w-full h-full object-cover">
+                            </div>
+                            <div class="aspect-square bg-secondary rounded-[1px] overflow-hidden">
+                                <img src="assets/projects/nssr/DJI_0304.JPG" loading="lazy" alt="NSSR Devastation Aerial" class="w-full h-full object-cover">
+                            </div>
+                            <div class="aspect-square bg-secondary rounded-[1px] overflow-hidden">
+                                <img src="assets/projects/nssr/DJI_0302.JPG" loading="lazy" alt="NSSR Devastation Aerial" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <a href="https://northshuswapstorageresort.com/" target="_blank" class="inline-flex w-full justify-center items-center gap-2 p-4 bg-primary text-white font-header font-bold uppercase tracking-widest text-xs rounded-default hover:bg-primary-container transition-colors focus:ring-4 focus:ring-primary/30">
+                            Visit the Website <i class="ph ph-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </main>

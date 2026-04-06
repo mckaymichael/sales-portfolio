@@ -184,29 +184,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- CAROUSEL LOGIC (SectionVoices) ---
     const track = document.getElementById('carousel-track');
     const slides = document.querySelectorAll('.voice-slide');
-    const nextBtn = document.getElementById('next-btn');
-    const prevBtn = document.getElementById('prev-btn');
-    const dotsContainer = document.getElementById('carousel-dots');
+    const nextBtns = document.querySelectorAll('.next-testimonial');
+    const prevBtns = document.querySelectorAll('.prev-testimonial');
     let currentIndex = 0;
     let isDragging = false;
     let startX = 0;
     let currentTranslate = 0;
     let prevTranslate = 0;
-    let animationID = 0;
-
-    // Create dots for mobile/tablet paging
-    if (dotsContainer) {
-        slides.forEach((_, i) => {
-            const dot = document.createElement('button');
-            dot.className = `w-3 h-3 rounded-[1px] border border-white/30 transition-all duration-300 ${i === 0 ? 'bg-white w-6' : 'bg-white/20'}`;
-            dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
-            dot.addEventListener('click', () => {
-                currentIndex = i;
-                snapToCurrentSlide();
-            });
-            dotsContainer.appendChild(dot);
-        });
-    }
 
     function snapToCurrentSlide() {
         const slideWidth = track.parentElement.clientWidth;
@@ -215,23 +199,19 @@ document.addEventListener('DOMContentLoaded', () => {
         
         gsap.to(track, {
             x: currentTranslate,
-            duration: 0.3,
+            duration: 0.4,
             ease: "power2.out"
         });
 
-        updateDots();
+
+        updateIndex();
     }
 
-    function updateDots() {
-        if (!dotsContainer) return;
-        const dots = dotsContainer.querySelectorAll('button');
-        dots.forEach((dot, i) => {
-            if (i === currentIndex) {
-                dot.classList.add('bg-white', 'w-6');
-                dot.classList.remove('bg-white/20');
-            } else {
-                dot.classList.remove('bg-white', 'w-6');
-                dot.classList.add('bg-white/20');
+    function updateIndex() {
+        slides.forEach((slide, i) => {
+            const indexDisplay = slide.querySelector('.carousel-index');
+            if (indexDisplay) {
+                indexDisplay.textContent = `${currentIndex + 1}/${slides.length}`;
             }
         });
     }
@@ -284,15 +264,15 @@ document.addEventListener('DOMContentLoaded', () => {
         track.addEventListener('touchmove', touchMove, { passive: true });
         track.addEventListener('touchend', touchEnd);
 
-        if (nextBtn && prevBtn) {
-            nextBtn.addEventListener('click', () => {
+        if (nextBtns.length > 0 && prevBtns.length > 0) {
+            nextBtns.forEach(btn => btn.addEventListener('click', () => {
                 currentIndex = (currentIndex + 1) % slides.length;
                 snapToCurrentSlide();
-            });
-            prevBtn.addEventListener('click', () => {
+            }));
+            prevBtns.forEach(btn => btn.addEventListener('click', () => {
                 currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
                 snapToCurrentSlide();
-            });
+            }));
         }
 
         window.addEventListener('resize', snapToCurrentSlide);

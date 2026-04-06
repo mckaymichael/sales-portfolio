@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -337,108 +337,143 @@
             </div>
         </section>
 
-        <section id="voices" class="h-screen-fit min-h-[700px] w-full p-4 relative bg-surface overflow-hidden">
-            <div class="w-full h-full relative rounded-[1px] overflow-hidden bg-black text-white">
+        <section id="voices" class="h-auto min-h-[700px] w-full relative overflow-hidden py-16 md:py-24 lg:py-32">
+            <div class="w-full h-full relative overflow-hidden text-gray-900">
                 
                 <!-- Sliding Container -->
-                <div id="carousel-track" class="flex h-full w-full items-stretch">
+                <div id="carousel-track" class="flex h-auto w-full items-stretch">
                     
                     <!-- Slide 1 -->
-                    <div class="voice-slide relative flex-shrink-0 w-full h-full min-h-full p-8 md:p-16 lg:p-24 flex flex-col pt-20 md:pt-24 lg:pt-32">
-                        <div class="absolute inset-0 z-0">
-                            <img src="assets/nature/blur/nature-blur-29.jpg" alt="" class="w-full h-full object-cover opacity-60">
-                            <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
+                    <div class="voice-slide relative flex-shrink-0 w-full h-auto flex flex-col px-8 md:px-16 lg:px-24 overflow-hidden">
+                        <!-- Top Row: 1/3 - 2/3 -->
+                        <div class="w-full flex flex-row flex-1">
+                            <!-- Left: 33% -->
+                            <div class="w-1/3 flex flex-col">
+                                <p class="font-header font-bold text-[10px] md:text-xs uppercase tracking-[0.4em] text-gray-400">Testimonials</p>
+                            </div>
+                            <!-- Right: 66% -->
+                            <div class="w-2/3 flex items-center justify-end">
+                                <p class="font-header font-bold text-2xl md:text-3xl lg:text-4xl leading-[1.2] tracking-tight text-right w-full text-gray-900">
+                                    &ldquo;Michael consistently asked sharp, practical questions. What sets him apart is his focus on application.&rdquo;
+                                </p>
+                            </div>
                         </div>
-                        <div class="relative z-10 flex-1 flex flex-col justify-start">
-                            <p class="animate-content font-header font-bold text-[10px] md:text-xs uppercase tracking-[0.3em] mb-8 md:mb-12 opacity-80">Voices of Impact</p>
-                            <p class="animate-content font-body text-lg md:text-xl lg:text-3xl italic leading-snug md:leading-relaxed max-w-4xl mb-12 md:mb-16 select-none whitespace-pre-line tracking-tight">
-                                &ldquo;Michael was one of the most engaged students I've had in the Bachelor of Creative Industries program. In my innovation and entrepreneurship class, he consistently asked sharp, practical questions that helped create a better learning environment for all of us. What sets Michael apart is his focus on application. His team's business pitch to a panel of industry experts was amazing. Instead of just learning the theory, he worked on building something real. Michael is down to earth, hard-working and has a genuine ability to lead and gets things done. He would be a huge asset to any organization and I wouldn't hesitate to recommend him!&rdquo;
-                            </p>
-                        </div>
-                        <div class="relative z-10 flex flex-col md:flex-row items-start md:items-end justify-between mt-auto w-full gap-8 pb-20 md:pb-0">
-                            <div class="animate-content flex items-center gap-6">
-                                <div class="relative w-16 h-16 md:w-20 md:h-20 rounded-[1px] overflow-hidden border border-white/10 shrink-0 bg-[#251204] flex items-center justify-center text-xs opacity-50 text-white font-bold uppercase">DR</div>
+
+                        <!-- Bottom Row: 1/3 - 2/3 (Metadata & Controls) -->
+                        <div class="w-full flex flex-row items-end mt-24 md:mt-32">
+                            <!-- Left: 33% (Numbering) -->
+                            <div class="w-1/3">
                                 <div>
-                                    <h4 class="font-header font-bold text-xl md:text-2xl tracking-tight text-white line-height-1">Danielle Rockel</h4>
-                                    <p class="font-header text-[10px] md:text-xs opacity-60 font-bold uppercase tracking-widest mt-1 text-white">Strategy Advisor and Instructor</p>
+                                    <span class="carousel-index font-header font-bold text-4xl md:text-7xl text-gray-900">1/3</span>
+                                </div>
+                            </div>
+                            <!-- Right: 66% (Arrows & Name Spaced Evenly) -->
+                            <div class="w-2/3 flex items-center justify-between">
+                                <!-- Arrows (Lined up with bot-left of quote above) -->
+                                <div class="flex gap-4">
+                                    <button class="prev-testimonial w-12 h-12 md:w-16 md:h-16 rounded-full border border-gray-900 flex items-center justify-center transition-all hover:bg-gray-100 active:scale-90 text-gray-900" aria-label="Previous">
+                                        <i class="ph ph-arrow-left text-2xl"></i>
+                                    </button>
+                                    <button class="next-testimonial w-12 h-12 md:w-16 md:h-16 rounded-full border border-gray-900 flex items-center justify-center transition-all hover:bg-gray-100 active:scale-90 text-gray-900" aria-label="Next">
+                                        <i class="ph ph-arrow-right text-2xl"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Name & Role -->
+                                <div class="text-right max-w-sm">
+                                    <div>
+                                        <h4 class="font-header font-bold text-xl md:text-2xl tracking-tight text-gray-900 line-height-1">Danielle Rockel</h4>
+                                        <p class="font-body italic text-sm md:text-lg text-gray-500 mt-2">Strategy Advisor and Instructor, BCIT</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Slide 2 -->
-                    <div class="voice-slide relative flex-shrink-0 w-full h-full min-h-full p-8 md:p-16 lg:p-24 flex flex-col pt-20 md:pt-24 lg:pt-32">
-                        <div class="absolute inset-0 z-0">
-                            <img src="assets/nature/blur/nature-blur-63.jpg" alt="" class="w-full h-full object-cover opacity-60">
-                            <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
+                    <div class="voice-slide relative flex-shrink-0 w-full h-auto flex flex-col px-8 md:px-16 lg:px-24 overflow-hidden">
+                        <!-- Top Row -->
+                        <div class="w-full flex flex-row flex-1">
+                            <div class="w-1/3">
+                                <p class="font-header font-bold text-[10px] md:text-xs uppercase tracking-[0.4em] text-gray-400">Testimonials</p>
+                            </div>
+                            <div class="w-2/3 flex items-center justify-end">
+                                <p class="font-header font-bold text-2xl md:text-3xl lg:text-4xl leading-[1.2] tracking-tight text-right w-full text-gray-900">
+                                    &ldquo;Michael seems to genuinely care about others success. He&rsquo;s also a sponge for knowledge.&rdquo;
+                                </p>
+                            </div>
                         </div>
-                        <div class="relative z-10 flex-1 flex flex-col justify-start">
-                            <p class="animate-content font-header font-bold text-[10px] md:text-xs uppercase tracking-[0.3em] mb-8 md:mb-12 opacity-80">Voices of Impact</p>
-                            <p class="animate-content font-body text-lg md:text-xl lg:text-3xl italic leading-snug md:leading-relaxed max-w-4xl mb-12 md:mb-16 select-none whitespace-pre-line tracking-tight">
-                                &ldquo;Michael seems to genuinely care about his classmates' success. He give tons of feedback to others and offers advice (and photography service!) that is actually useful. He's also a sponge for knowledge, whether it's through books, podcasts, events, etc. 
 
-Also: He's super punctual. People notice that stuff.&rdquo;
-                            </p>
-                        </div>
-                        <div class="relative z-10 flex flex-col md:flex-row items-start md:items-end justify-between mt-auto w-full gap-8 pb-20 md:pb-0">
-                            <div class="animate-content flex items-center gap-6">
-                                <div class="relative w-16 h-16 md:w-20 md:h-20 rounded-[1px] overflow-hidden border border-white/10 shrink-0 bg-white/5">
-                                    <img src="assets/portraits/jayme.png" alt="Jayme Cochrane" class="w-full h-full object-cover">
-                                </div>
+                        <!-- Bottom Row -->
+                        <div class="w-full flex flex-row items-end mt-24 md:mt-32">
+                            <div class="w-1/3">
                                 <div>
-                                    <h4 class="font-header font-bold text-xl md:text-2xl tracking-tight text-white line-height-1">Jayme Cochrane</h4>
-                                    <p class="font-header text-[10px] md:text-xs opacity-60 font-bold uppercase tracking-widest mt-1 text-white">Creative Technologist and BCI Program Head</p>
+                                    <span class="carousel-index font-header font-bold text-4xl md:text-7xl text-gray-900">2/3</span>
+                                </div>
+                            </div>
+                            <div class="w-2/3 flex items-center justify-between">
+                                <div class="flex gap-4">
+                                    <button class="prev-testimonial w-12 h-12 md:w-16 md:h-16 rounded-full border border-gray-900 flex items-center justify-center transition-all hover:bg-gray-100 active:scale-90 text-gray-900" aria-label="Previous">
+                                        <i class="ph ph-arrow-left text-2xl"></i>
+                                    </button>
+                                    <button class="next-testimonial w-12 h-12 md:w-16 md:h-16 rounded-full border border-gray-900 flex items-center justify-center transition-all hover:bg-gray-100 active:scale-90 text-gray-900" aria-label="Next">
+                                        <i class="ph ph-arrow-right text-2xl"></i>
+                                    </button>
+                                </div>
+                                <div class="text-right max-w-sm">
+                                    <div>
+                                        <h4 class="font-header font-bold text-xl md:text-2xl tracking-tight text-gray-900 line-height-1">Jayme Cochrane</h4>
+                                        <p class="font-body italic text-sm md:text-lg text-gray-500 mt-2">Creative Technologist and BCI Program Head</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Slide 3 -->
-                    <div class="voice-slide relative flex-shrink-0 w-full h-full min-h-full p-8 md:p-16 lg:p-24 flex flex-col pt-20 md:pt-24 lg:pt-32">
-                        <div class="absolute inset-0 z-0">
-                            <img src="assets/nature/blur/nature-blur-65.jpg" alt="" class="w-full h-full object-cover opacity-60">
-                            <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
+                    <div class="voice-slide relative flex-shrink-0 w-full h-auto flex flex-col px-8 md:px-16 lg:px-24 overflow-hidden">
+                        <!-- Top Row -->
+                        <div class="w-full flex flex-row flex-1">
+                            <div class="w-1/3">
+                                <p class="font-header font-bold text-[10px] md:text-xs uppercase tracking-[0.4em] text-gray-400">Testimonials</p>
+                            </div>
+                            <div class="w-2/3 flex items-center justify-end">
+                                <p class="font-header font-bold text-2xl md:text-3xl lg:text-4xl leading-[1.2] tracking-tight text-right w-full text-gray-900">
+                                    &ldquo;Michael makes an effort to talk to everyone. I think that makes him stand out.&rdquo;
+                                </p>
+                            </div>
                         </div>
-                        <div class="relative z-10 flex-1 flex flex-col justify-start">
-                            <p class="animate-content font-header font-bold text-[10px] md:text-xs uppercase tracking-[0.3em] mb-8 md:mb-12 opacity-80">Voices of Impact</p>
-                            <p class="animate-content font-body text-lg md:text-xl lg:text-3xl italic leading-snug md:leading-relaxed max-w-4xl mb-12 md:mb-16 select-none whitespace-pre-line tracking-tight">
-                                &ldquo;Michael makes an effort to talk to everyone and connect with them, I think that makes him stand out.&rdquo;
-                            </p>
-                        </div>
-                        <div class="relative z-10 flex flex-col md:flex-row items-start md:items-end justify-between mt-auto w-full gap-8 pb-20 md:pb-0">
-                            <div class="animate-content flex items-center gap-6">
-                                <div class="relative w-16 h-16 md:w-20 md:h-20 rounded-[1px] overflow-hidden border border-white/10 shrink-0 bg-white/5">
-                                    <img src="assets/portraits/rawan.png" alt="Rawan Aladdin" class="w-full h-full object-cover">
-                                </div>
+
+                        <!-- Bottom Row -->
+                        <div class="w-full flex flex-row items-end mt-24 md:mt-32">
+                            <div class="w-1/3">
                                 <div>
-                                    <h4 class="font-header font-bold text-xl md:text-2xl tracking-tight text-white line-height-1">Rawan Aladdin</h4>
-                                    <p class="font-header text-[10px] md:text-xs opacity-60 font-bold uppercase tracking-widest mt-1 text-white">BCI Student</p>
+                                    <span class="carousel-index font-header font-bold text-4xl md:text-7xl text-gray-900">3/3</span>
+                                </div>
+                            </div>
+                            <div class="w-2/3 flex items-center justify-between">
+                                <div class="flex gap-4">
+                                    <button class="prev-testimonial w-12 h-12 md:w-16 md:h-16 rounded-full border border-gray-900 flex items-center justify-center transition-all hover:bg-gray-100 active:scale-90 text-gray-900" aria-label="Previous">
+                                        <i class="ph ph-arrow-left text-2xl"></i>
+                                    </button>
+                                    <button class="next-testimonial w-12 h-12 md:w-16 md:h-16 rounded-full border border-gray-900 flex items-center justify-center transition-all hover:bg-gray-100 active:scale-90 text-gray-900" aria-label="Next">
+                                        <i class="ph ph-arrow-right text-2xl"></i>
+                                    </button>
+                                </div>
+                                <div class="text-right max-w-sm">
+                                    <div>
+                                        <h4 class="font-header font-bold text-xl md:text-2xl tracking-tight text-gray-900 line-height-1">Rawan Aladdin</h4>
+                                        <p class="font-body italic text-sm md:text-lg text-gray-500 mt-2">BCI Student</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                 </div>
-
-                <!-- Navigation Controls -->
-                <div class="absolute bottom-8 right-8 md:bottom-16 md:right-16 z-20 flex flex-col md:flex-row items-center gap-6">
-                    <!-- Dots for mobile/tablet -->
-                    <div id="carousel-dots" class="flex gap-3 md:hidden">
-                        <!-- Dots added via JS -->
-                    </div>
-
-                    <!-- Arrows for Desktop -->
-                    <div class="hidden md:flex gap-4">
-                        <button id="prev-btn" class="w-12 h-12 md:w-14 md:h-14 rounded-[1px] bg-white/10 backdrop-blur-md flex items-center justify-center transition-all hover:bg-white/20 active:scale-90 border border-white/10 text-white" aria-label="Previous">
-                            <i class="ph ph-arrow-left text-2xl"></i>
-                        </button>
-                        <button id="next-btn" class="w-12 h-12 md:w-14 md:h-14 rounded-[1px] bg-white/10 backdrop-blur-md flex items-center justify-center transition-all hover:bg-white/20 active:scale-90 border border-white/10 text-white" aria-label="Next">
-                            <i class="ph ph-arrow-right text-2xl"></i>
-                        </button>
-                    </div>
-                </div>
             </div>
         </section>
+
 
         <!-- FOOTER -->
         <footer class="w-full bg-secondary-dark text-white overflow-hidden">

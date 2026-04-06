@@ -187,22 +187,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtns = document.querySelectorAll('.next-testimonial');
     const prevBtns = document.querySelectorAll('.prev-testimonial');
     let currentIndex = 0;
-    let isDragging = false;
-    let startX = 0;
-    let currentTranslate = 0;
-    let prevTranslate = 0;
 
     function snapToCurrentSlide() {
         const slideWidth = track.parentElement.clientWidth;
-        currentTranslate = currentIndex * -slideWidth;
-        prevTranslate = currentTranslate;
+        const targetX = currentIndex * -slideWidth;
         
         gsap.to(track, {
-            x: currentTranslate,
+            x: targetX,
             duration: 0.4,
             ease: "power2.out"
         });
-
 
         updateIndex();
     }
@@ -216,54 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function getPositionX(e) {
-        return e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-    }
-
-    function touchStart(e) {
-        isDragging = true;
-        startX = getPositionX(e);
-        track.style.cursor = 'grabbing';
-        track.style.transition = 'none'; // Absolutely no lag during drag
-        gsap.killTweensOf(track);
-    }
-
-    function touchMove(e) {
-        if (!isDragging) return;
-        const currentX = getPositionX(e);
-        const diff = currentX - startX;
-        currentTranslate = prevTranslate + diff;
-        
-        // No resistance - follow mouse 1:1 exactly
-        gsap.set(track, { x: currentTranslate });
-    }
-
-    function touchEnd() {
-        if (!isDragging) return;
-        isDragging = false;
-        track.style.cursor = 'grab';
-        
-        const slideWidth = track.parentElement.clientWidth;
-        const movedBy = currentTranslate - prevTranslate;
-
-        // Snap logic based on move distance
-        if (movedBy < -100 && currentIndex < slides.length - 1) {
-            currentIndex += 1;
-        } else if (movedBy > 100 && currentIndex > 0) {
-            currentIndex -= 1;
-        }
-
-        snapToCurrentSlide();
-    }
-
     if (track && slides.length > 0) {
-        track.addEventListener('mousedown', touchStart);
-        track.addEventListener('mousemove', touchMove);
-        window.addEventListener('mouseup', touchEnd);
-        track.addEventListener('touchstart', touchStart, { passive: true });
-        track.addEventListener('touchmove', touchMove, { passive: true });
-        track.addEventListener('touchend', touchEnd);
-
         if (nextBtns.length > 0 && prevBtns.length > 0) {
             nextBtns.forEach(btn => btn.addEventListener('click', () => {
                 currentIndex = (currentIndex + 1) % slides.length;

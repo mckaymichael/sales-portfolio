@@ -45,7 +45,18 @@
                         body: ['Unna', 'serif'],
                     },
                     borderRadius: {
-                        'default': '4px',
+                        'default': '1px',
+                    },
+                    fontSize: {
+                        // Minor Third (1.200) typescale — base 16px
+                        'step-0': ['1rem',     { lineHeight: '1.6' }],  // 16px — body base
+                        'step-1': ['1.2rem',   { lineHeight: '1.6' }],  // 19.2px — body lg
+                        'step-2': ['1.44rem',  { lineHeight: '1.4' }],  // 23px — small display
+                        'step-3': ['1.728rem', { lineHeight: '1.3' }],  // 27.6px — h4
+                        'step-4': ['2.074rem', { lineHeight: '1.2' }],  // 33.2px — h3
+                        'step-5': ['2.488rem', { lineHeight: '1.15' }], // 39.8px — h2
+                        'step-6': ['2.986rem', { lineHeight: '1.1' }],  // 47.8px — h1
+                        'step-7': ['3.583rem', { lineHeight: '1.05' }], // 57.3px — hero display
                     },
                 }
             }
@@ -103,9 +114,9 @@
         
         <!-- Desktop Nav -->
         <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
-          <a href="impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm hover:bg-gray-100/20">My Impact</a>
-          <a href="gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm bg-gray-100/20">Nature Gallery</a>
-          <a href="about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm hover:bg-gray-100/20">About Me</a>
+          <a href="impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">My Impact</a>
+          <a href="gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] border-b-2 border-secondary text-secondary">Nature Gallery</a>
+          <a href="about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">About Me</a>
           <a href="assets/files/Good Choice.pdf" download="Good Choice.pdf" class="ml-4 btn-primary relative">
             Resume
           </a>
@@ -113,15 +124,15 @@
 
         <!-- Mobile Menu Button -->
         <div class="flex items-center lg:hidden relative z-20">
-          <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-100/20 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition-colors" aria-controls="mobile-menu" aria-expanded="false">
+          <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-[1px] hover:bg-gray-100/20 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition-colors" aria-controls="mobile-menu" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
             <!-- Icon when menu is closed. -->
             <svg id="icon-menu-closed" class="block h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              <path stroke-linecap="square" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
             <!-- Icon when menu is open. -->
             <svg id="icon-menu-open" class="hidden h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              <path stroke-linecap="square" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
@@ -132,9 +143,9 @@
     <!-- Mobile Menu, using max-h for accordion animation -->
     <div class="lg:hidden absolute top-20 left-0 w-full bg-[#FFF8F3] shadow-xl border-t border-[#D7C2B7] overflow-hidden max-h-0 transition-all duration-300 ease-in-out" id="mobile-menu">
       <div class="px-6 pt-4 pb-8 space-y-2">
-        <a href="impact.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm">My Impact</a>
-        <a href="gallery.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm">Nature Gallery</a>
-        <a href="about.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm">About Me</a>
+        <a href="impact.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">My Impact</a>
+        <a href="gallery.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Nature Gallery</a>
+        <a href="about.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">About Me</a>
         <a href="assets/files/Good Choice.pdf" download="Good Choice.pdf" class="btn-primary block w-full text-center mt-6">
           Download Resume
         </a>
@@ -300,39 +311,78 @@
     </main>
 
     <!-- Auto-Scroll Button -->
-    <button id="auto-scroll-btn" class="fixed bottom-8 right-8 z-[100] w-14 h-14 bg-primary text-white rounded-full shadow-xl flex items-center justify-center hover:bg-primary-container transition-colors focus:outline-none focus:ring-4 focus:ring-primary/30" aria-label="Toggle Auto-Scroll">
+    <button id="auto-scroll-btn" class="fixed bottom-8 right-8 z-[100] w-14 h-14 bg-primary text-white rounded-[1px] shadow-xl flex items-center justify-center hover:bg-primary-container transition-colors focus:outline-none focus:ring-4 focus:ring-primary/30" aria-label="Toggle Auto-Scroll">
         <i id="icon-play" class="ph-fill ph-play text-2xl"></i>
         <i id="icon-pause" class="ph-fill ph-pause text-2xl hidden"></i>
     </button>
 
-    <!-- FOOTER -->
-        <footer class="bg-secondary-dark text-white py-20 px-4">
-        <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-center md:items-start text-center md:text-left">
-            <div>
-                <h2 class="font-header font-bold text-2xl tracking-[0.2em] uppercase mb-4">Michael McKay</h2>
-                <p class="font-body italic text-white/60">Using business as a force of good.</p>
-            </div>
-            
-            <div class="flex flex-col gap-4">
-                <h3 class="font-header text-xs font-bold uppercase tracking-widest opacity-60">Navigate</h3>
-                <div class="flex flex-wrap justify-center md:justify-start gap-x-8 gap-y-3 text-[10px] md:text-xs font-header font-bold uppercase tracking-widest">
-                    <a href="index.html" class="hover:text-primary-container transition-colors">Home</a>
-                    <a href="about.html" class="hover:text-primary-container transition-colors">About</a>
-                    <a href="impact.html" class="hover:text-primary-container transition-colors">Impact</a>
-                    <a href="gallery.html" class="hover:text-primary-container transition-colors">Gallery</a>
+     <!-- FOOTER -->
+        <footer class="w-full bg-secondary-dark text-white overflow-hidden">
+
+            <!-- MASTHEAD: Image + Name overlay -->
+            <div class="relative w-full h-[50vh] min-h-[320px] overflow-hidden">
+                <img src="assets/nature/blur/nature-blur-45.jpg" alt="" class="absolute inset-0 w-full h-full object-cover object-center opacity-50">
+                <div class="relative z-10 h-full max-w-[1400px] mx-auto px-8 md:px-16 flex flex-col justify-end pb-10 md:pb-14">
+                    <p class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-4">Michael McKay &mdash; Portfolio</p>
+                    <h2 class="font-header font-bold text-step-6 md:text-step-7 leading-none tracking-tight text-white">
+                        Using Business<br class="hidden md:block"> as a Force for Good.
+                    </h2>
                 </div>
             </div>
 
-            <div class="flex flex-col gap-4">
-                <h3 class="font-header text-xs font-bold uppercase tracking-widest opacity-60">Connect</h3>
-                <div class="flex flex-wrap justify-center md:justify-start gap-x-8 gap-y-3 text-[10px] md:text-xs font-header font-bold uppercase tracking-widest">
-                    <a href="mailto:mckaymichaelk@gmail.com" class="hover:text-primary-container transition-colors">Email</a>
-                    <a href="https://linkedin.com/in/michaelkmckay" target="_blank" class="hover:text-primary-container transition-colors">LinkedIn</a>
-                    <a href="tel:6048259224" class="hover:text-primary-container transition-colors">Phone</a>
+            <!-- EDITORIAL CONTENT GRID -->
+            <div class="max-w-[1400px] mx-auto px-8 md:px-16 pt-16 pb-20 border-t border-white/10">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
+
+                    <!-- COL 1: Navigation -->
+                    <div>
+                        <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Navigate</h3>
+                        <nav class="flex flex-col gap-5">
+                            <a href="index.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Home</a>
+                            <a href="impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">My Impact</a>
+                            <a href="gallery.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Nature Gallery</a>
+                            <a href="about.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">About Me</a>
+                        </nav>
+                    </div>
+
+                    <!-- COL 2: Roles -->
+                    <div>
+                        <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Ready to Lead As</h3>
+                        <div class="flex flex-col">
+                            <div class="group border-t border-white/10 py-5 cursor-default">
+                                <p class="font-header font-bold text-step-1 text-white/80 group-hover:text-white transition-colors tracking-tight leading-snug">Business Development<br>Representative</p>
+                                <p class="font-body italic text-sm text-white/0 group-hover:text-white/50 transition-all duration-300 max-h-0 group-hover:max-h-20 overflow-hidden leading-relaxed mt-0 group-hover:mt-3">Turning social impact goals into scalable, revenue-generating realities.</p>
+                            </div>
+                            <div class="group border-t border-white/10 py-5 cursor-default">
+                                <p class="font-header font-bold text-step-1 text-white/80 group-hover:text-white transition-colors tracking-tight leading-snug">Growth &amp; Impact<br>Consultant</p>
+                                <p class="font-body italic text-sm text-white/0 group-hover:text-white/50 transition-all duration-300 max-h-0 group-hover:max-h-20 overflow-hidden leading-relaxed mt-0 group-hover:mt-3">Solving complex organizational problems with creative, sustainable strategies.</p>
+                            </div>
+                            <div class="group border-t border-b border-white/10 py-5 cursor-default">
+                                <p class="font-header font-bold text-step-1 text-white/80 group-hover:text-white transition-colors tracking-tight leading-snug">Sustainability<br>Consultant</p>
+                                <p class="font-body italic text-sm text-white/0 group-hover:text-white/50 transition-all duration-300 max-h-0 group-hover:max-h-20 overflow-hidden leading-relaxed mt-0 group-hover:mt-3">Helping teams expand reach while scaling positive environmental impact.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COL 3: Contact -->
+                    <div>
+                        <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Get in Touch</h3>
+                        <div class="flex flex-col gap-5">
+                            <a href="https://linkedin.com/in/michaelkmckay" target="_blank" class="inline-block font-header font-bold text-step-1 text-white/70 hover:text-white border-b border-white/20 hover:border-white/60 pb-1 transition-all w-fit tracking-tight">LinkedIn</a>
+                            <a href="mailto:mckaymichaelk@gmail.com" class="inline-block font-header font-bold text-step-1 text-white/70 hover:text-white border-b border-white/20 hover:border-white/60 pb-1 transition-all w-fit tracking-tight">Email Me</a>
+                            <a href="tel:6048259224" class="inline-block font-header font-bold text-step-1 text-white/70 hover:text-white border-b border-white/20 hover:border-white/60 pb-1 transition-all w-fit tracking-tight">604.825.9224</a>
+                            <a href="assets/files/Good Choice.pdf" download="Good Choice.pdf" class="inline-block font-header font-bold text-step-1 text-white/70 hover:text-white border-b border-white/20 hover:border-white/60 pb-1 transition-all w-fit tracking-tight">Download Resume</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom bar -->
+                <div class="mt-20 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <p class="font-header text-[10px] uppercase tracking-widest text-white/25">&copy; 2025 Michael McKay. All rights reserved.</p>
+                    <p class="font-body italic text-sm text-white/25">"Using business as a force for good."</p>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
     <script src="script.js"></script>
 </body>

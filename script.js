@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (dotsContainer) {
         slides.forEach((_, i) => {
             const dot = document.createElement('button');
-            dot.className = `w-3 h-3 rounded-full border border-white/30 transition-all duration-300 ${i === 0 ? 'bg-white w-6' : 'bg-white/20'}`;
+            dot.className = `w-3 h-3 rounded-[1px] border border-white/30 transition-all duration-300 ${i === 0 ? 'bg-white w-6' : 'bg-white/20'}`;
             dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
             dot.addEventListener('click', () => {
                 currentIndex = i;

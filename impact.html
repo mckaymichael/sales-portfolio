@@ -45,7 +45,7 @@
                         body: ['Unna', 'serif'],
                     },
                     borderRadius: {
-                        'default': '4px',
+                        'default': '1px',
                     },
                     fontSize: {
                         // Minor Third (1.200) typescale — base 16px
@@ -101,9 +101,9 @@
         
         <!-- Desktop Nav -->
         <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
-          <a href="impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm bg-gray-100/20">My Impact</a>
-          <a href="gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm hover:bg-gray-100/20">Nature Gallery</a>
-          <a href="about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm hover:bg-gray-100/20">About Me</a>
+          <a href="impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] border-b-2 border-secondary text-secondary">My Impact</a>
+          <a href="gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">Nature Gallery</a>
+          <a href="about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">About Me</a>
           <a href="assets/files/Good Choice.pdf" download="Good Choice.pdf" class="ml-4 btn-primary relative">
             Resume
           </a>
@@ -111,15 +111,15 @@
 
         <!-- Mobile Menu Button -->
         <div class="flex items-center lg:hidden relative z-20">
-          <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-100/20 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition-colors" aria-controls="mobile-menu" aria-expanded="false">
+          <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-[1px] hover:bg-gray-100/20 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition-colors" aria-controls="mobile-menu" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
             <!-- Icon when menu is closed. -->
             <svg id="icon-menu-closed" class="block h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              <path stroke-linecap="square" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
             <!-- Icon when menu is open. -->
             <svg id="icon-menu-open" class="hidden h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              <path stroke-linecap="square" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
@@ -130,9 +130,9 @@
     <!-- Mobile Menu, using max-h for accordion animation -->
     <div class="lg:hidden absolute top-20 left-0 w-full bg-[#FFF8F3] shadow-xl border-t border-[#D7C2B7] overflow-hidden max-h-0 transition-all duration-300 ease-in-out" id="mobile-menu">
       <div class="px-6 pt-4 pb-8 space-y-2">
-        <a href="impact.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm">My Impact</a>
-        <a href="gallery.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm">Nature Gallery</a>
-        <a href="about.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm">About Me</a>
+        <a href="impact.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">My Impact</a>
+        <a href="gallery.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Nature Gallery</a>
+        <a href="about.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">About Me</a>
         <a href="assets/files/Good Choice.pdf" download="Good Choice.pdf" class="btn-primary block w-full text-center mt-6">
           Download Resume
         </a>
@@ -193,11 +193,11 @@
             <div class="impact-container mx-auto">
                 
                 <!-- Lumóra -->
-                <div class="project-row flex flex-col lg:flex-row items-start gap-12 lg:gap-20">
+                <div class="project-row flex flex-col lg:flex-row items-start gap-12 lg:gap-20 p-2 md:p-4">
                     <div class="w-full lg:w-1/3">
                         <div class="flex items-center gap-3 mb-4">
                             <span class="project-category !mb-0">ENACTUS BCIT</span>
-                            <span class="inline-block w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                            <span class="inline-block w-1.5 h-1.5 rounded-[1px] bg-primary animate-pulse"></span>
                             <span class="text-primary font-header font-bold text-[10px] uppercase tracking-widest">TOP 10 LOI ACCELERATE</span>
                         </div>
                         <h3 class="font-header font-bold text-step-5 text-on-surface mb-6 tracking-tight uppercase">Lumóra</h3>
@@ -209,7 +209,7 @@
                         <p class="font-body text-xl text-on-surface/70 leading-relaxed mb-8">
                             Transforming unavoidable milk waste into a biodegradable fibre that works with nature.
                         </p>
-                        <a href="projects/lumora.html" class="group inline-flex items-center gap-3 text-primary font-header font-bold text-xs uppercase tracking-widest transition-all hover:gap-5">
+                        <a href="projects/lumora.html" class="card-link-target group inline-flex items-center gap-3 text-primary font-header font-bold text-xs uppercase tracking-widest transition-all hover:gap-5">
                             View Project <span class="block w-8 h-[1px] bg-primary transition-all group-hover:w-12"></span>
                         </a>
                     </div>
@@ -221,7 +221,7 @@
                 </div>
 
                 <!-- EcoMeter -->
-                <div class="project-row flex flex-col lg:flex-row items-start gap-12 lg:gap-20">
+                <div class="project-row flex flex-col lg:flex-row items-start gap-12 lg:gap-20 p-2 md:p-4">
                     <div class="w-full lg:w-1/3">
                         <div class="project-category">ENACTUS BCIT</div>
                         <h3 class="font-header font-bold text-step-5 text-on-surface mb-6 tracking-tight uppercase">EcoMeter</h3>
@@ -233,7 +233,7 @@
                         <p class="font-body text-xl text-on-surface/70 leading-relaxed mb-8">
                             "Trust in EcoMeter today. Achieve zero waste tomorrow."
                         </p>
-                        <a href="projects/ecometer.html" class="group inline-flex items-center gap-3 text-primary font-header font-bold text-xs uppercase tracking-widest transition-all hover:gap-5">
+                        <a href="projects/ecometer.html" class="card-link-target group inline-flex items-center gap-3 text-primary font-header font-bold text-xs uppercase tracking-widest transition-all hover:gap-5">
                             View Project <span class="block w-8 h-[1px] bg-primary transition-all group-hover:w-12"></span>
                         </a>
                     </div>
@@ -245,7 +245,7 @@
                 </div>
 
                 <!-- HSCC -->
-                <div class="project-row flex flex-col lg:flex-row items-start gap-12 lg:gap-20">
+                <div class="project-row flex flex-col lg:flex-row items-start gap-12 lg:gap-20 p-2 md:p-4">
                     <div class="w-full lg:w-1/3">
                         <div class="project-category">ENACTUS BCIT</div>
                         <h3 class="font-header font-bold text-step-5 text-on-surface mb-6 tracking-tight uppercase">HSCC</h3>
@@ -256,7 +256,7 @@
                         <p class="font-body text-xl text-on-surface/70 leading-relaxed mb-8">
                             Empowering aspiring business students with the foundation to ignite entrepreneurial action.
                         </p>
-                        <a href="projects/hscc.html" class="group inline-flex items-center gap-3 text-primary font-header font-bold text-xs uppercase tracking-widest transition-all hover:gap-5">
+                        <a href="projects/hscc.html" class="card-link-target group inline-flex items-center gap-3 text-primary font-header font-bold text-xs uppercase tracking-widest transition-all hover:gap-5">
                             View Project <span class="block w-8 h-[1px] bg-primary transition-all group-hover:w-12"></span>
                         </a>
                     </div>
@@ -274,23 +274,27 @@
 
 
             <!-- Sponsor CTA -->
-            <div class="impact-row mt-24 bg-secondary text-white rounded-default p-8 md:p-12 shadow-xl flex flex-col items-center text-center max-w-4xl mx-auto border border-white/10 relative overflow-hidden">
-                <div class="absolute -right-10 -bottom-10 opacity-10 pointer-events-none">
-                    <i class="ph-fill ph-handshake text-[250px]"></i>
+            <div class="impact-row mt-24 bg-secondary-dark text-white  p-8 md:p-12 shadow-xl flex flex-col items-center text-center max-w-4xl mx-auto border border-white/10 relative overflow-hidden">
+                <!-- Nature Blur Background -->
+                <div class="absolute inset-0 z-0">
+                    <img src="assets/nature/blur/nature-blur-1.jpg" alt="" class="w-full h-full object-cover opacity-70">
+                    <div class="absolute inset-0 bg-black/40"></div>
                 </div>
-                <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-6 relative z-10">
+
+                <div class="w-16 h-16 rounded-[1px] flex items-center justify-center mb-6 relative z-10">
                     <i class="ph ph-handshake text-3xl"></i>
                 </div>
                 <h2 class="font-header font-bold text-3xl md:text-4xl mb-4 tracking-tight relative z-10">Join Our Mission</h2>
                 <p class="font-body text-xl text-white/80 leading-relaxed mb-8 max-w-2xl relative z-10">
                     We are actively seeking corporate partners to sponsor Enactus BCIT. Help us empower student-led social enterprises to drive scalable impact and tackle global challenges.
                 </p>
-                <a href="mailto:mckaymichaelk@gmail.com?subject=Enactus Sponsorship Inquiry" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-primary text-white hover:bg-primary-container font-header font-bold uppercase tracking-widest text-xs transition-all hover:scale-105 active:scale-95 group rounded-sm relative z-10 focus:ring-4 focus:ring-primary/30">
+                <a href="mailto:mckaymichaelk@gmail.com?subject=Enactus Sponsorship Inquiry" class="inline-flex items-center rounded-[4px] justify-center gap-3 px-8 py-4 bg-primary text-white hover:bg-primary-container font-header font-bold uppercase tracking-widest text-xs transition-all hover:scale-105 active:scale-95 group relative z-10 focus:ring-4 focus:ring-primary/30">
                     Become A Sponsor
                     <i class="ph ph-arrow-up-right text-lg transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 relative -top-[1px]"></i>
                 </a>
             </div>
-        </div>        <!-- Wildfire Feature Section -->
+        </div>
+        <!-- Wildfire Feature Section -->
         <div id="section-wildfire" class="max-w-[1200px] mx-auto px-4 mt-40">
 
             <!-- Section eyebrow + title — matches site standard -->
@@ -303,7 +307,7 @@
 
             <!-- Feature Image — no card wrapper, raw editorial -->
             <div class="mb-6 overflow-hidden rounded-[1px]">
-                <img src="assets/nature/nature-49.jpg" alt="Shuswap Strong" loading="lazy" class="w-full aspect-[16/9] object-cover object-center">
+                <img src="assets/nature/nature-49.jpg" alt="Shuswap Strong" loading="lazy" class="w-full aspect-[4/3] object-cover object-center">
             </div>
             <!-- Caption -->
             <p class="font-header font-bold text-[10px] uppercase tracking-widest text-on-surface/40 mb-20">
@@ -371,34 +375,73 @@
     </main>
 
 
-    <!-- FOOTER -->
-        <footer class="bg-secondary-dark text-white py-20 px-4">
-        <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-center md:items-start text-center md:text-left">
-            <div>
-                <h2 class="font-header font-bold text-2xl tracking-[0.2em] uppercase mb-4">Michael McKay</h2>
-                <p class="font-body italic text-white/60">Using business as a force of good.</p>
-            </div>
-            
-            <div class="flex flex-col gap-4">
-                <h3 class="font-header text-xs font-bold uppercase tracking-widest opacity-60">Navigate</h3>
-                <div class="flex flex-wrap justify-center md:justify-start gap-x-8 gap-y-3 text-[10px] md:text-xs font-header font-bold uppercase tracking-widest">
-                    <a href="index.html" class="hover:text-primary-container transition-colors">Home</a>
-                    <a href="about.html" class="hover:text-primary-container transition-colors">About</a>
-                    <a href="impact.html" class="hover:text-primary-container transition-colors">Impact</a>
-                    <a href="gallery.html" class="hover:text-primary-container transition-colors">Gallery</a>
+     <!-- FOOTER -->
+        <footer class="w-full bg-secondary-dark text-white overflow-hidden">
+
+            <!-- MASTHEAD: Image + Name overlay -->
+            <div class="relative w-full h-[50vh] min-h-[320px] overflow-hidden">
+                <img src="assets/nature/blur/nature-blur-45.jpg" alt="" class="absolute inset-0 w-full h-full object-cover object-center opacity-50">
+                <div class="relative z-10 h-full max-w-[1400px] mx-auto px-8 md:px-16 flex flex-col justify-end pb-10 md:pb-14">
+                    <p class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-4">Michael McKay &mdash; Portfolio</p>
+                    <h2 class="font-header font-bold text-step-6 md:text-step-7 leading-none tracking-tight text-white">
+                        Using Business<br class="hidden md:block"> as a Force for Good.
+                    </h2>
                 </div>
             </div>
 
-            <div class="flex flex-col gap-4">
-                <h3 class="font-header text-xs font-bold uppercase tracking-widest opacity-60">Connect</h3>
-                <div class="flex flex-wrap justify-center md:justify-start gap-x-8 gap-y-3 text-[10px] md:text-xs font-header font-bold uppercase tracking-widest">
-                    <a href="mailto:mckaymichaelk@gmail.com" class="hover:text-primary-container transition-colors">Email</a>
-                    <a href="https://linkedin.com/in/michaelkmckay" target="_blank" class="hover:text-primary-container transition-colors">LinkedIn</a>
-                    <a href="tel:6048259224" class="hover:text-primary-container transition-colors">Phone</a>
+            <!-- EDITORIAL CONTENT GRID -->
+            <div class="max-w-[1400px] mx-auto px-8 md:px-16 pt-16 pb-20 border-t border-white/10">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
+
+                    <!-- COL 1: Navigation -->
+                    <div>
+                        <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Navigate</h3>
+                        <nav class="flex flex-col gap-5">
+                            <a href="index.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Home</a>
+                            <a href="impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">My Impact</a>
+                            <a href="gallery.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Nature Gallery</a>
+                            <a href="about.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">About Me</a>
+                        </nav>
+                    </div>
+
+                    <!-- COL 2: Roles -->
+                    <div>
+                        <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Ready to Lead As</h3>
+                        <div class="flex flex-col">
+                            <div class="group border-t border-white/10 py-5 cursor-default">
+                                <p class="font-header font-bold text-step-1 text-white/80 group-hover:text-white transition-colors tracking-tight leading-snug">Business Development<br>Representative</p>
+                                <p class="font-body italic text-sm text-white/0 group-hover:text-white/50 transition-all duration-300 max-h-0 group-hover:max-h-20 overflow-hidden leading-relaxed mt-0 group-hover:mt-3">Turning social impact goals into scalable, revenue-generating realities.</p>
+                            </div>
+                            <div class="group border-t border-white/10 py-5 cursor-default">
+                                <p class="font-header font-bold text-step-1 text-white/80 group-hover:text-white transition-colors tracking-tight leading-snug">Growth &amp; Impact<br>Consultant</p>
+                                <p class="font-body italic text-sm text-white/0 group-hover:text-white/50 transition-all duration-300 max-h-0 group-hover:max-h-20 overflow-hidden leading-relaxed mt-0 group-hover:mt-3">Solving complex organizational problems with creative, sustainable strategies.</p>
+                            </div>
+                            <div class="group border-t border-b border-white/10 py-5 cursor-default">
+                                <p class="font-header font-bold text-step-1 text-white/80 group-hover:text-white transition-colors tracking-tight leading-snug">Sustainability<br>Consultant</p>
+                                <p class="font-body italic text-sm text-white/0 group-hover:text-white/50 transition-all duration-300 max-h-0 group-hover:max-h-20 overflow-hidden leading-relaxed mt-0 group-hover:mt-3">Helping teams expand reach while scaling positive environmental impact.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COL 3: Contact -->
+                    <div>
+                        <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Get in Touch</h3>
+                        <div class="flex flex-col gap-5">
+                            <a href="https://linkedin.com/in/michaelkmckay" target="_blank" class="inline-block font-header font-bold text-step-1 text-white/70 hover:text-white border-b border-white/20 hover:border-white/60 pb-1 transition-all w-fit tracking-tight">LinkedIn</a>
+                            <a href="mailto:mckaymichaelk@gmail.com" class="inline-block font-header font-bold text-step-1 text-white/70 hover:text-white border-b border-white/20 hover:border-white/60 pb-1 transition-all w-fit tracking-tight">Email Me</a>
+                            <a href="tel:6048259224" class="inline-block font-header font-bold text-step-1 text-white/70 hover:text-white border-b border-white/20 hover:border-white/60 pb-1 transition-all w-fit tracking-tight">604.825.9224</a>
+                            <a href="assets/files/Good Choice.pdf" download="Good Choice.pdf" class="inline-block font-header font-bold text-step-1 text-white/70 hover:text-white border-b border-white/20 hover:border-white/60 pb-1 transition-all w-fit tracking-tight">Download Resume</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom bar -->
+                <div class="mt-20 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <p class="font-header text-[10px] uppercase tracking-widest text-white/25">&copy; 2025 Michael McKay. All rights reserved.</p>
+                    <p class="font-body italic text-sm text-white/25">"Using business as a force for good."</p>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
     <script src="script.js"></script>
 </body>

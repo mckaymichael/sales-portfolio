@@ -15,13 +15,18 @@
     --color-outline-variant: #D7C2B7;
     --color-tertiary-fixed: #F5DFC9;
     --color-on-tertiary-fixed: #25190C;
-    --header-height: 5rem; /* 80px matches h-20 */
-    
+    --header-height: 5rem;
+    /* 80px matches h-20 */
+
     /* SDG Colors */
     --sdg-4: #C5192D;
     --sdg-11: #F89D2A;
     --sdg-12: #BF8B2E;
     --sdg-13: #3F7E44;
+}
+
+image {
+    border-radius: 1px !important;
 }
 
 html,
@@ -64,6 +69,7 @@ h6 {
 
 /* Editorial Typography Utilities */
 .display-lg {
+    font-family: 'Figtree', sans-serif;
     font-size: 3.5rem;
     line-height: 1.1;
     letter-spacing: -0.02em;
@@ -183,7 +189,8 @@ h6 {
 #carousel-track {
     cursor: grab !important;
     user-select: none;
-    transition: none !important; /* This one's gone for good */
+    transition: none !important;
+    /* This one's gone for good */
 }
 
 #carousel-track:active {
@@ -227,4 +234,112 @@ header#site-header.is-transparent,
     border-style: none !important;
     border: none !important;
     box-shadow: none !important;
+}
+
+/* --- ENACTUS IMPACT REDESIGN --- */
+.impact-container {
+    max-width: 1400px;
+}
+
+.project-row {
+    padding: 6rem 0;
+    border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.project-row:last-child {
+    border-bottom: none;
+}
+
+.project-category {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--color-on-surface);
+    opacity: 0.6;
+    margin-bottom: 1.5rem;
+    font-family: 'Figtree', sans-serif;
+}
+
+.project-title-large {
+    font-family: 'Figtree', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.project-feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+}
+
+.project-feature-item {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-on-surface);
+    opacity: 0.5;
+    font-family: 'Figtree', sans-serif;
+}
+
+.btn-view-project {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--color-on-surface);
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    font-family: 'Figtree', sans-serif;
+}
+
+.btn-view-project:hover {
+    background-color: var(--color-on-surface);
+    color: var(--color-surface);
+}
+
+.project-image-container {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: 1px;
+    overflow: hidden;
+    background-color: var(--color-surface-container-low);
+}
+
+.project-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-row:hover .project-image-container img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+    .project-row {
+        flex-direction: column;
+        padding: 4rem 0;
+        gap: 2.5rem;
+    }
+
+    .project-row>div:first-child {
+        width: 100%;
+    }
+
+    .project-row>div:last-child {
+        width: 100%;
+    }
+
+    .project-title-large {
+        font-size: 2.2rem;
+    }
 }

@@ -46,6 +46,17 @@
                     borderRadius: {
                         'default': '4px',
                     },
+                    fontSize: {
+                        // Minor Third (1.200) typescale — base 16px
+                        'step-0': ['1rem',     { lineHeight: '1.6' }],  // 16px — body base
+                        'step-1': ['1.2rem',   { lineHeight: '1.6' }],  // 19.2px — body lg
+                        'step-2': ['1.44rem',  { lineHeight: '1.4' }],  // 23px — small display
+                        'step-3': ['1.728rem', { lineHeight: '1.3' }],  // 27.6px — h4
+                        'step-4': ['2.074rem', { lineHeight: '1.2' }],  // 33.2px — h3
+                        'step-5': ['2.488rem', { lineHeight: '1.15' }], // 39.8px — h2
+                        'step-6': ['2.986rem', { lineHeight: '1.1' }],  // 47.8px — h1
+                        'step-7': ['3.583rem', { lineHeight: '1.05' }], // 57.3px — hero display
+                    },
                 }
             }
         }
@@ -146,21 +157,21 @@
   </nav>
 </div>
 
-            <div class="max-w-[1200px] w-full mx-auto px-6 text-center relative z-10 flex flex-col justify-center items-center mt-24">
-                <h1 class="hero-text display-lg text-white mb-10 tracking-tight leading-[1.1]">
+            <div class="max-w-[1200px] w-full mx-auto px-6 text-center relative z-10 flex flex-col justify-center items-center mt-24 pb-16 md:pb-24">
+                <h1 class="hero-text font-header font-bold text-step-5 md:text-step-6 lg:display-lg text-white mb-6 md:mb-10 tracking-tight leading-[1.1]">
                     Scale Your Corporate, Social, and Environmental Impact
                     Without Slowing Business Growth
                 </h1>
                 
-                <p class="hero-text text-lg md:text-xl text-white/90 leading-relaxed max-w-[70ch] mb-16 font-body">
+                <p class="hero-text text-step-0 md:text-step-1 text-white/90 leading-relaxed max-w-[60ch] mb-10 md:mb-16 font-body">
                     I combine sales, marketing, and creative design to help you secure funding, build lasting partnerships, and drive strategic growth.
                 </p>
                 
-                <div class="hero-text flex flex-col sm:flex-row items-center gap-8">
-                    <a href="impact.html" class="btn-primary">
+                <div class="hero-text flex flex-col sm:flex-row items-center gap-4 sm:gap-8 w-full sm:w-auto">
+                    <a href="impact.html" class="btn-primary w-full sm:w-auto text-center">
                         See My Impact
                     </a>
-                    <a href="assets/files/Good Choice.pdf" download="Good Choice.pdf" class="btn-secondary">
+                    <a href="assets/files/Good Choice.pdf" download="Good Choice.pdf" class="btn-secondary w-full sm:w-auto text-center">
                         Download Resume
                     </a>
                 </div>
@@ -172,7 +183,7 @@
         <section id="competencies" class="w-full py-24 md:py-32 px-6 md:px-12 lg:px-20 overflow-hidden">
             <div class="max-w-[1400px] mx-auto">
                 <div class="mb-20 md:mb-28">
-                    <h2 class="font-serif text-4xl md:text-6xl text-on-surface italic leading-tight max-w-3xl">
+                    <h2 class="font-header font-bold text-step-5 md:text-step-6 text-on-surface leading-tight max-w-3xl">
                         Bringing Skills to Help You Grow.
                     </h2>
                 </div>
@@ -249,7 +260,7 @@
                         </div>
                         
                         <div class="border-t border-outline-variant/50 pt-5 flex-grow flex flex-col">
-                            <h3 class="font-serif italic text-3xl md:text-4xl text-on-surface mb-6 group-hover:text-primary transition-colors tracking-tight leading-tight">
+                            <h3 class="font-header font-bold text-step-4 md:text-step-5 text-on-surface mb-6 group-hover:text-primary transition-colors tracking-tight">
                                 High School Case Competition
                             </h3>
                             
@@ -263,7 +274,7 @@
                             </div>
                             
                             <div class="inline-flex items-center gap-3 text-primary font-header font-bold text-xs uppercase tracking-widest transition-all group-hover:gap-5">
-                                Read Article <span class="block w-8 h-[1px] bg-primary transition-all group-hover:w-12"></span>
+                                View Project <span class="block w-8 h-[1px] bg-primary transition-all group-hover:w-12"></span>
                             </div>
                         </div>
                     </a>
@@ -275,7 +286,7 @@
                         </div>
                         
                         <div class="border-t border-outline-variant/50 pt-5 flex-grow flex flex-col">
-                            <h3 class="font-serif italic text-3xl md:text-4xl text-on-surface mb-6 group-hover:text-primary transition-colors tracking-tight leading-tight">
+                            <h3 class="font-header font-bold text-step-4 md:text-step-5 text-on-surface mb-6 group-hover:text-primary transition-colors tracking-tight">
                                 EcoMeter
                             </h3>
                             
@@ -291,7 +302,7 @@
                             </div>
                             
                             <div class="inline-flex items-center gap-3 text-primary font-header font-bold text-xs uppercase tracking-widest transition-all group-hover:gap-5">
-                                Read Article <span class="block w-8 h-[1px] bg-primary transition-all group-hover:w-12"></span>
+                                View Project <span class="block w-8 h-[1px] bg-primary transition-all group-hover:w-12"></span>
                             </div>
                         </div>
                     </a>
@@ -303,7 +314,7 @@
                         </div>
                         
                         <div class="border-t border-outline-variant/50 pt-5 flex-grow flex flex-col">
-                            <h3 class="font-serif italic text-3xl md:text-4xl text-on-surface mb-6 group-hover:text-primary transition-colors tracking-tight leading-tight">
+                            <h3 class="font-header font-bold text-step-4 md:text-step-5 text-on-surface mb-6 group-hover:text-primary transition-colors tracking-tight">
                                 Lumóra
                             </h3>
                             
@@ -318,7 +329,7 @@
                             </div>
                             
                             <div class="inline-flex items-center gap-3 text-primary font-header font-bold text-xs uppercase tracking-widest transition-all group-hover:gap-5">
-                                Read Article <span class="block w-8 h-[1px] bg-primary transition-all group-hover:w-12"></span>
+                                View Project <span class="block w-8 h-[1px] bg-primary transition-all group-hover:w-12"></span>
                             </div>
                         </div>
                     </a>
@@ -340,9 +351,9 @@
                         </div>
                         <div class="relative z-10 flex-1 flex flex-col justify-start">
                             <p class="animate-content font-header font-bold text-[10px] md:text-xs uppercase tracking-[0.3em] mb-8 md:mb-12 opacity-80">Voices of Impact</p>
-                            <h3 class="animate-content font-body text-lg md:text-xl lg:text-3xl italic leading-snug md:leading-relaxed max-w-4xl mb-12 md:mb-16 select-none whitespace-pre-line tracking-tight">
+                            <p class="animate-content font-body text-lg md:text-xl lg:text-3xl italic leading-snug md:leading-relaxed max-w-4xl mb-12 md:mb-16 select-none whitespace-pre-line tracking-tight">
                                 &ldquo;Michael was one of the most engaged students I've had in the Bachelor of Creative Industries program. In my innovation and entrepreneurship class, he consistently asked sharp, practical questions that helped create a better learning environment for all of us. What sets Michael apart is his focus on application. His team's business pitch to a panel of industry experts was amazing. Instead of just learning the theory, he worked on building something real. Michael is down to earth, hard-working and has a genuine ability to lead and gets things done. He would be a huge asset to any organization and I wouldn't hesitate to recommend him!&rdquo;
-                            </h3>
+                            </p>
                         </div>
                         <div class="relative z-10 flex flex-col md:flex-row items-start md:items-end justify-between mt-auto w-full gap-8 pb-20 md:pb-0">
                             <div class="animate-content flex items-center gap-6">
@@ -363,11 +374,11 @@
                         </div>
                         <div class="relative z-10 flex-1 flex flex-col justify-start">
                             <p class="animate-content font-header font-bold text-[10px] md:text-xs uppercase tracking-[0.3em] mb-8 md:mb-12 opacity-80">Voices of Impact</p>
-                            <h3 class="animate-content font-body text-lg md:text-xl lg:text-3xl italic leading-snug md:leading-relaxed max-w-4xl mb-12 md:mb-16 select-none whitespace-pre-line tracking-tight">
+                            <p class="animate-content font-body text-lg md:text-xl lg:text-3xl italic leading-snug md:leading-relaxed max-w-4xl mb-12 md:mb-16 select-none whitespace-pre-line tracking-tight">
                                 &ldquo;Michael seems to genuinely care about his classmates' success. He give tons of feedback to others and offers advice (and photography service!) that is actually useful. He's also a sponge for knowledge, whether it's through books, podcasts, events, etc. 
 
 Also: He's super punctual. People notice that stuff.&rdquo;
-                            </h3>
+                            </p>
                         </div>
                         <div class="relative z-10 flex flex-col md:flex-row items-start md:items-end justify-between mt-auto w-full gap-8 pb-20 md:pb-0">
                             <div class="animate-content flex items-center gap-6">
@@ -390,9 +401,9 @@ Also: He's super punctual. People notice that stuff.&rdquo;
                         </div>
                         <div class="relative z-10 flex-1 flex flex-col justify-start">
                             <p class="animate-content font-header font-bold text-[10px] md:text-xs uppercase tracking-[0.3em] mb-8 md:mb-12 opacity-80">Voices of Impact</p>
-                            <h3 class="animate-content font-body text-lg md:text-xl lg:text-3xl italic leading-snug md:leading-relaxed max-w-4xl mb-12 md:mb-16 select-none whitespace-pre-line tracking-tight">
+                            <p class="animate-content font-body text-lg md:text-xl lg:text-3xl italic leading-snug md:leading-relaxed max-w-4xl mb-12 md:mb-16 select-none whitespace-pre-line tracking-tight">
                                 &ldquo;Michael makes an effort to talk to everyone and connect with them, I think that makes him stand out.&rdquo;
-                            </h3>
+                            </p>
                         </div>
                         <div class="relative z-10 flex flex-col md:flex-row items-start md:items-end justify-between mt-auto w-full gap-8 pb-20 md:pb-0">
                             <div class="animate-content flex items-center gap-6">

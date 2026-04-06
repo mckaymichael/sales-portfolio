@@ -45,6 +45,20 @@
                     },
                     borderRadius: {
                         'default': '4px',
+                    },
+                    fontSize: {
+                        // Minor Third (1.200) typescale — base 16px
+                        'step-0': ['1rem',     { lineHeight: '1.6' }],  // 16px — body base
+                        'step-1': ['1.2rem',   { lineHeight: '1.6' }],  // 19.2px — body lg
+                        'step-2': ['1.44rem',  { lineHeight: '1.4' }],  // 23px — small display
+                        'step-3': ['1.728rem', { lineHeight: '1.3' }],  // 27.6px — h4
+                        'step-4': ['2.074rem', { lineHeight: '1.2' }],  // 33.2px — h3
+                        'step-5': ['2.488rem', { lineHeight: '1.15' }], // 39.8px — h2
+                        'step-6': ['2.986rem', { lineHeight: '1.1' }],  // 47.8px — h1
+                        'step-7': ['3.583rem', { lineHeight: '1.05' }], // 57.3px — hero display
+                    },
+                    screens: {
+                        'custom-books': '1090px',
                     }
                 }
             }
@@ -60,99 +74,139 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
     <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/api/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/api/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     
     <!-- Lenis Smooth Scroll -->
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     
     <link rel="stylesheet" href="style.css">
     <style>
-        .editorial-reveal { opacity: 0; transform: translateY(30px); }
         .book-item:hover .book-number { color: var(--tw-primary); }
+        img { border-radius: 1px; }
+        
+        /* Fix for potential horizontal overflow */
+        body { overflow-x: hidden; width: 100%; position: relative; }
+        
+        /* Mobile Menu Transitions */
+        #mobile-menu {
+            transition: max-height 0.3s ease-in-out, opacity 0.2s ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body antialiased selection:bg-primary/10">
 
     <!-- Header Overlay Gradient -->
-    <div class="fixed top-0 left-0 w-full h-32 bg-gradient-to-b from-black/5 to-transparent z-40 pointer-events-none"></div>
+    <div class="fixed top-0 left-0 w-full h-32 bg-gradient-to-b from-black/5 to-transparent z-[90] pointer-events-none"></div>
 
-    <div class="fixed top-0 left-0 w-full z-50">
-      <nav class="bg-surface text-on-surface shadow-sm border-b border-outline-variant transition-colors duration-300">
+    <!-- Standard Responsive Header Container -->
+    <div class="fixed top-0 left-0 w-full z-[100] transition-all duration-300">
+      <nav class="bg-[#FFF8F3] text-gray-900 shadow-sm border-b border-[#D7C2B7]">
         <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between h-20 items-center">
+            
+            <!-- Logo -->
             <div class="flex-shrink-0 flex items-center relative z-20">
               <a href="index.html" class="text-xl md:text-2xl font-header font-bold uppercase tracking-[0.2em] hover:opacity-80 transition-opacity">
                 Michael McKay
               </a>
             </div>
+            
+            <!-- Desktop Nav -->
             <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
               <a href="impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm hover:bg-gray-100/20">My Impact</a>
               <a href="gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm hover:bg-gray-100/20">Nature Gallery</a>
-              <a href="about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm bg-gray-100/20">About Me</a>
-              <a href="assets/files/Good Choice.pdf" download="Good Choice.pdf" class="ml-4 btn-primary relative">Resume</a>
+              <a href="about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm bg-gray-200">About Me</a>
+              <a href="assets/files/Good Choice.pdf" download="Good Choice.pdf" class="ml-4 btn-primary relative">
+                Resume
+              </a>
             </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="flex items-center lg:hidden relative z-50">
+              <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-100/20 focus:outline-none transition-colors" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg id="icon-menu-closed" class="block h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg id="icon-menu-open" class="hidden h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Mobile Menu Container -->
+        <div id="mobile-menu" class="lg:hidden absolute top-20 left-0 w-full bg-[#FFF8F3] shadow-xl border-t border-[#D7C2B7] overflow-hidden max-h-0 transition-all duration-300 ease-in-out z-40">
+          <div class="px-6 pt-4 pb-8 space-y-2">
+            <a href="impact.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm">My Impact</a>
+            <a href="gallery.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm">Nature Gallery</a>
+            <a href="about.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-sm">About Me</a>
+            <a href="assets/files/Good Choice.pdf" download="Good Choice.pdf" class="btn-primary block w-full text-center mt-6">
+              Download Resume
+            </a>
           </div>
         </div>
       </nav>
     </div>
 
-    <main class="pt-32 min-h-screen">
+    <main class="pt-20 min-h-screen">
         <!-- HERO / VIDEO -->
-        <section class="max-w-[1400px] mx-auto px-4 mb-24 md:mb-40">
-            <div class="w-full aspect-video md:aspect-[21/9] bg-black relative rounded-[1px] overflow-hidden mb-12 shadow-[0_0_1px_rgba(0,0,0,0.1)]">
-                <video src="assets/video/landscape-me.mp4" autoplay loop muted playsinline class="w-full h-full object-cover opacity-80"></video>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex flex-col justify-end p-8 md:p-16">
-                     <h1 class="font-header font-bold text-5xl md:text-8xl text-white uppercase tracking-tight leading-tight">
-                        The Process <br/>of Becoming
+        <section class="w-full max-w-[1400px] mx-auto px-4 pb-4">
+            <div class="w-full h-[calc(100vh-80px)] bg-black relative rounded-[1px] overflow-hidden">
+                <video src="assets/video/landscape-me.mp4" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex flex-col justify-end items-center md:items-start p-8 md:p-16">
+                     <h1 class="font-header font-bold text-5xl md:text-8xl text-white uppercase tracking-tight leading-tight text-center md:text-left">
+                        The Process of <br class="hidden md:block">Becoming
                     </h1>
                 </div>
             </div>
         </section>
 
         <!-- INTRODUCTION / PHILOSOPHY -->
-        <section class="max-w-[1200px] mx-auto px-4 mb-32 md:mb-48 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
-            <div class="lg:col-span-8">
-                <div class="prose prose-xl prose-p:font-body text-on-surface/80 leading-relaxed font-body">
-                    <h2 class="font-header font-bold text-[12px] uppercase tracking-[0.3em] font-bold text-primary mb-12">Biography</h2>
-                    <p class="first-letter:text-8xl first-letter:font-bold first-letter:text-primary first-letter:mr-4 first-letter:float-left first-letter:leading-[0.8] mb-12 text-2xl md:text-3xl italic font-serif leading-snug text-on-surface">
-                        I am a driven and adaptable business student with a passion for innovation and social impact. My experience in Enactus BCIT has taught me the value of teamwork, problem-solving, and community engagement. I am a quick learner with a strong work ethic and a proven ability to contribute to meaningful projects. Life scares me, but a fast heart rate never hurt anyone, right?
-                    </p>
-                    <p class="text-xl md:text-2xl mt-12 mb-12 opacity-90">
-                        One of the biggest challenges in life for most people is performing at their very best. How would you define it? For me, right now, it's about the process of becoming. I am the best that I can be at this moment. I'm building the skills necessary to become influential and leadership material.
-                    </p>
-                </div>
+        <section class="max-w-[1200px] mx-auto px-4 mt-24 md:mt-32 mb-32 md:mb-48 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 overflow-hidden">
+            <div class="lg:col-span-8 min-w-0 flex flex-col gap-8">
+                <h2 class="font-header font-bold text-[12px] uppercase tracking-[0.3em] text-primary">Biography</h2>
+                <p class="first-letter:text-8xl first-letter:font-bold first-letter:text-primary first-letter:mr-4 first-letter:float-left first-letter:leading-[0.8] text-xl md:text-2xl italic font-serif leading-snug text-on-surface">
+                    I am a driven and adaptable business student with a passion for innovation and social impact. My experience in Enactus BCIT has taught me the value of teamwork, problem-solving, and community engagement. I am a quick learner with a strong work ethic and a proven ability to contribute to meaningful projects. Life scares me, but a fast heart rate never hurt anyone, right?
+                </p>
+                <p class="text-lg md:text-xl text-on-surface/75 leading-relaxed font-body clear-both">
+                    One of the biggest challenges in life for most people is performing at their very best. How would you define it? For me, right now, it's about the process of becoming. I am the best that I can be at this moment. I'm building the skills necessary to become influential and leadership material.
+                </p>
+
+                <!-- FEATURED MANTRA — no label, let the quote speak -->
+                <blockquote class="bg-tertiary-fixed/50 border-l-4 border-primary px-6 py-5 rounded-[1px]">
+                    <p class="font-serif italic text-2xl md:text-3xl text-primary leading-snug">"Using business as a force for good."</p>
+                </blockquote>
             </div>
             
             <!-- STRENGTHS DOSSIER -->
-            <div class="lg:col-span-4 border-l border-outline-variant/30 pl-8 lg:pl-12 flex flex-col gap-12">
+            <div class="lg:col-span-4 border-l border-outline-variant/30 pl-6 lg:pl-8 flex flex-col gap-10 min-w-0 overflow-hidden">
                 <div>
-                     <h4 class="font-header text-[10px] uppercase tracking-widest font-bold text-primary mb-6">Core Values</h4>
-                     <p class="font-body text-xl italic text-on-surface/80">"Using business as a force for good."</p>
-                </div>
-
-                <div>
-                    <h4 class="font-header text-[10px] uppercase tracking-widest font-bold text-primary mb-6">Natural Strengths</h4>
-                    <div class="flex flex-col gap-4">
-                        <div class="flex items-center gap-3 border-b border-outline-variant/20 pb-3">
-                            <span class="font-header font-bold text-xs uppercase tracking-widest min-w-[100px]">Connectedness</span>
-                            <div class="h-1 flex-grow bg-primary/10 rounded-full overflow-hidden"><div class="h-full bg-primary w-[95%]"></div></div>
+                    <h4 class="font-header text-[10px] uppercase tracking-widest font-bold text-primary mb-5">Natural Strengths</h4>
+                    <div class="flex flex-col gap-5">
+                        <div class="border-b border-outline-variant/20 pb-4">
+                            <span class="font-header font-bold text-[10px] uppercase tracking-widest text-primary/70 block mb-1">Connectedness</span>
+                            <p class="font-serif italic text-base md:text-lg text-on-surface/80 leading-snug">Everything happens for a reason.</p>
                         </div>
-                        <div class="flex items-center gap-3 border-b border-outline-variant/20 pb-3">
-                            <span class="font-header font-bold text-xs uppercase tracking-widest min-w-[100px]">Intellection</span>
-                            <div class="h-1 flex-grow bg-primary/10 rounded-full overflow-hidden"><div class="h-full bg-primary w-[90%]"></div></div>
+                        <div class="border-b border-outline-variant/20 pb-4">
+                            <span class="font-header font-bold text-[10px] uppercase tracking-widest text-primary/70 block mb-1">Learner</span>
+                            <p class="font-serif italic text-base md:text-lg text-on-surface/80 leading-snug">The process of learning, rather than the outcome, excites me.</p>
                         </div>
-                        <div class="flex items-center gap-3 border-b border-outline-variant/20 pb-3">
-                            <span class="font-header font-bold text-xs uppercase tracking-widest min-w-[100px]">Adaptability</span>
-                            <div class="h-1 flex-grow bg-primary/10 rounded-full overflow-hidden"><div class="h-full bg-primary w-[98%]"></div></div>
+                        <div class="border-b border-outline-variant/20 pb-4">
+                            <span class="font-header font-bold text-[10px] uppercase tracking-widest text-primary/70 block mb-1">Adaptability</span>
+                            <p class="font-serif italic text-base md:text-lg text-on-surface/80 leading-snug">Take things as they come with willingness.</p>
                         </div>
-                        <div class="flex items-center gap-3 border-b border-outline-variant/20 pb-3">
-                            <span class="font-header font-bold text-xs uppercase tracking-widest min-w-[100px]">Learner</span>
-                            <div class="h-1 flex-grow bg-primary/10 rounded-full overflow-hidden"><div class="h-full bg-primary w-[95%]"></div></div>
+                        <div class="border-b border-outline-variant/20 pb-4">
+                            <span class="font-header font-bold text-[10px] uppercase tracking-widest text-primary/70 block mb-1">Intellection</span>
+                            <p class="font-serif italic text-base md:text-lg text-on-surface/80 leading-snug">Introspective and appreciative of intellectual discussion.</p>
                         </div>
-                        <div class="flex items-center gap-3 border-b border-outline-variant/20 pb-3">
-                            <span class="font-header font-bold text-xs uppercase tracking-widest min-w-[100px]">Belief</span>
-                            <div class="h-1 flex-grow bg-primary/10 rounded-full overflow-hidden"><div class="h-full bg-primary w-[85%]"></div></div>
+                        <div class="border-b border-outline-variant/20 pb-4">
+                            <span class="font-header font-bold text-[10px] uppercase tracking-widest text-primary/70 block mb-1">Belief</span>
+                            <p class="font-serif italic text-base md:text-lg text-on-surface/80 leading-snug">Core values that provide a strong sense of purpose.</p>
                         </div>
                     </div>
                     <a href="assets/files/McKay-Michael-All_34.pdf" target="_blank" class="inline-block mt-8 text-[10px] font-header font-bold uppercase tracking-widest text-primary border-b border-primary hover:border-transparent transition-all">Download Full CliftonStrengths Report</a>
@@ -160,9 +214,11 @@
             </div>
         </section>
 
+
+
         <!-- THE PHILOSOPHY OF PRESENCE -->
         <section class="w-full bg-secondary-dark py-24 md:py-40 text-white relative overflow-hidden mb-32 md:mb-48">
-            <div class="max-w-[1000px] mx-auto px-4 text-center relative z-10 transition-all duration-1000 editorial-reveal" id="scroll-presence">
+            <div class="max-w-[1000px] mx-auto px-4 text-center relative z-10" id="presence-content">
                 <h2 class="font-header text-[12px] uppercase tracking-[0.3em] font-bold text-primary-container mb-8">The Philosophy of Presence</h2>
                 <p class="font-serif text-3xl md:text-5xl italic leading-tight mb-12">
                    You can't truly connect with someone if you're not present in the moment.
@@ -181,262 +237,160 @@
                     </a>
                 </div>
             </div>
-            <div class="absolute inset-x-0 bottom-0 top-0 z-0 overflow-hidden opacity-20 pointer-events-none">
+            <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
                 <img src="assets/nature/nature-14.jpg" class="w-full h-full object-cover blur-2xl scale-110">
             </div>
         </section>
 
-        <!-- THE LIBRARY (ESSAY + BOOK LIST) -->
-        <section class="max-w-[1400px] mx-auto px-4 mb-32 md:mb-48">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
-                
-                <!-- FEATURED ESSAY -->
-                <div class="lg:col-span-12 mb-16 lg:mb-24">
-                    <h2 class="font-header font-bold text-[12px] uppercase tracking-[0.3em] font-bold text-primary mb-12">The 26-Book Challenge</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-start">
-                        <div class="prose prose-lg md:prose-xl text-on-surface/80 leading-relaxed font-body">
-                            <p class="first-letter:text-7xl first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left first-letter:leading-[0.8] mb-8">
-                                In January of 2025, I was unemployed, and had been unemployed for over 7 months. I felt stuck with no ambition. I lost hope of finding a career.
-                            </p>
-                            <p class="mb-8">
-                                With the new year sparking a desire in me to improve, I set a challenge: To become a reader. I used to read all the time as a kid and I was longing for stories, wisdom, and a reason to learn. So I promised to read one book every two weeks.
-                            </p>
-                        </div>
-                        <div class="prose prose-lg md:prose-xl text-on-surface/80 leading-relaxed font-body">
-                            <p class="mb-8 italic font-serif text-2xl text-on-surface">
-                                All-in-all, reading has sparked growth in me. It made me more patient and capable of doing boring things without getting distracted.
-                            </p>
-                            <p>
-                                Most importantly, I learned that I'm not on Earth to live a life for me. I'm here for other people. I'm here to serve. The more grateful I become and the more humility I have, the happier I am.
-                            </p>
-                        </div>
-                    </div>
+        <!-- 26-BOOK CHALLENGE -->
+        <section class="max-w-[1400px] mx-auto px-4 mb-20 md:mb-28">
+            <h2 class="font-header font-bold text-[12px] uppercase tracking-[0.3em] text-primary mb-12">The 26-Book Challenge</h2>
 
-                    <!-- IMPACT BOOKS -->
-                    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="bg-surface-variant/30 p-8 border-l-4 border-primary rounded-[1px]">
-                             <h4 class="font-header font-bold text-xs uppercase tracking-widest text-primary mb-2">Most Impactful</h4>
-                             <p class="font-serif italic text-2xl text-on-surface mb-2 leading-tight">Inner Excellence by Jim Murphy</p>
-                             <p class="font-body text-lg opacity-70">"Love, Courage, & Wisdom. Live for something greater than yourself."</p>
-                        </div>
-                        <div class="bg-surface-variant/30 p-8 border-l-4 border-primary rounded-[1px]">
-                             <h4 class="font-header font-bold text-xs uppercase tracking-widest text-primary mb-2">Most Impactful</h4>
-                             <p class="font-serif italic text-2xl text-on-surface mb-2 leading-tight">Walden by Henry D. Thoreau</p>
-                             <p class="font-body text-lg opacity-70">"Complex in writing but simple in principle. You'll find that less is more."</p>
-                        </div>
-                    </div>
+            <!-- Editorial layout: narrow prose + sidebar. Inspired by DESIGN.md — luxury print monograph feel -->
+            <div class="flex flex-col lg:flex-row gap-12 lg:gap-24">
+
+                <!-- PROSE COLUMN — capped at readable measure (~65 chars per line) -->
+                <div class="w-full lg:w-auto lg:max-w-[65ch] shrink-0 text-on-surface/80 leading-relaxed font-body space-y-6">
+                    <p class="text-xl md:text-2xl italic font-serif text-on-surface leading-snug">
+                        <span class="float-left text-7xl font-bold leading-[0.8] mr-3 text-primary font-header">I</span>n January of 2025, I was unemployed, and had been unemployed for over 7 months. I felt stuck with no ambition. I lost hope of finding a career.
+                    </p>
+                    <p class="text-base md:text-lg clear-both">
+                        With the new year sparking a desire in me to improve, I set a challenge: To become a reader. I used to read all the time as a kid and I was longing for stories, wisdom, and a reason to learn. So I promised to read one book every two weeks.
+                    </p>
+                    <p class="mb-6 italic font-serif text-xl md:text-2xl text-on-surface leading-snug">
+                        All-in-all, reading has sparked growth in me. It made me more patient and capable of doing boring things without getting distracted.
+                    </p>
+                    <p class="text-base md:text-lg">
+                        Most importantly, I learned that I'm not on Earth to live a life for me. I'm here for other people. I'm here to serve. The more grateful I become and the more humility I have, the happier I am.
+                    </p>
                 </div>
 
-                <!-- THE CATALOGUE (FULL WIDTH GRID SECTION) -->
-                <div class="lg:col-span-12 bg-surface-container-low p-6 md:p-12 lg:p-20 rounded-[1px]">
-                    <div class="flex justify-between items-end mb-12 pb-4 border-b border-outline-variant/40">
-                         <h3 class="font-header font-bold text-2xl lg:text-3xl uppercase tracking-tighter">Index of 2025</h3>
-                         <span class="font-header font-bold text-[10px] uppercase opacity-40">25 Volumes</span>
+                <!-- SIDEBAR — Most Impactful cards, fills remaining space -->
+                <div class="flex flex-col gap-6 flex-grow">
+                    <div class="bg-surface-variant/30 p-6 md:p-8 border-l-4 border-primary rounded-[1px]">
+                        <h4 class="font-header font-bold text-xs uppercase tracking-widest text-primary mb-2">Most Impactful</h4>
+                        <p class="font-serif italic text-xl md:text-2xl text-on-surface mb-2 leading-tight">Inner Excellence by Jim Murphy</p>
+                        <p class="font-body text-base opacity-70">"Love, Courage, & Wisdom. Live for something greater than yourself."</p>
                     </div>
-                    
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 md:gap-x-12 lg:gap-x-16 gap-y-6">
-                        <ol class="contents">
-                            <!-- 01 -->
-                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=Letters+from+a+Stoic+Seneca" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">01</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Letters from a Stoic</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Seneca</span>
-                                </a>
-                            </li>
-                            <!-- 02 -->
-                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=Inner+Excellence+Jim+Murphy" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">02</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Inner Excellence</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Murphy</span>
-                                </a>
-                            </li>
-                            <!-- 03 -->
-                             <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=The+Design+of+Everyday+Things+Don+Norman" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">03</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">The Design of Everyday Things</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Norman</span>
-                                </a>
-                            </li>
-                            <!-- 04 -->
-                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=Fiber+Fueled+Will+Bulsiewicz" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">04</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Fiber Fueled</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Bulsiewicz</span>
-                                </a>
-                            </li>
-                            <!-- 05 -->
-                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=The+Psychology+of+Money+Morgan+Housel" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">05</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">The Psychology of Money</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Housel</span>
-                                </a>
-                            </li>
-                            <!-- 06 -->
-                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=The+4-Hour+Workweek+Tim+Ferriss" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">06</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">The 4-Hour Workweek</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Ferriss</span>
-                                </a>
-                            </li>
-                            <!-- 07 -->
-                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=The+Simple+Path+to+Wealth+JL+Collins" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">07</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">The Simple Path to Wealth</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Collins</span>
-                                </a>
-                            </li>
-                            <!-- 08 -->
-                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=Discipline+Equals+Freedom+Jocko+Willink" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">08</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Discipline Equals Freedom</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Willink</span>
-                                </a>
-                            </li>
-                            <!-- 09 -->
-                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=Blink+Malcolm+Gladwell" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">09</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Blink</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Gladwell</span>
-                                </a>
-                            </li>
-                            <!-- 10 -->
-                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=Mere+Christianity+CS+Lewis" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">10</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Mere Christianity</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Lewis</span>
-                                </a>
-                            </li>
-                            <!-- 11 -->
-                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=The+100+Startup+Chris+Guillebeau" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">11</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">The $100 Startup</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Guillebeau</span>
-                                </a>
-                            </li>
-                            <!-- 12 -->
-                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=How+to+Read+Churches+Denis+McNamara" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">12</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">How to Read Churches</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">McNamara</span>
-                                </a>
-                            </li>
-                            <!-- 13 -->
-                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=Orthodoxy+GK+Chesterton" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">13</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Orthodoxy</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Chesterton</span>
-                                </a>
-                            </li>
-                            <!-- 14 -->
-                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=Walden+Henry+David+Thoreau" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">14</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Walden</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Thoreau</span>
-                                </a>
-                            </li>
-                            <!-- 15 -->
-                             <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=Why+We+re+Catholic+Trent+Horn" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">15</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Why We're Catholic</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Horn</span>
-                                </a>
-                            </li>
-                            <!-- 16 -->
-                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=Tools+of+Titans+Tim+Ferriss" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">16</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Tools of Titans</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Ferriss</span>
-                                </a>
-                            </li>
-                            <!-- 17 -->
-                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=How+to+Avoid+a+Climate+Disaster+Bill+Gates" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">17</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">How to Avoid a Climate Disaster</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Gates</span>
-                                </a>
-                            </li>
-                            <!-- 18 -->
-                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=The+Agony+and+the+Ecstasy+Irving+Stone" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">18</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">The Agony and the Ecstasy</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Stone</span>
-                                </a>
-                            </li>
-                            <!-- 19 -->
-                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=Ecommerce+2023+Traver+Laudon" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">19</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Ecommerce 2023, 17e</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Laudon</span>
-                                </a>
-                            </li>
-                            <!-- 20 -->
-                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=Anything+You+Want+Derek+Sivers" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">20</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Anything You Want</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Sivers</span>
-                                </a>
-                            </li>
-                            <!-- 21 -->
-                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=Dragon+Keeper+Robin+Hobb" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">21</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Dragon Keeper</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Hobb</span>
-                                </a>
-                            </li>
-                            <!-- 22 -->
-                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=Human+Nature+Kate+Marvel" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">22</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Human Nature</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Marvel</span>
-                                </a>
-                            </li>
-                            <!-- 23 -->
-                             <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=The+Abolition+of+Man+CS+Lewis" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">23</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">The Abolition of Man</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Lewis</span>
-                                </a>
-                            </li>
-                            <!-- 24 -->
-                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=The+Great+Divorce+CS+Lewis" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">24</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">The Great Divorce</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Lewis</span>
-                                </a>
-                            </li>
-                            <!-- 25 -->
-                            <li class="book-item pb-2 border-b border-outline-variant/10 group transition-all min-w-0">
-                                <a href="https://www.amazon.com/s?k=Tao+Te+Ching+Stephen+Mitchell" target="_blank" class="flex gap-4 items-center group">
-                                    <span class="book-number font-header font-bold text-[8px] uppercase opacity-30 transition-colors">25</span>
-                                    <span class="text-on-surface opacity-80 group-hover:opacity-100 italic font-serif flex-grow truncate">Tao Te Ching</span>
-                                    <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 transition-all shrink-0">Mitchell</span>
-                                </a>
-                            </li>
-                        </ol>
+                    <div class="bg-surface-variant/30 p-6 md:p-8 border-l-4 border-primary rounded-[1px]">
+                        <h4 class="font-header font-bold text-xs uppercase tracking-widest text-primary mb-2">Most Impactful</h4>
+                        <p class="font-serif italic text-xl md:text-2xl text-on-surface mb-2 leading-tight">Walden by Henry D. Thoreau</p>
+                        <p class="font-body text-base opacity-70">"Complex in writing but simple in principle. You'll find that less is more."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- INDEX OF 2025 — pulled out of the nested grid entirely, full-width tinted band -->
+        <section class="w-full bg-surface-container-low mb-32 md:mb-48">
+            <div class="max-w-[1400px] mx-auto px-4 py-10 md:py-14 lg:py-16">
+                <div class="flex justify-between items-end mb-10 pb-4 border-b border-outline-variant/40">
+                    <h3 class="font-header font-bold text-2xl lg:text-3xl uppercase tracking-tighter">Index of 2025</h3>
+                    <span class="font-header font-bold text-[10px] uppercase opacity-40">25 Volumes</span>
+                </div>
+
+                <!-- 1 col → 2 col (sm 640px) → 3 col (custom-books 1090px) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 custom-books:grid-cols-3 gap-x-8 gap-y-4">
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">01</span><a href="https://www.amazon.com/s?k=Letters+from+a+Stoic+Seneca" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">Letters from a Stoic</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Seneca</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">02</span><a href="https://www.amazon.com/s?k=Inner+Excellence+Jim+Murphy" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">Inner Excellence</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Murphy</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">03</span><a href="https://www.amazon.com/s?k=The+Design+of+Everyday+Things+Don+Norman" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">The Design of Everyday Things</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Norman</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">04</span><a href="https://www.amazon.com/s?k=Fiber+Fueled+Will+Bulsiewicz" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">Fiber Fueled</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Bulsiewicz</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">05</span><a href="https://www.amazon.com/s?k=The+Psychology+of+Money+Morgan+Housel" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">The Psychology of Money</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Housel</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">06</span><a href="https://www.amazon.com/s?k=The+4-Hour+Workweek+Tim+Ferriss" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">The 4-Hour Workweek</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Ferriss</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">07</span><a href="https://www.amazon.com/s?k=The+Simple+Path+to+Wealth+JL+Collins" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">The Simple Path to Wealth</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Collins</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">08</span><a href="https://www.amazon.com/s?k=Discipline+Equals+Freedom+Jocko+Willink" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">Discipline Equals Freedom</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Willink</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">09</span><a href="https://www.amazon.com/s?k=Blink+Malcolm+Gladwell" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">Blink</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Gladwell</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">10</span><a href="https://www.amazon.com/s?k=Mere+Christianity+CS+Lewis" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">Mere Christianity</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Lewis</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">11</span><a href="https://www.amazon.com/s?k=The+100+Startup+Chris+Guillebeau" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">The $100 Startup</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Guillebeau</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">12</span><a href="https://www.amazon.com/s?k=How+to+Read+Churches+Denis+McNamara" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">How to Read Churches</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">McNamara</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">13</span><a href="https://www.amazon.com/s?k=Orthodoxy+GK+Chesterton" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">Orthodoxy</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Chesterton</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">14</span><a href="https://www.amazon.com/s?k=Walden+Henry+David+Thoreau" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">Walden</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Thoreau</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">15</span><a href="https://www.amazon.com/s?k=Why+We+re+Catholic+Trent+Horn" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">Why We're Catholic</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Horn</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">16</span><a href="https://www.amazon.com/s?k=Tools+of+Titans+Tim+Ferriss" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">Tools of Titans</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Ferriss</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">17</span><a href="https://www.amazon.com/s?k=How+to+Avoid+a+Climate+Disaster+Bill+Gates" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">How to Avoid a Climate Disaster</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Gates</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">18</span><a href="https://www.amazon.com/s?k=The+Agony+and+the+Ecstasy+Irving+Stone" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">The Agony and the Ecstasy</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Stone</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">19</span><a href="https://www.amazon.com/s?k=Ecommerce+2023+Traver+Laudon" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">Ecommerce 2023, 17e</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Laudon</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">20</span><a href="https://www.amazon.com/s?k=Anything+You+Want+Derek+Sivers" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">Anything You Want</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Sivers</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">21</span><a href="https://www.amazon.com/s?k=Dragon+Keeper+Robin+Hobb" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">Dragon Keeper</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Hobb</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">22</span><a href="https://www.amazon.com/s?k=Human+Nature+Kate+Marvel" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">Human Nature</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Marvel</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">23</span><a href="https://www.amazon.com/s?k=The+Abolition+of+Man+CS+Lewis" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">The Abolition of Man</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Lewis</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">24</span><a href="https://www.amazon.com/s?k=The+Great+Divorce+CS+Lewis" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">The Great Divorce</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Lewis</span>
+                    </div>
+                    <div class="book-item flex justify-between items-center py-2 border-b border-outline-variant/10 group min-w-0 overflow-hidden">
+                        <div class="flex items-center gap-3 min-w-0"><span class="book-number font-header font-bold text-[8px] uppercase opacity-30 shrink-0">25</span><a href="https://www.amazon.com/s?k=Tao+Te+Ching+Stephen+Mitchell" target="_blank" class="italic font-serif truncate text-sm opacity-80 group-hover:opacity-100 hover:underline min-w-0">Tao Te Ching</a></div>
+                        <span class="text-[8px] font-header font-bold uppercase opacity-20 group-hover:opacity-60 shrink-0 ml-2">Mitchell</span>
                     </div>
                 </div>
             </div>
@@ -470,29 +424,15 @@
         </div>
     </footer>
 
+    <script src="script.js"></script>
     <script>
-        // Init Lenis
+        // Lenis smooth scroll for About page
         const lenis = new Lenis();
         function raf(time) {
             lenis.raf(time);
             requestAnimationFrame(raf);
         }
         requestAnimationFrame(raf);
-
-        // GSAP Scroll Animations
-        gsap.registerPlugin(ScrollTrigger);
-        
-        gsap.to('#scroll-presence', {
-            scrollTrigger: {
-                trigger: '#scroll-presence',
-                start: 'top 80%',
-                once: true
-            },
-            opacity: 1,
-            y: 0,
-            duration: 1.2,
-            ease: 'power3.out'
-        });
     </script>
 </body>
 </html>

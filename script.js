@@ -18,6 +18,19 @@ gsap.ticker.add((time) => {
 
 gsap.ticker.lagSmoothing(0);
 
+// Smooth scroll for all internal anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#' || targetId === '') return;
+        lenis.scrollTo(targetId, {
+            offset: -80, // Accounts for head-20 (80px)
+            duration: 0.8
+        });
+    });
+});
+
 
 
 // Image Protection: Disable right-click on all images

@@ -322,19 +322,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- SMOOTH SCROLL FOR ANCHORS ---
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            gsap.to(window, {
-                duration: 1,
-                scrollTo: targetId,
-                ease: "power2.inOut"
-            });
-        });
-    });
-
     // --- AUTO SCROLL BUTTON LOGIC ---
     const autoScrollBtn = document.getElementById('auto-scroll-btn');
     if (autoScrollBtn) {

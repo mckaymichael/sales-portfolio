@@ -210,15 +210,50 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- WHIMSICAL THOUGHT LOGIC (Testimonial Arrows) ---
+    const thoughts = [
+        "I'm awesome", "Leader Material", "Curious Cat", "Dog Person",
+        "Tree Hugger", "Goofball", "Goofy Goober", "Silly Goose",
+        "Team Player", "Caring", "Sponge", "Talkative", "Entrepreneur", "Innovative", "Creative", "🐶🐶🐶", "📸 Gotcha 📸", "You look good 😜",
+    ];
+
+    function createThought(btn) {
+        const thought = document.createElement('div');
+        thought.textContent = thoughts[Math.floor(Math.random() * thoughts.length)];
+        thought.className = 'absolute pointer-events-none font-header font-bold text-[10px] uppercase tracking-widest text-white/90 whitespace-nowrap z-[100]';
+        
+        // Position it above the button relative to the viewport/document
+        const rect = btn.getBoundingClientRect();
+        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        thought.style.position = 'absolute';
+        thought.style.left = `${rect.left + rect.width / 2 + scrollLeft}px`;
+        thought.style.top = `${rect.top + scrollTop - 10}px`;
+        thought.style.transform = 'translateX(-50%)';
+        
+        document.body.appendChild(thought);
+        
+        gsap.to(thought, {
+            y: -40,
+            opacity: 0,
+            duration: 0.9,
+            ease: "power1.out",
+            onComplete: () => thought.remove()
+        });
+    }
+
     if (track && slides.length > 0) {
         if (nextBtns.length > 0 && prevBtns.length > 0) {
             nextBtns.forEach(btn => btn.addEventListener('click', () => {
                 currentIndex = (currentIndex + 1) % slides.length;
                 snapToCurrentSlide();
+                createThought(btn);
             }));
             prevBtns.forEach(btn => btn.addEventListener('click', () => {
                 currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
                 snapToCurrentSlide();
+                createThought(btn);
             }));
         }
 

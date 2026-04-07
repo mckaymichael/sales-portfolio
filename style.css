@@ -188,14 +188,9 @@ h6 {
 
 /* --- VOICES CAROUSEL --- */
 #carousel-track {
-    cursor: grab !important;
     user-select: none;
     transition: none !important;
     /* This one's gone for good */
-}
-
-#carousel-track:active {
-    cursor: grabbing !important;
 }
 
 .voice-slide {

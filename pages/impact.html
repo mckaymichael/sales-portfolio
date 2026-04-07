@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TREFDP7M2T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TREFDP7M2T');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Impact | Michael McKay</title>
+    <meta name="description" content="Showcasing social and environmental impact through Enactus BCIT student-led businesses.">
+    <link rel="icon" href="../assets/icons/logo.svg" type="image/svg+xml">
+    <meta name="robots" content="noindex, noimageindex">
+    
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6D390E',
+                        'primary-container': '#8A5024',
+                        secondary: '#2C4035',
+                        'secondary-dark': '#2C2926',
+                        surface: '#FFF8F3',
+                        'surface-container-low': '#F9F2EC',
+                        'surface-container-lowest': '#FDFBF9',
+                        'surface-variant': '#E8E1DB',
+                        'on-surface': '#1E1B18',
+                        'on-primary': '#FDFBF9',
+                        'outline-variant': '#D7C2B7',
+                        'tertiary-fixed': '#F5DFC9',
+                        'on-tertiary-fixed': '#25190C',
+                        white: '#FDFBF9',
+                        black: '#0A0A0A',
+                    },
+                    fontFamily: {
+                        sans: ['Figtree', 'sans-serif'],
+                        serif: ['Unna', 'serif'],
+                        header: ['Figtree', 'sans-serif'],
+                        body: ['Unna', 'serif'],
+                    },
+                    borderRadius: {
+                        'default': '1px',
+                    },
+                    fontSize: {
+                        // Minor Third (1.200) typescale — base 16px
+                        'step-0': ['1rem',     { lineHeight: '1.6' }],  // 16px — body base
+                        'step-1': ['1.2rem',   { lineHeight: '1.6' }],  // 19.2px — body lg
+                        'step-2': ['1.44rem',  { lineHeight: '1.4' }],  // 23px — small display
+                        'step-3': ['1.728rem', { lineHeight: '1.3' }],  // 27.6px — h4
+                        'step-4': ['2.074rem', { lineHeight: '1.2' }],  // 33.2px — h3
+                        'step-5': ['2.488rem', { lineHeight: '1.15' }], // 39.8px — h2
+                        'step-6': ['2.986rem', { lineHeight: '1.1' }],  // 47.8px — h1
+                        'step-7': ['3.583rem', { lineHeight: '1.05' }], // 57.3px — hero display
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-surface text-on-surface font-body antialiased">
+
+    <!-- Header Overlay Gradient -->
+    <div class="fixed top-0 left-0 w-full h-32 bg-gradient-to-b from-black/5 to-transparent z-40 pointer-events-none"></div>
+
+    <!-- Standard Responsive Header Container -->
+<div class="fixed top-0 left-0 w-full z-50">
+  <nav class="bg-[#FFF8F3] text-gray-900 shadow-sm border-b border-[#D7C2B7] transition-colors duration-300">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+        
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center relative z-20">
+          <a href="../index.html" class="text-xl md:text-2xl font-header font-bold uppercase tracking-[0.2em] hover:opacity-80 transition-opacity">
+            Michael McKay
+          </a>
+        </div>
+        
+        <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
+          <a href="impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] border-b-2 border-secondary text-secondary">My Impact</a>
+          <a href="gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">Nature Gallery</a>
+          <a href="about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">About Me</a>
+          <a href="infinite-game.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">The Infinite Game</a>
+          <a href="../assets/files/Good Choice.pdf" download="Good Choice.pdf" class="ml-4 btn-primary relative">
+            Resume
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="flex items-center lg:hidden relative z-20">
+          <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-[1px] hover:bg-gray-100/20 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition-colors" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <!-- Icon when menu is closed. -->
+            <svg id="icon-menu-closed" class="block h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="square" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <!-- Icon when menu is open. -->
+            <svg id="icon-menu-open" class="hidden h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="square" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- Mobile Menu, using max-h for accordion animation -->
+    <div class="lg:hidden absolute top-20 left-0 w-full bg-[#FFF8F3] shadow-xl border-t border-[#D7C2B7] overflow-hidden max-h-0 transition-all duration-300 ease-in-out" id="mobile-menu">
+      <div class="px-6 pt-4 pb-8 space-y-2">
+        <a href="impact.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">My Impact</a>
+        <a href="gallery.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Nature Gallery</a>
+        <a href="about.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">About Me</a>
+        <a href="infinite-game.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">The Infinite Game</a>
+        <a href="../assets/files/Good Choice.pdf" download="Good Choice.pdf" class="btn-primary block w-full text-center mt-6">
+          Download Resume
+        </a>
+      </div>
+    </div>
+  </nav>
+</div>
+
+    <main class="pt-32 pb-24 px-4 min-h-screen">
+        <div id="section-impact" class="max-w-[1400px] mx-auto">
+            <div class="mb-20">
+                <h1 class="font-header font-bold text-step-6 md:text-step-7 text-on-surface leading-tight mb-8">
+                    Helping BCIT Student-Led <br/>Businesses Solve Global Issues.
+                </h1>
+                <p class="font-body text-xl md:text-2xl text-on-surface/80 leading-relaxed max-w-4xl">
+                    I Lead Sponsorship Strategy at Enactus BCIT. Our club is a breeding ground for innovative ideas that address the <a href="https://sdgs.un.org/goals" target="_blank" class="underline hover:text-primary transition-colors">17 UN Sustainability Development Goals</a>. This is where the two worlds of sustainable futures and business collide.
+                </p>
+            </div>
+            <!-- UN SDG Context -->
+            <div class="impact-row bg-secondary text-white p-8 md:p-12 border border-white/10 rounded-default mb-20 shadow-xl relative overflow-hidden">
+                <!-- Decorative Graphic -->
+                <div class="absolute -right-20 -top-20 opacity-10 pointer-events-none">
+                    <i class="ph-fill ph-globe-hemisphere-west text-[400px] text-white"></i>
+                </div>
+                
+                <h2 class="font-header font-bold text-2xl md:text-3xl text-white mb-6 relative z-10 tracking-tight">Why the Global Goals Matter</h2>
+                <p class="font-body text-lg md:text-xl text-white/80 leading-relaxed max-w-4xl mb-12 relative z-10">
+                    The 17 Sustainable Development Goals are a global call to action to end poverty, protect the planet, and ensure peace and prosperity by 2030. As of 2025, the world faces profound hurdles, making immediate, scalable social enterprises more critical than ever.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative z-10">
+                    <div class="space-y-3 border-t border-white/20 pt-6">
+                        <div class="text-4xl md:text-5xl font-header font-bold text-tertiary-fixed tracking-tight">35%</div>
+                        <h3 class="font-header font-bold text-xs uppercase tracking-widest text-white mb-4">Targets on Track</h3>
+                        <p class="font-body text-white/70 leading-relaxed text-lg">Only about a third of the UN's targets are currently making moderate global progress, requiring aggressive intervention.</p>
+                    </div>
+                    <div class="space-y-3 border-t border-white/20 pt-6">
+                        <div class="text-4xl md:text-5xl font-header font-bold text-tertiary-fixed tracking-tight">800M+</div>
+                        <h3 class="font-header font-bold text-xs uppercase tracking-widest text-white mb-4">Living in Poverty</h3>
+                        <p class="font-body text-white/70 leading-relaxed text-lg">More than 800 million citizens globally still live in extreme poverty worldwide, fueling our urgency to address SDG 2 and SDG 8.</p>
+                    </div>
+                    <div class="space-y-3 border-t border-white/20 pt-6">
+                        <div class="text-4xl md:text-5xl font-header font-bold text-tertiary-fixed tracking-tight">$4T</div>
+                        <h3 class="font-header font-bold text-xs uppercase tracking-widest text-white mb-4">Annual Financing Gap</h3>
+                        <p class="font-body text-white/70 leading-relaxed text-lg">Developing nations face a $4 Trillion annual shortfall to achieve these goals, highlighting the need for systemic corporate partnerships.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Title -->
+            <div class="impact-row mb-4">
+                <h2 class="font-header font-bold text-2xl md:text-3xl text-on-surface tracking-tight max-w-4xl">
+                    Our Sustainability Success Stories
+                </h2>
+            </div>
+
+            <!-- Projects List (Split Layout with Cohesive Homepage Styling) -->
+            <div class="impact-container mx-auto">
+                
+                <!-- Lumóra -->
+                <div class="project-row flex flex-col lg:flex-row items-start gap-12 lg:gap-20 p-2 md:p-4">
+                    <div class="w-full lg:w-1/3">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="project-category !mb-0">ENACTUS BCIT</span>
+                            <span class="inline-block w-1.5 h-1.5 rounded-[1px] bg-primary animate-pulse"></span>
+                            <span class="text-primary font-header font-bold text-[10px] uppercase tracking-widest">TOP 10 LOI ACCELERATE</span>
+                        </div>
+                        <h3 class="font-header font-bold text-step-5 text-on-surface mb-6 tracking-tight uppercase">Lumóra</h3>
+                        <div class="project-feature-list !mb-8">
+                            <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-default mb-2">SDG 9: Industry & Innovation</span>
+                            <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-default mb-2">SDG 12: Responsible Consumption</span>
+                            <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-default mb-2">SDG 15: Life on Land</span>
+                        </div>
+                        <p class="font-body text-xl text-on-surface/70 leading-relaxed mb-8">
+                            Transforming unavoidable milk waste into a biodegradable fibre that works with nature.
+                        </p>
+                        <a href="../projects/lumora.html" class="card-link-target group inline-flex items-center gap-3 text-primary font-header font-bold text-xs uppercase tracking-widest transition-all hover:gap-5">
+                            View Project <span class="block w-8 h-[1px] bg-primary transition-all group-hover:w-12"></span>
+                        </a>
+                    </div>
+                    <div class="w-full lg:w-2/3">
+                        <a href="../projects/lumora.html" class="project-image-container block rounded-default shadow-sm group">
+                            <img src="../assets/projects/lumora/lumora.jpg" alt="Lumóra" loading="lazy" class="transition-transform duration-1000 group-hover:scale-105">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- EcoMeter -->
+                <div class="project-row flex flex-col lg:flex-row items-start gap-12 lg:gap-20 p-2 md:p-4">
+                    <div class="w-full lg:w-1/3">
+                        <div class="project-category">ENACTUS BCIT</div>
+                        <h3 class="font-header font-bold text-step-5 text-on-surface mb-6 tracking-tight uppercase">EcoMeter</h3>
+                        <div class="project-feature-list !mb-8">
+                            <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-default mb-2">SDG 2: Zero Hunger</span>
+                            <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-default mb-2">SDG 11: Sustainable Cities</span>
+                            <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-default mb-2">SDG 12: Responsible Consumption</span>
+                        </div>
+                        <p class="font-body text-xl text-on-surface/70 leading-relaxed mb-8">
+                            "Trust in EcoMeter today. Achieve zero waste tomorrow."
+                        </p>
+                        <a href="../projects/ecometer.html" class="card-link-target group inline-flex items-center gap-3 text-primary font-header font-bold text-xs uppercase tracking-widest transition-all hover:gap-5">
+                            View Project <span class="block w-8 h-[1px] bg-primary transition-all group-hover:w-12"></span>
+                        </a>
+                    </div>
+                    <div class="w-full lg:w-2/3">
+                        <a href="../projects/ecometer.html" class="project-image-container block rounded-default shadow-sm group">
+                            <img src="../assets/projects/ecometer/ecometer.jpg" alt="EcoMeter" loading="lazy" class="transition-transform duration-1000 group-hover:scale-105">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- HSCC -->
+                <div class="project-row flex flex-col lg:flex-row items-start gap-12 lg:gap-20 p-2 md:p-4">
+                    <div class="w-full lg:w-1/3">
+                        <div class="project-category">ENACTUS BCIT</div>
+                        <h3 class="font-header font-bold text-step-5 text-on-surface mb-6 tracking-tight uppercase">HSCC</h3>
+                        <div class="project-feature-list !mb-8">
+                            <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-default mb-2">SDG 4: Quality Education</span>
+                            <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-default mb-2">SDG 17: Partnerships for the Goals</span>
+                        </div>
+                        <p class="font-body text-xl text-on-surface/70 leading-relaxed mb-8">
+                            Empowering aspiring business students with the foundation to ignite entrepreneurial action.
+                        </p>
+                        <a href="../projects/hscc.html" class="card-link-target group inline-flex items-center gap-3 text-primary font-header font-bold text-xs uppercase tracking-widest transition-all hover:gap-5">
+                            View Project <span class="block w-8 h-[1px] bg-primary transition-all group-hover:w-12"></span>
+                        </a>
+                    </div>
+                    <div class="w-full lg:w-2/3">
+                        <a href="../projects/hscc.html" class="project-image-container block rounded-default shadow-sm group">
+                            <img src="../assets/projects/high-school-case-comp/hscc.jpg" alt="HSCC" loading="lazy" class="transition-transform duration-1000 group-hover:scale-105">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+            <!-- Sponsor CTA -->
+            <div class="impact-row mt-24 bg-secondary-dark text-white  p-8 md:p-12 shadow-xl flex flex-col items-center text-center max-w-4xl mx-auto border border-white/10 relative overflow-hidden">
+                <!-- Nature Blur Background -->
+                <div class="absolute inset-0 z-0">
+                    <img src="../assets/nature/blur/nature-blur-1.jpg" alt="" class="w-full h-full object-cover opacity-70">
+                    <div class="absolute inset-0 bg-black/40"></div>
+                </div>
+
+                <div class="w-16 h-16 rounded-[1px] flex items-center justify-center mb-6 relative z-10">
+                    <i class="ph ph-handshake text-3xl"></i>
+                </div>
+                <h2 class="font-header font-bold text-3xl md:text-4xl mb-4 tracking-tight relative z-10">Join Our Mission</h2>
+                <p class="font-body text-xl text-white/80 leading-relaxed mb-8 max-w-2xl relative z-10">
+                    We are actively seeking corporate partners to sponsor Enactus BCIT. Help us empower student-led social enterprises to drive scalable impact and tackle global challenges.
+                </p>
+                <a href="mailto:mckaymichaelk@gmail.com?subject=Sponsorship Inquiry" target="_blank" class="inline-flex items-center rounded-[4px] justify-center gap-3 px-8 py-4 bg-primary text-white hover:bg-primary-container font-header font-bold uppercase tracking-widest text-xs transition-all hover:scale-105 active:scale-95 group relative z-10 focus:ring-4 focus:ring-primary/30">
+                    Become A Sponsor
+                    <i class="ph ph-arrow-up-right text-lg transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 relative -top-[1px]"></i>
+                </a>
+            </div>
+        </div>
+        <!-- Wildfire Feature Section -->
+        <div id="section-wildfire" class="max-w-[1200px] mx-auto px-4 mt-40">
+
+            <!-- Section eyebrow + title — matches site standard -->
+            <div class="mb-16 border-t border-outline-variant/30 pt-16">
+                <p class="font-header font-bold text-[12px] uppercase tracking-[0.3em] text-primary mb-6">Documentary Photography · 2023</p>
+                <h2 class="font-header font-bold text-step-5 md:text-step-6 text-on-surface leading-tight max-w-3xl">
+                    The Bush Creek East Wildfire
+                </h2>
+            </div>
+
+            <!-- Feature Image — no card wrapper, raw editorial -->
+            <div class="mb-6 overflow-hidden rounded-[1px]">
+                <img src="../assets/nature/nature-49.jpg" alt="Shuswap Strong" loading="lazy" class="w-full aspect-[4/3] object-cover object-center">
+            </div>
+            <!-- Caption -->
+            <p class="font-header font-bold text-[10px] uppercase tracking-widest text-on-surface/40 mb-20">
+                Shuswap Strong &mdash; Aerial drone, Bush Creek East, BC &mdash; 2023
+            </p>
+
+            <!-- Content Split -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+
+                <!-- Artist Statement -->
+                <div class="impact-row lg:col-span-7">
+                    <h3 class="font-header font-bold text-[12px] uppercase tracking-[0.3em] text-primary mb-8">Shuswap Strong: Artist's Statement</h3>
+                    <div class="font-body text-lg text-on-surface/80 leading-relaxed space-y-6">
+                        <p>Over the summer of 2023, my home was nearly burnt down by a vicious forest fire. The forest fire was considered one of the fastest spreading fires in BC history, growing 20 kilometres wide in just 12 hours. The residents of Shuswap Lake and Adams Lake were left fleeing their homes with the fire being less than 100 meters away before they realized it. My dad and my uncle have a business up in the Shuswap that was burned in half. It puts into perspective the selectiveness that a forest fire has. It hops, skips, bounces, dodges, and lands on whatever it feels like. No one knew if the town of Scotch Creek was going to be safe. Luckily, not all of it was burnt down. The fire was savage, and it made some residents turn savage too by using the distraction of the fire as an opportunity to steal from vacant homes and break into facilities such as my father's and my uncle's.</p>
+                        <p>Despite the darkness of what happened, an incredible union was formed from the locals who decided to fight back against the raging fire. My uncle fought off the fire before the firefighters and helicopters could help and managed to stop some of the fire in its tracks, saving his and his neighbours' homes. Sparked by these heroic actions that occurred all over the town, the locals of Shuswap created the tag &ldquo;#ShuswapStrong,&rdquo; which became the symbol of the heroes of our town and the inspiration for naming this photo.</p>
+                        <p>My photo was shot from my drone, near the end of the fire's rage. The shot is taken from above, looking straight down at the ground. When you look closely, the trees you see are the shadows of the trees still standing. This photo was taken in the morning while the sun was still low and cast these long silhouettes of the burnt-up forest near my dad's burnt-down business. When I see this photo, I think of what my uncle did to save the homes of his neighbours. I think of the locals everywhere else that were brave enough to fight against this fire. And I think of the strength of the community and how everyone is doing their best to lift each other.</p>
+                    </div>
+                    <a href="https://www.cbc.ca/news/canada/british-columbia/wildfires-shuswap-kelowna-august-20-1.6941821" target="_blank" class="inline-block mt-10 text-[10px] font-header font-bold uppercase tracking-widest text-primary border-b border-primary hover:border-transparent transition-all">Read the CBC Story</a>
+                </div>
+
+                <!-- Awards & NSSR Sidebar -->
+                <div class="lg:col-span-5 flex flex-col gap-16">
+
+                    <!-- Awards — editorial list style, no card -->
+                    <div class="impact-row border-l border-outline-variant/30 pl-6 lg:pl-8">
+                        <h4 class="font-header text-[10px] uppercase tracking-widest font-bold text-primary mb-6">Applied Arts Magazine</h4>
+                        <p class="font-body text-base md:text-lg text-on-surface/75 leading-relaxed mb-8">
+                            Shuswap Strong won two photography awards and led to an interview with Applied Arts Magazine about the experience of turning disaster into art.
+                        </p>
+                        <div class="flex flex-col gap-4">
+                            <a href="https://www.appliedartsmag.com/blog/taking-the-pulse-with-michael-mckay-a18363/" target="_blank" class="inline-block text-[10px] font-header font-bold uppercase tracking-widest text-primary border-b border-primary hover:border-transparent transition-all w-fit">Read Interview</a>
+                            <a href="https://www.appliedartsmag.com/winners/photography/shuswap-strong-w79/?year=2024" target="_blank" class="inline-block text-[10px] font-header font-bold uppercase tracking-widest text-primary border-b border-primary hover:border-transparent transition-all w-fit">Nature / Landscape Award</a>
+                            <a href="https://www.appliedartsmag.com/winners/photography/shuswap-strong-w79/?year=2024" target="_blank" class="inline-block text-[10px] font-header font-bold uppercase tracking-widest text-primary border-b border-primary hover:border-transparent transition-all w-fit">Young Blood Award</a>
+                        </div>
+                    </div>
+
+                    <!-- NSSR -->
+                    <div class="impact-row">
+                        <h4 class="font-header text-[10px] uppercase tracking-widest font-bold text-primary mb-6">North Shuswap Storage Resort</h4>
+                        <p class="font-body text-base md:text-lg text-on-surface/75 leading-relaxed mb-4">
+                            This is my uncle and my dad's business that was burnt down in the fire. I designed their website and help maintain it regularly to aid in their recovery and operation.
+                        </p>
+                        <p class="font-body text-base md:text-lg text-on-surface/75 leading-relaxed mb-8">
+                            Thankfully, they had insurance to help them rebuild. Three years later and they are fully booked once again.
+                        </p>
+
+                        <!-- Drone shots mini-grid -->
+                        <div class="grid grid-cols-2 gap-2 mb-8">
+                            <div class="col-span-2 aspect-video rounded-[1px] overflow-hidden">
+                                <img src="../assets/projects/nssr/DJI_0310.JPG" loading="lazy" alt="NSSR Devastation Aerial" class="w-full h-full object-cover">
+                            </div>
+                            <div class="aspect-square rounded-[1px] overflow-hidden">
+                                <img src="../assets/projects/nssr/DJI_0304.JPG" loading="lazy" alt="NSSR Devastation Aerial" class="w-full h-full object-cover">
+                            </div>
+                            <div class="aspect-square rounded-[1px] overflow-hidden">
+                                <img src="../assets/projects/nssr/DJI_0302.JPG" loading="lazy" alt="NSSR Devastation Aerial" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-4">
+                            <a href="https://northshuswapstorageresort.com/" target="_blank" class="inline-block text-[10px] font-header font-bold uppercase tracking-widest text-primary border-b border-primary hover:border-transparent transition-all w-fit">Visit the Website</a>
+                            <a href="shuswap-gallery.html" class="inline-block text-[10px] font-header font-bold uppercase tracking-widest text-primary border-b border-primary hover:border-transparent transition-all w-fit">View Full Aerial Gallery</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+     <!-- FOOTER -->
+        <footer class="w-full bg-secondary-dark text-white overflow-hidden">
+
+            <!-- MASTHEAD: Image + Name overlay -->
+            <div class="relative w-full h-[50vh] min-h-[320px] parallax-wrap">
+                <img src="../assets/nature/blur/nature-blur-45.jpg" alt="" class="parallax-img opacity-50">
+                <div class="relative z-10 h-full max-w-[1400px] mx-auto px-8 md:px-16 flex flex-col justify-end pb-10 md:pb-14">
+                    <p class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-4">Michael McKay &mdash; Portfolio</p>
+                    <h2 class="font-header font-bold text-step-6 md:text-step-7 leading-none tracking-tight text-white">
+                        Using Business<br class="hidden md:block"> as a Force for Good.
+                    </h2>
+                </div>
+            </div>
+
+            <!-- EDITORIAL CONTENT GRID -->
+            <div class="max-w-[1400px] mx-auto px-8 md:px-16 pt-16 pb-20 border-t border-white/10">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
+
+                    <!-- COL 1: Navigation -->
+                    <div>
+                        <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Navigate</h3>
+                        <nav class="flex flex-col gap-5">
+                            <a href="../index.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Home</a>
+                            <a href="impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">My Impact</a>
+                            <a href="gallery.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Nature Gallery</a>
+                            <a href="about.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">About Me</a>
+                            <a href="infinite-game.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">The Infinite Game</a>
+                        </nav>
+                    </div>
+
+                    <!-- COL 2: Roles -->
+                    <div>
+                        <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Ready to Lead As</h3>
+                        <div class="flex flex-col">
+                            <div class="group border-t border-white/10 py-5 flex flex-row justify-between items-start gap-4 cursor-default">
+                                <div class="flex-1">
+                                    <p class="font-header font-bold text-step-1 text-white/80 group-hover:text-white transition-colors tracking-tight leading-snug">Business Development Representative</p>
+                                    <p class="font-body italic text-sm text-white/0 group-hover:text-white/50 transition-all duration-500 max-h-0 group-hover:max-h-20 overflow-hidden leading-relaxed mt-0 group-hover:mt-3">Turning social impact goals into scalable, revenue-generating realities.</p>
+                                </div>
+                                <i class="ph ph-arrow-right text-lg text-white/20 transition-all duration-500 group-hover:rotate-90 group-hover:text-white group-hover:opacity-100 mt-1"></i>
+                            </div>
+                            <div class="group border-t border-white/10 py-5 flex flex-row justify-between items-start gap-4 cursor-default">
+                                <div class="flex-1">
+                                    <p class="font-header font-bold text-step-1 text-white/80 group-hover:text-white transition-colors tracking-tight leading-snug">Growth &amp; Impact Consultant</p>
+                                    <p class="font-body italic text-sm text-white/0 group-hover:text-white/50 transition-all duration-500 max-h-0 group-hover:max-h-20 overflow-hidden leading-relaxed mt-0 group-hover:mt-3">Solving complex organizational problems with creative, sustainable strategies.</p>
+                                </div>
+                                <i class="ph ph-arrow-right text-lg text-white/20 transition-all duration-500 group-hover:rotate-90 group-hover:text-white group-hover:opacity-100 mt-1"></i>
+                            </div>
+                            <div class="group border-t border-b border-white/10 py-5 flex flex-row justify-between items-start gap-4 cursor-default">
+                                <div class="flex-1">
+                                    <p class="font-header font-bold text-step-1 text-white/80 group-hover:text-white transition-colors tracking-tight leading-snug">Sustainability Consultant</p>
+                                    <p class="font-body italic text-sm text-white/0 group-hover:text-white/50 transition-all duration-500 max-h-0 group-hover:max-h-20 overflow-hidden leading-relaxed mt-0 group-hover:mt-3">Helping teams expand reach while scaling positive environmental impact.</p>
+                                </div>
+                                <i class="ph ph-arrow-right text-lg text-white/20 transition-all duration-500 group-hover:rotate-90 group-hover:text-white group-hover:opacity-100 mt-1"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COL 3: Contact -->
+                    <div>
+                        <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Get in Touch</h3>
+                        <div class="flex flex-col gap-5">
+                            <a href="https://linkedin.com/in/michaelkmckay" target="_blank" class="inline-block font-header font-bold text-step-1 text-white/70 hover:text-white border-b border-white/20 hover:border-white/60 pb-1 transition-all w-fit tracking-tight">LinkedIn</a>
+                            <a href="mailto:mckaymichaelk@gmail.com" target="_blank" class="inline-block font-header font-bold text-step-1 text-white/70 hover:text-white border-b border-white/20 hover:border-white/60 pb-1 transition-all w-fit tracking-tight">Email Me</a>
+                            <a href="tel:6048259224" class="inline-block font-header font-bold text-step-1 text-white/70 hover:text-white border-b border-white/20 hover:border-white/60 pb-1 transition-all w-fit tracking-tight">604.825.9224</a>
+                            <a href="../assets/files/Good Choice.pdf" download="Good Choice.pdf" class="inline-block font-header font-bold text-step-1 text-white/70 hover:text-white border-b border-white/20 hover:border-white/60 pb-1 transition-all w-fit tracking-tight">Download Resume</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom bar -->
+                <div class="mt-20 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <p class="font-header text-[10px] uppercase tracking-widest text-white/25">&copy; 2026 Michael McKay. All rights reserved.</p>
+                    <p class="font-body italic text-sm text-white/25">"Using business as a force for good."</p>
+                </div>
+            </div>
+        </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

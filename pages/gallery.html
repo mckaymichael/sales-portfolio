@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TREFDP7M2T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TREFDP7M2T');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Gallery | Michael McKay</title>
+    <meta name="description" content="A curated gallery of nature and landscape photography by Michael McKay. expressing a love for the environment.">
+    <link rel="icon" href="../assets/icons/logo.svg" type="image/svg+xml">
+    <meta name="robots" content="noindex, noimageindex">
+    
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6D390E',
+                        'primary-container': '#8A5024',
+                        secondary: '#2C4035',
+                        'secondary-dark': '#2C2926',
+                        surface: '#FFF8F3',
+                        'surface-container-low': '#F9F2EC',
+                        'surface-container-lowest': '#FDFBF9',
+                        'surface-variant': '#E8E1DB',
+                        'on-surface': '#1E1B18',
+                        'on-primary': '#FDFBF9',
+                        'outline-variant': '#D7C2B7',
+                        'tertiary-fixed': '#F5DFC9',
+                        'on-tertiary-fixed': '#25190C',
+                        white: '#FDFBF9',
+                        black: '#0A0A0A',
+                    },
+                    fontFamily: {
+                        sans: ['Figtree', 'sans-serif'],
+                        serif: ['Unna', 'serif'],
+                        header: ['Figtree', 'sans-serif'],
+                        body: ['Unna', 'serif'],
+                    },
+                    borderRadius: {
+                        'default': '1px',
+                    },
+                    fontSize: {
+                        // Minor Third (1.200) typescale — base 16px
+                        'step-0': ['1rem',     { lineHeight: '1.6' }],  // 16px — body base
+                        'step-1': ['1.2rem',   { lineHeight: '1.6' }],  // 19.2px — body lg
+                        'step-2': ['1.44rem',  { lineHeight: '1.4' }],  // 23px — small display
+                        'step-3': ['1.728rem', { lineHeight: '1.3' }],  // 27.6px — h4
+                        'step-4': ['2.074rem', { lineHeight: '1.2' }],  // 33.2px — h3
+                        'step-5': ['2.488rem', { lineHeight: '1.15' }], // 39.8px — h2
+                        'step-6': ['2.986rem', { lineHeight: '1.1' }],  // 47.8px — h1
+                        'step-7': ['3.583rem', { lineHeight: '1.05' }], // 57.3px — hero display
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <style type="text/css">
+        .gallery-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            will-change: opacity, transform;
+        }
+        .gallery-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased">
+
+
+    <!-- Header Overlay Gradient -->
+    <div class="fixed top-0 left-0 w-full h-32 bg-gradient-to-b from-black/5 to-transparent z-40 pointer-events-none"></div>
+
+    <!-- Standard Responsive Header Container -->
+<div class="fixed top-0 left-0 w-full z-50">
+  <nav class="bg-[#FFF8F3] text-gray-900 shadow-sm border-b border-[#D7C2B7] transition-colors duration-300">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+        
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center relative z-20">
+          <a href="../index.html" class="text-xl md:text-2xl font-header font-bold uppercase tracking-[0.2em] hover:opacity-80 transition-opacity">
+            Michael McKay
+          </a>
+        </div>
+        
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
+          <a href="impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">My Impact</a>
+          <a href="gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] border-b-2 border-secondary text-secondary">Nature Gallery</a>
+          <a href="about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">About Me</a>
+          <a href="infinite-game.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">The Infinite Game</a>
+          <a href="../assets/files/Good Choice.pdf" download="Good Choice.pdf" class="ml-4 btn-primary relative">
+            Resume
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="flex items-center lg:hidden relative z-20">
+          <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-[1px] hover:bg-gray-100/20 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition-colors" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <!-- Icon when menu is closed. -->
+            <svg id="icon-menu-closed" class="block h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="square" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <!-- Icon when menu is open. -->
+            <svg id="icon-menu-open" class="hidden h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="square" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- Mobile Menu, using max-h for accordion animation -->
+    <div class="lg:hidden absolute top-20 left-0 w-full bg-[#FFF8F3] shadow-xl border-t border-[#D7C2B7] overflow-hidden max-h-0 transition-all duration-300 ease-in-out" id="mobile-menu">
+      <div class="px-6 pt-4 pb-8 space-y-2">
+        <a href="impact.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">My Impact</a>
+        <a href="gallery.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Nature Gallery</a>
+        <a href="about.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">About Me</a>
+        <a href="infinite-game.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">The Infinite Game</a>
+        <a href="../assets/files/Good Choice.pdf" download="Good Choice.pdf" class="btn-primary block w-full text-center mt-6">
+          Download Resume
+        </a>
+      </div>
+    </div>
+  </nav>
+</div>
+
+    <main class="pt-32 pb-24 px-4 min-h-screen">
+        <div class="max-w-[1600px] mx-auto">
+            <div class="text-center mb-20">
+                <h1 class="font-header font-bold text-5xl md:text-7xl text-on-surface mb-6 tracking-tight">Expressing the Message <br/>of Preserving Our Planet</h1>
+                <p class="font-body text-lg text-on-surface/70 max-w-2xl mx-auto">
+                    Photography has been my catalyst for expressing love and admiration for the natural world. You'll notice a lot of the photos on this website are nature photos. I took these photos myself over the years. My photography has taught me to slow down and appreciate the beauty of the world around me. It has pushed me creatively and has helped me to see the world in a different light. 
+                </p>
+            </div>
+
+            <!-- Masonry Grid -->
+            <div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4">
+                <!-- Group 1 -->
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-1.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-2.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-3.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-4.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-5.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-6.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-7.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-8.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-9.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-10.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <!-- Group 2 -->
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-11.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-12.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-13.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-14.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-15.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-16.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-17.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-18.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-19.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-20.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <!-- Group 3 -->
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-21.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-22.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-23.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-24.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-25.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-26.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-27.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-28.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-29.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-30.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <!-- Group 4 -->
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-31.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-32.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-33.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-34.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-35.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-36.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-37.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-38.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-39.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-40.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <!-- Group 5 -->
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-41.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-42.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-43.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-44.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-45.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-46.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-47.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-48.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-49.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-50.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <!-- Group 6 -->
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-51.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-52.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-53.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-54.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-55.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-56.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-57.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-58.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-59.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-60.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <!-- Group 7 -->
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-61.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-62.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-63.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-64.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-65.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-66.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-67.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-68.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-69.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-70.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <!-- Group 8 -->
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-71.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-72.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-73.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-74.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-75.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-76.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-77.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-78.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-79.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-80.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <!-- Group 9 -->
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-81.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-82.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-83.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-84.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-85.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-86.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-87.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-88.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-89.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-90.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <!-- Group 10 -->
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-91.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-92.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-93.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-94.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-95.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-96.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-97.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-98.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-99.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-100.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <!-- Group 11 -->
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-101.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-102.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-103.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-104.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-105.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-106.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-107.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-108.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-109.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-110.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <!-- Group 12 -->
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-111.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-112.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-113.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-114.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-115.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-116.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-117.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-118.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-119.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-120.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <!-- Group 13 -->
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-121.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-122.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-123.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-124.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-125.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-126.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-127.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/nature/nature-128.jpg" loading="lazy" alt="Nature Photography by Michael McKay" title="© Michael McKay" class="w-full h-auto rounded-[1px]"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Auto-Scroll Button -->
+    <button id="auto-scroll-btn" class="fixed bottom-8 right-8 z-[100] w-14 h-14 bg-primary text-white rounded-[1px] shadow-xl flex items-center justify-center hover:bg-primary-container transition-colors focus:outline-none focus:ring-4 focus:ring-primary/30" aria-label="Toggle Auto-Scroll">
+        <i id="icon-play" class="ph-fill ph-play text-2xl"></i>
+        <i id="icon-pause" class="ph-fill ph-pause text-2xl hidden"></i>
+    </button>
+
+     <!-- FOOTER -->
+        <footer class="w-full bg-secondary-dark text-white overflow-hidden">
+
+            <!-- MASTHEAD: Image + Name overlay -->
+            <div class="relative w-full h-[50vh] min-h-[320px] parallax-wrap">
+                <img src="../assets/nature/blur/nature-blur-45.jpg" alt="" class="parallax-img opacity-50">
+                <div class="relative z-10 h-full max-w-[1400px] mx-auto px-8 md:px-16 flex flex-col justify-end pb-10 md:pb-14">
+                    <p class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-4">Michael McKay &mdash; Portfolio</p>
+                    <h2 class="font-header font-bold text-step-6 md:text-step-7 leading-none tracking-tight text-white">
+                        Using Business<br class="hidden md:block"> as a Force for Good.
+                    </h2>
+                </div>
+            </div>
+
+            <!-- EDITORIAL CONTENT GRID -->
+            <div class="max-w-[1400px] mx-auto px-8 md:px-16 pt-16 pb-20 border-t border-white/10">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
+
+                    <!-- COL 1: Navigation -->
+                    <div>
+                        <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Navigate</h3>
+                        <nav class="flex flex-col gap-5">
+                            <a href="../index.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Home</a>
+                            <a href="impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">My Impact</a>
+                            <a href="gallery.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Nature Gallery</a>
+                            <a href="about.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">About Me</a>
+                            <a href="infinite-game.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">The Infinite Game</a>
+                        </nav>
+                    </div>
+
+                    <!-- COL 2: Roles -->
+                    <div>
+                        <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Ready to Lead As</h3>
+                        <div class="flex flex-col">
+                            <div class="group border-t border-white/10 py-5 flex flex-row justify-between items-start gap-4 cursor-default">
+                                <div class="flex-1">
+                                    <p class="font-header font-bold text-step-1 text-white/80 group-hover:text-white transition-colors tracking-tight leading-snug">Business Development Representative</p>
+                                    <p class="font-body italic text-sm text-white/0 group-hover:text-white/50 transition-all duration-500 max-h-0 group-hover:max-h-20 overflow-hidden leading-relaxed mt-0 group-hover:mt-3">Turning social impact goals into scalable, revenue-generating realities.</p>
+                                </div>
+                                <i class="ph ph-arrow-right text-lg text-white/20 transition-all duration-500 group-hover:rotate-90 group-hover:text-white group-hover:opacity-100 mt-1"></i>
+                            </div>
+                            <div class="group border-t border-white/10 py-5 flex flex-row justify-between items-start gap-4 cursor-default">
+                                <div class="flex-1">
+                                    <p class="font-header font-bold text-step-1 text-white/80 group-hover:text-white transition-colors tracking-tight leading-snug">Growth &amp; Impact Consultant</p>
+                                    <p class="font-body italic text-sm text-white/0 group-hover:text-white/50 transition-all duration-500 max-h-0 group-hover:max-h-20 overflow-hidden leading-relaxed mt-0 group-hover:mt-3">Solving complex organizational problems with creative, sustainable strategies.</p>
+                                </div>
+                                <i class="ph ph-arrow-right text-lg text-white/20 transition-all duration-500 group-hover:rotate-90 group-hover:text-white group-hover:opacity-100 mt-1"></i>
+                            </div>
+                            <div class="group border-t border-b border-white/10 py-5 flex flex-row justify-between items-start gap-4 cursor-default">
+                                <div class="flex-1">
+                                    <p class="font-header font-bold text-step-1 text-white/80 group-hover:text-white transition-colors tracking-tight leading-snug">Sustainability Consultant</p>
+                                    <p class="font-body italic text-sm text-white/0 group-hover:text-white/50 transition-all duration-500 max-h-0 group-hover:max-h-20 overflow-hidden leading-relaxed mt-0 group-hover:mt-3">Helping teams expand reach while scaling positive environmental impact.</p>
+                                </div>
+                                <i class="ph ph-arrow-right text-lg text-white/20 transition-all duration-500 group-hover:rotate-90 group-hover:text-white group-hover:opacity-100 mt-1"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COL 3: Contact -->
+                    <div>
+                        <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Get in Touch</h3>
+                        <div class="flex flex-col gap-5">
+                            <a href="https://linkedin.com/in/michaelkmckay" target="_blank" class="inline-block font-header font-bold text-step-1 text-white/70 hover:text-white border-b border-white/20 hover:border-white/60 pb-1 transition-all w-fit tracking-tight">LinkedIn</a>
+                            <a href="mailto:mckaymichaelk@gmail.com" target="_blank" class="inline-block font-header font-bold text-step-1 text-white/70 hover:text-white border-b border-white/20 hover:border-white/60 pb-1 transition-all w-fit tracking-tight">Email Me</a>
+                            <a href="tel:6048259224" class="inline-block font-header font-bold text-step-1 text-white/70 hover:text-white border-b border-white/20 hover:border-white/60 pb-1 transition-all w-fit tracking-tight">604.825.9224</a>
+                            <a href="../assets/files/Good Choice.pdf" download="Good Choice.pdf" class="inline-block font-header font-bold text-step-1 text-white/70 hover:text-white border-b border-white/20 hover:border-white/60 pb-1 transition-all w-fit tracking-tight">Download Resume</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom bar -->
+                <div class="mt-20 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <p class="font-header text-[10px] uppercase tracking-widest text-white/25">&copy; 2026 Michael McKay. All rights reserved.</p>
+                    <p class="font-body italic text-sm text-white/25">"Using business as a force for good."</p>
+                </div>
+            </div>
+        </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

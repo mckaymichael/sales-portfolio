@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TREFDP7M2T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TREFDP7M2T');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumóra | Project Showcase</title>
+    <meta name="description" content="An in-depth look at Lumóra, a sustainable sanitation project.">
+    <link rel="icon" href="../assets/icons/logo.svg" type="image/svg+xml">
+    <meta name="robots" content="noindex, noimageindex">
+    
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6D390E',
+                        'primary-container': '#8A5024',
+                        secondary: '#2C4035',
+                        'secondary-dark': '#2C2926',
+                        surface: '#FFF8F3',
+                        'surface-container-low': '#F9F2EC',
+                        'surface-container-lowest': '#FDFBF9',
+                        'surface-variant': '#E8E1DB',
+                        'on-surface': '#1E1B18',
+                        'on-primary': '#FDFBF9',
+                        'outline-variant': '#D7C2B7',
+                        'tertiary-fixed': '#F5DFC9',
+                        'on-tertiary-fixed': '#25190C',
+                        white: '#FDFBF9',
+                        black: '#0A0A0A',
+                    },
+                    fontFamily: {
+                        sans: ['Figtree', 'sans-serif'],
+                        serif: ['Unna', 'serif'],
+                        header: ['Figtree', 'sans-serif'],
+                        body: ['Unna', 'serif'],
+                    },
+                    borderRadius: {
+                        'default': '1px',
+                    },
+                    fontSize: {
+                        // Minor Third (1.200) typescale — base 16px
+                        'step-0': ['1rem',     { lineHeight: '1.6' }],  // 16px — body base
+                        'step-1': ['1.2rem',   { lineHeight: '1.6' }],  // 19.2px — body lg
+                        'step-2': ['1.44rem',  { lineHeight: '1.4' }],  // 23px — small display
+                        'step-3': ['1.728rem', { lineHeight: '1.3' }],  // 27.6px — h4
+                        'step-4': ['2.074rem', { lineHeight: '1.2' }],  // 33.2px — h3
+                        'step-5': ['2.488rem', { lineHeight: '1.15' }], // 39.8px — h2
+                        'step-6': ['2.986rem', { lineHeight: '1.1' }],  // 47.8px — h1
+                        'step-7': ['3.583rem', { lineHeight: '1.05' }], // 57.3px — hero display
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-surface text-on-surface font-body antialiased">
+
+    <!-- Header Overlay Gradient -->
+    <div class="fixed top-0 left-0 w-full h-32 bg-gradient-to-b from-black/5 to-transparent z-40 pointer-events-none"></div>
+
+    <!-- Standard Responsive Header Container -->
+    <div class="fixed top-0 left-0 w-full z-50">
+      <nav class="bg-[#FFF8F3] text-gray-900 shadow-sm border-b border-[#D7C2B7] transition-colors duration-300">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between h-20 items-center">
+            
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center relative z-20">
+              <a href="../index.html" class="text-xl md:text-2xl font-header font-bold uppercase tracking-[0.2em] hover:opacity-80 transition-opacity">
+                Michael McKay
+              </a>
+            </div>
+            
+            <!-- Desktop Nav -->
+            <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
+              <a href="impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">My Impact</a>
+              <a href="gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">Nature Gallery</a>
+              <a href="about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">About Me</a>
+              <a href="infinite-game.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">The Infinite Game</a>
+              <a href="../assets/files/Good Choice.pdf" download="Good Choice.pdf" class="ml-4 btn-primary relative">
+                Resume
+              </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="flex items-center lg:hidden relative z-20">
+              <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-[1px] hover:bg-gray-100/20 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition-colors" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <!-- Icon when menu is closed. -->
+                <svg id="icon-menu-closed" class="block h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="square" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <!-- Icon when menu is open. -->
+                <svg id="icon-menu-open" class="hidden h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="square" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Mobile Menu, using max-h for accordion animation -->
+        <div class="lg:hidden absolute top-20 left-0 w-full bg-[#FFF8F3] shadow-xl border-t border-[#D7C2B7] overflow-hidden max-h-0 transition-all duration-300 ease-in-out" id="mobile-menu">
+          <div class="px-6 pt-4 pb-8 space-y-2">
+            <a href="impact.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">My Impact</a>
+            <a href="gallery.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Nature Gallery</a>
+            <a href="about.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">About Me</a>
+            <a href="infinite-game.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">The Infinite Game</a>
+            <a href="../assets/files/Good Choice.pdf" download="Good Choice.pdf" class="btn-primary block w-full text-center mt-6">
+              Download Resume
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <main class="pt-32 pb-0 min-h-screen">
+        <!-- S1: Photo and Project Name -->
+        <section class="max-w-[1400px] mx-auto px-4 mb-20 md:mb-32">
+            <div class="w-full aspect-[16/9] md:aspect-[21/9] min-h-[50vh] bg-surface-variant relative rounded-[1px] overflow-hidden mb-12 shadow-[0_0_1px_rgba(0,0,0,0.1)]">
+                <img src="../assets/projects/lumora/lumora.jpg" alt="Lumóra Project" class="w-full h-full object-cover">
+            </div>
+            <div class="text-center px-4">
+                <h1 class="font-header font-bold text-6xl md:text-8xl tracking-tight text-on-surface uppercase pb-4">Lumóra</h1>
+            </div>
+        </section>
+
+        <!-- S2: Caption / UVP / Credibility/Impact -->
+        <section class="max-w-[1400px] mx-auto px-4 mb-24 md:mb-40">
+            <div class="border-t border-b border-outline-variant/40 py-12 md:py-20 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+                <!-- Caption -->
+                <div class="flex flex-col gap-4">
+                    <h4 class="font-header text-[10px] uppercase tracking-widest font-bold text-primary">Project Abstract</h4>
+                    <p class="font-body text-lg md:text-xl text-on-surface/80 leading-relaxed italic">
+                        Repurposing hotel waste into sustainable sanitation solutions for communities in need.
+                    </p>
+                </div>
+                <!-- UVP -->
+                <div class="flex flex-col gap-4 md:border-l md:border-outline-variant/30 md:pl-8">
+                    <h4 class="font-header text-[10px] uppercase tracking-widest font-bold text-primary">Unique Value Proposition</h4>
+                    <p class="font-header text-xl md:text-2xl font-bold tracking-tight text-on-surface leading-tight">
+                        Intercepting landfill-bound hygiene products and redistributing them as life-saving sanitation tools.
+                    </p>
+                </div>
+                <!-- Credibility / Impact -->
+                <div class="flex flex-col gap-4 md:border-l md:border-outline-variant/30 md:pl-8">
+                    <h4 class="font-header text-[10px] uppercase tracking-widest font-bold text-primary">Impact Metrics & SDGs</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-block border border-outline-variant/60 text-on-surface/80 px-3 py-1.5 text-[10px] font-header font-bold uppercase tracking-widest rounded-[1px]">10k+ Bars Distributed</span>
+                        <span class="inline-block border border-outline-variant/60 text-on-surface/80 px-3 py-1.5 text-[10px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 3</span>
+                        <span class="inline-block border border-outline-variant/60 text-on-surface/80 px-3 py-1.5 text-[10px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 6</span>
+                        <span class="inline-block border border-outline-variant/60 text-on-surface/80 px-3 py-1.5 text-[10px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 12</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- S3: Photo -->
+        <section class="max-w-[1400px] mx-auto px-4 mb-24 md:mb-40">
+            <div class="w-full aspect-[16/9] md:aspect-[21/9] bg-secondary-dark relative rounded-[1px] overflow-hidden">
+                <!-- Placeholder nature photo until more project photos exist -->
+                <img src="../assets/nature/nature-44.jpg" alt="Impact Photography" class="w-full h-full object-cover">
+            </div>
+        </section>
+
+        <!-- S4 & S5: Mission & Vision -->
+        <section class="max-w-[1200px] mx-auto px-4 mb-24 md:mb-40">
+            <!-- Mission -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center mb-24">
+                <div class="order-2 md:order-1">
+                    <div class="w-full aspect-square md:aspect-[3/4] rounded-[1px] overflow-hidden relative">
+                        <!-- Placeholder nature photo until more project photos exist -->
+                        <img src="../assets/nature/nature-26.jpg" alt="Mission Imagery" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 flex flex-col gap-6">
+                    <h2 class="font-header text-[12px] uppercase tracking-[0.3em] font-bold text-primary">The Mission</h2>
+                    <p class="font-serif text-3xl md:text-5xl italic leading-tight text-on-surface">
+                        To eliminate preventative hygiene-related diseases by providing access to repurposed soap and sanitation education.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Vision -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
+                <div class="flex flex-col gap-6">
+                    <h2 class="font-header text-[12px] uppercase tracking-[0.3em] font-bold text-primary">The Vision</h2>
+                    <p class="font-body text-xl md:text-3xl leading-relaxed text-on-surface/80">
+                        A world where every individual, regardless of their socioeconomic status, has equitable access to basic hygiene necessities, fostering healthier and more resilient communities globally.
+                    </p>
+                </div>
+                <div>
+                     <div class="w-full aspect-square md:aspect-[3/4] rounded-[1px] overflow-hidden relative">
+                        <!-- Placeholder nature photo until more project photos exist -->
+                        <img src="../assets/nature/nature-31.jpg" alt="Vision Imagery" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- S6: About the project -->
+        <section class="max-w-[800px] mx-auto px-4 mb-32 md:mb-48">
+            <div class="prose prose-lg prose-p:font-body md:prose-xl text-on-surface/80 leading-relaxed font-body">
+                <h2 class="font-header font-bold text-3xl md:text-5xl text-on-surface uppercase tracking-tight mb-12 pb-6 border-b border-outline-variant/30">About Lumóra</h2>
+                
+                <p class="first-letter:text-7xl first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left first-letter:leading-[0.8]">
+                    Every single day, thousands of partially used soap bars are discarded by hotels across North America. Simultaneously, vulnerable communities both locally and internationally face severe health crises due to a lack of basic sanitation supplies. Lumóra exists to bridge this critical gap.
+                </p>
+                <p class="mt-8">
+                    Operating out of British Columbia, our student-led team partners with regional hospitality providers to intercept landfill-bound hygiene products. Instead of becoming environmental waste, these commodities are collected, sterilized, and meticulously re-processed into brand-new, pathogen-free soap bars.
+                </p>
+                <p class="mt-8">
+                    But our model goes beyond simple distribution. We couple our sanitation products with comprehensive hygiene education, working directly with NGOs and community leaders to ensure that the tools we provide translate directly into long-term behavioral change and disease prevention. This localized approach guarantees that our intervention is not just a temporary fix, but a sustainable pivot towards better public health.
+                </p>
+            </div>
+        </section>
+
+        <!-- S7: Funding -->
+        <section class="w-full bg-secondary-dark py-24 md:py-32 px-4 relative overflow-hidden">
+            <!-- Subtle background image overlay -->
+            <div class="absolute inset-0 z-0">
+                 <img src="../assets/nature/blur/nature-blur-15.jpg" alt="" class="w-full h-full object-cover opacity-20">
+                 <div class="absolute inset-0 bg-black/60"></div>
+            </div>
+
+            <div class="max-w-[1000px] mx-auto relative z-10 text-white">
+                <div class="text-center mb-16">
+                    <h2 class="font-header font-bold text-4xl md:text-6xl tracking-tight mb-6">Fueling The Operation</h2>
+                    <p class="font-body text-xl md:text-2xl text-white/70 max-w-2xl mx-auto italic">
+                        To scale our impact and reach more communities, Lumóra relies on the strategic support of forward-thinking sponsors.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white/5 border border-white/10 p-8 md:p-12 md:p-16 rounded-[1px] backdrop-blur-md">
+                    <div>
+                        <h3 class="font-header text-[12px] uppercase tracking-[0.2em] font-bold text-primary-container mb-6">Why We Need It</h3>
+                        <ul class="space-y-6 font-body text-lg text-white/80">
+                            <li class="flex gap-4 items-start"><i class="ph ph-check-circle text-primary-container mt-1.5 shrink-0"></i> <span class="leading-snug">Expand our hotel partnership network and logistics capabilities.</span></li>
+                            <li class="flex gap-4 items-start"><i class="ph ph-check-circle text-primary-container mt-1.5 shrink-0"></i> <span class="leading-snug">Upgrade sterilization and reprocessing machinery for higher output.</span></li>
+                            <li class="flex gap-4 items-start"><i class="ph ph-check-circle text-primary-container mt-1.5 shrink-0"></i> <span class="leading-snug">Fund international shipping and distribution channels to NGOs.</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-header text-[12px] uppercase tracking-[0.2em] font-bold text-primary-container mb-6">Resource Allocation</h3>
+                        <ul class="space-y-6 font-body text-lg text-white/80">
+                            <li class="flex gap-4 items-start"><i class="ph ph-chart-donut text-primary-container mt-1.5 shrink-0"></i> <span class="leading-snug"><strong>40%</strong> Processing & Sterilization Equipment</span></li>
+                            <li class="flex gap-4 items-start"><i class="ph ph-chart-donut text-primary-container mt-1.5 shrink-0"></i> <span class="leading-snug"><strong>35%</strong> Logistics & International Distribution</span></li>
+                            <li class="flex gap-4 items-start"><i class="ph ph-chart-donut text-primary-container mt-1.5 shrink-0"></i> <span class="leading-snug"><strong>25%</strong> Community Education Programming</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-16 text-center">
+                    <a href="mailto:mckaymichaelk@gmail.com" class="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white text-black font-header font-bold uppercase tracking-widest text-sm hover:bg-surface-variant transition-colors rounded-[1px]">
+                        Become a Sponsor <i class="ph ph-arrow-up-right text-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+     <!-- FOOTER -->
+        <footer class="w-full bg-secondary-dark text-white overflow-hidden">
+
+            <!-- MASTHEAD: Image + Name overlay -->
+            <div class="relative w-full h-[50vh] min-h-[320px] parallax-wrap">
+                <img src="../assets/nature/blur/nature-blur-45.jpg" alt="" class="parallax-img opacity-50">
+                <div class="relative z-10 h-full max-w-[1400px] mx-auto px-8 md:px-16 flex flex-col justify-end pb-10 md:pb-14">
+                    <p class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-4">Michael McKay &mdash; Portfolio</p>
+                    <h2 class="font-header font-bold text-step-6 md:text-step-7 leading-none tracking-tight text-white">
+                        Using Business<br class="hidden md:block"> as a Force for Good.
+                    </h2>
+                </div>
+            </div>
+
+            <!-- EDITORIAL CONTENT GRID -->
+            <div class="max-w-[1400px] mx-auto px-8 md:px-16 pt-16 pb-20 border-t border-white/10">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
+
+                    <!-- COL 1: Navigation -->
+                    <div>
+                        <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Navigate</h3>
+                        <nav class="flex flex-col gap-5">
+                            <a href="../index.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Home</a>
+                            <a href="impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">My Impact</a>
+                            <a href="gallery.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Nature Gallery</a>
+                            <a href="about.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">About Me</a>
+                            <a href="infinite-game.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">The Infinite Game</a>
+                        </nav>
+                    </div>
+
+                    <!-- COL 2: Roles -->
+                    <div>
+                        <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Ready to Lead As</h3>
+                        <div class="flex flex-col">
+                            <div class="group border-t border-white/10 py-5 flex flex-row justify-between items-start gap-4 cursor-default">
+                                <div class="flex-1">
+                                    <p class="font-header font-bold text-step-1 text-white/80 group-hover:text-white transition-colors tracking-tight leading-snug">Business Development Representative</p>
+                                    <p class="font-body italic text-sm text-white/0 group-hover:text-white/50 transition-all duration-500 max-h-0 group-hover:max-h-20 overflow-hidden leading-relaxed mt-0 group-hover:mt-3">Turning social impact goals into scalable, revenue-generating realities.</p>
+                                </div>
+                                <i class="ph ph-arrow-right text-lg text-white/20 transition-all duration-500 group-hover:rotate-90 group-hover:text-white group-hover:opacity-100 mt-1"></i>
+                            </div>
+                            <div class="group border-t border-white/10 py-5 flex flex-row justify-between items-start gap-4 cursor-default">
+                                <div class="flex-1">
+                                    <p class="font-header font-bold text-step-1 text-white/80 group-hover:text-white transition-colors tracking-tight leading-snug">Growth &amp; Impact Consultant</p>
+                                    <p class="font-body italic text-sm text-white/0 group-hover:text-white/50 transition-all duration-500 max-h-0 group-hover:max-h-20 overflow-hidden leading-relaxed mt-0 group-hover:mt-3">Solving complex organizational problems with creative, sustainable strategies.</p>
+                                </div>
+                                <i class="ph ph-arrow-right text-lg text-white/20 transition-all duration-500 group-hover:rotate-90 group-hover:text-white group-hover:opacity-100 mt-1"></i>
+                            </div>
+                            <div class="group border-t border-b border-white/10 py-5 flex flex-row justify-between items-start gap-4 cursor-default">
+                                <div class="flex-1">
+                                    <p class="font-header font-bold text-step-1 text-white/80 group-hover:text-white transition-colors tracking-tight leading-snug">Sustainability Consultant</p>
+                                    <p class="font-body italic text-sm text-white/0 group-hover:text-white/50 transition-all duration-500 max-h-0 group-hover:max-h-20 overflow-hidden leading-relaxed mt-0 group-hover:mt-3">Helping teams expand reach while scaling positive environmental impact.</p>
+                                </div>
+                                <i class="ph ph-arrow-right text-lg text-white/20 transition-all duration-500 group-hover:rotate-90 group-hover:text-white group-hover:opacity-100 mt-1"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COL 3: Contact -->
+                    <div>
+                        <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Get in Touch</h3>
+                        <div class="flex flex-col gap-5">
+                            <a href="https://linkedin.com/in/michaelkmckay" target="_blank" class="inline-block font-header font-bold text-step-1 text-white/70 hover:text-white border-b border-white/20 hover:border-white/60 pb-1 transition-all w-fit tracking-tight">LinkedIn</a>
+                            <a href="mailto:mckaymichaelk@gmail.com" class="inline-block font-header font-bold text-step-1 text-white/70 hover:text-white border-b border-white/20 hover:border-white/60 pb-1 transition-all w-fit tracking-tight">Email Me</a>
+                            <a href="tel:6048259224" class="inline-block font-header font-bold text-step-1 text-white/70 hover:text-white border-b border-white/20 hover:border-white/60 pb-1 transition-all w-fit tracking-tight">604.825.9224</a>
+                            <a href="../assets/files/Good Choice.pdf" download="Good Choice.pdf" class="inline-block font-header font-bold text-step-1 text-white/70 hover:text-white border-b border-white/20 hover:border-white/60 pb-1 transition-all w-fit tracking-tight">Download Resume</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom bar -->
+                <div class="mt-20 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <p class="font-header text-[10px] uppercase tracking-widest text-white/25">&copy; 2026 Michael McKay. All rights reserved.</p>
+                    <p class="font-body italic text-sm text-white/25">"Using business as a force for good."</p>
+                </div>
+            </div>
+        </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

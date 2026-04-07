@@ -1,0 +1,404 @@
+/* Custom styles and overrides for the Sales Portfolio */
+
+
+:root {
+    --color-primary: #6D390E;
+    --color-primary-container: #8A5024;
+    --color-secondary: #2C4035;
+    --color-secondary-dark: #2C2926;
+    --color-surface: #FFF8F3;
+    --color-surface-container-low: #F9F2EC;
+    --color-surface-container-lowest: #FDFBF9;
+    --color-surface-variant: #E8E1DB;
+    --color-on-surface: #1E1B18;
+    --color-on-primary: #FDFBF9;
+    --color-outline-variant: #D7C2B7;
+    --color-tertiary-fixed: #F5DFC9;
+    --color-on-tertiary-fixed: #25190C;
+    --header-height: 5rem;
+    /* 80px matches h-20 */
+
+    /* SDG Colors */
+    --sdg-4: #C5192D;
+    --sdg-11: #F89D2A;
+    --sdg-12: #BF8B2E;
+    --sdg-13: #3F7E44;
+}
+
+img,
+[class*='rounded-'] {
+    border-radius: 1px;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+}
+
+/* Scroll Adjustment for Fixed Header */
+html {
+    scroll-padding-top: var(--header-height);
+}
+
+.h-screen-fit {
+    height: 100dvh;
+    height: calc(100dvh - var(--header-height));
+    min-height: calc(100dvh - var(--header-height));
+}
+
+img {
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    letter-spacing: -0.02em;
+}
+
+/* Editorial Typography Utilities */
+.display-lg {
+    font-family: 'Figtree', sans-serif;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+}
+
+.label-sm {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+/* Button Styles & Hover Interaction */
+.btn-primary {
+    background-color: #6D390E;
+    color: #FDFBF9;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    padding: 10px 24px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: #33302C;
+    transform: scale(1.05);
+}
+
+.btn-primary:active {
+    transform: scale(0.95);
+}
+
+.btn-secondary {
+    background-color: #EEE7E1;
+    color: var(--color-on-surface);
+    font-family: 'Figtree', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    padding: 10px 32px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:hover {
+    background-color: #33302C;
+    color: #FDFBF9;
+    box-shadow: 0 10px 20px -3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outlined {
+    border: 1px solid #534434;
+    color: #534434;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    padding: 10px 32px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-outlined:hover {
+    background-color: #33302C;
+    color: #FDFBF9;
+    border-color: #33302C;
+    box-shadow: 0 10px 20px -3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outlined-dark {
+    border: 1px solid #8F7F75;
+    color: #8F7F75;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    padding: 10px 32px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-outlined-dark:hover {
+    background-color: #33302C;
+    color: #FDFBF9;
+    border-color: #33302C;
+    box-shadow: 0 10px 20px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific component styles */
+.rounded-default {
+    border-radius: 4px;
+}
+
+.text-shadow-xl {
+    text-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* --- VOICES CAROUSEL --- */
+#carousel-track {
+    user-select: none;
+    transition: none !important;
+    /* This one's gone for good */
+}
+
+.voice-slide {
+    width: 100%;
+}
+
+/* --- NAVIGATION (Mobile First) --- */
+
+/* --- NAVIGATION (Standard Dropdown) --- */
+
+/* Site Header Defaults */
+header#site-header {
+    background-color: rgba(255, 248, 243, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #6D390E;
+}
+
+header#site-header.is-transparent,
+.no-border-at-top nav,
+.hero-nav.bg-transparent {
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+/* Kill all ghost borders from pseudo-elements as reported by user */
+.no-border-at-top *,
+.hero-nav.bg-transparent *,
+.no-border-at-top *::before,
+.no-border-at-top *::after,
+.hero-nav.bg-transparent *::before,
+.hero-nav.bg-transparent *::after {
+    border-style: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* --- ENACTUS IMPACT REDESIGN --- */
+.impact-container {
+    max-width: 1400px;
+}
+
+.project-row {
+    padding: 6rem 0;
+    border-bottom: 1px solid var(--color-outline-variant);
+    position: relative;
+    /* Added to allow absolute overlay links */
+}
+
+.project-row:last-child {
+    border-bottom: none;
+}
+
+.project-category {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--color-on-surface);
+    opacity: 0.6;
+    margin-bottom: 1.5rem;
+    font-family: 'Figtree', sans-serif;
+}
+
+.project-title-large {
+    font-family: 'Figtree', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.project-feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+}
+
+.project-feature-item {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-on-surface);
+    opacity: 0.5;
+    font-family: 'Figtree', sans-serif;
+}
+
+.btn-view-project {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--color-on-surface);
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    font-family: 'Figtree', sans-serif;
+}
+
+.btn-view-project:hover {
+    background-color: var(--color-on-surface);
+    color: var(--color-surface);
+}
+
+.project-image-container {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: 1px;
+    overflow: hidden;
+    background-color: var(--color-surface-container-low);
+}
+
+.project-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-row:hover .project-image-container img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+    .project-row {
+        flex-direction: column;
+        padding: 4rem 0;
+        gap: 2.5rem;
+    }
+
+    .project-row>div:first-child {
+        width: 100%;
+    }
+
+    .project-row>div:last-child {
+        width: 100%;
+    }
+
+    .project-title-large {
+        font-size: 2.2rem;
+    }
+}
+
+/* CARDS: Make whole row clickable */
+.card-link-target::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.project-row {
+    transition: background-color 0.3s ease;
+}
+
+.project-row:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+/* --- PARALLAX EFFECT UTILITY --- */
+.parallax-wrap {
+    overflow: hidden;
+    position: relative;
+}
+
+.parallax-wrap img.parallax-img {
+    height: 140% !important;
+    width: 100% !important;
+    object-fit: cover;
+    position: absolute;
+    top: -20%;
+    left: 0;
+    will-change: transform;
+}
+
+/* --- EDITORIAL REFINEMENTS --- */
+.text-balance {
+    text-wrap: balance;
+}
+
+.bio-text {
+    line-height: 1.7;
+    color: rgba(30, 27, 24, 0.85);
+}
+
+.bio-drop-cap::first-letter {
+    font-family: 'Figtree', sans-serif;
+    float: left;
+    font-size: 5.5rem;
+    line-height: 0.75;
+    margin-right: 0.4rem;
+    margin-top: 0.4rem;
+    font-weight: 800;
+    color: #6D390E;
+}
+
+/* Testimonial Quote Balancing */
+.voice-slide blockquote p {
+    text-wrap: balance;
+}

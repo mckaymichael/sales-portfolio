@@ -361,3 +361,18 @@ header#site-header.is-transparent,
 .project-row:hover {
     background-color: rgba(0, 0, 0, 0.02);
 }
+/* --- PARALLAX EFFECT UTILITY --- */
+.parallax-wrap {
+    overflow: hidden;
+    position: relative;
+}
+
+.parallax-wrap img.parallax-img {
+    height: 140% !important;
+    width: 100% !important;
+    object-fit: cover;
+    position: absolute;
+    top: -20%;
+    left: 0;
+    will-change: transform;
+}

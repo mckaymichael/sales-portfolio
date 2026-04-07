@@ -340,4 +340,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }, { passive: true });
         });
     }
+
+    // --- GLOBAL PARALLAX ENGINE ---
+    const parallaxImages = document.querySelectorAll('.parallax-img');
+    parallaxImages.forEach(img => {
+        // Use the closest parent with .parallax-wrap for the trigger
+        const wrapper = img.closest('.parallax-wrap');
+        if (!wrapper) return;
+
+        gsap.to(img, {
+            y: '20%', // This moves within the 140% height / -20% top offset
+            ease: 'none',
+            scrollTrigger: {
+                trigger: wrapper,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: true
+            }
+        });
+    });
 });

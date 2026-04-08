@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TREFDP7M2T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TREFDP7M2T');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leap of Faith | Michael McKay</title>
+    <meta name="description" content="Jumping for a cause. Supporting Cyrus Centre's mission to end youth homelessness through the 2026 Leap of Faith fundraiser.">
+
+    <!-- Social Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Leap of Faith | Michael McKay">
+    <meta property="og:description" content="Jumping for a cause. Supporting Cyrus Centre's mission to end youth homelessness through the 2026 Leap of Faith fundraiser.">
+    <meta property="og:image" content="https://michaelmckay.net/assets/portraits/michael_social.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Leap of Faith | Michael McKay">
+    <meta property="twitter:description" content="Jumping for a cause. Supporting Cyrus Centre's mission to end youth homelessness through the 2026 Leap of Faith fundraiser.">
+    <meta property="twitter:image" content="https://michaelmckay.net/assets/portraits/michael_social.png">
+    <link rel="icon" href="../assets/icons/logo.svg" type="image/svg+xml">
+    
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6D390E',
+                        'primary-container': '#8A5024',
+                        secondary: '#2C4035',
+                        'secondary-dark': '#2C2926',
+                        surface: '#FFF8F3',
+                        'surface-container-low': '#F9F2EC',
+                        'surface-container-lowest': '#FDFBF9',
+                        'surface-variant': '#E8E1DB',
+                        'on-surface': '#1E1B18',
+                        'on-primary': '#FDFBF9',
+                        'outline-variant': '#D7C2B7',
+                        'tertiary-fixed': '#F5DFC9',
+                        'on-tertiary-fixed': '#25190C',
+                        white: '#FDFBF9',
+                        black: '#0A0A0A',
+                    },
+                    fontFamily: {
+                        sans: ['Figtree', 'sans-serif'],
+                        serif: ['Unna', 'serif'],
+                        header: ['Figtree', 'sans-serif'],
+                        body: ['Unna', 'serif'],
+                    },
+                    borderRadius: {
+                        'default': '1px',
+                    },
+                    fontSize: {
+                        // Minor Third (1.200) typescale : base 16px
+                        'step-0': ['1rem',     { lineHeight: '1.6' }],  // 16px : body base
+                        'step-1': ['1.2rem',   { lineHeight: '1.6' }],  // 19.2px : body lg
+                        'step-2': ['1.44rem',  { lineHeight: '1.4' }],  // 23px : small display
+                        'step-3': ['1.728rem', { lineHeight: '1.3' }],  // 27.6px : h4
+                        'step-4': ['2.074rem', { lineHeight: '1.2' }],  // 33.2px : h3
+                        'step-5': ['2.488rem', { lineHeight: '1.15' }], // 39.8px : h2
+                        'step-6': ['2.986rem', { lineHeight: '1.1' }],  // 47.8px : h1
+                        'step-7': ['3.583rem', { lineHeight: '1.05' }], // 57.3px : hero display
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-surface text-on-surface font-body antialiased">
+
+    <!-- Header Overlay Gradient -->
+    <div class="fixed top-0 left-0 w-full h-32 bg-gradient-to-b from-black/5 to-transparent z-40 pointer-events-none"></div>
+
+    <!-- Standard Responsive Header Container -->
+    <div class="fixed top-0 left-0 w-full z-50">
+      <nav class="bg-[#FFF8F3] text-gray-900 shadow-sm border-b border-[#D7C2B7] transition-colors duration-300">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between h-20 items-center">
+            
+            <div class="flex-shrink-0 flex items-center relative z-20">
+              <a href="../index.html" class="text-xl md:text-2xl font-header font-bold uppercase tracking-[0.2em] hover:opacity-80 transition-opacity">
+                Michael McKay
+              </a>
+            </div>
+            
+            <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
+              <a href="../pages/impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] border-b-2 border-secondary text-secondary">My Impact</a>
+              <a href="../pages/gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">Nature Gallery</a>
+              <a href="../pages/about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">About Me</a>
+              <a href="../pages/infinite-game.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">The Infinite Game</a>
+              <a href="../assets/files/Good Choice.pdf" download="Good Choice.pdf" class="ml-4 btn-primary relative">
+                Resume
+              </a>
+            </div>
+
+            <div class="flex items-center lg:hidden relative z-20">
+              <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-[1px] hover:bg-gray-100/20 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition-colors" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg id="icon-menu-closed" class="block h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="square" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg id="icon-menu-open" class="hidden h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="square" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:hidden absolute top-20 left-0 w-full bg-[#FFF8F3] shadow-xl border-t border-[#D7C2B7] overflow-hidden max-h-0 transition-all duration-300 ease-in-out" id="mobile-menu">
+          <div class="px-6 pt-4 pb-8 space-y-2">
+            <a href="../pages/impact.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">My Impact</a>
+            <a href="../pages/gallery.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Nature Gallery</a>
+            <a href="../pages/about.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">About Me</a>
+            <a href="../pages/infinite-game.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">The Infinite Game</a>
+            <a href="../assets/files/Good Choice.pdf" download="Good Choice.pdf" class="btn-primary block w-full text-center mt-6">
+              Download Resume
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    
+    <!-- Project Sub-Navigation (Breadcrumbs only, as requested no cross-links) -->
+    <div class="sticky top-20 z-[49] bg-[#FFF8F3]/90 backdrop-blur-md border-b border-[#D7C2B7]/30 py-4">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-[10px] font-header font-bold uppercase tracking-widest text-on-surface/60">
+            <div class="flex items-center gap-2">
+                <a href="../pages/impact.html" class="hover:text-primary transition-colors flex items-center gap-2 group">
+                    <span class="inline-block transition-transform group-hover:-translate-x-1">←</span>
+                    <span>Back to Impact</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <main class="pt-20 pb-0 min-h-screen">
+
+        <!-- S1: Photo and Project Name -->
+        <section class="animate-reveal max-w-[1400px] mx-auto px-4 mb-20 md:mb-32">
+            <div class="w-full aspect-[16/9] md:aspect-[21/9] min-h-[50vh] bg-secondary-dark relative rounded-[1px] overflow-hidden mb-12 shadow-[0_0_1px_rgba(0,0,0,0.1)]">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+                <img src="../assets/nature/blur/nature-blur-65.jpg" alt="Leap of Faith" class="w-full h-full object-cover">
+                <div class="absolute bottom-12 left-12 z-20">
+                    <span class="inline-block px-3 py-1 bg-primary text-white text-[10px] font-header font-bold uppercase tracking-widest rounded-[1px] mb-4">Coming July 9, 2026</span>
+                </div>
+            </div>
+            <div class="text-center px-4">
+                <h1 class="font-header font-bold text-6xl md:text-8xl tracking-tight text-on-surface uppercase pb-4">Leap of Faith</h1>
+                <p class="font-serif text-2xl md:text-3xl italic text-on-surface/60">Jumping out of a plane to end youth homelessness.</p>
+            </div>
+        </section>
+
+        <!-- S2: Goal & Participation (Front and Center) -->
+        <section class="max-w-[1400px] mx-auto px-4 mb-24 md:mb-32">
+            <div class="animate-reveal bg-secondary-dark text-white p-12 md:p-20 rounded-[1px] shadow-2xl relative overflow-hidden text-center">
+                <div class="absolute inset-0 bg-[url('../assets/nature/blur/nature-blur-15.jpg')] bg-cover opacity-10"></div>
+                <div class="relative z-10 max-w-4xl mx-auto">
+                    <h2 class="font-header text-[12px] uppercase tracking-[0.3em] font-bold text-tertiary-fixed mb-8">The Hurdles We Clear Together</h2>
+                    <p class="font-serif text-3xl md:text-5xl leading-tight italic mb-12">
+                        Your funds and participation on this journey provides a future for youth in our community.
+                    </p>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-12 border-t border-white/10 pt-12">
+                        <div class="text-center">
+                            <span class="block font-header text-6xl md:text-8xl font-bold tracking-tight text-white mb-2">$800</span>
+                            <span class="block font-header text-xs uppercase tracking-widest text-white/50">Our Fundraising Hurdle</span>
+                        </div>
+                        <div class="text-left max-w-sm">
+                            <h4 class="font-header font-bold text-xl text-white mb-3">One Full Week of Housing</h4>
+                            <p class="font-body text-white/70 text-lg leading-relaxed">
+                                I'm inviting you to join me in clearing this hurdle. Every dollar provides safe housing and professional support for a young person at Cyrus Centre who deserves a real chance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- S3: Mission Detail & SDGs -->
+        <section class="max-w-[1400px] mx-auto px-4 mb-24 md:mb-40">
+            <div class="animate-reveal border-t border-b border-outline-variant/40 py-12 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
+                <!-- Abstract -->
+                <div class="flex flex-col gap-4">
+                    <h4 class="font-header text-[10px] uppercase tracking-widest font-bold text-primary">Mission Detail</h4>
+                    <p class="font-body text-xl md:text-2xl text-on-surface/80 leading-relaxed italic">
+                        "Supporting Home at Last, the program helping youth aged 16–24 transition from crisis to independence."
+                    </p>
+                </div>
+                <!-- SDGs -->
+                <div class="flex flex-col gap-4 md:border-l md:border-outline-variant/30 md:pl-12">
+                    <h4 class="font-header text-[10px] uppercase tracking-widest font-bold text-primary">UN Global Goals</h4>
+                    <div class="flex flex-wrap gap-4 mt-2">
+                        <div class="flex items-center gap-3 border border-outline-variant/60 px-4 py-2 rounded-default">
+                             <span class="font-header font-bold text-step-2 text-primary">01</span>
+                             <span class="font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/80">No Poverty</span>
+                        </div>
+                        <div class="flex items-center gap-3 border border-outline-variant/60 px-4 py-2 rounded-default">
+                             <span class="font-header font-bold text-step-2 text-primary">11</span>
+                             <span class="font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/80">Sustainable Cities</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- S4: Story -->
+        <section class="animate-reveal max-w-[800px] mx-auto px-4 mb-32 md:mb-40">
+            <div class="prose prose-lg prose-p:font-body md:prose-xl text-on-surface/80 leading-relaxed font-body">
+                <h2 class="font-header font-bold text-3xl md:text-5xl text-on-surface uppercase tracking-tight mb-12 pb-6 border-b border-outline-variant/30">Why I'm Jumping</h2>
+                
+                <p class="first-letter:text-7xl first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left first-letter:leading-[0.8]">
+                    I'm jumping out of a plane in July. Not because I'm a thrill-seeker: I'm actually a little terrified. I'm doing it because youth homelessness is a crisis we can't ignore, and this is my 'Leap of Faith' to support the Cyrus Centre.
+                </p>
+                <p class="mt-8">
+                    Every day, youth in our community face choices no one their age should have to make: stay somewhere unsafe, sleep in a car, or return to an unhealthy situation. Cyrus Centre provides an alternative: a path from crisis toward independence through warm meals, safe beds, and mentorship.
+                </p>
+                <p class="mt-8">
+                    I believe that no one jumps alone. By taking this literal leap, I'm hoping to raise $800 to fund a full week of support for a young person who needs a real chance to build their future. This isn't just about my jump: it's about our impact.
+                </p>
+            </div>
+        </section>
+
+         <!-- S5: Call to Action (Moved below story) -->
+         <section class="animate-reveal max-w-[1400px] mx-auto px-4 mb-40">
+            <div class="w-full bg-secondary text-on-primary py-16 px-4 rounded-[1px] text-center flex flex-col items-center justify-center relative overflow-hidden shadow-2xl">
+                <div class="absolute inset-0 bg-[url('../assets/nature/blur/nature-blur-45.jpg')] bg-cover opacity-20"></div>
+                <div class="relative z-10 flex flex-col items-center">
+                    <i class="ph ph-hand-heart text-5xl text-tertiary-fixed mb-6"></i>
+                    <h2 class="font-header font-bold text-2xl md:text-4xl tracking-[0.05em] mb-4 uppercase">Participate in the Journey</h2>
+                    <p class="font-body text-xl mb-10 max-w-2xl text-on-primary/80">
+                        I'm inviting you to come with me on this journey by providing the funds needed to shelter youth in our community. You get to help me clear this hurdle.
+                    </p>
+                    <a href="https://secure.qgiv.com/event/leapoffaith2026/account/2318234/" target="_blank" class="px-12 py-6 bg-primary text-white font-header font-bold uppercase tracking-[0.2em] text-xs hover:bg-primary-container transition-all hover:scale-105 rounded-[1px] shadow-xl">
+                        Fund The Journey
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+     <!-- FOOTER -->
+        <footer class="w-full bg-secondary-dark text-white overflow-hidden">
+            <div class="max-w-[1400px] mx-auto px-8 md:px-16 pt-16 pb-20 border-t border-white/10">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
+                    <div>
+                        <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Navigate</h3>
+                        <nav class="flex flex-col gap-5">
+                            <a href="../index.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Home</a>
+                            <a href="../pages/impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">My Impact</a>
+                            <a href="../pages/gallery.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Nature Gallery</a>
+                            <a href="../pages/about.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">About Me</a>
+                        </nav>
+                    </div>
+                    <div>
+                         <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Support The Cause</h3>
+                         <p class="font-body text-white/60 mb-6 italic leading-relaxed">Help me reach my $800 goal for youth experiencing homelessness.</p>
+                         <a href="https://secure.qgiv.com/event/leapoffaith2026/account/2318234/" target="_blank" class="inline-block px-6 py-3 border border-white/20 text-white font-header font-bold uppercase tracking-widest text-[10px] hover:bg-white/10 transition-colors">Donate Now</a>
+                    </div>
+                </div>
+                <div class="mt-20 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <p class="font-header text-[10px] uppercase tracking-widest text-white/50">&copy; 2026 Michael McKay. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

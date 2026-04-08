@@ -45,6 +45,13 @@ html {
     scroll-padding-top: var(--header-height);
 }
 
+/* --- Reveal Animations --- */
+.animate-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    will-change: transform, opacity;
+}
+
 .h-screen-fit {
     height: 100dvh;
     height: calc(100dvh - var(--header-height));

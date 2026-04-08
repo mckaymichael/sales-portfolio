@@ -425,21 +425,6 @@
             stagger: 0.2,
             ease: "expo.out"
         });
-
-        // Scroll reveal for sections
-        gsap.utils.toArray(".animate-reveal").forEach((element) => {
-            gsap.from(element, {
-                opacity: 0,
-                y: 40,
-                duration: 1.2,
-                ease: "power4.out",
-                scrollTrigger: {
-                    trigger: element,
-                    start: "top 85%",
-                    toggleActions: "play none none none"
-                }
-            });
-        });
     </script>
 </body>
 </html>

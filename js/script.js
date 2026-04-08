@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const thoughts = [
         "I'm awesome", "Leader Material", "Curious Cat", "Dog Person",
         "Tree Hugger", "Goofball", "Goofy Goober", "Silly Goose",
-        "Team Player", "Caring", "Sponge", "Talkative", "Entrepreneur", "Innovative", "Creative", "🐶🐶🐶", "📸 Gotcha 📸", "You look good 😜",
+        "Team Player", "Caring", "Sponge", "Talkative", "Entrepreneur", "Innovative", "Creative", "🐶🐶🐶", "📸 Gotcha 📸", "You look good 😜","LinkedIn Boy","Sustainability Nerd","I'm a nerd", "Photographer", "Climber", "Love", "Courage", "Wisdom", "Book Worm", "Business, Business, Business", "Smoothies 🥵"
     ];
 
     function createThought(btn) {

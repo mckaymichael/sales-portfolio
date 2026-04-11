@@ -24,6 +24,22 @@ https://decorepair.com/ - This is my current company I used to work for. I was a
 
 https://www.linkedin.com/in/michaelkmckay/ - This is my linkedin profile. 
 
+North Langley Basketball Association - 
+
+Volunteer coaching was a big part of my life. For five years, I coached basketball for kids aged 5 to 15. In my final year, I had a strong team — talented, competitive, and hungry for glory. But my assistant coach and I saw the potential downside: if we leaned too hard into winning, they might lose their love for the game and struggle to handle defeat.
+    
+So I focused our practices and games around something deeper — teaching them how to have fun, include everyone, and show respect, especially when the other team was struggling.
+    
+We ended up winning the season, but what stuck with me most was the incredible sportsmanship the team showed along the way. As a coach, it meant everything to know I’d helped teach them a lesson that goes beyond basketball.
+
+Winning was the goal, but the dream was to enjoy the process.
+
+Enactus BCIT High School Case Competition - 
+
+After ending my coaching days, I was defficient in my volunteering experiences and the HSCC was exactly what I didn't know I needed. being put under pressure to lead, to teach, to inspire, and to make a l;asting impression all under less than 2 days was difficult, but rewarding, fun, and I would do it again. 
+
+Working with teenagers and children is fun and they always surprise me with how smart they are. These kids really had an impact on me and how I wish to dedicate myself to more volunteering, fundraising, unique experiences that have a positive impact on my community and someday the whole world. 
+
 ** Impact **
 
 **Shuswap Strong Artist’s Statement**

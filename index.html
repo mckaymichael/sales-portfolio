@@ -100,7 +100,7 @@
 </head>
 <body class="bg-surface text-on-surface font-body antialiased selection:bg-primary selection:text-white">
 
-    <main class="flex min-h-screen flex-col items-center justify-between">
+    <main class="flex min-h-screen flex-col items-center justify-between overflow-x-hidden">
         
         <!-- SECTION: HERO -->
         <section id="hero" class="relative min-h-[100dvh] w-full flex flex-col items-center justify-center overflow-hidden bg-secondary-dark">
@@ -129,7 +129,7 @@
         
         <!-- Desktop Nav -->
         <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
-          <a href="pages/impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">My Impact</a>
+          <a href="pages/impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">Impact Projects</a>
           <a href="pages/gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">Nature Gallery</a>
           <a href="pages/about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">About Me</a>
           <a href="pages/infinite-game.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">The Infinite Game</a>
@@ -159,7 +159,7 @@
     <!-- Mobile Menu, using max-h for accordion animation -->
     <div class="lg:hidden absolute top-20 left-0 w-full bg-[#FFF8F3] shadow-xl border-t border-[#D7C2B7] overflow-hidden max-h-0 transition-all duration-300 ease-in-out" id="mobile-menu">
       <div class="px-6 pt-4 pb-8 space-y-2">
-        <a href="pages/impact.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">My Impact</a>
+        <a href="pages/impact.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Impact Projects</a>
         <a href="pages/gallery.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Nature Gallery</a>
         <a href="pages/about.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">About Me</a>
         <a href="pages/infinite-game.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">The Infinite Game</a>
@@ -173,17 +173,17 @@
 
             <div class="max-w-[1200px] w-full mx-auto px-6 text-center relative z-10 flex flex-col justify-center items-center mt-24 pb-16 md:pb-24">
                 <h1 class="hero-text font-header font-bold text-step-5 md:text-step-6 lg:display-lg text-white mb-6 md:mb-10 tracking-tight leading-[1.1]">
-                    <span class="block md:hidden">Scale Your Global Impact Without Compromising Growth</span>
-                    <span class="hidden md:block">Scale Your Corporate, Social, and Environmental Impact Without Compromising Business Growth</span>
+                    <span class="block md:hidden">Scale Your Mission Without Limits</span>
+                    <span class="hidden md:block">Helping Mission-Driven Organizations Scale</span>
                 </h1>
                 
                 <p class="hero-text text-step-0 md:text-step-1 text-white/90 leading-relaxed max-w-[60ch] mb-10 md:mb-16 font-body">
-                    I combine sales, marketing, and creative design to help you secure funding, build lasting partnerships, and drive strategic growth.
+                    I am a strategic sales and creative leader dedicated to helping you secure funding, build lasting partnerships, and drive strategic growth.
                 </p>
                 
                 <div class="hero-text flex flex-col sm:flex-row items-center gap-4 sm:gap-8 w-full sm:w-auto">
                     <a href="pages/impact.html" class="btn-primary w-full sm:w-auto text-center">
-                        See My Impact
+                        See Impact Projects
                     </a>
                     <a href="assets/files/Good Choice.pdf" download="Good Choice.pdf" class="btn-secondary w-full sm:w-auto text-center">
                         Download Resume
@@ -202,7 +202,7 @@
                     <!-- Left Column: Title -->
                     <div class="w-full md:w-1/3">
                         <h2 class="font-header font-bold text-step-5 md:text-step-6 text-on-surface leading-tight tracking-tight text-balance">
-                            Solving Business Problems Through Creative Strategy.
+                            Solving Revenue, Growth, and Impact Challenges Through Creative Strategy.
                         </h2>
                     </div>
 
@@ -251,161 +251,283 @@
             </div>
         </section>
 
-        <!-- SECTION: READY TO LEAD AS (Swapped to Grid Style) -->
-        <section id="roles" class="w-full py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-surface">
-            <div class="max-w-[1400px] mx-auto">
-                <div class="mb-20 md:mb-28 flex justify-center">
-                    <h2 class="font-header font-bold text-step-5 md:text-step-6 text-on-surface leading-tight tracking-tight max-w-3xl text-center">
-                        Ready to Lead As
+        <!-- SECTION: EXPERIENCE & IMPACT SHOWCASE -->
+        <section id="role-impact-showcase" class="w-full bg-surface relative">
+            
+            <!-- Mobile Fallback (Stacked) -->
+            <div class="md:hidden flex flex-col py-24 px-6 gap-20">
+                
+                <!-- Mobile Intro -->
+                <div class="animate-reveal">
+                    <h2 class="font-header font-bold text-4xl text-on-surface leading-tight tracking-tight mb-6">
+                        Strategizing for Real-World Impact.
                     </h2>
+                    <p class="font-body text-xl text-on-surface/70 leading-relaxed text-balance">
+                        Theory only goes so far. The following highlights how I step into direct leadership roles to secure partnerships, drive growth, and scale sustainability across award-winning initiatives.
+                    </p>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
-                    <!-- Role 1 -->
-                    <div class="strength-card group flex flex-col items-start gap-8 border-t border-outline-variant/30 pt-10 p-6">
-                        <div class="w-full h-24 parallax-wrap rounded-[1px] overflow-hidden">
-                            <img src="assets/nature/blur/nature-blur-46.jpg" alt="" class="parallax-img transition-transform duration-1000 group-hover:scale-110">
+                <!-- Panel 1 Mobile -->
+                <div class="flex flex-col gap-6 animate-reveal">
+                    <div class="flex flex-col gap-5">
+                        <div class="w-full aspect-[4/3] rounded-[2px] overflow-hidden shadow-lg border border-outline-variant/20 block">
+                            <img src="assets/projects/lumora/lumora.jpg" alt="Lumóra" class="w-full h-full object-cover">
                         </div>
-                        <div>
-                            <h3 class="font-header font-bold text-2xl mb-4 text-on-surface tracking-tight group-hover:text-primary transition-colors duration-500">Business Development Representative</h3>
-                            <p class="font-body text-balance text-lg text-on-surface/70 leading-relaxed">
-                                Turning social impact goals into scalable, revenue-generating enterprises. Focused on strategic partnerships and sustainable growth models.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- Role 2 -->
-                    <div class="strength-card group flex flex-col items-start gap-8 border-t border-outline-variant/30 pt-10 p-6">
-                        <div class="w-full h-24 parallax-wrap rounded-[1px] overflow-hidden">
-                            <img src="assets/nature/blur/nature-blur-82.jpg" alt="" class="parallax-img transition-transform duration-1000 group-hover:scale-110">
-                        </div>
-                        <div>
-                            <h3 class="font-header font-bold text-2xl mb-4 text-on-surface tracking-tight group-hover:text-primary transition-colors duration-500">Growth & Impact Consultant</h3>
-                            <p class="font-body text-balance text-lg text-on-surface/70 leading-relaxed">
-                                Solving complex organizational problems with creative, sustainable strategies that balance profit and purpose.
-                            </p>
+                        <div class="w-full flex justify-between items-start px-1">
+                            <div class="flex flex-col">
+                                <p class="font-header font-bold text-3xl text-on-surface leading-none tracking-tighter mb-1">100%</p>
+                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">Biodegradable Target</p>
+                            </div>
+                            <div class="flex flex-col text-right">
+                                <p class="font-header font-bold text-3xl text-on-surface leading-none tracking-tighter mb-1">$5k+</p>
+                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">Early Phase Funding</p>
+                            </div>
                         </div>
                     </div>
+                    <div>
+                        <p class="font-header font-bold text-[10px] uppercase tracking-widest text-primary mb-3">Role: Business Development Rep.</p>
+                        <h3 class="font-header font-bold text-4xl text-on-surface leading-tight tracking-tight mb-4">Lumóra</h3>
+                        <p class="font-body text-lg text-on-surface/80 leading-relaxed mb-6">Transforming unavoidable milk waste into 100% biodegradable fiber that restores nitrogen to the soil.</p>
+                        
+                        <div class="border-l-2 border-primary pl-4 mb-6">
+                            <h4 class="font-header font-bold text-[10px] uppercase tracking-[0.2em] text-on-surface/50 mb-2">My Contribution</h4>
+                            <p class="font-body text-base text-on-surface/70 leading-relaxed">Focused on strategic partnerships and sustainable growth models. Secured critical corporate sponsorships to act as the bridge between environmental objectives and project revenue.</p>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-2 py-1 text-[9px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 9</span>
+                            <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-2 py-1 text-[9px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 12</span>
+                            <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-2 py-1 text-[9px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 15</span>
+                        </div>
+                        
+                        <a href="projects/lumora.html" class="inline-flex items-center gap-2 font-header font-bold text-xs uppercase tracking-widest text-primary hover:text-primary-container transition-colors">
+                            View Project <i class="ph ph-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
 
-                    <!-- Role 3 -->
-                    <div class="strength-card group flex flex-col items-start gap-8 border-t border-outline-variant/30 pt-10 p-6">
-                        <div class="w-full h-24 parallax-wrap rounded-[1px] overflow-hidden">
-                            <img src="assets/nature/blur/nature-blur-20.jpg" alt="" class="parallax-img transition-transform duration-1000 group-hover:scale-110">
+                <!-- Panel 2 Mobile -->
+                <div class="flex flex-col gap-6 animate-reveal">
+                    <div class="flex flex-col gap-5">
+                        <div class="w-full aspect-[4/3] rounded-[2px] overflow-hidden shadow-lg border border-outline-variant/20 block">
+                            <img src="assets/nature/nature-49.jpg" alt="Shuswap Strong" class="w-full h-full object-cover">
                         </div>
-                        <div>
-                            <h3 class="font-header font-bold text-2xl mb-4 text-on-surface tracking-tight group-hover:text-primary transition-colors duration-500">Sustainability Consultant</h3>
-                            <p class="font-body text-balance text-lg text-on-surface/70 leading-relaxed">
-                                Helping teams expand their reach while scaling positive environmental impact through data-driven advocacy and design.
-                            </p>
+                        <div class="w-full flex justify-between items-start px-1">
+                            <div class="flex flex-col">
+                                <p class="font-header font-bold text-3xl text-on-surface leading-none tracking-tighter mb-1">2</p>
+                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">National Awards</p>
+                            </div>
+                            <div class="flex flex-col text-right">
+                                <p class="font-header font-bold text-3xl text-on-surface leading-none tracking-tighter mb-1">100%</p>
+                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">Storage Capacity Hit</p>
+                            </div>
                         </div>
+                    </div>
+                    <div>
+                        <p class="font-header font-bold text-[10px] uppercase tracking-widest text-primary mb-3">Role: Growth & Impact Consultant</p>
+                        <h3 class="font-header font-bold text-4xl text-on-surface leading-tight tracking-tight mb-4">Shuswap Strong</h3>
+                        <p class="font-body text-lg text-on-surface/80 leading-relaxed mb-6">A campaign documenting the devastating 2023 BC wildfires and the incredible resilience of the local community.</p>
+                        
+                        <div class="border-l-2 border-primary pl-4 mb-6">
+                            <h4 class="font-header font-bold text-[10px] uppercase tracking-[0.2em] text-on-surface/50 mb-2">My Contribution</h4>
+                            <p class="font-body text-base text-on-surface/70 leading-relaxed">Solved complex organizational problems with creative strategy. Engineered the official campaign website, managed aerial drone documentation, and secured two national photography awards.</p>
+                        </div>
+                        
+                        <a href="pages/shuswap-gallery.html" class="inline-flex items-center gap-2 font-header font-bold text-xs uppercase tracking-widest text-primary hover:text-primary-container transition-colors mt-2">
+                            View Gallery <i class="ph ph-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Panel 3 Mobile -->
+                <div class="flex flex-col gap-6 animate-reveal">
+                    <div class="flex flex-col gap-5">
+                        <div class="w-full aspect-[4/3] rounded-[2px] overflow-hidden shadow-lg border border-outline-variant/20 block">
+                            <img src="assets/projects/ecometer/ecometer.jpg" alt="EcoMeter" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-full flex justify-between items-start px-1">
+                            <div class="flex flex-col">
+                                <p class="font-header font-bold text-3xl text-on-surface leading-none tracking-tighter mb-1">4+</p>
+                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">Corp Partners</p>
+                            </div>
+                            <div class="flex flex-col text-right">
+                                <p class="font-header font-bold text-3xl text-on-surface leading-none tracking-tighter mb-1">100%</p>
+                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">Pilot Funded</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="font-header font-bold text-[10px] uppercase tracking-widest text-primary mb-3">Role: Sustainability Consultant</p>
+                        <h3 class="font-header font-bold text-4xl text-on-surface leading-tight tracking-tight mb-4">EcoMeter</h3>
+                        <p class="font-body text-lg text-on-surface/80 leading-relaxed mb-6">An innovative digital solution designed for measuring and managing organizational environmental performance.</p>
+                        
+                        <div class="border-l-2 border-primary pl-4 mb-6">
+                            <h4 class="font-header font-bold text-[10px] uppercase tracking-[0.2em] text-on-surface/50 mb-2">My Contribution</h4>
+                            <p class="font-body text-base text-on-surface/70 leading-relaxed">Helped the project expand its reach and impact by directing the sponsor acquisition phase, securing critical corporate partners to fully fund the initiative.</p>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-2 py-1 text-[9px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 2</span>
+                            <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-2 py-1 text-[9px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 8</span>
+                            <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-2 py-1 text-[9px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 11</span>
+                            <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-2 py-1 text-[9px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 12</span>
+                        </div>
+                        
+                        <a href="projects/ecometer.html" class="inline-flex items-center gap-2 font-header font-bold text-xs uppercase tracking-widest text-primary hover:text-primary-container transition-colors">
+                            View Project <i class="ph ph-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <section id="section-impact" class="w-full py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-surface">
-            <div class="max-w-[1400px] mx-auto w-full">
+
+            <!-- Desktop GSAP Pinned Showcase -->
+            <div id="showcase-pin-container" class="hidden md:flex w-full h-[calc(100vh-80px)] overflow-hidden relative bg-surface">
                 
-                <!-- Header: Title + Button -->
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-8 lg:gap-20">
-                    <div class="max-w-2xl">
-                        <h2 class="animate-reveal font-header font-bold text-4xl md:text-5xl lg:text-5xl text-on-surface leading-tight tracking-tight mb-8">
-                            Hands-On Experience Building Sustainable Initiatives
+                <!-- Panel 0: Intro Context -->
+                <div class="showcase-panel absolute top-0 left-0 w-full h-full flex flex-col justify-center px-16 lg:px-24 xl:px-40 z-0 bg-surface border-t border-outline-variant/30">
+                    <div class="max-w-5xl">
+                        <h2 class="font-header font-bold text-5xl lg:text-7xl xl:text-8xl text-on-surface leading-tight tracking-tight mb-10">
+                            Strategizing for Real-World Impact.
                         </h2>
-                        <p class="font-body text-xl text-on-surface/70 leading-relaxed max-w-xl">
-                            I gained practical consulting experience by leading the sponsorship strategy at Enactus BCIT, helping student-led social enterprises directly address UN SDG goals while building strategic partnerships.
+                        <p class="font-body text-2xl lg:text-3xl xl:text-4xl text-on-surface/70 leading-snug max-w-4xl text-balance border-l-2 border-primary pl-8">
+                            Theory only goes so far. The following highlights how I step into direct leadership roles to secure partnerships, drive growth, and scale sustainability.
                         </p>
                     </div>
-                    <a href="pages/impact.html" class="btn-primary flex items-center gap-3 px-8 py-4 font-header font-bold uppercase tracking-widest text-xs transition-all hover:scale-105 active:scale-95 self-start md:self-end mb-2 group whitespace-nowrap flex-shrink-0">
-                        See All Impact Projects
-                        <i class="ph ph-arrow-up-right text-lg transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 relative -top-[1px]"></i>
-                    </a>
                 </div>
 
-                <!-- Projects Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                    
-                    <!-- Card 1: HSCC -->
-                    <a href="projects/hscc.html" class="editorial-card animate-reveal block w-full group h-full flex flex-col">
-                        <div class="w-full aspect-[4/3] rounded-[1px] overflow-hidden mb-6">
-                            <img src="assets/projects/high-school-case-comp/hscc.jpg" alt="Enactus Presentation" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]">
+                <!-- Panel 1 -->
+                <div class="showcase-panel absolute top-0 left-0 w-full h-full flex flex-row z-10 bg-surface">
+                    <div class="w-5/12 h-full flex flex-col justify-center p-6 lg:p-12 xl:px-16 border-r border-outline-variant/30">
+                        <div class="w-full aspect-[4/5] relative overflow-hidden rounded-[2px] shadow-2xl mb-8">
+                            <img src="assets/projects/lumora/lumora.jpg" alt="Lumóra" class="showcase-img w-full h-full object-cover scale-110">
                         </div>
-                        
-                        <div class="border-t border-outline-variant/50 pt-5 flex-grow flex flex-col">
-                            <h3 class="font-header font-bold text-step-4 md:text-step-5 text-on-surface mb-6 group-hover:text-primary transition-colors tracking-tight">
-                                High School Case Competition
-                            </h3>
-                            
-                            <p class="font-body text-xl text-on-surface/70 leading-relaxed mb-8">
-                                Inspiring the next generation of social entrepreneurs through competition.
-                            </p>
-
-                            <div class="flex flex-col gap-2 mb-8 mt-auto">
-                                <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-[1px]">SDG 4: Quality Education</span>
-                                <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-[1px]">SDG 17: Partnerships for the Goals</span>
+                        <div class="w-full flex justify-between items-start px-2">
+                            <div class="flex flex-col">
+                                <p class="font-header font-bold text-3xl xl:text-4xl text-on-surface leading-none tracking-tighter mb-1">100%</p>
+                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">Biodegradable Target</p>
                             </div>
-                            
-                            <div class="inline-flex items-center gap-3 text-primary font-header font-bold text-xs uppercase tracking-widest transition-all group-hover:gap-5">
-                                View Project <span class="block w-8 h-[1px] bg-primary transition-all group-hover:w-12"></span>
+                            <div class="flex flex-col text-right">
+                                <p class="font-header font-bold text-3xl xl:text-4xl text-on-surface leading-none tracking-tighter mb-1">$5k+</p>
+                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">Early Phase Funding</p>
                             </div>
                         </div>
-                    </a>
-
-                    <!-- Card 2: EcoMeter -->
-                    <a href="projects/ecometer.html" class="editorial-card animate-reveal block w-full group h-full flex flex-col">
-                        <div class="w-full aspect-[4/3] rounded-[1px] overflow-hidden mb-6">
-                            <img src="assets/projects/ecometer/ecometer.jpg" alt="EcoMeter Project" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]">
-                        </div>
-                        
-                        <div class="border-t border-outline-variant/50 pt-5 flex-grow flex flex-col">
-                            <h3 class="font-header font-bold text-step-4 md:text-step-5 text-on-surface mb-6 group-hover:text-primary transition-colors tracking-tight">
-                                EcoMeter
-                            </h3>
+                    </div>
+                    <div class="w-7/12 h-full flex flex-col justify-center px-16 xl:px-24">
+                        <div class="showcase-content opacity-100">
+                            <p class="font-header font-bold text-[10px] lg:text-xs uppercase tracking-[0.3em] text-primary mb-4">Role: Business Development Rep.</p>
+                            <h3 class="font-header font-bold text-5xl lg:text-7xl text-on-surface leading-tight tracking-tight mb-6">Lumóra</h3>
                             
-                            <p class="font-body text-xl text-on-surface/70 leading-relaxed mb-8">
-                                An innovative solution for measuring and managing environmental performance.
-                            </p>
-
-                            <div class="flex flex-col gap-2 mb-8 mt-auto">
-                                <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-[1px]">SDG 2: Zero Hunger</span>
-                                <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-[1px]">SDG 8: Decent Work</span>
-                                <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-[1px]">SDG 11: Sustainable Cities</span>
-                                <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-[1px]">SDG 12: Responsible Consumption</span>
-                            </div>
-                            
-                            <div class="inline-flex items-center gap-3 text-primary font-header font-bold text-xs uppercase tracking-widest transition-all group-hover:gap-5">
-                                View Project <span class="block w-8 h-[1px] bg-primary transition-all group-hover:w-12"></span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Card 3: Lumora -->
-                    <a href="projects/lumora.html" class="editorial-card animate-reveal block w-full group h-full flex flex-col">
-                        <div class="w-full aspect-[4/3] rounded-[1px] overflow-hidden mb-6">
-                            <img src="assets/projects/lumora/lumora.jpg" alt="Lumora Project" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]">
-                        </div>
-                        
-                        <div class="border-t border-outline-variant/50 pt-5 flex-grow flex flex-col">
-                            <h3 class="font-header font-bold text-step-4 md:text-step-5 text-on-surface mb-6 group-hover:text-primary transition-colors tracking-tight">
-                                Lumóra
-                            </h3>
-                            
-                            <p class="font-body text-xl text-on-surface/70 leading-relaxed mb-8">
+                            <p class="font-body text-xl lg:text-3xl text-on-surface/80 leading-snug mb-10 max-w-2xl text-balance">
                                 Transforming unavoidable milk waste into 100% biodegradable fiber that restores nitrogen to the soil.
                             </p>
 
-                            <div class="flex flex-col gap-2 mb-8 mt-auto">
-                                <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-[1px]">SDG 9: Industry, Innovation & Infrastructure</span>
-                                <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-[1px]">SDG 12: Responsible Consumption & Production</span>
-                                <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-[1px]">SDG 15: Life on Land</span>
+                            <div class="flex flex-col gap-2 mb-8 border-l-2 border-primary pl-5">
+                                <h4 class="font-header font-bold text-[10px] uppercase tracking-[0.2em] text-on-surface/50">My Contribution</h4>
+                                <p class="font-body text-lg xl:text-xl text-on-surface/70 leading-relaxed max-w-xl">
+                                    Focused on strategic partnerships and sustainable growth models. Secured critical corporate sponsorships to act as the bridge between environmental objectives and project revenue.
+                                </p>
+                            </div>
+
+                            <div class="flex flex-col gap-3 mb-10">
+                                <h4 class="font-header font-bold text-[10px] uppercase tracking-[0.2em] text-on-surface/50">UN SDGs Addressed</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-3 py-1.5 text-[10px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 9: Industry & Innovation</span>
+                                    <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-3 py-1.5 text-[10px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 12: Responsible Consumption</span>
+                                    <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-3 py-1.5 text-[10px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 15: Life on Land</span>
+                                </div>
                             </div>
                             
-                            <div class="inline-flex items-center gap-3 text-primary font-header font-bold text-xs uppercase tracking-widest transition-all group-hover:gap-5">
-                                View Project <span class="block w-8 h-[1px] bg-primary transition-all group-hover:w-12"></span>
+                            <a href="projects/lumora.html" class="btn-primary w-fit text-sm">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 2 -->
+                <div class="showcase-panel absolute top-0 left-0 w-full h-full flex flex-row z-20 bg-surface">
+                    <div class="w-5/12 h-full flex flex-col justify-center p-6 lg:p-12 xl:px-16 border-r border-outline-variant/30">
+                        <div class="w-full aspect-[4/5] relative overflow-hidden rounded-[2px] shadow-2xl mb-8">
+                            <img src="assets/nature/nature-49.jpg" alt="Shuswap Strong" class="showcase-img w-full h-full object-cover scale-110">
+                        </div>
+                        <div class="w-full flex justify-between items-start px-2">
+                            <div class="flex flex-col">
+                                <p class="font-header font-bold text-3xl xl:text-4xl text-on-surface leading-none tracking-tighter mb-1">2</p>
+                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">National Awards</p>
+                            </div>
+                            <div class="flex flex-col text-right">
+                                <p class="font-header font-bold text-3xl xl:text-4xl text-on-surface leading-none tracking-tighter mb-1">100%</p>
+                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">Storage Capacity Hit</p>
                             </div>
                         </div>
-                    </a>
+                    </div>
+                    <div class="w-7/12 h-full flex flex-col justify-center px-16 xl:px-24">
+                        <div class="showcase-content opacity-100">
+                            <p class="font-header font-bold text-[10px] lg:text-xs uppercase tracking-[0.3em] text-primary mb-4">Role: Growth & Impact Consultant</p>
+                            <h3 class="font-header font-bold text-5xl lg:text-7xl text-on-surface leading-tight tracking-tight mb-6 text-balance">Shuswap Strong</h3>
+                            
+                            <p class="font-body text-xl lg:text-3xl text-on-surface/80 leading-snug mb-10 max-w-2xl text-balance">
+                                A campaign documenting the devastating 2023 BC wildfires and the incredible resilience of the local community.
+                            </p>
+
+                            <div class="flex flex-col gap-2 mb-14 border-l-2 border-primary pl-5">
+                                <h4 class="font-header font-bold text-[10px] uppercase tracking-[0.2em] text-on-surface/50">My Contribution</h4>
+                                <p class="font-body text-lg xl:text-xl text-on-surface/70 leading-relaxed max-w-xl">
+                                    Solved complex organizational problems with creative strategy. Engineered the official campaign website, managed aerial drone documentation, and secured two national photography awards.
+                                </p>
+                            </div>
+
+                            <a href="pages/shuswap-gallery.html" class="btn-primary w-fit text-sm">View Gallery</a>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Panel 3 -->
+                <div class="showcase-panel absolute top-0 left-0 w-full h-full flex flex-row z-30 bg-surface">
+                    <div class="w-5/12 h-full flex flex-col justify-center p-6 lg:p-12 xl:px-16 border-r border-outline-variant/30">
+                        <div class="w-full aspect-[4/5] relative overflow-hidden rounded-[2px] shadow-2xl mb-8">
+                            <img src="assets/projects/ecometer/ecometer.jpg" alt="EcoMeter" class="showcase-img w-full h-full object-cover scale-110">
+                        </div>
+                        <div class="w-full flex justify-between items-start px-2">
+                            <div class="flex flex-col">
+                                <p class="font-header font-bold text-3xl xl:text-4xl text-on-surface leading-none tracking-tighter mb-1">4+</p>
+                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">Corp Partners</p>
+                            </div>
+                            <div class="flex flex-col text-right">
+                                <p class="font-header font-bold text-3xl xl:text-4xl text-on-surface leading-none tracking-tighter mb-1">100%</p>
+                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">Pilot Funded</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-7/12 h-full flex flex-col justify-center px-16 xl:px-24">
+                        <div class="showcase-content opacity-100">
+                            <p class="font-header font-bold text-[10px] lg:text-xs uppercase tracking-[0.3em] text-primary mb-4">Role: Sustainability Consultant</p>
+                            <h3 class="font-header font-bold text-5xl lg:text-7xl text-on-surface leading-tight tracking-tight mb-6">EcoMeter</h3>
+                            
+                            <p class="font-body text-xl lg:text-3xl text-on-surface/80 leading-snug mb-10 max-w-2xl text-balance">
+                                An innovative digital solution designed for measuring and managing organizational environmental performance.
+                            </p>
+
+                            <div class="flex flex-col gap-2 mb-8 border-l-2 border-primary pl-5">
+                                <h4 class="font-header font-bold text-[10px] uppercase tracking-[0.2em] text-on-surface/50">My Contribution</h4>
+                                <p class="font-body text-lg xl:text-xl text-on-surface/70 leading-relaxed max-w-xl">
+                                   Helped the project expand its reach and impact by directing the sponsor acquisition phase, securing critical corporate partners to fully fund the initiative.
+                                </p>
+                            </div>
+
+                            <div class="flex flex-col gap-3 mb-10">
+                                <h4 class="font-header font-bold text-[10px] uppercase tracking-[0.2em] text-on-surface/50">UN SDGs Addressed</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-3 py-1.5 text-[10px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 2: Zero Hunger</span>
+                                    <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-3 py-1.5 text-[10px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 8: Decent Work</span>
+                                    <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-3 py-1.5 text-[10px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 11: Sustainable Cities</span>
+                                    <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-3 py-1.5 text-[10px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 12: Responsible Consumption</span>
+                                </div>
+                            </div>
+                            
+                            <a href="projects/ecometer.html" class="btn-primary w-fit text-sm">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -545,8 +667,73 @@
                 </div>
             </div>
         </section>
+        
+        <!-- LEADERSHIP IMMERSIVE EXPERIENCE -->
+        <section id="leadership" class="bg-surface overflow-hidden border-t border-outline-variant/30 relative pt-20">
+            
+            <!-- 01: The Hero Context -->
+            <div class="w-full relative overflow-hidden group">
+                <!-- Image Container -->
+                <div class="w-full h-[60vh] md:h-screen relative overflow-hidden">
+                    <img src="assets/projects/high-school-case-comp/hscc-6.jpg" alt="Leadership Context" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000 scale-105 object-left md:object-center" data-parallax="0.1">
+                    <!-- Overlay (Desktop only) -->
+                    <div class="absolute inset-0 bg-secondary-dark/40 hidden md:block"></div>
+                </div>
+
+                <!-- Headline Container -->
+                <div class="relative md:absolute md:bottom-24 left-0 w-full px-8 md:px-16 lg:px-24 py-12 md:py-0 bg-surface md:bg-transparent">
+                    <h2 class="font-header font-bold text-5xl md:text-8xl lg:text-9xl text-on-surface md:text-white leading-[0.85] tracking-tighter animate-reveal">
+                        I Wish to <br class="hidden md:block"> Be a Leader
+                    </h2>
+                </div>
+            </div>
+
+            <!-- 02: THE SEQUENTIAL PILLARS -->
+            <div class="max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24">
+                
+                <!-- BEAT 1: COACHING -->
+                <div class="min-h-[50vh] flex flex-col justify-center py-32 md:py-48 border-b border-outline-variant/10">
+                    <div class="max-w-5xl">
+                        <span class="block font-header font-bold text-xs uppercase tracking-[0.4em] text-primary mb-8 animate-reveal">North Langley Basketball Association</span>
+                        <h3 class="font-header font-bold text-4xl md:text-5xl lg:text-6xl text-on-surface leading-tight tracking-tight mb-10 animate-reveal">
+                            5 Years Coaching Youth Basketball
+                        </h3>
+                        <p class="font-body text-xl md:text-2xl text-on-surface/70 leading-relaxed animate-reveal max-w-3xl text-balance">
+                            In my final season, we had a team that was hungry for glory, but I was worried they would lose their love for the game if we pushed too hard. It meant everything to me to step back from the scoreboard and teach them about sportsmanship and the joy of the process. We won the season, but the real victory for me was seeing them learn a lesson that goes far beyond the court.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- BEAT 2: HSCC -->
+                <div class="min-h-[50vh] flex flex-col justify-end items-end text-right py-32 md:py-48 border-b border-outline-variant/10">
+                    <div class="max-w-5xl">
+                        <span class="block font-header font-bold text-xs uppercase tracking-[0.4em] text-primary mb-8 animate-reveal">Enactus BCIT Case Comp</span>
+                        <h3 class="font-header font-bold text-4xl md:text-5xl lg:text-6xl text-on-surface leading-tight tracking-tight mb-10 animate-reveal text-balance">
+                            Pushing the Next Generation to Think Bigger
+                        </h3>
+                        <p class="font-body text-xl md:text-2xl text-on-surface/70 leading-relaxed animate-reveal max-w-3xl ml-auto text-balance">
+                            I had 48 hours to lead, teach, and inspire a group of teenagers under intense pressure to build a marketing campaign for a local startup. It was difficult, but rewarding, and the kids constantly surprised me with how smart they were. This experience made me realize how much I want to dedicate myself to work that has a positive impact on my community.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- BEAT 3: PEAK LEADERSHIP -->
+                <div class="min-h-[50vh] flex flex-col justify-center py-32 md:py-48">
+                    <div class="max-w-5xl">
+                        <span class="block font-header font-bold text-xs uppercase tracking-[0.4em] text-primary mb-8 animate-reveal">BCIT Peak Leadership Program</span>
+                        <h3 class="font-header font-bold text-4xl md:text-5xl lg:text-6xl text-on-surface leading-tight tracking-tight mb-10 animate-reveal">
+                            Strategic Leadership Readiness
+                        </h3>
+                        <p class="font-body text-xl md:text-2xl text-on-surface/70 leading-relaxed animate-reveal max-w-3xl text-balance">
+                            I have gained the professional tools to manage teams and handle conflict. It’s the foundation I'm using to back up my ambition and make sure I’m ready to lead effectively as I grow in my career.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
 <!-- LOOKING FOR WORK CTA -->
-        <section class="w-full h-[80vh] min-h-[600px] relative parallax-wrap overflow-hidden bg-black">
+        <section class="w-full h-[80vh] min-h-[600px] relative parallax-wrap overflow-hidden bg-secondary-dark">
             <img src="assets/portraits/michael.png" alt="Michael McKay" class="parallax-img opacity-60 object-top">
             <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
                 <p class="font-header font-bold text-[10px] md:text-xs uppercase tracking-[0.5em] text-white/80 mb-8">Currently Seeking New Opportunities</p>
@@ -587,7 +774,7 @@
                         <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Navigate</h3>
                         <nav class="flex flex-col gap-5">
                             <a href="index.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Home</a>
-                            <a href="pages/impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">My Impact</a>
+                            <a href="pages/impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Impact Projects</a>
                             <a href="pages/gallery.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Nature Gallery</a>
                             <a href="pages/about.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">About Me</a>
                              <a href="pages/infinite-game.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">The Infinite Game</a>

@@ -83,6 +83,7 @@
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
     
     <!-- Lenis Smooth Scroll -->
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
@@ -100,7 +101,7 @@
         </a>
         
         <div class="hidden lg:flex items-center gap-8 xl:gap-12">
-          <a href="impact.html" class="nav-link font-sans font-bold uppercase text-[10px] tracking-widest text-on-surface/60 hover:text-primary transition-colors">My Impact</a>
+          <a href="impact.html" class="nav-link font-sans font-bold uppercase text-[10px] tracking-widest text-on-surface/60 hover:text-primary transition-colors">Impact Projects</a>
           <a href="gallery.html" class="nav-link font-sans font-bold uppercase text-[10px] tracking-widest text-on-surface/60 hover:text-primary transition-colors">Nature Gallery</a>
           <a href="about.html" class="nav-link font-sans font-bold uppercase text-[10px] tracking-widest text-on-surface/60 hover:text-primary transition-colors">About Me</a>
           <a href="infinite-game.html" class="nav-link font-sans font-bold uppercase text-[10px] tracking-widest text-on-surface/60 hover:text-primary transition-colors">The Infinite Game</a>
@@ -119,7 +120,7 @@
     <div id="mobile-menu" class="lg:hidden fixed inset-0 z-[60] bg-surface translate-x-full transition-transform duration-500 flex flex-col items-center justify-center gap-8">
         <button id="close-menu" class="absolute top-8 right-8 text-on-surface"><i class="ph ph-x text-4xl"></i></button>
         <a href="../index.html" class="font-header font-bold text-3xl uppercase tracking-tighter">Michael McKay</a>
-        <a href="impact.html" class="font-sans font-bold uppercase text-xl tracking-widest">My Impact</a>
+        <a href="impact.html" class="font-sans font-bold uppercase text-xl tracking-widest">Impact Projects</a>
         <a href="gallery.html" class="font-sans font-bold uppercase text-xl tracking-widest">Nature Gallery</a>
         <a href="about.html" class="font-sans font-bold uppercase text-xl tracking-widest">About Me</a>
         <a href="infinite-game.html" class="font-sans font-bold uppercase text-xl tracking-widest">The Infinite Game</a>
@@ -179,7 +180,7 @@
                     <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Navigate</h3>
                     <nav class="flex flex-col gap-5">
                         <a href="../index.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Home</a>
-                        <a href="impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">My Impact</a>
+                        <a href="impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Impact Projects</a>
                         <a href="gallery.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Nature Gallery</a>
                         <a href="about.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">About Me</a>
                         <a href="infinite-game.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">The Infinite Game</a>
@@ -236,45 +237,6 @@
     </footer>
 
     <script>
-        // Lenis Smooth Scroll
-        const lenis = new Lenis();
-        function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
-
-        // Mobile Menu Logic
-        const menuBtn = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const closeBtn = document.getElementById('close-menu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('translate-x-full');
-        });
-
-        closeBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('translate-x-full');
-        });
-
-        // Intersection Observer for gallery items
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            observer.observe(item);
-        });
-
         // Nav Scroll Effect
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('main-nav');
@@ -285,5 +247,9 @@
             }
         });
     </script>
+    <script src="../js/script.js"></script>
 </body>
 </html>
+
+
+

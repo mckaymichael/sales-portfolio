@@ -1,0 +1,26 @@
+﻿On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   index.html
+	modified:   js/script.js
+	modified:   pages/about.html
+	modified:   pages/code-of-ethics.html
+	modified:   pages/gallery.html
+	modified:   pages/impact.html
+	modified:   pages/infinite-game.html
+	modified:   pages/project-template.html
+	modified:   pages/shuswap-gallery.html
+	modified:   projects/ecometer.html
+	modified:   projects/hscc.html
+	modified:   projects/leap-of-faith.html
+	modified:   projects/lumora.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	diff_output.txt
+	status.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")

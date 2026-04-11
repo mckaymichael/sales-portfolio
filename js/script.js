@@ -3,9 +3,9 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 // Initialize Lenis Smooth Scroll
 const lenis = new Lenis({
-    duration: 1.2,
+    duration: 1.0,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    wheelMultiplier: 1.1,
+    wheelMultiplier: 1.4,
     smoothWheel: true,
 });
 
@@ -221,17 +221,27 @@ document.addEventListener('DOMContentLoaded', () => {
         thought.textContent = thoughts[Math.floor(Math.random() * thoughts.length)];
         thought.className = 'absolute pointer-events-none font-header font-bold text-[10px] uppercase tracking-widest text-white/90 whitespace-nowrap z-[100]';
         
-        // Position it above the button relative to the viewport/document
         const rect = btn.getBoundingClientRect();
-        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const voicesSection = document.getElementById('voices');
         
-        thought.style.position = 'absolute';
-        thought.style.left = `${rect.left + rect.width / 2 + scrollLeft}px`;
-        thought.style.top = `${rect.top + scrollTop - 10}px`;
-        thought.style.transform = 'translateX(-50%)';
-        
-        document.body.appendChild(thought);
+        if (voicesSection) {
+            const vRect = voicesSection.getBoundingClientRect();
+            thought.style.position = 'absolute';
+            thought.style.left = `${rect.left + rect.width / 2 - vRect.left}px`;
+            thought.style.top = `${rect.top - vRect.top - 10}px`;
+            thought.style.transform = 'translateX(-50%)';
+            voicesSection.appendChild(thought);
+        } else {
+            const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            thought.style.position = 'absolute';
+            thought.style.left = `${rect.left + rect.width / 2 + scrollLeft}px`;
+            thought.style.top = `${rect.top + scrollTop - 10}px`;
+            thought.style.transform = 'translateX(-50%)';
+            
+            document.body.appendChild(thought);
+        }
         
         gsap.to(thought, {
             y: -40,
@@ -370,7 +380,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!wrapper) return;
 
         gsap.to(img, {
-            y: '20%', // This moves within the 140% height / -20% top offset
+            y: '14%', // Reduced from 20% to prevent over-translating past the -20% top offset (140vh * 0.14 = 19.6vh <= 20vh overhang)
             ease: 'none',
             scrollTrigger: {
                 trigger: wrapper,
@@ -389,11 +399,86 @@ document.addEventListener('DOMContentLoaded', () => {
                 opacity: 1,
                 y: 0,
                 duration: 1,
-                stagger: 0.15,
-                ease: "power3.out",
+                stagger: 0.1,
+                ease: "power2.out",
                 overwrite: true
             }),
-            start: "top 85%",
+            once: true
         });
+    }
+
+    // --- GSAP ZERO-HEIGHT LAZY FIX ---
+    // Instead of forcing a massive loading screen, we gracefully listen for lazy-loaded
+    // images popping into the DOM and tell GSAP to recalibrate its physical markers.
+    // We debounce the refresh call to prevent performance thrashing on rapid loading.
+    let refreshTimeout;
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    lazyImages.forEach(img => {
+        img.addEventListener('load', () => {
+            clearTimeout(refreshTimeout);
+            refreshTimeout = setTimeout(() => {
+                ScrollTrigger.refresh();
+            }, 100);
+        });
+    });
+
+    // --- GSAP SHOWCASE PINNING & WIPING ---
+    const pinContainer = document.getElementById('showcase-pin-container');
+    if (pinContainer && window.innerWidth >= 768) {
+        const panels = gsap.utils.toArray('.showcase-panel');
+        
+        if (panels.length > 0) {
+            // Initialize subsequent panels off-screen
+            gsap.set(panels.slice(1), { yPercent: 100 });
+            
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: pinContainer,
+                    pin: true,
+                    scrub: true,
+                    start: "top 80px", // Account for 80px static header
+                    end: () => "+=" + (panels.length * window.innerHeight),
+                }
+            });
+
+            panels.slice(1).forEach((panel, i) => {
+                const prevPanel = panels[i];
+                
+                // Shrink previous panel to simulate depth
+                tl.to(prevPanel, {
+                    scale: 0.95,
+                    transformOrigin: "top center",
+                    ease: "none",
+                    duration: 1
+                });
+
+                // Slide new panel up over it
+                tl.to(panel, {
+                    yPercent: 0,
+                    ease: "none",
+                    duration: 1
+                }, "<");
+                
+                // Subtle image parallax/scale
+                const img = panel.querySelector('.showcase-img');
+                if (img) {
+                    gsap.fromTo(img, 
+                        { scale: 1.15 }, 
+                        { scale: 1, ease: "none", duration: 1 }, 
+                        "<" 
+                    );
+                }
+                
+                // Content subtle reveal
+                const content = panel.querySelector('.showcase-content');
+                if (content) {
+                    gsap.fromTo(content,
+                        { y: 30, opacity: 0 },
+                        { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" },
+                        "<0.6" 
+                    );
+                }
+            });
+        }
     }
 });

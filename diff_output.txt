@@ -1,0 +1,1025 @@
+﻿diff --git a/index.html b/index.html
+index e8656a4..867127d 100644
+--- a/index.html
++++ b/index.html
+@@ -100,7 +100,7 @@
+ </head>
+ <body class="bg-surface text-on-surface font-body antialiased selection:bg-primary selection:text-white">
+ 
+-    <main class="flex min-h-screen flex-col items-center justify-between">
++    <main class="flex min-h-screen flex-col items-center justify-between overflow-x-hidden">
+         
+         <!-- SECTION: HERO -->
+         <section id="hero" class="relative min-h-[100dvh] w-full flex flex-col items-center justify-center overflow-hidden bg-secondary-dark">
+@@ -129,7 +129,7 @@
+         
+         <!-- Desktop Nav -->
+         <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
+-          <a href="pages/impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">My Impact</a>
++          <a href="pages/impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">Impact Projects</a>
+           <a href="pages/gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">Nature Gallery</a>
+           <a href="pages/about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">About Me</a>
+           <a href="pages/infinite-game.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">The Infinite Game</a>
+@@ -159,7 +159,7 @@
+     <!-- Mobile Menu, using max-h for accordion animation -->
+     <div class="lg:hidden absolute top-20 left-0 w-full bg-[#FFF8F3] shadow-xl border-t border-[#D7C2B7] overflow-hidden max-h-0 transition-all duration-300 ease-in-out" id="mobile-menu">
+       <div class="px-6 pt-4 pb-8 space-y-2">
+-        <a href="pages/impact.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">My Impact</a>
++        <a href="pages/impact.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Impact Projects</a>
+         <a href="pages/gallery.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Nature Gallery</a>
+         <a href="pages/about.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">About Me</a>
+         <a href="pages/infinite-game.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">The Infinite Game</a>
+@@ -183,7 +183,7 @@
+                 
+                 <div class="hero-text flex flex-col sm:flex-row items-center gap-4 sm:gap-8 w-full sm:w-auto">
+                     <a href="pages/impact.html" class="btn-primary w-full sm:w-auto text-center">
+-                        See My Impact
++                        See Impact Projects
+                     </a>
+                     <a href="assets/files/Good Choice.pdf" download="Good Choice.pdf" class="btn-secondary w-full sm:w-auto text-center">
+                         Download Resume
+@@ -202,7 +202,7 @@
+                     <!-- Left Column: Title -->
+                     <div class="w-full md:w-1/3">
+                         <h2 class="font-header font-bold text-step-5 md:text-step-6 text-on-surface leading-tight tracking-tight text-balance">
+-                            Solving Business Problems Through Creative Strategy.
++                            Solving Revenue, Growth, and Impact Challenges Through Creative Strategy.
+                         </h2>
+                     </div>
+ 
+@@ -251,161 +251,285 @@
+             </div>
+         </section>
+ 
+-        <!-- SECTION: READY TO LEAD AS (Swapped to Grid Style) -->
+-        <section id="roles" class="w-full py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-surface">
+-            <div class="max-w-[1400px] mx-auto">
+-                <div class="mb-20 md:mb-28 flex justify-center">
+-                    <h2 class="font-header font-bold text-step-5 md:text-step-6 text-on-surface leading-tight tracking-tight max-w-3xl text-center">
+-                        Ready to Lead As
++        <!-- SECTION: EXPERIENCE & IMPACT SHOWCASE -->
++        <section id="role-impact-showcase" class="w-full bg-surface relative">
++            
++            <!-- Mobile Fallback (Stacked) -->
++            <div class="md:hidden flex flex-col py-24 px-6 gap-20">
++                
++                <!-- Mobile Intro -->
++                <div class="animate-reveal">
++                    <p class="font-header font-bold text-[10px] uppercase tracking-[0.4em] text-primary mb-4">Experience & Application</p>
++                    <h2 class="font-header font-bold text-4xl text-on-surface leading-tight tracking-tight mb-6">
++                        Translating strategy into real-world impact.
+                     </h2>
++                    <p class="font-body text-xl text-on-surface/70 leading-relaxed text-balance">
++                        Theory only goes so far. The following highlights how I step into direct leadership roles to secure partnerships, drive growth, and scale sustainability across award-winning initiatives.
++                    </p>
+                 </div>
+                 
+-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
+-                    <!-- Role 1 -->
+-                    <div class="strength-card group flex flex-col items-start gap-8 border-t border-outline-variant/30 pt-10 p-6">
+-                        <div class="w-full h-24 parallax-wrap rounded-[1px] overflow-hidden">
+-                            <img src="assets/nature/blur/nature-blur-46.jpg" alt="" class="parallax-img transition-transform duration-1000 group-hover:scale-110">
++                <!-- Panel 1 Mobile -->
++                <div class="flex flex-col gap-6 animate-reveal">
++                    <div class="flex flex-col gap-5">
++                        <div class="w-full aspect-[4/3] rounded-[2px] overflow-hidden shadow-lg border border-outline-variant/20 block">
++                            <img src="assets/projects/lumora/lumora.jpg" alt="Lum├│ra" class="w-full h-full object-cover">
+                         </div>
+-                        <div>
+-                            <h3 class="font-header font-bold text-2xl mb-4 text-on-surface tracking-tight group-hover:text-primary transition-colors duration-500">Business Development Representative</h3>
+-                            <p class="font-body text-balance text-lg text-on-surface/70 leading-relaxed">
+-                                Turning social impact goals into scalable, revenue-generating enterprises. Focused on strategic partnerships and sustainable growth models.
+-                            </p>
++                        <div class="w-full flex justify-between items-start px-1">
++                            <div class="flex flex-col">
++                                <p class="font-header font-bold text-3xl text-on-surface leading-none tracking-tighter mb-1">100%</p>
++                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">Biodegradable Target</p>
++                            </div>
++                            <div class="flex flex-col text-right">
++                                <p class="font-header font-bold text-3xl text-on-surface leading-none tracking-tighter mb-1">$5k+</p>
++                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">Early Phase Funding</p>
++                            </div>
+                         </div>
+                     </div>
+-                    
+-                    <!-- Role 2 -->
+-                    <div class="strength-card group flex flex-col items-start gap-8 border-t border-outline-variant/30 pt-10 p-6">
+-                        <div class="w-full h-24 parallax-wrap rounded-[1px] overflow-hidden">
+-                            <img src="assets/nature/blur/nature-blur-82.jpg" alt="" class="parallax-img transition-transform duration-1000 group-hover:scale-110">
++                    <div>
++                        <p class="font-header font-bold text-[10px] uppercase tracking-widest text-primary mb-3">Role: Business Development Rep.</p>
++                        <h3 class="font-header font-bold text-4xl text-on-surface leading-tight tracking-tight mb-4">Lum├│ra</h3>
++                        <p class="font-body text-lg text-on-surface/80 leading-relaxed mb-6">Transforming unavoidable milk waste into 100% biodegradable fiber that restores nitrogen to the soil.</p>
++                        
++                        <div class="border-l-2 border-primary pl-4 mb-6">
++                            <h4 class="font-header font-bold text-[10px] uppercase tracking-[0.2em] text-on-surface/50 mb-2">My Contribution</h4>
++                            <p class="font-body text-base text-on-surface/70 leading-relaxed">Focused on strategic partnerships and sustainable growth models. Secured critical corporate sponsorships to act as the bridge between environmental objectives and project revenue.</p>
+                         </div>
+-                        <div>
+-                            <h3 class="font-header font-bold text-2xl mb-4 text-on-surface tracking-tight group-hover:text-primary transition-colors duration-500">Growth & Impact Consultant</h3>
+-                            <p class="font-body text-balance text-lg text-on-surface/70 leading-relaxed">
+-                                Solving complex organizational problems with creative, sustainable strategies that balance profit and purpose.
+-                            </p>
++                        
++                        <div class="flex flex-wrap gap-2 mb-8">
++                            <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-2 py-1 text-[9px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 9</span>
++                            <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-2 py-1 text-[9px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 12</span>
++                            <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-2 py-1 text-[9px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 15</span>
+                         </div>
++                        
++                        <a href="projects/lumora.html" class="inline-flex items-center gap-2 font-header font-bold text-xs uppercase tracking-widest text-primary hover:text-primary-container transition-colors">
++                            View Project <i class="ph ph-arrow-right"></i>
++                        </a>
+                     </div>
++                </div>
+ 
+-                    <!-- Role 3 -->
+-                    <div class="strength-card group flex flex-col items-start gap-8 border-t border-outline-variant/30 pt-10 p-6">
+-                        <div class="w-full h-24 parallax-wrap rounded-[1px] overflow-hidden">
+-                            <img src="assets/nature/blur/nature-blur-20.jpg" alt="" class="parallax-img transition-transform duration-1000 group-hover:scale-110">
++                <!-- Panel 2 Mobile -->
++                <div class="flex flex-col gap-6 animate-reveal">
++                    <div class="flex flex-col gap-5">
++                        <div class="w-full aspect-[4/3] rounded-[2px] overflow-hidden shadow-lg border border-outline-variant/20 block">
++                            <img src="assets/nature/nature-49.jpg" alt="Shuswap Strong" class="w-full h-full object-cover">
+                         </div>
+-                        <div>
+-                            <h3 class="font-header font-bold text-2xl mb-4 text-on-surface tracking-tight group-hover:text-primary transition-colors duration-500">Sustainability Consultant</h3>
+-                            <p class="font-body text-balance text-lg text-on-surface/70 leading-relaxed">
+-                                Helping teams expand their reach while scaling positive environmental impact through data-driven advocacy and design.
+-                            </p>
++                        <div class="w-full flex justify-between items-start px-1">
++                            <div class="flex flex-col">
++                                <p class="font-header font-bold text-3xl text-on-surface leading-none tracking-tighter mb-1">2</p>
++                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">National Awards</p>
++                            </div>
++                            <div class="flex flex-col text-right">
++                                <p class="font-header font-bold text-3xl text-on-surface leading-none tracking-tighter mb-1">100%</p>
++                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">Storage Capacity Hit</p>
++                            </div>
++                        </div>
++                    </div>
++                    <div>
++                        <p class="font-header font-bold text-[10px] uppercase tracking-widest text-primary mb-3">Role: Growth & Impact Consultant</p>
++                        <h3 class="font-header font-bold text-4xl text-on-surface leading-tight tracking-tight mb-4">Shuswap Strong</h3>
++                        <p class="font-body text-lg text-on-surface/80 leading-relaxed mb-6">A campaign documenting the devastating 2023 BC wildfires and the incredible resilience of the local community.</p>
++                        
++                        <div class="border-l-2 border-primary pl-4 mb-6">
++                            <h4 class="font-header font-bold text-[10px] uppercase tracking-[0.2em] text-on-surface/50 mb-2">My Contribution</h4>
++                            <p class="font-body text-base text-on-surface/70 leading-relaxed">Solved complex organizational problems with creative strategy. Engineered the official campaign website, managed aerial drone documentation, and secured two national photography awards.</p>
++                        </div>
++                        
++                        <a href="pages/shuswap-gallery.html" class="inline-flex items-center gap-2 font-header font-bold text-xs uppercase tracking-widest text-primary hover:text-primary-container transition-colors mt-2">
++                            View Gallery <i class="ph ph-arrow-right"></i>
++                        </a>
++                    </div>
++                </div>
++
++                <!-- Panel 3 Mobile -->
++                <div class="flex flex-col gap-6 animate-reveal">
++                    <div class="flex flex-col gap-5">
++                        <div class="w-full aspect-[4/3] rounded-[2px] overflow-hidden shadow-lg border border-outline-variant/20 block">
++                            <img src="assets/projects/ecometer/ecometer.jpg" alt="EcoMeter" class="w-full h-full object-cover">
++                        </div>
++                        <div class="w-full flex justify-between items-start px-1">
++                            <div class="flex flex-col">
++                                <p class="font-header font-bold text-3xl text-on-surface leading-none tracking-tighter mb-1">4+</p>
++                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">Corp Partners</p>
++                            </div>
++                            <div class="flex flex-col text-right">
++                                <p class="font-header font-bold text-3xl text-on-surface leading-none tracking-tighter mb-1">100%</p>
++                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">Pilot Funded</p>
++                            </div>
++                        </div>
++                    </div>
++                    <div>
++                        <p class="font-header font-bold text-[10px] uppercase tracking-widest text-primary mb-3">Role: Sustainability Consultant</p>
++                        <h3 class="font-header font-bold text-4xl text-on-surface leading-tight tracking-tight mb-4">EcoMeter</h3>
++                        <p class="font-body text-lg text-on-surface/80 leading-relaxed mb-6">An innovative digital solution designed for measuring and managing organizational environmental performance.</p>
++                        
++                        <div class="border-l-2 border-primary pl-4 mb-6">
++                            <h4 class="font-header font-bold text-[10px] uppercase tracking-[0.2em] text-on-surface/50 mb-2">My Contribution</h4>
++                            <p class="font-body text-base text-on-surface/70 leading-relaxed">Helped the project expand its reach and impact by directing the sponsor acquisition phase, securing critical corporate partners to fully fund the initiative.</p>
++                        </div>
++                        
++                        <div class="flex flex-wrap gap-2 mb-8">
++                            <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-2 py-1 text-[9px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 2</span>
++                            <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-2 py-1 text-[9px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 8</span>
++                            <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-2 py-1 text-[9px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 11</span>
++                            <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-2 py-1 text-[9px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 12</span>
+                         </div>
++                        
++                        <a href="projects/ecometer.html" class="inline-flex items-center gap-2 font-header font-bold text-xs uppercase tracking-widest text-primary hover:text-primary-container transition-colors">
++                            View Project <i class="ph ph-arrow-right"></i>
++                        </a>
+                     </div>
+                 </div>
+             </div>
+-        </section>
+-        
+-        <section id="section-impact" class="w-full py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-surface">
+-            <div class="max-w-[1400px] mx-auto w-full">
++
++            <!-- Desktop GSAP Pinned Showcase -->
++            <div id="showcase-pin-container" class="hidden md:flex w-full h-[calc(100vh-80px)] overflow-hidden relative bg-surface">
+                 
+-                <!-- Header: Title + Button -->
+-                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-8 lg:gap-20">
+-                    <div class="max-w-2xl">
+-                        <h2 class="animate-reveal font-header font-bold text-4xl md:text-5xl lg:text-5xl text-on-surface leading-tight tracking-tight mb-8">
+-                            Hands-On Experience Building Sustainable Initiatives
++                <!-- Panel 0: Intro Context -->
++                <div class="showcase-panel absolute top-0 left-0 w-full h-full flex flex-col justify-center px-16 lg:px-24 xl:px-40 z-0 bg-surface border-t border-outline-variant/30">
++                    <div class="max-w-5xl">
++                        <p class="font-header font-bold text-xs uppercase tracking-[0.4em] text-primary mb-6">Experience & Application</p>
++                        <h2 class="font-header font-bold text-5xl lg:text-7xl xl:text-8xl text-on-surface leading-tight tracking-tight mb-10">
++                            Translating strategy into real-world impact.
+                         </h2>
+-                        <p class="font-body text-xl text-on-surface/70 leading-relaxed max-w-xl">
+-                            I gained practical consulting experience by leading the sponsorship strategy at Enactus BCIT, helping student-led social enterprises directly address UN SDG goals while building strategic partnerships.
++                        <p class="font-body text-2xl lg:text-3xl xl:text-4xl text-on-surface/70 leading-snug max-w-4xl text-balance border-l-2 border-primary pl-8">
++                            Theory only goes so far. The following highlights how I step into direct leadership roles to secure partnerships, drive growth, and scale sustainability.
+                         </p>
+                     </div>
+-                    <a href="pages/impact.html" class="btn-primary flex items-center gap-3 px-8 py-4 font-header font-bold uppercase tracking-widest text-xs transition-all hover:scale-105 active:scale-95 self-start md:self-end mb-2 group whitespace-nowrap flex-shrink-0">
+-                        See All Impact Projects
+-                        <i class="ph ph-arrow-up-right text-lg transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 relative -top-[1px]"></i>
+-                    </a>
+                 </div>
+ 
+-                <!-- Projects Grid -->
+-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+-                    
+-                    <!-- Card 1: HSCC -->
+-                    <a href="projects/hscc.html" class="editorial-card animate-reveal block w-full group h-full flex flex-col">
+-                        <div class="w-full aspect-[4/3] rounded-[1px] overflow-hidden mb-6">
+-                            <img src="assets/projects/high-school-case-comp/hscc.jpg" alt="Enactus Presentation" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]">
++                <!-- Panel 1 -->
++                <div class="showcase-panel absolute top-0 left-0 w-full h-full flex flex-row z-10 bg-surface">
++                    <div class="w-5/12 h-full flex flex-col justify-center p-6 lg:p-12 xl:px-16 border-r border-outline-variant/30">
++                        <div class="w-full aspect-[4/5] relative overflow-hidden rounded-[2px] shadow-2xl mb-8">
++                            <img src="assets/projects/lumora/lumora.jpg" alt="Lum├│ra" class="showcase-img w-full h-full object-cover scale-110">
+                         </div>
+-                        
+-                        <div class="border-t border-outline-variant/50 pt-5 flex-grow flex flex-col">
+-                            <h3 class="font-header font-bold text-step-4 md:text-step-5 text-on-surface mb-6 group-hover:text-primary transition-colors tracking-tight">
+-                                High School Case Competition
+-                            </h3>
++                        <div class="w-full flex justify-between items-start px-2">
++                            <div class="flex flex-col">
++                                <p class="font-header font-bold text-3xl xl:text-4xl text-on-surface leading-none tracking-tighter mb-1">100%</p>
++                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">Biodegradable Target</p>
++                            </div>
++                            <div class="flex flex-col text-right">
++                                <p class="font-header font-bold text-3xl xl:text-4xl text-on-surface leading-none tracking-tighter mb-1">$5k+</p>
++                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">Early Phase Funding</p>
++                            </div>
++                        </div>
++                    </div>
++                    <div class="w-7/12 h-full flex flex-col justify-center px-16 xl:px-24">
++                        <div class="showcase-content opacity-100">
++                            <p class="font-header font-bold text-[10px] lg:text-xs uppercase tracking-[0.3em] text-primary mb-4">Role: Business Development Rep.</p>
++                            <h3 class="font-header font-bold text-5xl lg:text-7xl text-on-surface leading-tight tracking-tight mb-6">Lum├│ra</h3>
+                             
+-                            <p class="font-body text-xl text-on-surface/70 leading-relaxed mb-8">
+-                                Inspiring the next generation of social entrepreneurs through competition.
++                            <p class="font-body text-xl lg:text-3xl text-on-surface/80 leading-snug mb-10 max-w-2xl text-balance">
++                                Transforming unavoidable milk waste into 100% biodegradable fiber that restores nitrogen to the soil.
+                             </p>
+ 
+-                            <div class="flex flex-col gap-2 mb-8 mt-auto">
+-                                <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-[1px]">SDG 4: Quality Education</span>
+-                                <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-[1px]">SDG 17: Partnerships for the Goals</span>
++                            <div class="flex flex-col gap-2 mb-8 border-l-2 border-primary pl-5">
++                                <h4 class="font-header font-bold text-[10px] uppercase tracking-[0.2em] text-on-surface/50">My Contribution</h4>
++                                <p class="font-body text-lg xl:text-xl text-on-surface/70 leading-relaxed max-w-xl">
++                                    Focused on strategic partnerships and sustainable growth models. Secured critical corporate sponsorships to act as the bridge between environmental objectives and project revenue.
++                                </p>
+                             </div>
+-                            
+-                            <div class="inline-flex items-center gap-3 text-primary font-header font-bold text-xs uppercase tracking-widest transition-all group-hover:gap-5">
+-                                View Project <span class="block w-8 h-[1px] bg-primary transition-all group-hover:w-12"></span>
++
++                            <div class="flex flex-col gap-3 mb-10">
++                                <h4 class="font-header font-bold text-[10px] uppercase tracking-[0.2em] text-on-surface/50">UN SDGs Addressed</h4>
++                                <div class="flex flex-wrap gap-2">
++                                    <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-3 py-1.5 text-[10px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 9: Industry & Innovation</span>
++                                    <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-3 py-1.5 text-[10px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 12: Responsible Consumption</span>
++                                    <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-3 py-1.5 text-[10px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 15: Life on Land</span>
++                                </div>
+                             </div>
++                            
++                            <a href="projects/lumora.html" class="btn-primary w-fit text-sm">View Project</a>
+                         </div>
+-                    </a>
++                    </div>
++                </div>
+ 
+-                    <!-- Card 2: EcoMeter -->
+-                    <a href="projects/ecometer.html" class="editorial-card animate-reveal block w-full group h-full flex flex-col">
+-                        <div class="w-full aspect-[4/3] rounded-[1px] overflow-hidden mb-6">
+-                            <img src="assets/projects/ecometer/ecometer.jpg" alt="EcoMeter Project" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]">
++                <!-- Panel 2 -->
++                <div class="showcase-panel absolute top-0 left-0 w-full h-full flex flex-row z-20 bg-surface">
++                    <div class="w-5/12 h-full flex flex-col justify-center p-6 lg:p-12 xl:px-16 border-r border-outline-variant/30">
++                        <div class="w-full aspect-[4/5] relative overflow-hidden rounded-[2px] shadow-2xl mb-8">
++                            <img src="assets/nature/nature-49.jpg" alt="Shuswap Strong" class="showcase-img w-full h-full object-cover scale-110">
+                         </div>
+-                        
+-                        <div class="border-t border-outline-variant/50 pt-5 flex-grow flex flex-col">
+-                            <h3 class="font-header font-bold text-step-4 md:text-step-5 text-on-surface mb-6 group-hover:text-primary transition-colors tracking-tight">
+-                                EcoMeter
+-                            </h3>
++                        <div class="w-full flex justify-between items-start px-2">
++                            <div class="flex flex-col">
++                                <p class="font-header font-bold text-3xl xl:text-4xl text-on-surface leading-none tracking-tighter mb-1">2</p>
++                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">National Awards</p>
++                            </div>
++                            <div class="flex flex-col text-right">
++                                <p class="font-header font-bold text-3xl xl:text-4xl text-on-surface leading-none tracking-tighter mb-1">100%</p>
++                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">Storage Capacity Hit</p>
++                            </div>
++                        </div>
++                    </div>
++                    <div class="w-7/12 h-full flex flex-col justify-center px-16 xl:px-24">
++                        <div class="showcase-content opacity-100">
++                            <p class="font-header font-bold text-[10px] lg:text-xs uppercase tracking-[0.3em] text-primary mb-4">Role: Growth & Impact Consultant</p>
++                            <h3 class="font-header font-bold text-5xl lg:text-7xl text-on-surface leading-tight tracking-tight mb-6 text-balance">Shuswap Strong</h3>
+                             
+-                            <p class="font-body text-xl text-on-surface/70 leading-relaxed mb-8">
+-                                An innovative solution for measuring and managing environmental performance.
++                            <p class="font-body text-xl lg:text-3xl text-on-surface/80 leading-snug mb-10 max-w-2xl text-balance">
++                                A campaign documenting the devastating 2023 BC wildfires and the incredible resilience of the local community.
+                             </p>
+ 
+-                            <div class="flex flex-col gap-2 mb-8 mt-auto">
+-                                <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-[1px]">SDG 2: Zero Hunger</span>
+-                                <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-[1px]">SDG 8: Decent Work</span>
+-                                <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-[1px]">SDG 11: Sustainable Cities</span>
+-                                <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-[1px]">SDG 12: Responsible Consumption</span>
+-                            </div>
+-                            
+-                            <div class="inline-flex items-center gap-3 text-primary font-header font-bold text-xs uppercase tracking-widest transition-all group-hover:gap-5">
+-                                View Project <span class="block w-8 h-[1px] bg-primary transition-all group-hover:w-12"></span>
++                            <div class="flex flex-col gap-2 mb-14 border-l-2 border-primary pl-5">
++                                <h4 class="font-header font-bold text-[10px] uppercase tracking-[0.2em] text-on-surface/50">My Contribution</h4>
++                                <p class="font-body text-lg xl:text-xl text-on-surface/70 leading-relaxed max-w-xl">
++                                    Solved complex organizational problems with creative strategy. Engineered the official campaign website, managed aerial drone documentation, and secured two national photography awards.
++                                </p>
+                             </div>
++
++                            <a href="pages/shuswap-gallery.html" class="btn-primary w-fit text-sm">View Gallery</a>
+                         </div>
+-                    </a>
++                    </div>
++                </div>
+ 
+-                    <!-- Card 3: Lumora -->
+-                    <a href="projects/lumora.html" class="editorial-card animate-reveal block w-full group h-full flex flex-col">
+-                        <div class="w-full aspect-[4/3] rounded-[1px] overflow-hidden mb-6">
+-                            <img src="assets/projects/lumora/lumora.jpg" alt="Lumora Project" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]">
++                <!-- Panel 3 -->
++                <div class="showcase-panel absolute top-0 left-0 w-full h-full flex flex-row z-30 bg-surface">
++                    <div class="w-5/12 h-full flex flex-col justify-center p-6 lg:p-12 xl:px-16 border-r border-outline-variant/30">
++                        <div class="w-full aspect-[4/5] relative overflow-hidden rounded-[2px] shadow-2xl mb-8">
++                            <img src="assets/projects/ecometer/ecometer.jpg" alt="EcoMeter" class="showcase-img w-full h-full object-cover scale-110">
+                         </div>
+-                        
+-                        <div class="border-t border-outline-variant/50 pt-5 flex-grow flex flex-col">
+-                            <h3 class="font-header font-bold text-step-4 md:text-step-5 text-on-surface mb-6 group-hover:text-primary transition-colors tracking-tight">
+-                                Lum├│ra
+-                            </h3>
++                        <div class="w-full flex justify-between items-start px-2">
++                            <div class="flex flex-col">
++                                <p class="font-header font-bold text-3xl xl:text-4xl text-on-surface leading-none tracking-tighter mb-1">4+</p>
++                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">Corp Partners</p>
++                            </div>
++                            <div class="flex flex-col text-right">
++                                <p class="font-header font-bold text-3xl xl:text-4xl text-on-surface leading-none tracking-tighter mb-1">100%</p>
++                                <p class="font-header font-bold text-[9px] text-on-surface/50 uppercase tracking-[0.2em]">Pilot Funded</p>
++                            </div>
++                        </div>
++                    </div>
++                    <div class="w-7/12 h-full flex flex-col justify-center px-16 xl:px-24">
++                        <div class="showcase-content opacity-100">
++                            <p class="font-header font-bold text-[10px] lg:text-xs uppercase tracking-[0.3em] text-primary mb-4">Role: Sustainability Consultant</p>
++                            <h3 class="font-header font-bold text-5xl lg:text-7xl text-on-surface leading-tight tracking-tight mb-6">EcoMeter</h3>
+                             
+-                            <p class="font-body text-xl text-on-surface/70 leading-relaxed mb-8">
+-                                Transforming unavoidable milk waste into 100% biodegradable fiber that restores nitrogen to the soil.
++                            <p class="font-body text-xl lg:text-3xl text-on-surface/80 leading-snug mb-10 max-w-2xl text-balance">
++                                An innovative digital solution designed for measuring and managing organizational environmental performance.
+                             </p>
+ 
+-                            <div class="flex flex-col gap-2 mb-8 mt-auto">
+-                                <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-[1px]">SDG 9: Industry, Innovation & Infrastructure</span>
+-                                <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-[1px]">SDG 12: Responsible Consumption & Production</span>
+-                                <span class="inline-block w-fit font-header text-[10px] font-bold uppercase tracking-widest text-on-surface/60 border border-outline-variant/40 px-3 py-1.5 rounded-[1px]">SDG 15: Life on Land</span>
++                            <div class="flex flex-col gap-2 mb-8 border-l-2 border-primary pl-5">
++                                <h4 class="font-header font-bold text-[10px] uppercase tracking-[0.2em] text-on-surface/50">My Contribution</h4>
++                                <p class="font-body text-lg xl:text-xl text-on-surface/70 leading-relaxed max-w-xl">
++                                   Helped the project expand its reach and impact by directing the sponsor acquisition phase, securing critical corporate partners to fully fund the initiative.
++                                </p>
+                             </div>
+-                            
+-                            <div class="inline-flex items-center gap-3 text-primary font-header font-bold text-xs uppercase tracking-widest transition-all group-hover:gap-5">
+-                                View Project <span class="block w-8 h-[1px] bg-primary transition-all group-hover:w-12"></span>
++
++                            <div class="flex flex-col gap-3 mb-10">
++                                <h4 class="font-header font-bold text-[10px] uppercase tracking-[0.2em] text-on-surface/50">UN SDGs Addressed</h4>
++                                <div class="flex flex-wrap gap-2">
++                                    <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-3 py-1.5 text-[10px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 2: Zero Hunger</span>
++                                    <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-3 py-1.5 text-[10px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 8: Decent Work</span>
++                                    <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-3 py-1.5 text-[10px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 11: Sustainable Cities</span>
++                                    <span class="inline-block border border-outline-variant/60 text-on-surface/70 px-3 py-1.5 text-[10px] font-header font-bold uppercase tracking-widest rounded-[1px]">SDG 12: Responsible Consumption</span>
++                                </div>
+                             </div>
++                            
++                            <a href="projects/ecometer.html" class="btn-primary w-fit text-sm">View Project</a>
+                         </div>
+-                    </a>
++                    </div>
+                 </div>
++
+             </div>
+         </section>
+ 
+@@ -546,7 +670,7 @@
+             </div>
+         </section>
+ <!-- LOOKING FOR WORK CTA -->
+-        <section class="w-full h-[80vh] min-h-[600px] relative parallax-wrap overflow-hidden bg-black">
++        <section class="w-full h-[80vh] min-h-[600px] relative parallax-wrap overflow-hidden bg-secondary-dark">
+             <img src="assets/portraits/michael.png" alt="Michael McKay" class="parallax-img opacity-60 object-top">
+             <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+                 <p class="font-header font-bold text-[10px] md:text-xs uppercase tracking-[0.5em] text-white/80 mb-8">Currently Seeking New Opportunities</p>
+@@ -587,7 +711,7 @@
+                         <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Navigate</h3>
+                         <nav class="flex flex-col gap-5">
+                             <a href="index.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Home</a>
+-                            <a href="pages/impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">My Impact</a>
++                            <a href="pages/impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Impact Projects</a>
+                             <a href="pages/gallery.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Nature Gallery</a>
+                             <a href="pages/about.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">About Me</a>
+                              <a href="pages/infinite-game.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">The Infinite Game</a>
+diff --git a/js/script.js b/js/script.js
+index 1733bc7..fe68460 100644
+--- a/js/script.js
++++ b/js/script.js
+@@ -221,17 +221,27 @@ document.addEventListener('DOMContentLoaded', () => {
+         thought.textContent = thoughts[Math.floor(Math.random() * thoughts.length)];
+         thought.className = 'absolute pointer-events-none font-header font-bold text-[10px] uppercase tracking-widest text-white/90 whitespace-nowrap z-[100]';
+         
+-        // Position it above the button relative to the viewport/document
+         const rect = btn.getBoundingClientRect();
+-        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
++        const voicesSection = document.getElementById('voices');
+         
+-        thought.style.position = 'absolute';
+-        thought.style.left = `${rect.left + rect.width / 2 + scrollLeft}px`;
+-        thought.style.top = `${rect.top + scrollTop - 10}px`;
+-        thought.style.transform = 'translateX(-50%)';
+-        
+-        document.body.appendChild(thought);
++        if (voicesSection) {
++            const vRect = voicesSection.getBoundingClientRect();
++            thought.style.position = 'absolute';
++            thought.style.left = `${rect.left + rect.width / 2 - vRect.left}px`;
++            thought.style.top = `${rect.top - vRect.top - 10}px`;
++            thought.style.transform = 'translateX(-50%)';
++            voicesSection.appendChild(thought);
++        } else {
++            const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
++            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
++            
++            thought.style.position = 'absolute';
++            thought.style.left = `${rect.left + rect.width / 2 + scrollLeft}px`;
++            thought.style.top = `${rect.top + scrollTop - 10}px`;
++            thought.style.transform = 'translateX(-50%)';
++            
++            document.body.appendChild(thought);
++        }
+         
+         gsap.to(thought, {
+             y: -40,
+@@ -370,7 +380,7 @@ document.addEventListener('DOMContentLoaded', () => {
+         if (!wrapper) return;
+ 
+         gsap.to(img, {
+-            y: '20%', // This moves within the 140% height / -20% top offset
++            y: '14%', // Reduced from 20% to prevent over-translating past the -20% top offset (140vh * 0.14 = 19.6vh <= 20vh overhang)
+             ease: 'none',
+             scrollTrigger: {
+                 trigger: wrapper,
+@@ -389,11 +399,86 @@ document.addEventListener('DOMContentLoaded', () => {
+                 opacity: 1,
+                 y: 0,
+                 duration: 1,
+-                stagger: 0.15,
+-                ease: "power3.out",
++                stagger: 0.1,
++                ease: "power2.out",
+                 overwrite: true
+             }),
+-            start: "top 85%",
++            once: true
+         });
+     }
++
++    // --- GSAP ZERO-HEIGHT LAZY FIX ---
++    // Instead of forcing a massive loading screen, we gracefully listen for lazy-loaded
++    // images popping into the DOM and tell GSAP to recalibrate its physical markers.
++    // We debounce the refresh call to prevent performance thrashing on rapid loading.
++    let refreshTimeout;
++    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
++    lazyImages.forEach(img => {
++        img.addEventListener('load', () => {
++            clearTimeout(refreshTimeout);
++            refreshTimeout = setTimeout(() => {
++                ScrollTrigger.refresh();
++            }, 100);
++        });
++    });
++
++    // --- GSAP SHOWCASE PINNING & WIPING ---
++    const pinContainer = document.getElementById('showcase-pin-container');
++    if (pinContainer && window.innerWidth >= 768) {
++        const panels = gsap.utils.toArray('.showcase-panel');
++        
++        if (panels.length > 0) {
++            // Initialize subsequent panels off-screen
++            gsap.set(panels.slice(1), { yPercent: 100 });
++            
++            const tl = gsap.timeline({
++                scrollTrigger: {
++                    trigger: pinContainer,
++                    pin: true,
++                    scrub: 1,
++                    start: "top 80px", // Account for 80px static header
++                    end: () => "+=" + (panels.length * window.innerHeight),
++                }
++            });
++
++            panels.slice(1).forEach((panel, i) => {
++                const prevPanel = panels[i];
++                
++                // Shrink previous panel to simulate depth
++                tl.to(prevPanel, {
++                    scale: 0.95,
++                    transformOrigin: "top center",
++                    ease: "none",
++                    duration: 1
++                });
++
++                // Slide new panel up over it
++                tl.to(panel, {
++                    yPercent: 0,
++                    ease: "none",
++                    duration: 1
++                }, "<");
++                
++                // Subtle image parallax/scale
++                const img = panel.querySelector('.showcase-img');
++                if (img) {
++                    gsap.fromTo(img, 
++                        { scale: 1.15 }, 
++                        { scale: 1, ease: "none", duration: 1 }, 
++                        "<" 
++                    );
++                }
++                
++                // Content subtle reveal
++                const content = panel.querySelector('.showcase-content');
++                if (content) {
++                    gsap.fromTo(content,
++                        { y: 30, opacity: 0 },
++                        { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" },
++                        "<0.6" 
++                    );
++                }
++            });
++        }
++    }
+ });
+diff --git a/pages/about.html b/pages/about.html
+index 2abe474..fedbd3c 100644
+--- a/pages/about.html
++++ b/pages/about.html
+@@ -127,7 +127,7 @@
+             
+             <!-- Desktop Nav -->
+             <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
+-              <a href="impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">My Impact</a>
++              <a href="impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">Impact Projects</a>
+               <a href="gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">Nature Gallery</a>
+               <a href="about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] border-b-2 border-secondary text-secondary">About Me</a>
+               <a href="infinite-game.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">The Infinite Game</a>
+@@ -155,7 +155,7 @@
+         <!-- Mobile Menu Container -->
+         <div id="mobile-menu" class="lg:hidden absolute top-20 left-0 w-full bg-[#FFF8F3] shadow-xl border-t border-[#D7C2B7] overflow-hidden max-h-0 transition-all duration-300 ease-in-out z-40">
+           <div class="px-6 pt-4 pb-8 space-y-2">
+-            <a href="impact.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">My Impact</a>
++            <a href="impact.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Impact Projects</a>
+             <a href="gallery.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Nature Gallery</a>
+             <a href="about.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">About Me</a>
+             <a href="infinite-game.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">The Infinite Game</a>
+@@ -536,7 +536,7 @@
+                         <h3 class="animate-reveal font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Navigate</h3>
+                         <nav class="flex flex-col gap-5">
+                             <a href="../index.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Home</a>
+-                            <a href="impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">My Impact</a>
++                            <a href="impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Impact Projects</a>
+                             <a href="gallery.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Nature Gallery</a>
+                             <a href="about.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">About Me</a>
+                              <a href="infinite-game.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">The Infinite Game</a>
+@@ -628,3 +628,4 @@
+     </script>
+ </body>
+ </html>
++
+diff --git a/pages/code-of-ethics.html b/pages/code-of-ethics.html
+index a1b3111..8748ccb 100644
+--- a/pages/code-of-ethics.html
++++ b/pages/code-of-ethics.html
+@@ -111,7 +111,7 @@
+             
+             <!-- Desktop Nav -->
+             <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
+-              <a href="impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">My Impact</a>
++              <a href="impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">Impact Projects</a>
+               <a href="gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">Nature Gallery</a>
+               <a href="about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">About Me</a>
+               <a href="infinite-game.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">The Infinite Game</a>
+@@ -139,7 +139,7 @@
+         <!-- Mobile Menu Container -->
+         <div id="mobile-menu" class="lg:hidden absolute top-20 left-0 w-full bg-[#FFF8F3] shadow-xl border-t border-[#D7C2B7] overflow-hidden max-h-0 transition-all duration-300 ease-in-out z-40">
+           <div class="px-6 pt-4 pb-8 space-y-2">
+-            <a href="impact.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">My Impact</a>
++            <a href="impact.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Impact Projects</a>
+             <a href="gallery.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Nature Gallery</a>
+             <a href="about.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">About Me</a>
+             <a href="infinite-game.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">The Infinite Game</a>
+@@ -348,7 +348,7 @@
+                     <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Navigate</h3>
+                     <nav class="flex flex-col gap-5">
+                         <a href="../index.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Home</a>
+-                        <a href="impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">My Impact</a>
++                        <a href="impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Impact Projects</a>
+                         <a href="gallery.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Nature Gallery</a>
+                         <a href="about.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">About Me</a>
+                         <a href="infinite-game.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">The Infinite Game</a>
+@@ -428,3 +428,4 @@
+     </script>
+ </body>
+ </html>
++
+diff --git a/pages/gallery.html b/pages/gallery.html
+index 7cd3139..db1bffc 100644
+--- a/pages/gallery.html
++++ b/pages/gallery.html
+@@ -112,7 +112,7 @@
+         
+         <!-- Desktop Nav -->
+         <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
+-          <a href="impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">My Impact</a>
++          <a href="impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">Impact Projects</a>
+           <a href="gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] border-b-2 border-secondary text-secondary">Nature Gallery</a>
+           <a href="about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">About Me</a>
+           <a href="infinite-game.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">The Infinite Game</a>
+@@ -142,7 +142,7 @@
+     <!-- Mobile Menu, using max-h for accordion animation -->
+     <div class="lg:hidden absolute top-20 left-0 w-full bg-[#FFF8F3] shadow-xl border-t border-[#D7C2B7] overflow-hidden max-h-0 transition-all duration-300 ease-in-out" id="mobile-menu">
+       <div class="px-6 pt-4 pb-8 space-y-2">
+-        <a href="impact.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">My Impact</a>
++        <a href="impact.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Impact Projects</a>
+         <a href="gallery.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Nature Gallery</a>
+         <a href="about.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">About Me</a>
+         <a href="infinite-game.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">The Infinite Game</a>
+@@ -339,7 +339,7 @@
+                         <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Navigate</h3>
+                         <nav class="flex flex-col gap-5">
+                             <a href="../index.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Home</a>
+-                            <a href="impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">My Impact</a>
++                            <a href="impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Impact Projects</a>
+                             <a href="gallery.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Nature Gallery</a>
+                             <a href="about.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">About Me</a>
+                              <a href="infinite-game.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">The Infinite Game</a>
+@@ -398,3 +398,6 @@
+     <script src="../js/script.js"></script>
+ </body>
+ </html>
++
++
++
+diff --git a/pages/impact.html b/pages/impact.html
+index 6a2ca70..461d2ae 100644
+--- a/pages/impact.html
++++ b/pages/impact.html
+@@ -11,17 +11,17 @@
+     </script>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>My Impact | Michael McKay</title>
++    <title>Impact Projects | Michael McKay</title>
+     <meta name="description" content="Strategic growth and social impact initiatives. Explore Michael's work with Enactus and his commitment to sustainable business development.">
+ 
+     <!-- Social Meta Tags -->
+     <meta property="og:type" content="website">
+-    <meta property="og:title" content="My Impact | Michael McKay">
++    <meta property="og:title" content="Impact Projects | Michael McKay">
+     <meta property="og:description" content="Strategic growth and social impact initiatives. Explore Michael's work with Enactus and his commitment to sustainable business development.">
+     <meta property="og:image" content="https://michaelmckay.net/assets/portraits/michael_social.png">
+ 
+     <meta property="twitter:card" content="summary_large_image">
+-    <meta property="twitter:title" content="My Impact | Michael McKay">
++    <meta property="twitter:title" content="Impact Projects | Michael McKay">
+     <meta property="twitter:description" content="Strategic growth and social impact initiatives. Explore Michael's work with Enactus and his commitment to sustainable business development.">
+     <meta property="twitter:image" content="https://michaelmckay.net/assets/portraits/michael_social.png">
+     
+@@ -110,7 +110,7 @@
+         </div>
+         
+         <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
+-          <a href="impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] border-b-2 border-secondary text-secondary">My Impact</a>
++          <a href="impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] border-b-2 border-secondary text-secondary">Impact Projects</a>
+           <a href="gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">Nature Gallery</a>
+           <a href="about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">About Me</a>
+           <a href="infinite-game.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">The Infinite Game</a>
+@@ -140,7 +140,7 @@
+     <!-- Mobile Menu, using max-h for accordion animation -->
+     <div class="lg:hidden absolute top-20 left-0 w-full bg-[#FFF8F3] shadow-xl border-t border-[#D7C2B7] overflow-hidden max-h-0 transition-all duration-300 ease-in-out" id="mobile-menu">
+       <div class="px-6 pt-4 pb-8 space-y-2">
+-        <a href="impact.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">My Impact</a>
++        <a href="impact.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Impact Projects</a>
+         <a href="gallery.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Nature Gallery</a>
+         <a href="about.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">About Me</a>
+         <a href="infinite-game.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">The Infinite Game</a>
+@@ -483,7 +483,7 @@
+                         <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Navigate</h3>
+                         <nav class="flex flex-col gap-5">
+                             <a href="../index.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Home</a>
+-                            <a href="impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">My Impact</a>
++                            <a href="impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Impact Projects</a>
+                             <a href="gallery.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Nature Gallery</a>
+                             <a href="about.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">About Me</a>
+                              <a href="infinite-game.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">The Infinite Game</a>
+@@ -542,3 +542,4 @@
+     <script src="../js/script.js"></script>
+ </body>
+ </html>
++
+diff --git a/pages/infinite-game.html b/pages/infinite-game.html
+index 7a91d0c..25f2bbd 100644
+--- a/pages/infinite-game.html
++++ b/pages/infinite-game.html
+@@ -111,7 +111,7 @@
+             
+             <!-- Desktop Nav -->
+             <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
+-              <a href="impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">My Impact</a>
++              <a href="impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">Impact Projects</a>
+               <a href="gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">Nature Gallery</a>
+               <a href="about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">About Me</a>
+               <a href="infinite-game.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] border-b-2 border-secondary text-secondary">The Infinite Game</a>
+@@ -139,7 +139,7 @@
+         <!-- Mobile Menu Container -->
+         <div id="mobile-menu" class="lg:hidden absolute top-20 left-0 w-full bg-[#FFF8F3] shadow-xl border-t border-[#D7C2B7] overflow-hidden max-h-0 transition-all duration-300 ease-in-out z-40">
+           <div class="px-6 pt-4 pb-8 space-y-2">
+-            <a href="impact.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">My Impact</a>
++            <a href="impact.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Impact Projects</a>
+             <a href="gallery.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Nature Gallery</a>
+             <a href="about.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">About Me</a>
+             <a href="infinite-game.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">The Infinite Game</a>
+@@ -261,7 +261,7 @@
+                         <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Navigate</h3>
+                         <nav class="flex flex-col gap-5">
+                             <a href="../index.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Home</a>
+-                            <a href="impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">My Impact</a>
++                            <a href="impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Impact Projects</a>
+                             <a href="gallery.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Nature Gallery</a>
+                             <a href="about.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">About Me</a>
+                              <a href="infinite-game.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">The Infinite Game</a>
+@@ -343,3 +343,4 @@
+     </script>
+ </body>
+ </html>
++
+diff --git a/pages/project-template.html b/pages/project-template.html
+index 2fc54b8..046d6fb 100644
+--- a/pages/project-template.html
++++ b/pages/project-template.html
+@@ -111,7 +111,7 @@
+             
+             <!-- Desktop Nav -->
+             <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
+-              <a href="impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">My Impact</a>
++              <a href="impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">Impact Projects</a>
+               <a href="gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">Nature Gallery</a>
+               <a href="about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">About Me</a>
+               <a href="infinite-game.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">The Infinite Game</a>
+@@ -141,7 +141,7 @@
+         <!-- Mobile Menu, using max-h for accordion animation -->
+         <div class="lg:hidden absolute top-20 left-0 w-full bg-[#FFF8F3] shadow-xl border-t border-[#D7C2B7] overflow-hidden max-h-0 transition-all duration-300 ease-in-out" id="mobile-menu">
+           <div class="px-6 pt-4 pb-8 space-y-2">
+-            <a href="impact.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">My Impact</a>
++            <a href="impact.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Impact Projects</a>
+             <a href="gallery.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Nature Gallery</a>
+             <a href="about.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">About Me</a>
+             <a href="infinite-game.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">The Infinite Game</a>
+@@ -322,7 +322,7 @@
+                         <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Navigate</h3>
+                         <nav class="flex flex-col gap-5">
+                             <a href="../index.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Home</a>
+-                            <a href="impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">My Impact</a>
++                            <a href="impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Impact Projects</a>
+                             <a href="gallery.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Nature Gallery</a>
+                             <a href="about.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">About Me</a>
+                             <a href="infinite-game.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">The Infinite Game</a>
+@@ -380,3 +380,4 @@
+     <script src="../js/script.js"></script>
+ </body>
+ </html>
++
+diff --git a/pages/shuswap-gallery.html b/pages/shuswap-gallery.html
+index 32a90c9..d008557 100644
+--- a/pages/shuswap-gallery.html
++++ b/pages/shuswap-gallery.html
+@@ -100,7 +100,7 @@
+         </a>
+         
+         <div class="hidden lg:flex items-center gap-8 xl:gap-12">
+-          <a href="impact.html" class="nav-link font-sans font-bold uppercase text-[10px] tracking-widest text-on-surface/60 hover:text-primary transition-colors">My Impact</a>
++          <a href="impact.html" class="nav-link font-sans font-bold uppercase text-[10px] tracking-widest text-on-surface/60 hover:text-primary transition-colors">Impact Projects</a>
+           <a href="gallery.html" class="nav-link font-sans font-bold uppercase text-[10px] tracking-widest text-on-surface/60 hover:text-primary transition-colors">Nature Gallery</a>
+           <a href="about.html" class="nav-link font-sans font-bold uppercase text-[10px] tracking-widest text-on-surface/60 hover:text-primary transition-colors">About Me</a>
+           <a href="infinite-game.html" class="nav-link font-sans font-bold uppercase text-[10px] tracking-widest text-on-surface/60 hover:text-primary transition-colors">The Infinite Game</a>
+@@ -119,7 +119,7 @@
+     <div id="mobile-menu" class="lg:hidden fixed inset-0 z-[60] bg-surface translate-x-full transition-transform duration-500 flex flex-col items-center justify-center gap-8">
+         <button id="close-menu" class="absolute top-8 right-8 text-on-surface"><i class="ph ph-x text-4xl"></i></button>
+         <a href="../index.html" class="font-header font-bold text-3xl uppercase tracking-tighter">Michael McKay</a>
+-        <a href="impact.html" class="font-sans font-bold uppercase text-xl tracking-widest">My Impact</a>
++        <a href="impact.html" class="font-sans font-bold uppercase text-xl tracking-widest">Impact Projects</a>
+         <a href="gallery.html" class="font-sans font-bold uppercase text-xl tracking-widest">Nature Gallery</a>
+         <a href="about.html" class="font-sans font-bold uppercase text-xl tracking-widest">About Me</a>
+         <a href="infinite-game.html" class="font-sans font-bold uppercase text-xl tracking-widest">The Infinite Game</a>
+@@ -179,7 +179,7 @@
+                     <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Navigate</h3>
+                     <nav class="flex flex-col gap-5">
+                         <a href="../index.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Home</a>
+-                        <a href="impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">My Impact</a>
++                        <a href="impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Impact Projects</a>
+                         <a href="gallery.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Nature Gallery</a>
+                         <a href="about.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">About Me</a>
+                         <a href="infinite-game.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">The Infinite Game</a>
+@@ -287,3 +287,6 @@
+     </script>
+ </body>
+ </html>
++
++
++
+diff --git a/projects/ecometer.html b/projects/ecometer.html
+index 22a08b7..ba1ac64 100644
+--- a/projects/ecometer.html
++++ b/projects/ecometer.html
+@@ -112,7 +112,7 @@
+             
+             <!-- Desktop Nav -->
+             <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
+-              <a href="../pages/impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] border-b-2 border-secondary text-secondary">My Impact</a>
++              <a href="../pages/impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] border-b-2 border-secondary text-secondary">Impact Projects</a>
+               <a href="../pages/gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">Nature Gallery</a>
+               <a href="../pages/about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">About Me</a>
+               <a href="../pages/infinite-game.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">The Infinite Game</a>
+@@ -138,7 +138,7 @@
+ 
+         <div class="lg:hidden absolute top-20 left-0 w-full bg-[#FFF8F3] shadow-xl border-t border-[#D7C2B7] overflow-hidden max-h-0 transition-all duration-300 ease-in-out" id="mobile-menu">
+           <div class="px-6 pt-4 pb-8 space-y-2">
+-            <a href="../pages/impact.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">My Impact</a>
++            <a href="../pages/impact.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Impact Projects</a>
+             <a href="../pages/gallery.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Nature Gallery</a>
+             <a href="../pages/about.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">About Me</a>
+             <a href="../pages/infinite-game.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">The Infinite Game</a>
+@@ -405,7 +405,7 @@
+                         <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Navigate</h3>
+                         <nav class="flex flex-col gap-5">
+                             <a href="../index.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Home</a>
+-                            <a href="../pages/impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">My Impact</a>
++                            <a href="../pages/impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Impact Projects</a>
+                             <a href="../pages/gallery.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Nature Gallery</a>
+                             <a href="../pages/about.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">About Me</a>
+                              <a href="../pages/infinite-game.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">The Infinite Game</a>
+@@ -464,3 +464,4 @@
+     <script src="../js/script.js"></script>
+ </body>
+ </html>
++
+diff --git a/projects/hscc.html b/projects/hscc.html
+index 6ba23d2..6088deb 100644
+--- a/projects/hscc.html
++++ b/projects/hscc.html
+@@ -110,7 +110,7 @@
+             </div>
+             
+             <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
+-              <a href="../pages/impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] border-b-2 border-secondary text-secondary">My Impact</a>
++              <a href="../pages/impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] border-b-2 border-secondary text-secondary">Impact Projects</a>
+               <a href="../pages/gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">Nature Gallery</a>
+               <a href="../pages/about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">About Me</a>
+               <a href="../pages/infinite-game.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">The Infinite Game</a>
+@@ -135,7 +135,7 @@
+ 
+         <div class="lg:hidden absolute top-20 left-0 w-full bg-[#FFF8F3] shadow-xl border-t border-[#D7C2B7] overflow-hidden max-h-0 transition-all duration-300 ease-in-out" id="mobile-menu">
+           <div class="px-6 pt-4 pb-8 space-y-2">
+-            <a href="../pages/impact.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">My Impact</a>
++            <a href="../pages/impact.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Impact Projects</a>
+             <a href="../pages/gallery.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Nature Gallery</a>
+             <a href="../pages/about.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">About Me</a>
+             <a href="../pages/infinite-game.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">The Infinite Game</a>
+@@ -403,7 +403,7 @@
+                         <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Navigate</h3>
+                         <nav class="flex flex-col gap-5">
+                             <a href="../index.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Home</a>
+-                            <a href="../pages/impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">My Impact</a>
++                            <a href="../pages/impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Impact Projects</a>
+                             <a href="../pages/gallery.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Nature Gallery</a>
+                             <a href="../pages/about.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">About Me</a>
+                              <a href="../pages/infinite-game.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">The Infinite Game</a>
+@@ -462,3 +462,4 @@
+     <script src="../js/script.js"></script>
+ </body>
+ </html>
++
+diff --git a/projects/leap-of-faith.html b/projects/leap-of-faith.html
+index 6f170c9..ea2d86d 100644
+--- a/projects/leap-of-faith.html
++++ b/projects/leap-of-faith.html
+@@ -110,7 +110,7 @@
+             </div>
+             
+             <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
+-              <a href="../pages/impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] border-b-2 border-secondary text-secondary">My Impact</a>
++              <a href="../pages/impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] border-b-2 border-secondary text-secondary">Impact Projects</a>
+               <a href="../pages/gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">Nature Gallery</a>
+               <a href="../pages/about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">About Me</a>
+               <a href="../pages/infinite-game.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">The Infinite Game</a>
+@@ -135,7 +135,7 @@
+ 
+         <div class="lg:hidden absolute top-20 left-0 w-full bg-[#FFF8F3] shadow-xl border-t border-[#D7C2B7] overflow-hidden max-h-0 transition-all duration-300 ease-in-out" id="mobile-menu">
+           <div class="px-6 pt-4 pb-8 space-y-2">
+-            <a href="../pages/impact.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">My Impact</a>
++            <a href="../pages/impact.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Impact Projects</a>
+             <a href="../pages/gallery.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Nature Gallery</a>
+             <a href="../pages/about.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">About Me</a>
+             <a href="../pages/infinite-game.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">The Infinite Game</a>
+@@ -272,7 +272,7 @@
+                         <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Navigate</h3>
+                         <nav class="flex flex-col gap-5">
+                             <a href="../index.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Home</a>
+-                            <a href="../pages/impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">My Impact</a>
++                            <a href="../pages/impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Impact Projects</a>
+                             <a href="../pages/gallery.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Nature Gallery</a>
+                             <a href="../pages/about.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">About Me</a>
+                         </nav>
+@@ -292,3 +292,4 @@
+     <script src="../js/script.js"></script>
+ </body>
+ </html>
++
+diff --git a/projects/lumora.html b/projects/lumora.html
+index 5a51cc1..e40622d 100644
+--- a/projects/lumora.html
++++ b/projects/lumora.html
+@@ -110,7 +110,7 @@
+             </div>
+             
+             <div class="hidden lg:flex lg:items-center lg:space-x-4 relative z-20">
+-              <a href="../pages/impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] border-b-2 border-secondary text-secondary">My Impact</a>
++              <a href="../pages/impact.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] border-b-2 border-secondary text-secondary">Impact Projects</a>
+               <a href="../pages/gallery.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">Nature Gallery</a>
+               <a href="../pages/about.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">About Me</a>
+               <a href="../pages/infinite-game.html" class="px-3 py-2 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px] hover:bg-gray-100/20">The Infinite Game</a>
+@@ -135,7 +135,7 @@
+ 
+         <div class="lg:hidden absolute top-20 left-0 w-full bg-[#FFF8F3] shadow-xl border-t border-[#D7C2B7] overflow-hidden max-h-0 transition-all duration-300 ease-in-out" id="mobile-menu">
+           <div class="px-6 pt-4 pb-8 space-y-2">
+-            <a href="../pages/impact.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">My Impact</a>
++            <a href="../pages/impact.html" class="bg-gray-200 text-gray-900 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Impact Projects</a>
+             <a href="../pages/gallery.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">Nature Gallery</a>
+             <a href="../pages/about.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">About Me</a>
+             <a href="../pages/infinite-game.html" class="text-gray-900 hover:bg-gray-100 block py-3 px-4 font-sans font-bold uppercase text-xs tracking-widest transition-colors rounded-[1px]">The Infinite Game</a>
+@@ -417,7 +417,7 @@
+                         <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Navigate</h3>
+                         <nav class="flex flex-col gap-5">
+                             <a href="../index.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Home</a>
+-                            <a href="../pages/impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">My Impact</a>
++                            <a href="../pages/impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Impact Projects</a>
+                             <a href="../pages/gallery.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Nature Gallery</a>
+                             <a href="../pages/about.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">About Me</a>
+                              <a href="../pages/infinite-game.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">The Infinite Game</a>
+@@ -476,3 +476,4 @@
+     <script src="../js/script.js"></script>
+ </body>
+ </html>
++

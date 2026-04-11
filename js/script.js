@@ -46,15 +46,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // --- HERO ANIMATIONS ---
     const isMobile = window.innerWidth < 768;
-    const heroTextDelay = isMobile ? 4 : 10;
-    const heroNavDelay = isMobile ? 7 : 13;
-    const animDuration = 5;
+    const heroTextDelay = isMobile ? 2 : 2;
+    const heroNavDelay = isMobile ? 3 : 3;
+    const animDuration = 3;
 
     // Handle Mobile Video Seeking
     const heroVideo = document.getElementById('hero-video');
     if (isMobile && heroVideo) {
         heroVideo.addEventListener('loadedmetadata', () => {
-            const startTime = Math.max(0, heroVideo.duration - 7);
+            const startTime = Math.max(0, heroVideo.duration - 9);
             heroVideo.currentTime = startTime;
         });
     }

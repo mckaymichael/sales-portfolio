@@ -391,6 +391,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- HORIZONTAL PARALLAX (Leadership Mobile) ---
+    const leadershipImg = document.getElementById('leadership-image');
+    if (leadershipImg && isMobile) {
+        gsap.fromTo(leadershipImg, 
+            { objectPosition: '0% 50%' },
+            {
+                scrollTrigger: {
+                    trigger: leadershipImg,
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    scrub: true
+                },
+                objectPosition: '100% 50%',
+                ease: 'none'
+            }
+        );
+    }
+
     // --- GLOBAL REVEAL ANIMATIONS ---
     const revealElements = gsap.utils.toArray(".animate-reveal");
     if (revealElements.length > 0) {

@@ -58,15 +58,15 @@
                         'default': '1px',
                     },
                     fontSize: {
-                        // Minor Third (1.200) typescale — base 16px
-                        'step-0': ['1rem',     { lineHeight: '1.6' }],  // 16px — body base
-                        'step-1': ['1.2rem',   { lineHeight: '1.6' }],  // 19.2px — body lg
-                        'step-2': ['1.44rem',  { lineHeight: '1.4' }],  // 23px — small display
-                        'step-3': ['1.728rem', { lineHeight: '1.3' }],  // 27.6px — h4
-                        'step-4': ['2.074rem', { lineHeight: '1.2' }],  // 33.2px — h3
-                        'step-5': ['2.488rem', { lineHeight: '1.15' }], // 39.8px — h2
-                        'step-6': ['2.986rem', { lineHeight: '1.1' }],  // 47.8px — h1
-                        'step-7': ['3.583rem', { lineHeight: '1.05' }], // 57.3px — hero display
+                        // Minor Third (1.200) typescale : base 16px
+                        'step-0': ['1rem',     { lineHeight: '1.6' }],  // 16px : body base
+                        'step-1': ['1.2rem',   { lineHeight: '1.6' }],  // 19.2px : body lg
+                        'step-2': ['1.44rem',  { lineHeight: '1.4' }],  // 23px : small display
+                        'step-3': ['1.728rem', { lineHeight: '1.3' }],  // 27.6px : h4
+                        'step-4': ['2.074rem', { lineHeight: '1.2' }],  // 33.2px : h3
+                        'step-5': ['2.488rem', { lineHeight: '1.15' }], // 39.8px : h2
+                        'step-6': ['2.986rem', { lineHeight: '1.1' }],  // 47.8px : h1
+                        'step-7': ['3.583rem', { lineHeight: '1.05' }], // 57.3px : hero display
                     },
                 }
             }
@@ -152,40 +152,91 @@
   </nav>
 </div>
 
-    <main class="pt-32 pb-24 px-4 min-h-screen">
-        <div id="section-impact" class="max-w-[1400px] mx-auto">
-            <div class="mb-20">
-                <h1 class="font-header font-bold text-step-6 md:text-step-7 text-on-surface leading-tight mb-8">
+    <main class="pt-32 pb-24 min-h-screen">
+        <div id="section-impact" class="w-full">
+            
+            <!-- Category Title Section : Centered Container -->
+            <div class="max-w-[1400px] mx-auto px-8 lg:px-12">
+                <div class="animate-reveal mb-12 lg:mb-16 border-b border-outline-variant/30 pt-12 lg:pt-20 pb-12 lg:pb-16 text-center">
+                     <h1 class="font-header font-bold text-step-6 md:text-step-7 lg:text-step-8 text-on-surface leading-tight tracking-tight mb-8">
+                        The start of my journey into social impact.
+                     </h1>
+                     <p class="font-body text-xl md:text-2xl lg:text-3xl text-on-surface/70 leading-relaxed max-w-4xl mx-auto">
+                        How I'm using my business background to help solve problems that actually matter.
+                     </p>
+                </div>
+            </div>
+
+            <!-- FEATURED: Leap of Faith Full Width Banner -->
+            <div class="animate-reveal relative w-full mb-32 border-y border-outline-variant/30 group overflow-hidden shadow-sm">
+                <div class="flex flex-col lg:flex-row h-auto lg:h-[400px]">
+                    <!-- Image Area -->
+                    <div class="w-full lg:w-2/5 relative overflow-hidden h-[400px]">
+                        <img src="../assets/nature/blur/nature-blur-65.jpg" alt="Leap of Faith" class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110">
+                        <div class="absolute inset-0 flex flex-col justify-center px-12 z-20">
+                            <span class="inline-block w-fit px-3 py-1 bg-primary text-white text-[10px] font-header font-bold tracking-widest rounded-[1px] mb-4">Featured Initiative</span>
+                            <h2 class="text-secondary-dark font-header font-bold text-4xl lg:text-5xl tracking-tight leading-none mb-4">Starting with a<br>leap of faith</h2>
+                            <p class="text-secondary-dark font-body max-w-xs leading-relaxed">Join me on this journey as I provide the funds and support needed for those who need it most.</p>
+                        </div>
+                    </div>
+
+                    <!-- Horizontal Content Area : SINGLE COLUMN VERTICAL STACK -->
+                    <div class="w-full lg:w-3/5 bg-secondary-dark p-8 lg:p-16 flex flex-col items-start justify-center gap-10">
+                        <p class="font-serif text-2xl lg:text-3xl text-white italic leading-relaxed max-w-2xl">
+                            Jumping out of a plane to end youth homelessness.
+                        </p>
+                        
+                        <div class="flex gap-4 items-center">
+                            <i class="ph ph-hand-heart text-tertiary-fixed text-4xl shrink-0"></i>
+                            <div class="text-left font-header shrink-0">
+                                <h4 class="font-bold text-white/40 text-[10px] uppercase tracking-widest mb-1">Impact Goal</h4>
+                                <p class="text-white text-base font-bold">$800 for youth housing</p>
+                            </div>
+                        </div>
+
+                        <a href="../projects/leap-of-faith.html" class="inline-flex items-center gap-4 text-white font-header font-bold text-xs uppercase tracking-widest group/link border-b border-white/20 pb-2 hover:border-white transition-all">
+                            View Journey
+                            <i class="ph ph-arrow-right text-lg transition-transform group-hover/link:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-[1400px] mx-auto px-8 lg:px-12 mb-32">
+                <h2 class="animate-reveal font-header font-bold text-step-5 md:text-step-6 text-on-surface leading-tight mb-8">
                     Helping BCIT Student-Led <br/>Businesses Solve Global Issues.
-                </h1>
-                <p class="font-body text-xl md:text-2xl text-on-surface/80 leading-relaxed max-w-4xl">
+                </h2>
+                <p class="animate-reveal font-body text-xl md:text-2xl text-on-surface/80 leading-relaxed max-w-4xl">
                     I Lead Sponsorship Strategy at Enactus BCIT. Our club is a breeding ground for innovative ideas that address the <a href="https://sdgs.un.org/goals" target="_blank" class="underline hover:text-primary transition-colors">17 UN Sustainability Development Goals</a>. This is where the two worlds of sustainable futures and business collide.
                 </p>
             </div>
+
+
+
             <!-- UN SDG Context -->
-            <div class="impact-row bg-secondary text-white p-8 md:p-12 border border-white/10 rounded-default mb-20 shadow-xl relative overflow-hidden">
+            <div class="animate-reveal impact-row bg-secondary text-white p-8 md:p-12 border border-white/10 rounded-default mb-20 shadow-xl relative overflow-hidden">
                 <!-- Decorative Graphic -->
                 <div class="absolute -right-20 -top-20 opacity-10 pointer-events-none">
                     <i class="ph-fill ph-globe-hemisphere-west text-[400px] text-white"></i>
                 </div>
                 
-                <h2 class="font-header font-bold text-2xl md:text-3xl text-white mb-6 relative z-10 tracking-tight">Why the Global Goals Matter</h2>
-                <p class="font-body text-lg md:text-xl text-white/80 leading-relaxed max-w-4xl mb-12 relative z-10">
+                <h2 class="animate-reveal font-header font-bold text-2xl md:text-3xl text-white mb-6 relative z-10 tracking-tight">Why the Global Goals Matter</h2>
+                <p class="animate-reveal font-body text-lg md:text-xl text-white/80 leading-relaxed max-w-4xl mb-12 relative z-10">
                     The 17 Sustainable Development Goals are a global call to action to end poverty, protect the planet, and ensure peace and prosperity by 2030. As of 2025, the world faces profound hurdles, making immediate, scalable social enterprises more critical than ever.
                 </p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative z-10">
-                    <div class="space-y-3 border-t border-white/20 pt-6">
+                    <div class="animate-reveal space-y-3 border-t border-white/20 pt-6">
                         <div class="text-4xl md:text-5xl font-header font-bold text-tertiary-fixed tracking-tight">35%</div>
                         <h3 class="font-header font-bold text-xs uppercase tracking-widest text-white mb-4">Targets on Track</h3>
                         <p class="font-body text-white/70 leading-relaxed text-lg">Only about a third of the UN's targets are currently making moderate global progress, requiring aggressive intervention.</p>
                     </div>
-                    <div class="space-y-3 border-t border-white/20 pt-6">
+                    <div class="animate-reveal space-y-3 border-t border-white/20 pt-6">
                         <div class="text-4xl md:text-5xl font-header font-bold text-tertiary-fixed tracking-tight">800M+</div>
                         <h3 class="font-header font-bold text-xs uppercase tracking-widest text-white mb-4">Living in Poverty</h3>
                         <p class="font-body text-white/70 leading-relaxed text-lg">More than 800 million citizens globally still live in extreme poverty worldwide, fueling our urgency to address SDG 2 and SDG 8.</p>
                     </div>
-                    <div class="space-y-3 border-t border-white/20 pt-6">
+                    <div class="animate-reveal space-y-3 border-t border-white/20 pt-6">
                         <div class="text-4xl md:text-5xl font-header font-bold text-tertiary-fixed tracking-tight">$4T</div>
                         <h3 class="font-header font-bold text-xs uppercase tracking-widest text-white mb-4">Annual Financing Gap</h3>
                         <p class="font-body text-white/70 leading-relaxed text-lg">Developing nations face a $4 Trillion annual shortfall to achieve these goals, highlighting the need for systemic corporate partnerships.</p>
@@ -194,8 +245,9 @@
             </div>
 
             <!-- Projects Title -->
+             <section class="mx-auto px-8 lg:px-12">
             <div class="impact-row mb-4">
-                <h2 class="font-header font-bold text-2xl md:text-3xl text-on-surface tracking-tight max-w-4xl">
+                <h2 class="animate-reveal font-header font-bold text-2xl md:text-3xl text-on-surface tracking-tight max-w-4xl">
                     Our Sustainability Success Stories
                 </h2>
             </div>
@@ -204,7 +256,7 @@
             <div class="impact-container mx-auto">
                 
                 <!-- Lumóra -->
-                <div class="project-row flex flex-col lg:flex-row items-start gap-12 lg:gap-20 p-2 md:p-4">
+                <div class="project-row animate-reveal flex flex-col lg:flex-row items-start gap-12 lg:gap-20 p-2 md:p-4">
                     <div class="w-full lg:w-1/3">
                         <div class="flex items-center gap-3 mb-4">
                             <span class="project-category !mb-0">ENACTUS BCIT</span>
@@ -232,7 +284,7 @@
                 </div>
 
                 <!-- EcoMeter -->
-                <div class="project-row flex flex-col lg:flex-row items-start gap-12 lg:gap-20 p-2 md:p-4">
+                <div class="project-row animate-reveal flex flex-col lg:flex-row items-start gap-12 lg:gap-20 p-2 md:p-4">
                     <div class="w-full lg:w-1/3">
                         <div class="project-category">ENACTUS BCIT</div>
                         <h3 class="font-header font-bold text-step-5 text-on-surface mb-6 tracking-tight uppercase">EcoMeter</h3>
@@ -256,7 +308,7 @@
                 </div>
 
                 <!-- HSCC -->
-                <div class="project-row flex flex-col lg:flex-row items-start gap-12 lg:gap-20 p-2 md:p-4">
+                <div class="project-row animate-reveal flex flex-col lg:flex-row items-start gap-12 lg:gap-20 p-2 md:p-4">
                     <div class="w-full lg:w-1/3">
                         <div class="project-category">ENACTUS BCIT</div>
                         <h3 class="font-header font-bold text-step-5 text-on-surface mb-6 tracking-tight uppercase">HSCC</h3>
@@ -280,7 +332,7 @@
 
             </div>
 
-
+</section>
 
 
 
@@ -308,21 +360,21 @@
         <!-- Wildfire Feature Section -->
         <div id="section-wildfire" class="max-w-[1200px] mx-auto px-4 mt-40">
 
-            <!-- Section eyebrow + title — matches site standard -->
+            <!-- Section eyebrow + title : matches site standard -->
             <div class="mb-16 border-t border-outline-variant/30 pt-16">
                 <p class="font-header font-bold text-[12px] uppercase tracking-[0.3em] text-primary mb-6">Documentary Photography · 2023</p>
-                <h2 class="font-header font-bold text-step-5 md:text-step-6 text-on-surface leading-tight max-w-3xl">
+                <h2 class="animate-reveal font-header font-bold text-step-5 md:text-step-6 text-on-surface leading-tight max-w-3xl">
                     The Bush Creek East Wildfire
                 </h2>
             </div>
 
-            <!-- Feature Image — no card wrapper, raw editorial -->
+            <!-- Feature Image : no card wrapper, raw editorial -->
             <div class="mb-6 overflow-hidden rounded-[1px]">
                 <img src="../assets/nature/nature-49.jpg" alt="Shuswap Strong" loading="lazy" class="w-full aspect-[4/3] object-cover object-center">
             </div>
             <!-- Caption -->
             <p class="font-header font-bold text-[10px] uppercase tracking-widest text-on-surface/40 mb-20">
-                Shuswap Strong &mdash; Aerial drone, Bush Creek East, BC &mdash; 2023
+                Shuswap Strong : Aerial drone, Bush Creek East, BC : 2023
             </p>
 
             <!-- Content Split -->
@@ -342,7 +394,7 @@
                 <!-- Awards & NSSR Sidebar -->
                 <div class="lg:col-span-5 flex flex-col gap-16">
 
-                    <!-- Awards — editorial list style, no card -->
+                    <!-- Awards : editorial list style, no card -->
                     <div class="impact-row border-l border-outline-variant/30 pl-6 lg:pl-8">
                         <h4 class="font-header text-[10px] uppercase tracking-widest font-bold text-primary mb-6">Applied Arts Magazine</h4>
                         <p class="font-body text-base md:text-lg text-on-surface/75 leading-relaxed mb-8">
@@ -356,7 +408,7 @@
                     </div>
 
                     <!-- NSSR -->
-                    <div class="impact-row">
+                    <div class="impact-row animate-reveal">
                         <h4 class="font-header text-[10px] uppercase tracking-widest font-bold text-primary mb-6">North Shuswap Storage Resort</h4>
                         <p class="font-body text-base md:text-lg text-on-surface/75 leading-relaxed mb-4">
                             This is my uncle and my dad's business that was burnt down in the fire. I designed their website and help maintain it regularly to aid in their recovery and operation.
@@ -415,7 +467,7 @@
             <div class="relative w-full h-[50vh] min-h-[320px] parallax-wrap">
                 <img src="../assets/nature/blur/nature-blur-45.jpg" alt="" class="parallax-img opacity-50">
                 <div class="relative z-10 h-full max-w-[1400px] mx-auto px-8 md:px-16 flex flex-col justify-end pb-10 md:pb-14">
-                    <p class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-4">Michael McKay &mdash; Portfolio</p>
+                    <p class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-4">Michael McKay : Portfolio</p>
                     <h2 class="font-header font-bold text-step-6 md:text-step-7 leading-none tracking-tight text-white">
                         Using Business<br class="hidden md:block"> as a Force for Good.
                     </h2>
@@ -434,7 +486,8 @@
                             <a href="impact.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">My Impact</a>
                             <a href="gallery.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Nature Gallery</a>
                             <a href="about.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">About Me</a>
-                            <a href="infinite-game.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">The Infinite Game</a>
+                             <a href="infinite-game.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">The Infinite Game</a>
+                             <a href="code-of-ethics.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Personal Code of Ethics</a>
                         </nav>
                     </div>
 

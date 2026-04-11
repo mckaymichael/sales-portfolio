@@ -179,20 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- GALLERY ANIMATIONS ---
-    const galleryItems = document.querySelectorAll(".gallery-item");
-    if (galleryItems.length > 0) {
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { rootMargin: "0px 0px 100px 0px" });
-
-        galleryItems.forEach(item => observer.observe(item));
-    }
 
     // --- CAROUSEL LOGIC (SectionVoices) ---
     const track = document.getElementById('carousel-track');
@@ -394,4 +380,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // --- GLOBAL REVEAL ANIMATIONS ---
+    const revealElements = gsap.utils.toArray(".animate-reveal");
+    if (revealElements.length > 0) {
+        ScrollTrigger.batch(".animate-reveal", {
+            onEnter: batch => gsap.to(batch, {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                stagger: 0.15,
+                ease: "power3.out",
+                overwrite: true
+            }),
+            start: "top 85%",
+        });
+    }
 });

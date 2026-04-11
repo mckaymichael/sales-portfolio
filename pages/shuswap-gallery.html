@@ -88,18 +88,6 @@
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     
     <link rel="stylesheet" href="../css/style.css">
-    <style type="text/css">
-        .gallery-item {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-            will-change: opacity, transform;
-        }
-        .gallery-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
 </head>
 <body class="bg-surface text-on-surface font-body antialiased">
 
@@ -155,27 +143,27 @@
 
             <!-- Masonry Grid -->
             <div class="columns-1 sm:columns-2 lg:columns-3 gap-4">
-                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0301.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
-                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0302.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
-                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0303.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
-                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0304.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
-                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0305.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
-                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0306.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
-                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0310.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
-                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0311.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
-                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0312.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
-                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0313.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
-                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0314.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
-                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0315.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
-                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0316.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
-                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0317.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
-                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0318.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
-                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0320.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
-                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0322.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
-                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0323.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
-                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0324.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
-                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0325.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
-                <div class="gallery-item break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0326.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
+                <div class="gallery-item animate-reveal break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0301.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
+                <div class="gallery-item animate-reveal break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0302.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
+                <div class="gallery-item animate-reveal break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0303.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
+                <div class="gallery-item animate-reveal break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0304.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
+                <div class="gallery-item animate-reveal break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0305.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
+                <div class="gallery-item animate-reveal break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0306.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
+                <div class="gallery-item animate-reveal break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0310.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
+                <div class="gallery-item animate-reveal break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0311.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
+                <div class="gallery-item animate-reveal break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0312.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
+                <div class="gallery-item animate-reveal break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0313.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
+                <div class="gallery-item animate-reveal break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0314.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
+                <div class="gallery-item animate-reveal break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0315.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
+                <div class="gallery-item animate-reveal break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0316.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
+                <div class="gallery-item animate-reveal break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0317.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
+                <div class="gallery-item animate-reveal break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0318.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
+                <div class="gallery-item animate-reveal break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0320.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
+                <div class="gallery-item animate-reveal break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0322.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
+                <div class="gallery-item animate-reveal break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0323.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
+                <div class="gallery-item animate-reveal break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0324.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
+                <div class="gallery-item animate-reveal break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0325.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
+                <div class="gallery-item animate-reveal break-inside-avoid mb-4"><img src="../assets/projects/nssr/DJI_0326.JPG" loading="lazy" class="w-full h-auto rounded-[1px] shadow-sm"></div>
             </div>
         </div>
     </main>
@@ -195,6 +183,7 @@
                         <a href="gallery.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Nature Gallery</a>
                         <a href="about.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">About Me</a>
                         <a href="infinite-game.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">The Infinite Game</a>
+                        <a href="code-of-ethics.html" class="font-header font-bold text-step-2 text-white/70 hover:text-white transition-colors tracking-tight leading-none">Personal Code of Ethics</a>
                     </nav>
                 </div>
 

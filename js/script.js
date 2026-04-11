@@ -481,4 +481,107 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+
+    // --- IMPACT PAGE PINNING ---
+    const impactPinContainer = document.getElementById('impact-pin-container');
+    if (impactPinContainer && window.innerWidth >= 768) {
+        const panels = gsap.utils.toArray('#impact-pin-container .showcase-panel');
+        
+        if (panels.length > 0) {
+            gsap.set(panels.slice(1), { yPercent: 100 });
+            
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: impactPinContainer,
+                    pin: true,
+                    scrub: true,
+                    start: "top 80px",
+                    // Snappy duration (0.75 per screen)
+                    end: () => "+=" + (panels.length * window.innerHeight * 0.75),
+                }
+            });
+
+            panels.slice(1).forEach((panel, i) => {
+                const prevPanel = panels[i];
+                
+                tl.to(prevPanel, {
+                    scale: 0.95,
+                    transformOrigin: "top center",
+                    ease: "none",
+                    duration: 1
+                });
+
+                tl.to(panel, {
+                    yPercent: 0,
+                    ease: "none",
+                    duration: 1
+                }, "<");
+                
+                const img = panel.querySelector('.showcase-img');
+                if (img) {
+                    gsap.fromTo(img, 
+                        { scale: 1.15 }, 
+                        { scale: 1, ease: "none", duration: 1 }, 
+                        "<" 
+                    );
+                }
+                
+                const content = panel.querySelector('.showcase-content');
+                if (content) {
+                    gsap.fromTo(content,
+                        { y: 30, opacity: 0 },
+                        { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" },
+                        "<0.6" 
+                    );
+                }
+            });
+        }
+    }
+
+    // --- SPONSOR CTA PINNING ---
+    const sponsorPinContainer = document.getElementById('sponsor-pin-container');
+    if (sponsorPinContainer && window.innerWidth >= 768) {
+        const panels = gsap.utils.toArray('#sponsor-pin-container .showcase-panel');
+        
+        if (panels.length > 0) {
+            gsap.set(panels.slice(1), { yPercent: 100 });
+            
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: sponsorPinContainer,
+                    pin: true,
+                    scrub: true,
+                    start: "top 80px",
+                    // Snappy duration
+                    end: () => "+=" + (panels.length * window.innerHeight * 0.75),
+                }
+            });
+
+            panels.slice(1).forEach((panel, i) => {
+                const prevPanel = panels[i];
+                
+                tl.to(prevPanel, {
+                    scale: 0.95,
+                    transformOrigin: "top center",
+                    ease: "none",
+                    duration: 1
+                });
+
+                tl.to(panel, {
+                    yPercent: 0,
+                    ease: "none",
+                    duration: 1
+                }, "<");
+                
+                const content = panel.querySelector('.showcase-content');
+                if (content) {
+                    gsap.fromTo(content,
+                        { y: 30, opacity: 0 },
+                        { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" },
+                        "<0.6" 
+                    );
+                }
+            });
+        }
+    }
 });

@@ -30,7 +30,7 @@ Treat the UI as a series of physical, stacked materials.
 
 The system uses a high-contrast typographic pairing to signal professional curation.
 
-*   **Headers (Figtree):** Modern, geometric, and authoritative. Use `display-lg` (3.5rem) with tight letter-spacing (-0.02em) for hero moments.
+*   **Headers (Figtree):** Modern, geometric, and authoritative. Use `text-5xl md:text-7xl lg:text-8xl` (up to 6rem) with tight letter-spacing (-0.02em) for hero moments.
 *   **Body (Unna):** A sophisticated serif that provides an organic, literary feel. The "human" element of the system.
 
 **Hierarchy Strategy:**

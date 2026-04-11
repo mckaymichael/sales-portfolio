@@ -152,57 +152,140 @@
   </nav>
 </div>
 
-    <main class="pt-32 pb-24 min-h-screen">
+    <main class="pb-24 min-h-screen">
         <div id="section-impact" class="w-full">
             
-            <!-- Category Title Section : Centered Container -->
-            <div class="max-w-[1400px] mx-auto px-8 lg:px-12">
-                <div class="animate-reveal mb-12 lg:mb-16 border-b border-outline-variant/30 pt-12 lg:pt-20 pb-12 lg:pb-16 text-center">
-                     <h1 class="font-header font-bold text-step-6 md:text-step-7 lg:text-step-8 text-on-surface leading-tight tracking-tight mb-8">
-                        The start of my journey into social impact.
-                     </h1>
-                     <p class="font-body text-xl md:text-2xl lg:text-3xl text-on-surface/70 leading-relaxed max-w-4xl mx-auto">
-                        How I'm using my business background to help solve problems that actually matter.
-                     </p>
+            <!-- MOBILE - STATIC HERO SECTION -->
+            <div class="md:hidden">
+                <div class="max-w-[1400px] mx-auto px-8">
+                    <div class="animate-reveal mb-12 border-b border-outline-variant/30 pt-12 pb-12 text-center">
+                         <h1 class="font-header font-bold text-5xl text-on-surface leading-[1.05] tracking-tight mb-8">
+                            340+ Hours of Service. <br> A $95,000 Impact Goal.
+                         </h1>
+                         <p class="font-body text-xl text-on-surface/70 leading-relaxed text-balance">
+                            I use my business skills to solve real problems. Right now, I’m on a mission to raise $95,000 for Enactus BCIT and $800 for youth housing, backed by over 340 hours of community service.
+                         </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-12 mb-24">
+                        <div class="animate-reveal">
+                            <div class="text-5xl font-header font-bold text-on-surface tracking-tighter mb-2">$95K</div>
+                            <p class="font-header font-bold text-[10px] uppercase tracking-widest text-primary">Raising for Enactus BCIT</p>
+                        </div>
+                        <div class="animate-reveal">
+                            <div class="text-5xl font-header font-bold text-on-surface tracking-tighter mb-2">340+</div>
+                            <p class="font-header font-bold text-[10px] uppercase tracking-widest text-primary">Volunteer Hours</p>
+                        </div>
+                        <div class="animate-reveal">
+                            <div class="text-5xl font-header font-bold text-on-surface tracking-tighter mb-2">$800</div>
+                            <p class="font-header font-bold text-[10px] uppercase tracking-widest text-primary">Goal for Youth Housing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Full Width Banner for Mobile -->
+                <div class="animate-reveal relative w-full mb-32 border-y border-outline-variant/30 group overflow-hidden">
+                    <div class="h-[400px] relative">
+                        <img src="../assets/nature/blur/nature-blur-65.jpg" alt="Leap of Faith" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/50 flex flex-col justify-center px-10 z-20">
+                            <span class="inline-block w-fit px-3 py-1 bg-primary text-white text-[10px] font-header font-bold tracking-widest rounded-[1px] mb-4">Featured Initiative</span>
+                            <h2 class="text-white font-header font-bold text-4xl tracking-tight leading-none mb-4">Starting with a<br>leap of faith</h2>
+                            <p class="text-white/80 font-body max-w-xs leading-relaxed mb-6 italic text-lg line-clamp-2">Jumping out of a plane for youth homelessness.</p>
+                            
+                            <div class="flex flex-col gap-4 mb-8">
+                                <div class="flex gap-3 items-center">
+                                    <i class="ph ph-hand-heart text-tertiary-fixed text-2xl shrink-0"></i>
+                                    <p class="text-white text-sm font-bold">$800 for youth housing</p>
+                                </div>
+                                <div class="flex gap-3 items-center">
+                                    <i class="ph ph-parachute text-tertiary-fixed text-2xl shrink-0"></i>
+                                    <p class="text-white text-sm font-bold">Planned for June 2026</p>
+                                </div>
+                            </div>
+
+                             <a href="../projects/leap-of-faith.html" class="inline-flex items-center gap-4 text-white font-header font-bold text-xs uppercase tracking-widest border-b border-white/20 pb-1">
+                                View Journey <i class="ph ph-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- FEATURED: Leap of Faith Full Width Banner -->
-            <div class="animate-reveal relative w-full mb-32 border-y border-outline-variant/30 group overflow-hidden shadow-sm">
-                <div class="flex flex-col lg:flex-row h-auto lg:h-[400px]">
-                    <!-- Image Area -->
-                    <div class="w-full lg:w-2/5 relative overflow-hidden h-[400px]">
-                        <img src="../assets/nature/blur/nature-blur-65.jpg" alt="Leap of Faith" class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110">
-                        <div class="absolute inset-0 flex flex-col justify-center px-12 z-20">
-                            <span class="inline-block w-fit px-3 py-1 bg-primary text-white text-[10px] font-header font-bold tracking-widest rounded-[1px] mb-4">Featured Initiative</span>
-                            <h2 class="text-secondary-dark font-header font-bold text-4xl lg:text-5xl tracking-tight leading-none mb-4">Starting with a<br>leap of faith</h2>
-                            <p class="text-secondary-dark font-body max-w-xs leading-relaxed">Join me on this journey as I provide the funds and support needed for those who need it most.</p>
+            <!-- DESKTOP - GSAP PINNED HERO & LEAP OF FAITH -->
+            <div id="impact-pin-container" class="hidden md:flex w-full h-[calc(100vh-80px)] overflow-hidden relative bg-surface">
+                
+                <!-- Panel 1: Headline & Stats -->
+                <div class="showcase-panel absolute top-0 left-0 w-full h-full flex flex-col justify-center z-0 bg-surface border-t border-outline-variant/30">
+                    <div class="max-w-[1400px] mx-auto px-16 lg:px-24 w-full">
+                        <div class="animate-reveal text-center mb-16 lg:mb-24">
+                            <h1 class="font-header font-bold md:text-7xl lg:text-8xl text-on-surface leading-[1.05] tracking-tight mb-8">
+                                340+ Hours of Service. <br class="hidden lg:block"> A $95,000 Impact Goal.
+                            </h1>
+                            <p class="font-body text-2xl lg:text-3xl text-on-surface/70 leading-relaxed max-w-5xl mx-auto text-balance">
+                                I use my business skills to solve real problems. Right now, I’m on a mission to raise $95,000 for Enactus BCIT and $800 for youth housing, backed by over 340 hours of community service.
+                            </p>
                         </div>
-                    </div>
 
-                    <!-- Horizontal Content Area : SINGLE COLUMN VERTICAL STACK -->
-                    <div class="w-full lg:w-3/5 bg-secondary-dark p-8 lg:p-16 flex flex-col items-start justify-center gap-10">
-                        <p class="font-serif text-2xl lg:text-3xl text-white italic leading-relaxed max-w-2xl">
-                            Jumping out of a plane to end youth homelessness.
-                        </p>
-                        
-                        <div class="flex gap-4 items-center">
-                            <i class="ph ph-hand-heart text-tertiary-fixed text-4xl shrink-0"></i>
-                            <div class="text-left font-header shrink-0">
-                                <h4 class="font-bold text-white/40 text-[10px] uppercase tracking-widest mb-1">Impact Goal</h4>
-                                <p class="text-white text-base font-bold">$800 for youth housing</p>
+                        <!-- Cumulative Impact Stats Grid -->
+                        <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+                            <div class="animate-reveal">
+                                <div class="text-5xl md:text-6xl font-header font-bold text-on-surface tracking-tighter mb-2">$95K</div>
+                                <p class="font-header font-bold text-[10px] uppercase tracking-widest text-primary">Raising for Enactus BCIT</p>
+                                <div class="w-12 h-1 bg-primary/20 mt-4"></div>
+                            </div>
+                            <div class="animate-reveal">
+                                <div class="text-5xl md:text-6xl font-header font-bold text-on-surface tracking-tighter mb-2">340+</div>
+                                <p class="font-header font-bold text-[10px] uppercase tracking-widest text-primary">Volunteer Hours</p>
+                                <div class="w-12 h-1 bg-primary/20 mt-4"></div>
+                            </div>
+                            <div class="animate-reveal">
+                                <div class="text-5xl md:text-6xl font-header font-bold text-on-surface tracking-tighter mb-2">$800</div>
+                                <p class="font-header font-bold text-[10px] uppercase tracking-widest text-primary">Goal for Youth Housing</p>
+                                <div class="w-12 h-1 bg-primary/20 mt-4"></div>
+                            </div>
+                            <div class="animate-reveal">
+                                <div class="text-5xl md:text-6xl font-header font-bold text-on-surface tracking-tighter mb-2">Global</div>
+                                <p class="font-header font-bold text-[10px] uppercase tracking-widest text-primary">SDG Advocacy & Action</p>
+                                <div class="w-12 h-1 bg-primary/20 mt-4"></div>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <a href="../projects/leap-of-faith.html" class="inline-flex items-center gap-4 text-white font-header font-bold text-xs uppercase tracking-widest group/link border-b border-white/20 pb-2 hover:border-white transition-all">
-                            View Journey
-                            <i class="ph ph-arrow-right text-lg transition-transform group-hover/link:translate-x-1"></i>
-                        </a>
+                <!-- Panel 2: Leap of Faith (Wipe Over) -->
+                <div class="showcase-panel absolute top-0 left-0 w-full h-full z-10 bg-secondary-dark flex flex-col lg:flex-row shadow-2xl overflow-hidden border-t border-outline-variant/30">
+                    <div class="w-full lg:w-2/5 relative h-[50vh] lg:h-full overflow-hidden">
+                        <img src="../assets/nature/blur/nature-blur-65.jpg" alt="Leap of Faith" class="showcase-img w-full h-full object-cover scale-110">
+                    </div>
+                    <div class="w-full lg:w-3/5 h-[50vh] lg:h-full flex flex-col justify-center px-16 lg:px-24">
+                        <div class="showcase-content">
+                            <span class="inline-block w-fit px-3 py-1 bg-primary text-white text-[10px] font-header font-bold tracking-widest rounded-[1px] mb-8">Featured Initiative</span>
+                            <h2 class="text-white font-header font-bold text-5xl lg:text-7xl tracking-tight leading-none mb-10">Starting with a<br>leap of faith</h2>
+                            
+                            <p class="font-serif text-2xl lg:text-3xl text-white italic leading-relaxed max-w-2xl mb-12">
+                                Jumping out of a plane to end youth homelessness.
+                            </p>
+                            
+                            <div class="flex gap-12 items-center mb-16">
+                                <div class="flex gap-4 items-center">
+                                    <i class="ph ph-hand-heart text-tertiary-fixed text-4xl shrink-0"></i>
+                                    <div class="text-left font-header shrink-0">
+                                        <h4 class="font-bold text-white/40 text-[10px] uppercase tracking-widest mb-1">Impact Goal</h4>
+                                        <p class="text-white text-base font-bold">$800 for youth housing</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <a href="../projects/leap-of-faith.html" class="inline-flex items-center gap-4 text-white font-header font-bold text-xs uppercase tracking-widest group/link border-b border-white/20 pb-2 hover:border-white transition-all">
+                                View Journey
+                                <i class="ph ph-arrow-right text-lg transition-transform group-hover/link:translate-x-1"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="max-w-[1400px] mx-auto px-8 lg:px-12 mb-32">
+            <div class="max-w-[1400px] mx-auto px-8 lg:px-12 mb-32 mt-32">
                 <h2 class="animate-reveal font-header font-bold text-step-5 md:text-step-6 text-on-surface leading-tight mb-8">
                     Helping BCIT Student-Led <br/>Businesses Solve Global Issues.
                 </h2>
@@ -245,10 +328,10 @@
             </div>
 
             <!-- Projects Title -->
-             <section class="mx-auto px-8 lg:px-12">
+             <section class="mx-auto px-8 lg:px-16 mt-32">
             <div class="impact-row mb-4">
-                <h2 class="animate-reveal font-header font-bold text-2xl md:text-3xl text-on-surface tracking-tight max-w-4xl">
-                    Our Sustainability Success Stories
+                <h2 class="animate-reveal font-header font-bold text-step-5 md:text-step-6 text-on-surface tracking-tight max-w-4xl text-balance">
+                    Enactus Projects That Help Save The Planet
                 </h2>
             </div>
 
@@ -336,25 +419,52 @@
 
 
 
-            <!-- Sponsor CTA -->
-            <div class="impact-row mt-24 bg-secondary-dark text-white  p-8 md:p-12 shadow-xl flex flex-col items-center text-center max-w-4xl mx-auto border border-white/10 relative overflow-hidden">
-                <!-- Nature Blur Background -->
-                <div class="absolute inset-0 z-0">
-                    <img src="../assets/nature/blur/nature-blur-1.jpg" alt="" class="w-full h-full object-cover opacity-70">
-                    <div class="absolute inset-0 bg-black/40"></div>
+            <!-- SPONSORSHIP PINNED SECTION (DESKTOP) -->
+            <div id="sponsor-pin-container" class="hidden md:flex w-full h-[80vh] min-h-[700px] overflow-hidden relative bg-surface">
+                
+                <!-- Panel 1: Outro -->
+                <div class="showcase-panel absolute top-0 left-0 w-full h-full flex flex-col justify-center px-16 lg:px-24 z-0 bg-surface border-t border-outline-variant/30">
+                    <div class="max-w-4xl">
+                        <p class="font-header font-bold text-[10px] lg:text-xs uppercase tracking-[0.5em] text-primary mb-8">Expanding Our Impact</p>
+                        <h2 class="font-header font-bold text-5xl lg:text-7xl text-on-surface leading-tight tracking-tight mb-10 text-balance">
+                            Scaling Sustainable Solutions Together.
+                        </h2>
+                        <p class="font-body text-2xl lg:text-3xl text-on-surface/70 leading-snug max-w-2xl border-l-2 border-primary pl-8">
+                            As I Lead Sponsorship Strategy at Enactus BCIT, our focus is on building the corporate bridges necessary to turn innovative student ideas into scalable global tools.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="w-16 h-16 rounded-[1px] flex items-center justify-center mb-6 relative z-10">
-                    <i class="ph ph-handshake text-3xl"></i>
+                <!-- Panel 2: Sponsor CTA (Wipe Over) -->
+                <div class="showcase-panel absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center z-10 bg-secondary-dark text-white p-24 shadow-2xl overflow-hidden border-t border-white/10">
+                    <img src="../assets/nature/blur/nature-blur-1.jpg" alt="" class="parallax-img absolute inset-0 opacity-40">
+                    <div class="absolute inset-0 bg-black/50"></div>
+                    <div class="relative z-10 text-center max-w-4xl showcase-content">
+                        <div class="w-20 h-20 rounded-[1px] border border-white/20 mx-auto flex items-center justify-center mb-10">
+                            <i class="ph ph-handshake text-4xl"></i>
+                        </div>
+                        <h2 class="font-header font-bold text-6xl lg:text-7xl mb-10 tracking-tight text-white">Join Our Mission</h2>
+                        <p class="font-body text-2xl lg:text-3xl text-white/80 leading-relaxed mb-16 max-w-3xl mx-auto text-white/80">
+                            We are actively seeking corporate partners to sponsor Enactus BCIT. Help us empower student-led enterprises to drive impact.
+                        </p>
+                        <a href="mailto:mckaymichaelk@gmail.com?subject=Sponsorship Inquiry" target="_blank" class="btn-primary px-12 py-5 text-sm">
+                            Become A Sponsor
+                        </a>
+                    </div>
                 </div>
-                <h2 class="font-header font-bold text-3xl md:text-4xl mb-4 tracking-tight relative z-10">Join Our Mission</h2>
-                <p class="font-body text-xl text-white/80 leading-relaxed mb-8 max-w-2xl relative z-10">
-                    We are actively seeking corporate partners to sponsor Enactus BCIT. Help us empower student-led social enterprises to drive scalable impact and tackle global challenges.
-                </p>
-                <a href="mailto:mckaymichaelk@gmail.com?subject=Sponsorship Inquiry" target="_blank" class="inline-flex items-center rounded-[4px] justify-center gap-3 px-8 py-4 bg-primary text-white hover:bg-primary-container font-header font-bold uppercase tracking-widest text-xs transition-all hover:scale-105 active:scale-95 group relative z-10 focus:ring-4 focus:ring-primary/30">
-                    Become A Sponsor
-                    <i class="ph ph-arrow-up-right text-lg transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 relative -top-[1px]"></i>
-                </a>
+            </div>
+
+            <!-- MOBILE SPONSOR CTA (STATIC) -->
+            <div class="md:hidden px-8 mb-40">
+                <div class="bg-secondary-dark text-white p-12 rounded-default text-center relative overflow-hidden">
+                    <img src="../assets/nature/blur/nature-blur-1.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-30">
+                    <div class="absolute inset-0 bg-black/40"></div>
+                    <div class="relative z-10">
+                        <h3 class="text-white font-header font-bold text-3xl mb-6 tracking-tight">Join Our Mission</h3>
+                        <p class="text-white/80 font-body text-lg mb-10 leading-relaxed">Empower student-led social enterprises to drive impact at Enactus BCIT.</p>
+                        <a href="mailto:mckaymichaelk@gmail.com" class="btn-primary w-full text-center">Become A Sponsor</a>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Wildfire Feature Section -->

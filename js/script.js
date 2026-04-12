@@ -3,9 +3,9 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 // Initialize Lenis Smooth Scroll
 const lenis = new Lenis({
-    duration: 1.0,
+    duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    wheelMultiplier: 1.4,
+    wheelMultiplier: 1.1,
     smoothWheel: true,
 });
 
@@ -16,7 +16,8 @@ gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
 });
 
-gsap.ticker.lagSmoothing(0);
+// Restore default lag smoothing to prevent animation jitter on frame drops
+gsap.ticker.lagSmoothing(500, 33);
 
 // Smooth scroll for all internal anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -119,8 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 y: 0,
                 opacity: 1,
-                duration: 0.6,
-                stagger: 0.1,
+                duration: 0.4,
+                stagger: 0.05,
                 ease: "power2.out",
             });
         }
@@ -133,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 x: 0,
                 opacity: 1,
-                duration: 1,
+                duration: 0.6,
                 ease: "power3.out",
             });
         }
@@ -603,3 +604,45 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+// --- CINEMATIC PRELOADER ---
+/**
+ * Injects preloader CSS and handles the fade-out on window load.
+ * Masks the vertical loading behavior of CSS columns.
+ */
+function initPreloader() {
+    // Inject Preloader Styles
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-10deg); }
+            50% { transform: rotate(10deg); }
+        }
+        .animate-wiggle {
+            animation: wiggle 0.7s ease-in-out infinite;
+        }
+        #preloader {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.8s ease-in-out, visibility 0.8s;
+        }
+        #preloader.hidden-preloader {
+            opacity: 0;
+            visibility: hidden;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Fade out when EVERYTHING (images, scripts, etc.) is loaded
+    window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            setTimeout(() => {
+                preloader.classList.add('hidden-preloader');
+            }, 500); // Small buffer for smoothness
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initPreloader);
+

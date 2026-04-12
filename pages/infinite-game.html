@@ -91,6 +91,12 @@
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     
     <link rel="stylesheet" href="../css/style.css">
+    <style type="text/css">
+        /* Prevent CLS for GSAP animations and entrance jumps */
+        .blur-in, .editorial-line, #hero-img {
+            opacity: 0;
+        }
+    </style>
 </head>
 <body class="bg-surface text-on-surface font-body antialiased">
 <!-- Header Overlay Gradient -->
@@ -319,27 +325,32 @@
 
     <script src="../js/script.js"></script>
     <script>
-        // GSAP Hero Parallax
+        // GSAP Hero Parallax - Triggered on section instead of main for better performance
         gsap.to("#hero-img", {
-            yPercent: 20,
+            yPercent: 15,
             ease: "none",
             scrollTrigger: {
-                trigger: "main",
+                trigger: "section",
                 start: "top top",
                 end: "bottom top",
                 scrub: true
             }
         });
 
-        // Entrance animations
-        gsap.from(".blur-in", {
-            opacity: 0,
-            filter: "blur(10px)",
-            y: 30,
-            duration: 1.5,
-            stagger: 0.2,
-            ease: "expo.out"
-        });
+        // Entrance animations - Accelerated for a snappier feel
+        gsap.fromTo(".blur-in", 
+            { opacity: 0, y: 20 },
+            { 
+              opacity: 1, 
+              y: 0, 
+              duration: 1, 
+              stagger: 0.1, 
+              ease: "power2.out"
+            }
+        );
+
+        // Ensure hero image is visible instantly
+        gsap.set("#hero-img", { opacity: 1 });
     </script>
 </body>
 </html>

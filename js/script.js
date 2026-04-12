@@ -61,24 +61,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (document.querySelector('.hero-text')) {
-        gsap.to('.hero-text', {
-            y: 0,
-            opacity: 1,
-            duration: animDuration,
-            stagger: 0.2,
-            ease: "power3.out",
-            delay: heroTextDelay
-        });
+        gsap.fromTo('.hero-text', 
+            { y: 30, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: animDuration,
+                stagger: 0.2,
+                ease: "power3.out",
+                delay: heroTextDelay
+            }
+        );
     }
     
     if (document.querySelector('.hero-nav')) {
-        gsap.to('.hero-nav', {
-            y: 0,
-            opacity: 1,
-            duration: animDuration,
-            ease: "power2.out",
-            delay: heroNavDelay
-        });
+        gsap.fromTo('.hero-nav', 
+            { y: -20, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: animDuration,
+                ease: "power2.out",
+                delay: heroNavDelay
+            }
+        );
     }
     
     // --- HERO PARALLAX ---
@@ -645,4 +651,23 @@ function initPreloader() {
 }
 
 document.addEventListener('DOMContentLoaded', initPreloader);
+
+// --- HASH SCROLL HANDLER (Cross-page anchors) ---
+// Ensures that links from index.html to specific sections on other pages
+// land correctly after GSAP and Lenis have initialized.
+window.addEventListener('load', () => {
+    if (window.location.hash) {
+        const target = window.location.hash;
+        // Wait for GSAP pins and images to settle
+        setTimeout(() => {
+            if (lenis) {
+                lenis.scrollTo(target, {
+                    offset: -100,
+                    duration: 1.2,
+                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                });
+            }
+        }, 600);
+    }
+});
 

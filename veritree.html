@@ -49,22 +49,35 @@
 
     <style>
         body {
-            overflow: hidden; /* Prevent native scroll for slide-by-slide control */
+            overflow: hidden;
             background: #1E1B18;
+            margin: 0;
             height: 100vh;
             width: 100vw;
+            position: fixed;
         }
+        
+        #master-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
         section {
-            height: 100vh;
-            width: 100vw;
-            position: absolute; /* Stack slides for transition control */
+            height: 100%;
+            width: 100%;
+            position: absolute;
             top: 0;
             left: 0;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            visibility: hidden; /* Hidden by default */
+            visibility: hidden;
+            z-index: 1;
         }
         section.active {
             visibility: visible;
@@ -427,18 +440,18 @@
     <script>
         gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Observer);
 
-        window.onload = () => {
+        document.addEventListener('DOMContentLoaded', () => {
             const sections = gsap.utils.toArray('section');
             const dots = gsap.utils.toArray('.dot');
             const progressBar = document.getElementById('progress-bar');
-            let currentIndex = -1;
+            let currentIndex = 0;
             let animating = false;
 
             // --- SPLIT TEXT HELPER ---
             function splitText(el) {
                 if (!el) return;
                 el.childNodes.forEach(node => {
-                    if (node.nodeType === 3) { // Text node
+                    if (node.nodeType === 3) {
                         const text = node.textContent;
                         if (!text.trim()) return;
                         const words = text.split(/(\s+)/);
@@ -469,98 +482,78 @@
                 titles.forEach(title => splitText(title));
             });
 
-            // Set initial states
+            // --- INITIAL STATE ---
             gsap.set('section', { yPercent: 100, autoAlpha: 0 });
+            gsap.set(sections[0], { yPercent: 0, autoAlpha: 1, zIndex: 10 });
+            
+            // Content setup
             gsap.set('.split-child', { yPercent: 100, autoAlpha: 0 });
             gsap.set('.slide-content > *:not(h1):not(h2), .slide-content img', { opacity: 0, y: 30 });
             gsap.set('.editorial-line', { width: 0 });
 
-            function gotoSection(index, direction) {
-                if (index < 0 || index >= sections.length || (animating && index !== currentIndex)) return;
-                
-                // If we're clicking a dot for a section we're already on, do nothing
-                if (index === currentIndex && currentIndex !== -1) return;
+            // Initial reveal for Slide 1
+            const revealFirst = () => {
+                const tl = gsap.timeline();
+                tl.to(sections[0].querySelectorAll('.split-child'), { yPercent: 0, autoAlpha: 1, duration: 1.2, stagger: 0.03, ease: "power4.out" })
+                  .to(sections[0].querySelectorAll('.slide-content > *:not(h1):not(h2), .slide-content img'), { opacity: 1, y: 0, duration: 1, stagger: 0.1 }, "-=0.8")
+                  .to(sections[0].querySelectorAll('.editorial-line'), { width: "100%", duration: 1.2 }, "-=1.0");
+            };
+            revealFirst();
 
+            function gotoSection(index, direction) {
+                if (index < 0 || index >= sections.length || animating) return;
                 animating = true;
+
                 const prevIndex = currentIndex;
                 currentIndex = index;
                 const section = sections[index];
-                const prevSection = prevIndex >= 0 ? sections[prevIndex] : null;
+                const prevSection = sections[prevIndex];
 
-                // Update UI (Dots & Progress)
+                // Update UI
                 const progress = ((index + 1) / sections.length) * 100;
                 gsap.to(progressBar, { width: `${progress}%`, duration: 0.5 });
                 dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
 
                 const tl = gsap.timeline({
-                    onComplete: () => {
-                        animating = false;
-                    }
+                    onComplete: () => { animating = false; }
                 });
 
-                // 1. Position the next section
-                gsap.set(section, { 
-                    zIndex: 10, 
-                    autoAlpha: 1, 
-                    yPercent: direction > 0 ? 100 : -100,
-                    scale: 1.05 
-                });
+                // 1. Position incoming
+                gsap.set(section, { zIndex: 10, autoAlpha: 1, yPercent: direction > 0 ? 100 : -100 });
 
-                // 2. Animate out the previous section if it exists
+                // 2. Animate out prev
                 if (prevSection) {
                     tl.to(prevSection, {
-                        yPercent: direction > 0 ? -30 : 30, // Subtle move out
-                        scale: 0.95,
+                        yPercent: direction > 0 ? -30 : 30,
                         autoAlpha: 0,
                         duration: 1.2,
-                        ease: "power2.inOut"
+                        ease: "expo.inOut"
                     }, 0);
                     prevSection.classList.remove('active');
                 }
 
-                // 3. Animate in the new section
+                // 3. Animate in new
                 tl.to(section, {
                     yPercent: 0,
-                    scale: 1,
                     duration: 1.2,
-                    ease: "power2.inOut",
+                    ease: "expo.inOut",
                     onStart: () => section.classList.add('active')
                 }, 0);
 
-                // 4. Content Animations
+                // 4. Content
                 const splitChildren = section.querySelectorAll('.split-child');
-                const otherContent = section.querySelectorAll('.slide-content > *:not(h1):not(h2), .slide-content img');
+                const others = section.querySelectorAll('.slide-content > *:not(h1):not(h2), .slide-content img');
                 const lines = section.querySelectorAll('.editorial-line');
 
-                // Reset content states for re-entry
                 gsap.set(splitChildren, { yPercent: 100, autoAlpha: 0 });
-                gsap.set(otherContent, { opacity: 0, y: 30 });
+                gsap.set(others, { opacity: 0, y: 30 });
                 gsap.set(lines, { width: 0 });
 
-                tl.to(splitChildren, {
-                    yPercent: 0,
-                    autoAlpha: 1,
-                    duration: 1.2,
-                    stagger: 0.03,
-                    ease: "power4.out"
-                }, "-=0.6");
-
-                tl.to(otherContent, {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1,
-                    stagger: 0.1,
-                    ease: "power3.out"
-                }, "-=1.0");
-
-                tl.to(lines, {
-                    width: "100%",
-                    duration: 1.2,
-                    ease: "power4.inOut"
-                }, "-=1.0");
+                tl.to(splitChildren, { yPercent: 0, autoAlpha: 1, duration: 1.2, stagger: 0.03, ease: "power4.out" }, "-=0.6")
+                  .to(others, { opacity: 1, y: 0, duration: 1, stagger: 0.1 }, "-=1.0")
+                  .to(lines, { width: "100%", duration: 1.2 }, "-=1.0");
             }
 
-            // Create Observer
             Observer.create({
                 type: "wheel,touch,pointer",
                 wheelSpeed: -1,
@@ -570,19 +563,12 @@
                 preventDefault: true
             });
 
-            // Dot Click Event
             dots.forEach((dot, i) => {
                 dot.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    if (i !== currentIndex) {
-                        gotoSection(i, i > currentIndex ? 1 : -1);
-                    }
+                    if (i !== currentIndex) gotoSection(i, i > currentIndex ? 1 : -1);
                 });
             });
-
-            // Initial Section
-            gotoSection(0, 1);
-        };
+        });
     </script>
 </body>
 </html>

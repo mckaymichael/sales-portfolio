@@ -174,11 +174,11 @@
             <div class="container mx-auto px-10 md:px-24 relative z-10">
                 <div class="max-w-5xl slide-content">
                     <h1 class="font-header font-bold text-6xl md:text-9xl leading-[0.85] tracking-tighter mb-12 text-balance max-w-4xl">
-                        Verified Restoration.
+                        Why I Want to Work for Veritree
                     </h1>
                     <div class="editorial-line mb-12 opacity-40"></div>
                     <p class="font-body text-xl md:text-3xl text-white/70 max-w-xl leading-relaxed">
-                        A strategic justification for aligning Veritree's growth with the restorative economy.
+                        As an Enterprise Business Development Representative
                     </p>
                 </div>
             </div>
@@ -190,10 +190,10 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
                     <div class="slide-content">
                          <h2 class="font-header font-bold text-5xl md:text-7xl text-on-surface leading-[0.9] tracking-tighter mb-10 text-balance max-w-2xl">
-                            Built to Serve.
+                            I'm Here to Serve
                          </h2>
                          <p class="font-body text-xl md:text-2xl text-on-surface/70 leading-relaxed mb-10 text-balance">
-                            Veritree solves the "blind spot" of restorative trust. I solve the "blind spot" of strategic growth. Together, we move beyond tree planting into <strong class="text-primary font-bold">verified global impact</strong>.
+                            Money is not enough to motivate me. I seek bigger, worldly problems, that I want to help solve.
                          </p>
                          <div class="w-20 h-[1px] bg-primary mb-10 text-balance max-w-xl"></div>
                          <p class="font-header font-bold text-[10px] uppercase tracking-widest text-primary">Mission alignment is the foundation of my performance.</p>
@@ -504,8 +504,8 @@
                 const others = sections[0].querySelectorAll('.slide-content > *:not(h1):not(h2), .slide-content img');
                 const lines = sections[0].querySelectorAll('.editorial-line');
                 
-                if (split.length) tl.to(split, { yPercent: 0, autoAlpha: 1, duration: 1.2, stagger: 0.03, ease: "power4.out" });
-                if (others.length) tl.to(others, { opacity: 1, y: 0, duration: 1, stagger: 0.1 }, "-=0.8");
+                if (split.length) tl.to(split, { yPercent: 0, autoAlpha: 1, duration: 1.2, stagger: 0.05, ease: "power4.out" });
+                if (others.length) tl.to(others, { opacity: 1, y: 0, duration: 1, stagger: 0.12 }, "-=0.8");
                 if (lines.length) tl.to(lines, { width: "100%", duration: 1.2 }, "-=1.0");
             };
             
@@ -527,6 +527,7 @@
                 dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
 
                 const tl = gsap.timeline({
+                    delay: 0.2,
                     onComplete: () => { animating = false; }
                 });
 
@@ -560,11 +561,11 @@
 
                 if (splitChildren.length) {
                     gsap.set(splitChildren, { yPercent: 100, autoAlpha: 0 });
-                    tl.to(splitChildren, { yPercent: 0, autoAlpha: 1, duration: 1.2, stagger: 0.02, ease: "power4.out" }, "-=0.6");
+                    tl.to(splitChildren, { yPercent: 0, autoAlpha: 1, duration: 1.2, stagger: 0.05, ease: "power4.out" }, "-=0.6");
                 }
                 if (others.length) {
                     gsap.set(others, { opacity: 0, y: 30 });
-                    tl.to(others, { opacity: 1, y: 0, duration: 1, stagger: 0.08 }, "-=1.0");
+                    tl.to(others, { opacity: 1, y: 0, duration: 1, stagger: 0.12 }, "-=1.0");
                 }
                 if (lines.length) {
                     gsap.set(lines, { width: 0 });

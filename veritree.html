@@ -41,11 +41,7 @@
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Observer.min.js"></script>
+
 
     <style>
         body {
@@ -169,274 +165,280 @@
         <a href="#slide-10" class="dot"></a>
     </div>
 
-
-    <!-- SLIDE 1: INTRO -->
-    <section id="slide-1" class="bg-secondary-dark text-white active">
-        <div class="absolute inset-0 z-0">
-             <img src="assets/nature/blur/nature-blur-45.jpg" class="w-full h-full object-cover opacity-40" alt="">
-        </div>
-        <div class="container mx-auto px-10 md:px-24 relative z-10">
-            <div class="max-w-5xl slide-content">
-                <h1 class="font-header font-bold text-6xl md:text-9xl leading-[0.85] tracking-tighter mb-12 text-balance max-w-4xl">
-                    Verified Restoration.
-                </h1>
-                <div class="editorial-line mb-12 opacity-40"></div>
-                <p class="font-body text-xl md:text-3xl text-white/70 max-w-xl leading-relaxed">
-                    A strategic justification for aligning Veritree's growth with the restorative economy.
-                </p>
+    <div id="master-wrapper">
+        <!-- SLIDE 1: INTRO -->
+        <section id="slide-1" class="bg-secondary-dark text-white active" style="visibility: visible; z-index: 10;">
+            <div class="absolute inset-0 z-0">
+                 <img src="assets/nature/blur/nature-blur-45.jpg" class="w-full h-full object-cover opacity-40" alt="">
             </div>
-        </div>
-    </section>
-
-    <!-- SLIDE 2: MISSION -->
-    <section id="slide-2" class="bg-surface">
-        <div class="container mx-auto px-10 md:px-24">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
-                <div class="slide-content">
-                     <h2 class="font-header font-bold text-5xl md:text-7xl text-on-surface leading-[0.9] tracking-tighter mb-10 text-balance max-w-2xl">
-                        Built to Serve.
-                     </h2>
-                     <p class="font-body text-xl md:text-2xl text-on-surface/70 leading-relaxed mb-10 text-balance">
-                        Veritree solves the "blind spot" of restorative trust. I solve the "blind spot" of strategic growth. Together, we move beyond tree planting into <strong class="text-primary font-bold">verified global impact</strong>.
-                     </p>
-                     <div class="w-20 h-[1px] bg-primary mb-10 text-balance max-w-xl"></div>
-                     <p class="font-header font-bold text-[10px] uppercase tracking-widest text-primary">Mission alignment is the foundation of my performance.</p>
-                </div>
-                <div class="relative aspect-[4/5] slide-content" style="transition-delay: 0.2s;">
-                    <img src="assets/nature/nature-34.jpg" class="w-full h-full object-cover rounded-[1px] shadow-2xl" alt="">
-                    <div class="absolute -bottom-10 -left-10 bg-secondary flex flex-col justify-center p-12 text-white shadow-xl max-w-xs">
-                         <p class="font-serif italic text-2xl leading-tight">"Using Business as a Force for Good."</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SLIDE 3: DATA DASHBOARD -->
-    <section id="slide-3" class="bg-surface">
-        <div class="container mx-auto px-10 md:px-24">
-            <div class="max-w-5xl mb-16 slide-content">
-                <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-primary/40 mb-10 text-balance max-w-xl">02 // Measuring Grit</span>
-                <h2 class="font-header font-bold text-5xl md:text-7xl text-on-surface leading-[0.9] tracking-tighter">
-                    Personal KPIs
-                </h2>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 slide-content" style="transition-delay: 0.3s;">
-                <div class="border-t border-primary/20 pt-8">
-                    <p class="font-header font-bold text-4xl mb-2 tracking-tighter">32%</p>
-                    <p class="font-header font-bold text-[9px] uppercase tracking-widest text-primary/50 mb-4">Outreach Yield</p>
-                    <p class="font-body text-sm text-on-surface/60 italic leading-relaxed">Average conversion from first-touch outbound to Discovery Sync.</p>
-                </div>
-                <div class="border-t border-primary/20 pt-8">
-                    <p class="font-header font-bold text-4xl mb-2 tracking-tighter">5.5x</p>
-                    <p class="font-header font-bold text-[9px] uppercase tracking-widest text-primary/50 mb-4">Scaling Factor</p>
-                    <p class="font-body text-sm text-on-surface/60 italic leading-relaxed">Monthly recruitment and pipeline growth velocity achieved at Vosyn.</p>
-                </div>
-                <div class="border-t border-primary/20 pt-8">
-                    <p class="font-header font-bold text-4xl mb-2 tracking-tighter">$5k+</p>
-                    <p class="font-header font-bold text-[9px] uppercase tracking-widest text-primary/50 mb-4">Capital Secured</p>
-                    <p class="font-body text-sm text-on-surface/60 italic leading-relaxed">Direct corporate sponsorship funding closed for early-stage pilots.</p>
-                </div>
-                <div class="border-t border-primary/20 pt-8">
-                    <p class="font-header font-bold text-4xl mb-2 tracking-tighter">110%</p>
-                    <p class="font-header font-bold text-[9px] uppercase tracking-widest text-primary/50 mb-4">Quota Mastery</p>
-                    <p class="font-body text-sm text-on-surface/60 italic leading-relaxed">Consistent over-performance across high-volume sales environments.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SLIDE 4: MONITORING -->
-    <section id="slide-4" class="bg-secondary text-white">
-        <div class="container mx-auto px-10 md:px-24">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
-                <div class="slide-content">
-                    <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-white/30 mb-10 text-balance max-w-xl">03 // The Logic</span>
-                    <h2 class="font-header font-bold text-5xl md:text-7xl text-white leading-[0.9] tracking-tighter mb-10 text-balance max-w-xl">
-                        Verification is the Sale.
-                    </h2>
-                    <p class="font-body text-xl md:text-2xl text-white/70 leading-relaxed mb-10 text-balance max-w-xl">
-                         In enterprise sales, "Monitoring" is another word for "Confidence." My BDR strategy is built on selling the <strong class="text-white">Transparency</strong> of Veritree’s restoration data.
+            <div class="container mx-auto px-10 md:px-24 relative z-10">
+                <div class="max-w-5xl slide-content">
+                    <h1 class="font-header font-bold text-6xl md:text-9xl leading-[0.85] tracking-tighter mb-12 text-balance max-w-4xl">
+                        Verified Restoration.
+                    </h1>
+                    <div class="editorial-line mb-12 opacity-40"></div>
+                    <p class="font-body text-xl md:text-3xl text-white/70 max-w-xl leading-relaxed">
+                        A strategic justification for aligning Veritree's growth with the restorative economy.
                     </p>
-                    <div class="editorial-line mb-10 opacity-20"></div>
-                    <div class="flex gap-12 font-header font-bold text-[9px] uppercase tracking-widest opacity-60">
-                         <div class="flex items-center gap-2"><i class="ph ph-circle-wavy-check"></i> Survive Rate</div>
-                         <div class="flex items-center gap-2"><i class="ph ph-tree"></i> Hectares</div>
-                         <div class="flex items-center gap-2"><i class="ph ph-calendar"></i> Work Days</div>
-                    </div>
-                </div>
-                <div class="bg-surface/5 p-12 border border-white/10 slide-content" style="transition-delay: 0.2s;">
-                    <p class="font-serif text-3xl text-white/90 leading-snug">"We don't sell trees; we sell the proof that the trees are doing their job."</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SLIDE 5: LUMORA ARTIFACT -->
-    <section id="slide-5" class="bg-surface">
-        <div class="container mx-auto px-10 md:px-24">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
-                <div class="relative slide-content">
-                    <img src="assets/projects/lumora/lumora.jpg" class="w-full aspect-[4/5] object-cover rounded-[1px] grayscale-[20%]" alt="">
-                    <div class="absolute top-12 -right-12 bg-primary text-white p-12 shadow-2xl max-w-sm">
-                         <p class="font-header font-bold text-[10px] uppercase tracking-[0.3em] mb-4 opacity-50">Artifact I</p>
-                         <p class="font-serif italic text-2xl leading-tight mb-8">"I directed the strategic mapping for corporate stakeholders."</p>
-                         <div class="w-12 h-[1px] bg-white opacity-30"></div>
-                    </div>
-                </div>
-                <div class="slide-content" style="transition-delay: 0.3s;">
-                    <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-primary/40 mb-10 text-balance max-w-xl">04 // Relationship Strategy</span>
-                    <h2 class="font-header font-bold text-4xl md:text-6xl text-on-surface leading-[0.9] tracking-tighter mb-10 text-balance max-w-md">
-                        The Lumóra Blueprint.
-                    </h2>
-                    <div class="p-8 border border-primary/10 bg-white/50 mb-10 text-balance max-w-xl">
-                         <h4 class="font-header font-bold uppercase text-[9px] tracking-widest text-primary mb-3">Strategic Rationale</h4>
-                         <p class="font-body text-lg text-on-surface/70 leading-relaxed">"BDR success is measured by Discovery Syncs. For Lumóra, I had to map decision-makers at Tier-1 companies—exactly the skillset needed for Veritree's enterprise outreach."</p>
-                    </div>
-                    <p class="font-header font-header font-bold text-[10px] uppercase tracking-widest text-primary opacity-50">Key Skill: Stakeholder Research & Outreach</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SLIDE 6: DECO ARTIFACT -->
-    <section id="slide-6" class="bg-secondary-dark text-white">
-        <div class="container mx-auto px-10 md:px-24">
-            <div class="max-w-4xl slide-content">
-                <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-white/30 mb-10 text-balance max-w-xl">05 // Resilience</span>
-                <h2 class="font-header font-bold text-6xl md:text-9xl leading-[0.8] tracking-tighter mb-12 text-balance max-w-4xl">
-                    Grit. Persistence.
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-                    <div>
-                         <p class="font-body text-xl md:text-2xl text-white/60 leading-relaxed mb-12">
-                            Enterprise BDR work at Veritree is a marathon of rejection. My time at DECO built the resilience to maintain peak performance across thousands of outbound touches.
+        <!-- SLIDE 2: MISSION -->
+        <section id="slide-2" class="bg-surface">
+            <div class="container mx-auto px-10 md:px-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+                    <div class="slide-content">
+                         <h2 class="font-header font-bold text-5xl md:text-7xl text-on-surface leading-[0.9] tracking-tighter mb-10 text-balance max-w-2xl">
+                            Built to Serve.
+                         </h2>
+                         <p class="font-body text-xl md:text-2xl text-on-surface/70 leading-relaxed mb-10 text-balance">
+                            Veritree solves the "blind spot" of restorative trust. I solve the "blind spot" of strategic growth. Together, we move beyond tree planting into <strong class="text-primary font-bold">verified global impact</strong>.
                          </p>
-                         <div class="flex gap-16 font-header font-bold">
-                             <div>
-                                <p class="text-5xl tracking-tighter">110%</p>
-                                <p class="text-[9px] uppercase tracking-[0.3em] opacity-40">Performance</p>
-                             </div>
-                             <div>
-                                <p class="text-5xl tracking-tighter">1.2k</p>
-                                <p class="text-[9px] uppercase tracking-[0.3em] opacity-40">Volume</p>
-                             </div>
-                         </div>
+                         <div class="w-20 h-[1px] bg-primary mb-10 text-balance max-w-xl"></div>
+                         <p class="font-header font-bold text-[10px] uppercase tracking-widest text-primary">Mission alignment is the foundation of my performance.</p>
                     </div>
-                    <div class="p-10 border border-white/10 flex flex-col justify-center">
-                         <h4 class="font-header font-bold uppercase text-[9px] tracking-widest text-white/40 mb-6">Strategic Rationale</h4>
-                         <p class="font-body text-xl text-white/90">"A BDR's success is fueled by persistence. This artifact prove I have the stomach for the daily outbound grind."</p>
+                    <div class="relative aspect-[4/5] slide-content" style="transition-delay: 0.2s;">
+                        <img src="assets/nature/nature-34.jpg" class="w-full h-full object-cover rounded-[1px] shadow-2xl" alt="">
+                        <div class="absolute -bottom-10 -left-10 bg-secondary flex flex-col justify-center p-12 text-white shadow-xl max-w-xs">
+                             <p class="font-serif italic text-2xl leading-tight">"Using Business as a Force for Good."</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SLIDE 7: VOSYN ARTIFACT -->
-    <section id="slide-7" class="bg-surface text-on-surface">
-        <div class="container mx-auto px-10 md:px-24">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
-                <div class="slide-content">
-                     <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-primary/40 mb-10 text-balance max-w-xl">06 // Systems Design</span>
-                     <h2 class="font-header font-bold text-4xl md:text-6xl text-on-surface leading-[0.9] tracking-tighter mb-10 text-balance max-w-xl">
-                        Scaling Efficiency.
+        <!-- SLIDE 3: DATA DASHBOARD -->
+        <section id="slide-3" class="bg-surface">
+            <div class="container mx-auto px-10 md:px-24">
+                <div class="max-w-5xl mb-16 slide-content">
+                    <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-primary/40 mb-10 text-balance max-w-xl">02 // Measuring Grit</span>
+                    <h2 class="font-header font-bold text-5xl md:text-7xl text-on-surface leading-[0.9] tracking-tighter">
+                        Personal KPIs
+                    </h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 slide-content" style="transition-delay: 0.3s;">
+                    <div class="border-t border-primary/20 pt-8">
+                        <p class="font-header font-bold text-4xl mb-2 tracking-tighter">32%</p>
+                        <p class="font-header font-bold text-[9px] uppercase tracking-widest text-primary/50 mb-4">Outreach Yield</p>
+                        <p class="font-body text-sm text-on-surface/60 italic leading-relaxed">Average conversion from first-touch outbound to Discovery Sync.</p>
+                    </div>
+                    <div class="border-t border-primary/20 pt-8">
+                        <p class="font-header font-bold text-4xl mb-2 tracking-tighter">5.5x</p>
+                        <p class="font-header font-bold text-[9px] uppercase tracking-widest text-primary/50 mb-4">Scaling Factor</p>
+                        <p class="font-body text-sm text-on-surface/60 italic leading-relaxed">Monthly recruitment and pipeline growth velocity achieved at Vosyn.</p>
+                    </div>
+                    <div class="border-t border-primary/20 pt-8">
+                        <p class="font-header font-bold text-4xl mb-2 tracking-tighter">$5k+</p>
+                        <p class="font-header font-bold text-[9px] uppercase tracking-widest text-primary/50 mb-4">Capital Secured</p>
+                        <p class="font-body text-sm text-on-surface/60 italic leading-relaxed">Direct corporate sponsorship funding closed for early-stage pilots.</p>
+                    </div>
+                    <div class="border-t border-primary/20 pt-8">
+                        <p class="font-header font-bold text-4xl mb-2 tracking-tighter">110%</p>
+                        <p class="font-header font-bold text-[9px] uppercase tracking-widest text-primary/50 mb-4">Quota Mastery</p>
+                        <p class="font-body text-sm text-on-surface/60 italic leading-relaxed">Consistent over-performance across high-volume sales environments.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: MONITORING -->
+        <section id="slide-4" class="bg-secondary text-white">
+            <div class="container mx-auto px-10 md:px-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+                    <div class="slide-content">
+                        <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-white/30 mb-10 text-balance max-w-xl">03 // The Logic</span>
+                        <h2 class="font-header font-bold text-5xl md:text-7xl text-white leading-[0.9] tracking-tighter mb-10 text-balance max-w-xl">
+                            Verification is the Sale.
+                        </h2>
+                        <p class="font-body text-xl md:text-2xl text-white/70 leading-relaxed mb-10 text-balance max-w-xl">
+                             In enterprise sales, "Monitoring" is another word for "Confidence." My BDR strategy is built on selling the <strong class="text-white">Transparency</strong> of Veritree’s restoration data.
+                        </p>
+                        <div class="editorial-line mb-10 opacity-20"></div>
+                        <div class="flex gap-12 font-header font-bold text-[9px] uppercase tracking-widest opacity-60">
+                             <div class="flex items-center gap-2"><i class="ph ph-circle-wavy-check"></i> Survive Rate</div>
+                             <div class="flex items-center gap-2"><i class="ph ph-tree"></i> Hectares</div>
+                             <div class="flex items-center gap-2"><i class="ph ph-calendar"></i> Work Days</div>
+                        </div>
+                    </div>
+                    <div class="bg-surface/5 p-12 border border-white/10 slide-content" style="transition-delay: 0.2s;">
+                        <p class="font-serif text-3xl text-white/90 leading-snug">"We don't sell trees; we sell the proof that the trees are doing their job."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: LUMORA ARTIFACT -->
+        <section id="slide-5" class="bg-surface">
+            <div class="container mx-auto px-10 md:px-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+                    <div class="relative slide-content">
+                        <img src="assets/projects/lumora/lumora.jpg" class="w-full aspect-[4/5] object-cover rounded-[1px] grayscale-[20%]" alt="">
+                        <div class="absolute top-12 -right-12 bg-primary text-white p-12 shadow-2xl max-w-sm">
+                             <p class="font-header font-bold text-[10px] uppercase tracking-[0.3em] mb-4 opacity-50">Artifact I</p>
+                             <p class="font-serif italic text-2xl leading-tight mb-8">"I directed the strategic mapping for corporate stakeholders."</p>
+                             <div class="w-12 h-[1px] bg-white opacity-30"></div>
+                        </div>
+                    </div>
+                    <div class="slide-content" style="transition-delay: 0.3s;">
+                        <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-primary/40 mb-10 text-balance max-w-xl">04 // Relationship Strategy</span>
+                        <h2 class="font-header font-bold text-4xl md:text-6xl text-on-surface leading-[0.9] tracking-tighter mb-10 text-balance max-w-md">
+                            The Lumóra Blueprint.
+                        </h2>
+                        <div class="p-8 border border-primary/10 bg-white/50 mb-10 text-balance max-w-xl">
+                             <h4 class="font-header font-bold uppercase text-[9px] tracking-widest text-primary mb-3">Strategic Rationale</h4>
+                             <p class="font-body text-lg text-on-surface/70 leading-relaxed">"BDR success is measured by Discovery Syncs. For Lumóra, I had to map decision-makers at Tier-1 companies—exactly the skillset needed for Veritree's enterprise outreach."</p>
+                        </div>
+                        <p class="font-header font-header font-bold text-[10px] uppercase tracking-widest text-primary opacity-50">Key Skill: Stakeholder Research & Outreach</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: DECO ARTIFACT -->
+        <section id="slide-6" class="bg-secondary-dark text-white">
+            <div class="container mx-auto px-10 md:px-24">
+                <div class="max-w-4xl slide-content">
+                    <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-white/30 mb-10 text-balance max-w-xl">05 // Resilience</span>
+                    <h2 class="font-header font-bold text-6xl md:text-9xl leading-[0.8] tracking-tighter mb-12 text-balance max-w-4xl">
+                        Grit. Persistence.
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                        <div>
+                             <p class="font-body text-xl md:text-2xl text-white/60 leading-relaxed mb-12">
+                                Enterprise BDR work at Veritree is a marathon of rejection. My time at DECO built the resilience to maintain peak performance across thousands of outbound touches.
+                             </p>
+                             <div class="flex gap-16 font-header font-bold">
+                                 <div>
+                                    <p class="text-5xl tracking-tighter">110%</p>
+                                    <p class="text-[9px] uppercase tracking-[0.3em] opacity-40">Performance</p>
+                                 </div>
+                                 <div>
+                                    <p class="text-5xl tracking-tighter">1.2k</p>
+                                    <p class="text-[9px] uppercase tracking-[0.3em] opacity-40">Volume</p>
+                                 </div>
+                             </div>
+                        </div>
+                        <div class="p-10 border border-white/10 flex flex-col justify-center">
+                             <h4 class="font-header font-bold uppercase text-[9px] tracking-widest text-white/40 mb-6">Strategic Rationale</h4>
+                             <p class="font-body text-xl text-white/90">"A BDR's success is fueled by persistence. This artifact prove I have the stomach for the daily outbound grind."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 7: VOSYN ARTIFACT -->
+        <section id="slide-7" class="bg-surface text-on-surface">
+            <div class="container mx-auto px-10 md:px-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+                    <div class="slide-content">
+                         <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-primary/40 mb-10 text-balance max-w-xl">06 // Systems Design</span>
+                         <h2 class="font-header font-bold text-4xl md:text-6xl text-on-surface leading-[0.9] tracking-tighter mb-10 text-balance max-w-xl">
+                            Scaling Efficiency.
+                         </h2>
+                        <div class="p-8 border border-primary/10 bg-white/50 mb-10 text-balance max-w-xl">
+                             <h4 class="font-header font-bold uppercase text-[9px] tracking-widest text-primary mb-3">Strategic Rationale</h4>
+                             <p class="font-body text-lg text-on-surface/70 leading-relaxed">"RevOps-literate BDRs are 3x more effective. At Vosyn, I rebuilt the recruitment pipeline, automating manual stages to scale 5.5x in a month. I bring this same systems-thinking to your sales motion."</p>
+                        </div>
+                         <p class="font-header font-bold text-[10px] uppercase tracking-widest text-primary opacity-50">Focus: CRM Management & Automation</p>
+                    </div>
+                    <div class="relative aspect-square slide-content" style="transition-delay: 0.3s;">
+                        <img src="assets/nature/leadership.png" class="w-full h-full object-cover rounded-[1px] shadow-2xl grayscale-[20%]" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 8: KITCH ARTIFACT -->
+        <section id="slide-8" class="bg-surface">
+            <div class="container mx-auto px-10 md:px-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+                    <div class="slide-content flex flex-col gap-8">
+                         <div class="w-full border border-primary/10 p-12 bg-white flex flex-col justify-between aspect-square">
+                             <div class="h-[1px] w-12 bg-primary mb-8 opacity-40"></div>
+                             <div class="font-serif text-3xl leading-snug">"The Technical Rationale."</div>
+                             <div class="font-mono text-[9px] text-primary/30 mt-auto">lead_automation_script.js</div>
+                         </div>
+                    </div>
+                    <div class="slide-content" style="transition-delay: 0.2s;">
+                        <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-primary/40 mb-10 text-balance max-w-xl">07 // Technical Fluency</span>
+                        <h2 class="font-header font-bold text-4xl md:text-6xl text-on-surface leading-[0.9] tracking-tighter mb-10 text-balance max-w-md">
+                            The Technical Strategist.
+                        </h2>
+                        <p class="font-body text-lg text-on-surface/70 leading-relaxed mb-6">
+                             "At Kitch Components, I used JavaScript to automate complex workflows and manage digital operations. This technical literacy ensures I can speak to your product team and understand the underlying verification portal your clients use."
+                        </p>
+                        <div class="w-12 h-[1px] bg-primary/20"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 9: BDR 2.0 -->
+        <section id="slide-9" class="bg-surface">
+            <div class="container mx-auto px-10 md:px-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+                     <div class="slide-content">
+                        <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-primary/40 mb-10 text-balance max-w-xl">08 // The Future</span>
+                        <h2 class="font-header font-bold text-5xl md:text-7xl text-on-surface leading-[0.9] tracking-tighter mb-10 text-balance max-w-xl">
+                            The BDR 2.0.
+                        </h2>
+                        <p class="font-body text-xl md:text-2xl text-on-surface/70 leading-relaxed mb-10 text-balance">
+                             I am not a script-reader. I am a <strong class="text-primary font-bold">design-led strategy partner</strong> obsessed with mission-aligned revenue.
+                        </p>
+                        <div class="space-y-8">
+                             <div class="flex gap-6 items-start">
+                                 <span class="font-header font-bold text-xs text-primary mt-1 border border-primary px-1.5 py-0.5">A</span>
+                                 <div>
+                                     <p class="font-header font-bold text-lg mb-1">Design as Conversion</p>
+                                     <p class="font-body text-on-surface/60 text-base">Using visual storytelling to build instant authority with C-Suite leads.</p>
+                                 </div>
+                             </div>
+                             <div class="flex gap-6 items-start">
+                                 <span class="font-header font-bold text-xs text-primary mt-1 border border-primary px-1.5 py-0.5">B</span>
+                                 <div>
+                                     <p class="font-header font-bold text-lg mb-1">Analytical Edge</p>
+                                     <p class="font-body text-on-surface/60 text-base">Optimizing outreach based on hard pipeline trends and monitoring data.</p>
+                                 </div>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="slide-content border-l border-primary/10 pl-12" style="transition-delay: 0.3s;">
+                         <img src="assets/portraits/michael_social.png" class="w-full aspect-square object-cover" alt="">
+                         <p class="font-header font-bold uppercase tracking-[0.4em] text-[9px] mt-10 opacity-30 text-right">Built to Serve Our Planet</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 10: CTA -->
+        <section id="slide-10" class="bg-secondary-dark text-white">
+            <div class="container mx-auto px-10 md:px-24 text-center">
+                 <div class="max-w-4xl mx-auto slide-content">
+                     <h2 class="font-header font-bold text-6xl md:text-9xl leading-[0.9] tracking-tighter mb-12 text-balance max-w-5xl mx-auto">
+                        Audit. Align. Restore.
                      </h2>
-                    <div class="p-8 border border-primary/10 bg-white/50 mb-10 text-balance max-w-xl">
-                         <h4 class="font-header font-bold uppercase text-[9px] tracking-widest text-primary mb-3">Strategic Rationale</h4>
-                         <p class="font-body text-lg text-on-surface/70 leading-relaxed">"RevOps-literate BDRs are 3x more effective. At Vosyn, I rebuilt the recruitment pipeline, automating manual stages to scale 5.5x in a month. I bring this same systems-thinking to your sales motion."</p>
-                    </div>
-                     <p class="font-header font-bold text-[10px] uppercase tracking-widest text-primary opacity-50">Focus: CRM Management & Automation</p>
-                </div>
-                <div class="relative aspect-square slide-content" style="transition-delay: 0.3s;">
-                    <img src="assets/nature/leadership.png" class="w-full h-full object-cover rounded-[1px] shadow-2xl grayscale-[20%]" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SLIDE 8: KITCH ARTIFACT -->
-    <section id="slide-8" class="bg-surface">
-        <div class="container mx-auto px-10 md:px-24">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
-                <div class="slide-content flex flex-col gap-8">
-                     <div class="w-full border border-primary/10 p-12 bg-white flex flex-col justify-between aspect-square">
-                         <div class="h-[1px] w-12 bg-primary mb-8 opacity-40"></div>
-                         <div class="font-serif text-3xl leading-snug">"The Technical Rationale."</div>
-                         <div class="font-mono text-[9px] text-primary/30 mt-auto">lead_automation_script.js</div>
+                     <div class="flex flex-col md:flex-row gap-10 justify-center items-center mt-20">
+                         <a href="mailto:mckaymichaelk@gmail.com" class="px-14 py-6 bg-surface text-on-surface font-header font-bold uppercase tracking-[0.3em] text-[10px] hover:bg-white transition-all">
+                            Start the Partnership
+                         </a>
+                         <a href="index.html" class="font-header font-bold uppercase tracking-[0.3em] text-[9px] opacity-40 border-b border-white/20 hover:border-white hover:opacity-100 transition-all pb-1">
+                            Return to Portfolio
+                         </a>
                      </div>
-                </div>
-                <div class="slide-content" style="transition-delay: 0.2s;">
-                    <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-primary/40 mb-10 text-balance max-w-xl">07 // Technical Fluency</span>
-                    <h2 class="font-header font-bold text-4xl md:text-6xl text-on-surface leading-[0.9] tracking-tighter mb-10 text-balance max-w-md">
-                        The Technical Strategist.
-                    </h2>
-                    <p class="font-body text-lg text-on-surface/70 leading-relaxed mb-6">
-                         "At Kitch Components, I used JavaScript to automate complex workflows and manage digital operations. This technical literacy ensures I can speak to your product team and understand the underlying verification portal your clients use."
-                    </p>
-                    <div class="w-12 h-[1px] bg-primary/20"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SLIDE 9: BDR 2.0 -->
-    <section id="slide-9" class="bg-surface">
-        <div class="container mx-auto px-10 md:px-24">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
-                 <div class="slide-content">
-                    <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-primary/40 mb-10 text-balance max-w-xl">08 // The Future</span>
-                    <h2 class="font-header font-bold text-5xl md:text-7xl text-on-surface leading-[0.9] tracking-tighter mb-10 text-balance max-w-xl">
-                        The BDR 2.0.
-                    </h2>
-                    <p class="font-body text-xl md:text-2xl text-on-surface/70 leading-relaxed mb-10 text-balance">
-                         I am not a script-reader. I am a <strong class="text-primary font-bold">design-led strategy partner</strong> obsessed with mission-aligned revenue.
-                    </p>
-                    <div class="space-y-8">
-                         <div class="flex gap-6 items-start">
-                             <span class="font-header font-bold text-xs text-primary mt-1 border border-primary px-1.5 py-0.5">A</span>
-                             <div>
-                                 <p class="font-header font-bold text-lg mb-1">Design as Conversion</p>
-                                 <p class="font-body text-on-surface/60 text-base">Using visual storytelling to build instant authority with C-Suite leads.</p>
-                             </div>
-                         </div>
-                         <div class="flex gap-6 items-start">
-                             <span class="font-header font-bold text-xs text-primary mt-1 border border-primary px-1.5 py-0.5">B</span>
-                             <div>
-                                 <p class="font-header font-bold text-lg mb-1">Analytical Edge</p>
-                                 <p class="font-body text-on-surface/60 text-base">Optimizing outreach based on hard pipeline trends and monitoring data.</p>
-                             </div>
-                         </div>
-                    </div>
-                </div>
-                <div class="slide-content border-l border-primary/10 pl-12" style="transition-delay: 0.3s;">
-                     <img src="assets/portraits/michael_social.png" class="w-full aspect-square object-cover" alt="">
-                     <p class="font-header font-bold uppercase tracking-[0.4em] text-[9px] mt-10 opacity-30 text-right">Built to Serve Our Planet</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SLIDE 10: CTA -->
-    <section id="slide-10" class="bg-secondary-dark text-white">
-        <div class="container mx-auto px-10 md:px-24 text-center">
-             <div class="max-w-4xl mx-auto slide-content">
-                 <h2 class="font-header font-bold text-6xl md:text-9xl leading-[0.9] tracking-tighter mb-12 text-balance max-w-5xl mx-auto">
-                    Audit. Align. Restore.
-                 </h2>
-                 <div class="flex flex-col md:flex-row gap-10 justify-center items-center mt-20">
-                     <a href="mailto:mckaymichaelk@gmail.com" class="px-14 py-6 bg-surface text-on-surface font-header font-bold uppercase tracking-[0.3em] text-[10px] hover:bg-white transition-all">
-                        Start the Partnership
-                     </a>
-                     <a href="index.html" class="font-header font-bold uppercase tracking-[0.3em] text-[9px] opacity-40 border-b border-white/20 hover:border-white hover:opacity-100 transition-all pb-1">
-                        Return to Portfolio
-                     </a>
                  </div>
-             </div>
-        </div>
-    </section>
+            </div>
+        </section>
+    </div>
 
     <!-- SCRIPTS -->
+    <!-- GSAP loaded here (bottom of body) to guarantee all plugins are ready before inline code runs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Observer.min.js"></script>
     <script>
         gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Observer);
 
@@ -476,29 +478,39 @@
                 });
             }
 
-            // Initialize split text
+            // Initialize
             sections.forEach(section => {
                 const titles = section.querySelectorAll('h1, h2');
                 titles.forEach(title => splitText(title));
             });
 
-            // --- INITIAL STATE ---
+            // Initial States
             gsap.set('section', { yPercent: 100, autoAlpha: 0 });
             gsap.set(sections[0], { yPercent: 0, autoAlpha: 1, zIndex: 10 });
             
             // Content setup
-            gsap.set('.split-child', { yPercent: 100, autoAlpha: 0 });
-            gsap.set('.slide-content > *:not(h1):not(h2), .slide-content img', { opacity: 0, y: 30 });
-            gsap.set('.editorial-line', { width: 0 });
+            const allSplit = document.querySelectorAll('.split-child');
+            const allOthers = document.querySelectorAll('.slide-content > *:not(h1):not(h2), .slide-content img');
+            const allLines = document.querySelectorAll('.editorial-line');
+            
+            if (allSplit.length) gsap.set(allSplit, { yPercent: 100, autoAlpha: 0 });
+            if (allOthers.length) gsap.set(allOthers, { opacity: 0, y: 30 });
+            if (allLines.length) gsap.set(allLines, { width: 0 });
 
-            // Initial reveal for Slide 1
+            // Initial reveal
             const revealFirst = () => {
                 const tl = gsap.timeline();
-                tl.to(sections[0].querySelectorAll('.split-child'), { yPercent: 0, autoAlpha: 1, duration: 1.2, stagger: 0.03, ease: "power4.out" })
-                  .to(sections[0].querySelectorAll('.slide-content > *:not(h1):not(h2), .slide-content img'), { opacity: 1, y: 0, duration: 1, stagger: 0.1 }, "-=0.8")
-                  .to(sections[0].querySelectorAll('.editorial-line'), { width: "100%", duration: 1.2 }, "-=1.0");
+                const split = sections[0].querySelectorAll('.split-child');
+                const others = sections[0].querySelectorAll('.slide-content > *:not(h1):not(h2), .slide-content img');
+                const lines = sections[0].querySelectorAll('.editorial-line');
+                
+                if (split.length) tl.to(split, { yPercent: 0, autoAlpha: 1, duration: 1.2, stagger: 0.03, ease: "power4.out" });
+                if (others.length) tl.to(others, { opacity: 1, y: 0, duration: 1, stagger: 0.1 }, "-=0.8");
+                if (lines.length) tl.to(lines, { width: "100%", duration: 1.2 }, "-=1.0");
             };
-            revealFirst();
+            
+            // Wait a tiny bit for render to settle
+            setTimeout(revealFirst, 100);
 
             function gotoSection(index, direction) {
                 if (index < 0 || index >= sections.length || animating) return;
@@ -507,11 +519,11 @@
                 const prevIndex = currentIndex;
                 currentIndex = index;
                 const section = sections[index];
-                const prevSection = sections[prevIndex];
+                const prevSection = prevIndex >= 0 ? sections[prevIndex] : null;
 
                 // Update UI
                 const progress = ((index + 1) / sections.length) * 100;
-                gsap.to(progressBar, { width: `${progress}%`, duration: 0.5 });
+                if (progressBar) gsap.to(progressBar, { width: `${progress}%`, duration: 0.5 });
                 dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
 
                 const tl = gsap.timeline({
@@ -521,7 +533,7 @@
                 // 1. Position incoming
                 gsap.set(section, { zIndex: 10, autoAlpha: 1, yPercent: direction > 0 ? 100 : -100 });
 
-                // 2. Animate out prev
+                // 2. Outgoing
                 if (prevSection) {
                     tl.to(prevSection, {
                         yPercent: direction > 0 ? -30 : 30,
@@ -530,9 +542,10 @@
                         ease: "expo.inOut"
                     }, 0);
                     prevSection.classList.remove('active');
+                    gsap.set(prevSection, { zIndex: 1 }, "+=0.1");
                 }
 
-                // 3. Animate in new
+                // 3. Incoming
                 tl.to(section, {
                     yPercent: 0,
                     duration: 1.2,
@@ -545,18 +558,23 @@
                 const others = section.querySelectorAll('.slide-content > *:not(h1):not(h2), .slide-content img');
                 const lines = section.querySelectorAll('.editorial-line');
 
-                gsap.set(splitChildren, { yPercent: 100, autoAlpha: 0 });
-                gsap.set(others, { opacity: 0, y: 30 });
-                gsap.set(lines, { width: 0 });
-
-                tl.to(splitChildren, { yPercent: 0, autoAlpha: 1, duration: 1.2, stagger: 0.03, ease: "power4.out" }, "-=0.6")
-                  .to(others, { opacity: 1, y: 0, duration: 1, stagger: 0.1 }, "-=1.0")
-                  .to(lines, { width: "100%", duration: 1.2 }, "-=1.0");
+                if (splitChildren.length) {
+                    gsap.set(splitChildren, { yPercent: 100, autoAlpha: 0 });
+                    tl.to(splitChildren, { yPercent: 0, autoAlpha: 1, duration: 1.2, stagger: 0.02, ease: "power4.out" }, "-=0.6");
+                }
+                if (others.length) {
+                    gsap.set(others, { opacity: 0, y: 30 });
+                    tl.to(others, { opacity: 1, y: 0, duration: 1, stagger: 0.08 }, "-=1.0");
+                }
+                if (lines.length) {
+                    gsap.set(lines, { width: 0 });
+                    tl.to(lines, { width: "100%", duration: 1.2 }, "-=1.0");
+                }
             }
 
             Observer.create({
+                target: window,
                 type: "wheel,touch,pointer",
-                wheelSpeed: -1,
                 onDown: () => !animating && gotoSection(currentIndex - 1, -1),
                 onUp: () => !animating && gotoSection(currentIndex + 1, 1),
                 tolerance: 10,
@@ -565,6 +583,7 @@
 
             dots.forEach((dot, i) => {
                 dot.addEventListener('click', (e) => {
+                    e.preventDefault();
                     if (i !== currentIndex) gotoSection(i, i > currentIndex ? 1 : -1);
                 });
             });

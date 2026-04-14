@@ -427,7 +427,7 @@
     <script>
         gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Observer);
 
-        document.addEventListener('DOMContentLoaded', () => {
+        window.onload = () => {
             const sections = gsap.utils.toArray('section');
             const dots = gsap.utils.toArray('.dot');
             const progressBar = document.getElementById('progress-bar');
@@ -436,9 +436,12 @@
 
             // --- SPLIT TEXT HELPER ---
             function splitText(el) {
+                if (!el) return;
                 el.childNodes.forEach(node => {
                     if (node.nodeType === 3) { // Text node
-                        const words = node.textContent.split(/(\s+)/);
+                        const text = node.textContent;
+                        if (!text.trim()) return;
+                        const words = text.split(/(\s+)/);
                         const fragment = document.createDocumentFragment();
                         words.forEach(word => {
                             if (word.trim() === '') {
@@ -447,7 +450,7 @@
                                 const parent = document.createElement('span');
                                 parent.className = 'split-parent';
                                 const child = document.createElement('span');
-                                child.className = 'split-child inline-block';
+                                child.className = 'split-child';
                                 child.textContent = word;
                                 parent.appendChild(child);
                                 fragment.appendChild(parent);
@@ -468,18 +471,21 @@
 
             // Set initial states
             gsap.set('section', { yPercent: 100, autoAlpha: 0 });
-            gsap.set('.split-child', { yPercent: 100 });
+            gsap.set('.split-child', { yPercent: 100, autoAlpha: 0 });
             gsap.set('.slide-content > *:not(h1):not(h2), .slide-content img', { opacity: 0, y: 30 });
             gsap.set('.editorial-line', { width: 0 });
 
             function gotoSection(index, direction) {
-                if (index < 0 || index >= sections.length || animating) return;
-                animating = true;
+                if (index < 0 || index >= sections.length || (animating && index !== currentIndex)) return;
+                
+                // If we're clicking a dot for a section we're already on, do nothing
+                if (index === currentIndex && currentIndex !== -1) return;
 
+                animating = true;
                 const prevIndex = currentIndex;
                 currentIndex = index;
                 const section = sections[index];
-                const prevSection = sections[prevIndex];
+                const prevSection = prevIndex >= 0 ? sections[prevIndex] : null;
 
                 // Update UI (Dots & Progress)
                 const progress = ((index + 1) / sections.length) * 100;
@@ -496,14 +502,15 @@
                 gsap.set(section, { 
                     zIndex: 10, 
                     autoAlpha: 1, 
-                    yPercent: direction > 0 ? 100 : -100 
+                    yPercent: direction > 0 ? 100 : -100,
+                    scale: 1.05 
                 });
 
                 // 2. Animate out the previous section if it exists
                 if (prevSection) {
                     tl.to(prevSection, {
                         yPercent: direction > 0 ? -30 : 30, // Subtle move out
-                        scale: 0.9,
+                        scale: 0.95,
                         autoAlpha: 0,
                         duration: 1.2,
                         ease: "power2.inOut"
@@ -575,7 +582,7 @@
 
             // Initial Section
             gotoSection(0, 1);
-        });
+        };
     </script>
 </body>
 </html>

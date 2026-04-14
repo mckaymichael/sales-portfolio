@@ -44,40 +44,54 @@
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Observer.min.js"></script>
 
     <style>
         body {
-            overflow-x: hidden;
-            scroll-snap-type: y mandatory;
-        }
-        section {
-            scroll-snap-align: start;
-            scroll-snap-stop: always;
+            overflow: hidden; /* Prevent native scroll for slide-by-slide control */
+            background: #1E1B18;
             height: 100vh;
             width: 100vw;
-            position: relative;
+        }
+        section {
+            height: 100vh;
+            width: 100vw;
+            position: absolute; /* Stack slides for transition control */
+            top: 0;
+            left: 0;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            visibility: hidden; /* Hidden by default */
+        }
+        section.active {
+            visibility: visible;
+            z-index: 10;
         }
         .slide-content {
-            opacity: 0;
-            transform: translateY(20px);
+            /* Now just a container marker, children will be animated */
         }
-        .active .slide-content {
-            opacity: 1;
-            transform: translateY(0);
-            transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+        
+        /* Split Text Styles */
+        .split-parent { 
+            display: inline-block;
+            vertical-align: bottom;
+            overflow: hidden;
+            padding: 0.1em 0.05em;
+            margin: -0.1em -0.05em;
+            white-space: nowrap;
         }
+        .split-child { 
+            display: inline-block;
+            padding-right: 0.02em;
+        }
+
         .editorial-line {
             width: 0;
             height: 1px;
             background: currentColor;
-            transition: width 1.2s ease-in-out;
-        }
-        .active .editorial-line {
-            width: 100%;
         }
         #progress-bar {
             position: fixed;
@@ -91,7 +105,6 @@
         }
         .italic-serif {
             font-family: 'Unna', serif;
-            font-style: italic;
         }
         .nav-dots {
             position: fixed;
@@ -114,6 +127,15 @@
             background: #6D390E;
             transform: scale(1.8);
         }
+        
+        /* Image Parallax Effect */
+        section img {
+            transition: transform 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transform: scale(1.1);
+        }
+        section.active img {
+            transform: scale(1);
+        }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body antialiased">
@@ -134,15 +156,6 @@
         <a href="#slide-10" class="dot"></a>
     </div>
 
-    <!-- HEADER / LOGO -->
-    <header class="fixed top-0 left-0 w-full z-50 p-10 flex justify-between items-end pointer-events-none">
-        <div class="font-header font-bold uppercase tracking-[0.3em] text-[10px] pointer-events-auto leading-none border-b border-primary/20 pb-1">
-            <a href="index.html">Michael McKay</a>
-        </div>
-        <div class="font-header font-bold uppercase tracking-[0.3em] text-[9px] opacity-30 leading-none">
-            Veritree Presentation &copy; 2026
-        </div>
-    </header>
 
     <!-- SLIDE 1: INTRO -->
     <section id="slide-1" class="bg-secondary-dark text-white active">
@@ -151,9 +164,8 @@
         </div>
         <div class="container mx-auto px-10 md:px-24 relative z-10">
             <div class="max-w-5xl slide-content">
-                <p class="font-header font-bold uppercase tracking-[0.5em] text-[10px] mb-12 opacity-50">Enterprise BDR Pitch</p>
-                <h1 class="font-header font-bold text-6xl md:text-9xl leading-[0.85] tracking-tighter mb-12">
-                    Verified <br> Restoration.
+                <h1 class="font-header font-bold text-6xl md:text-9xl leading-[0.85] tracking-tighter mb-12 text-balance max-w-4xl">
+                    Verified Restoration.
                 </h1>
                 <div class="editorial-line mb-12 opacity-40"></div>
                 <p class="font-body text-xl md:text-3xl text-white/70 max-w-xl leading-relaxed">
@@ -168,14 +180,13 @@
         <div class="container mx-auto px-10 md:px-24">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
                 <div class="slide-content">
-                     <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-primary/40 mb-10 italic">01 // The Philosophy</span>
-                     <h2 class="font-header font-bold text-5xl md:text-7xl text-on-surface leading-[0.9] tracking-tighter mb-10">
-                        Built to <br> <span class="italic-serif font-normal">Serve.</span>
+                     <h2 class="font-header font-bold text-5xl md:text-7xl text-on-surface leading-[0.9] tracking-tighter mb-10 text-balance max-w-2xl">
+                        Built to Serve.
                      </h2>
                      <p class="font-body text-xl md:text-2xl text-on-surface/70 leading-relaxed mb-10 text-balance">
-                        Veritree solves the "blind spot" of restorative trust. I solve the "blind spot" of strategic growth. Together, we move beyond tree planting into **verified global impact**.
+                        Veritree solves the "blind spot" of restorative trust. I solve the "blind spot" of strategic growth. Together, we move beyond tree planting into <strong class="text-primary font-bold">verified global impact</strong>.
                      </p>
-                     <div class="w-20 h-[1px] bg-primary mb-10"></div>
+                     <div class="w-20 h-[1px] bg-primary mb-10 text-balance max-w-xl"></div>
                      <p class="font-header font-bold text-[10px] uppercase tracking-widest text-primary">Mission alignment is the foundation of my performance.</p>
                 </div>
                 <div class="relative aspect-[4/5] slide-content" style="transition-delay: 0.2s;">
@@ -192,9 +203,9 @@
     <section id="slide-3" class="bg-surface">
         <div class="container mx-auto px-10 md:px-24">
             <div class="max-w-5xl mb-16 slide-content">
-                <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-primary/40 mb-10 italic">02 // Measuring Grit</span>
+                <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-primary/40 mb-10 text-balance max-w-xl">02 // Measuring Grit</span>
                 <h2 class="font-header font-bold text-5xl md:text-7xl text-on-surface leading-[0.9] tracking-tighter">
-                    Personal <span class="italic-serif font-normal">KPIs.</span>
+                    Personal KPIs
                 </h2>
             </div>
             
@@ -227,13 +238,13 @@
     <section id="slide-4" class="bg-secondary text-white">
         <div class="container mx-auto px-10 md:px-24">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
-                 <div class="slide-content">
-                    <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-white/30 mb-10 italic">03 // The Logic</span>
-                    <h2 class="font-header font-bold text-5xl md:text-7xl text-white leading-[0.9] tracking-tighter mb-10">
-                        Verification <br> is the <span class="italic-serif font-normal">Sale.</span>
+                <div class="slide-content">
+                    <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-white/30 mb-10 text-balance max-w-xl">03 // The Logic</span>
+                    <h2 class="font-header font-bold text-5xl md:text-7xl text-white leading-[0.9] tracking-tighter mb-10 text-balance max-w-xl">
+                        Verification is the Sale.
                     </h2>
-                    <p class="font-body text-xl md:text-2xl text-white/70 leading-relaxed mb-10">
-                         In enterprise sales, "Monitoring" is another word for "Confidence." My BDR strategy is built on selling the **Transparency** of Veritree’s restoration data.
+                    <p class="font-body text-xl md:text-2xl text-white/70 leading-relaxed mb-10 text-balance max-w-xl">
+                         In enterprise sales, "Monitoring" is another word for "Confidence." My BDR strategy is built on selling the <strong class="text-white">Transparency</strong> of Veritree’s restoration data.
                     </p>
                     <div class="editorial-line mb-10 opacity-20"></div>
                     <div class="flex gap-12 font-header font-bold text-[9px] uppercase tracking-widest opacity-60">
@@ -243,7 +254,7 @@
                     </div>
                 </div>
                 <div class="bg-surface/5 p-12 border border-white/10 slide-content" style="transition-delay: 0.2s;">
-                    <p class="font-serif italic text-3xl text-white/90 leading-snug">"We don't sell trees; we sell the proof that the trees are doing their job."</p>
+                    <p class="font-serif text-3xl text-white/90 leading-snug">"We don't sell trees; we sell the proof that the trees are doing their job."</p>
                 </div>
             </div>
         </div>
@@ -262,13 +273,13 @@
                     </div>
                 </div>
                 <div class="slide-content" style="transition-delay: 0.3s;">
-                    <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-primary/40 mb-10 italic">04 // Relationship Strategy</span>
-                    <h2 class="font-header font-bold text-4xl md:text-6xl text-on-surface leading-[0.9] tracking-tighter mb-10">
-                        The Lumóra <span class="italic-serif font-normal">Blueprint.</span>
+                    <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-primary/40 mb-10 text-balance max-w-xl">04 // Relationship Strategy</span>
+                    <h2 class="font-header font-bold text-4xl md:text-6xl text-on-surface leading-[0.9] tracking-tighter mb-10 text-balance max-w-md">
+                        The Lumóra Blueprint.
                     </h2>
-                    <div class="p-8 border border-primary/10 bg-white/50 mb-10">
+                    <div class="p-8 border border-primary/10 bg-white/50 mb-10 text-balance max-w-xl">
                          <h4 class="font-header font-bold uppercase text-[9px] tracking-widest text-primary mb-3">Strategic Rationale</h4>
-                         <p class="font-body text-lg text-on-surface/70 leading-relaxed italic">"BDR success is measured by Discovery Syncs. For Lumóra, I had to map decision-makers at Tier-1 companies—exactly the skillset needed for Veritree's enterprise outreach."</p>
+                         <p class="font-body text-lg text-on-surface/70 leading-relaxed">"BDR success is measured by Discovery Syncs. For Lumóra, I had to map decision-makers at Tier-1 companies—exactly the skillset needed for Veritree's enterprise outreach."</p>
                     </div>
                     <p class="font-header font-header font-bold text-[10px] uppercase tracking-widest text-primary opacity-50">Key Skill: Stakeholder Research & Outreach</p>
                 </div>
@@ -280,9 +291,9 @@
     <section id="slide-6" class="bg-secondary-dark text-white">
         <div class="container mx-auto px-10 md:px-24">
             <div class="max-w-4xl slide-content">
-                <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-white/30 mb-10 italic">05 // Resilience</span>
-                <h2 class="font-header font-bold text-6xl md:text-9xl leading-[0.8] tracking-tighter mb-12">
-                    Grit. <br> <span class="italic-serif font-normal">Persistence.</span>
+                <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-white/30 mb-10 text-balance max-w-xl">05 // Resilience</span>
+                <h2 class="font-header font-bold text-6xl md:text-9xl leading-[0.8] tracking-tighter mb-12 text-balance max-w-4xl">
+                    Grit. Persistence.
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
                     <div>
@@ -301,8 +312,8 @@
                          </div>
                     </div>
                     <div class="p-10 border border-white/10 flex flex-col justify-center">
-                         <h4 class="font-header font-bold uppercase text-[9px] tracking-widest text-white/40 mb-6 italic">Strategic Rationale</h4>
-                         <p class="font-body text-xl italic text-white/90">"A BDR's success is fueled by persistence. This artifact prove I have the stomach for the daily outbound grind."</p>
+                         <h4 class="font-header font-bold uppercase text-[9px] tracking-widest text-white/40 mb-6">Strategic Rationale</h4>
+                         <p class="font-body text-xl text-white/90">"A BDR's success is fueled by persistence. This artifact prove I have the stomach for the daily outbound grind."</p>
                     </div>
                 </div>
             </div>
@@ -314,13 +325,13 @@
         <div class="container mx-auto px-10 md:px-24">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
                 <div class="slide-content">
-                     <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-primary/40 mb-10 italic">06 // Systems Design</span>
-                     <h2 class="font-header font-bold text-4xl md:text-6xl text-on-surface leading-[0.9] tracking-tighter mb-10">
-                        Scaling <br> <span class="italic-serif font-normal">Efficiency.</span>
+                     <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-primary/40 mb-10 text-balance max-w-xl">06 // Systems Design</span>
+                     <h2 class="font-header font-bold text-4xl md:text-6xl text-on-surface leading-[0.9] tracking-tighter mb-10 text-balance max-w-xl">
+                        Scaling Efficiency.
                      </h2>
-                    <div class="p-8 border border-primary/10 bg-white/50 mb-10">
+                    <div class="p-8 border border-primary/10 bg-white/50 mb-10 text-balance max-w-xl">
                          <h4 class="font-header font-bold uppercase text-[9px] tracking-widest text-primary mb-3">Strategic Rationale</h4>
-                         <p class="font-body text-lg text-on-surface/70 leading-relaxed italic">"RevOps-literate BDRs are 3x more effective. At Vosyn, I rebuilt the recruitment pipeline, automating manual stages to scale 5.5x in a month. I bring this same systems-thinking to your sales motion."</p>
+                         <p class="font-body text-lg text-on-surface/70 leading-relaxed">"RevOps-literate BDRs are 3x more effective. At Vosyn, I rebuilt the recruitment pipeline, automating manual stages to scale 5.5x in a month. I bring this same systems-thinking to your sales motion."</p>
                     </div>
                      <p class="font-header font-bold text-[10px] uppercase tracking-widest text-primary opacity-50">Focus: CRM Management & Automation</p>
                 </div>
@@ -338,16 +349,16 @@
                 <div class="slide-content flex flex-col gap-8">
                      <div class="w-full border border-primary/10 p-12 bg-white flex flex-col justify-between aspect-square">
                          <div class="h-[1px] w-12 bg-primary mb-8 opacity-40"></div>
-                         <div class="font-serif italic text-3xl leading-snug">"The Technical <br> Rationale."</div>
+                         <div class="font-serif text-3xl leading-snug">"The Technical Rationale."</div>
                          <div class="font-mono text-[9px] text-primary/30 mt-auto">lead_automation_script.js</div>
                      </div>
                 </div>
                 <div class="slide-content" style="transition-delay: 0.2s;">
-                    <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-primary/40 mb-10 italic">07 // Technical Fluency</span>
-                    <h2 class="font-header font-bold text-4xl md:text-6xl text-on-surface leading-[0.9] tracking-tighter mb-10">
-                        The Technical <br> <span class="italic-serif font-normal">Strategist.</span>
+                    <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-primary/40 mb-10 text-balance max-w-xl">07 // Technical Fluency</span>
+                    <h2 class="font-header font-bold text-4xl md:text-6xl text-on-surface leading-[0.9] tracking-tighter mb-10 text-balance max-w-md">
+                        The Technical Strategist.
                     </h2>
-                    <p class="font-body text-lg text-on-surface/70 leading-relaxed mb-6 italic">
+                    <p class="font-body text-lg text-on-surface/70 leading-relaxed mb-6">
                          "At Kitch Components, I used JavaScript to automate complex workflows and manage digital operations. This technical literacy ensures I can speak to your product team and understand the underlying verification portal your clients use."
                     </p>
                     <div class="w-12 h-[1px] bg-primary/20"></div>
@@ -361,25 +372,25 @@
         <div class="container mx-auto px-10 md:px-24">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
                  <div class="slide-content">
-                    <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-primary/40 mb-10 italic">08 // The Future</span>
-                    <h2 class="font-header font-bold text-5xl md:text-7xl text-on-surface leading-[0.9] tracking-tighter mb-10">
-                        The BDR <br> <span class="italic-serif font-normal">2.0.</span>
+                    <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-primary/40 mb-10 text-balance max-w-xl">08 // The Future</span>
+                    <h2 class="font-header font-bold text-5xl md:text-7xl text-on-surface leading-[0.9] tracking-tighter mb-10 text-balance max-w-xl">
+                        The BDR 2.0.
                     </h2>
                     <p class="font-body text-xl md:text-2xl text-on-surface/70 leading-relaxed mb-10 text-balance">
-                         I am not a script-reader. I am a **design-led strategy partner** obsessed with mission-aligned revenue.
+                         I am not a script-reader. I am a <strong class="text-primary font-bold">design-led strategy partner</strong> obsessed with mission-aligned revenue.
                     </p>
                     <div class="space-y-8">
                          <div class="flex gap-6 items-start">
                              <span class="font-header font-bold text-xs text-primary mt-1 border border-primary px-1.5 py-0.5">A</span>
                              <div>
-                                 <p class="font-header font-bold text-lg mb-1 italic">Design as Conversion</p>
+                                 <p class="font-header font-bold text-lg mb-1">Design as Conversion</p>
                                  <p class="font-body text-on-surface/60 text-base">Using visual storytelling to build instant authority with C-Suite leads.</p>
                              </div>
                          </div>
                          <div class="flex gap-6 items-start">
                              <span class="font-header font-bold text-xs text-primary mt-1 border border-primary px-1.5 py-0.5">B</span>
                              <div>
-                                 <p class="font-header font-bold text-lg mb-1 italic">Analytical Edge</p>
+                                 <p class="font-header font-bold text-lg mb-1">Analytical Edge</p>
                                  <p class="font-body text-on-surface/60 text-base">Optimizing outreach based on hard pipeline trends and monitoring data.</p>
                              </div>
                          </div>
@@ -397,8 +408,8 @@
     <section id="slide-10" class="bg-secondary-dark text-white">
         <div class="container mx-auto px-10 md:px-24 text-center">
              <div class="max-w-4xl mx-auto slide-content">
-                 <h2 class="font-header font-bold text-6xl md:text-9xl leading-[0.9] tracking-tighter mb-12 transform -skew-x-6">
-                    Audit. <br> Align. <br> <span class="italic-serif font-normal text-white/80">Restore.</span>
+                 <h2 class="font-header font-bold text-6xl md:text-9xl leading-[0.9] tracking-tighter mb-12 text-balance max-w-5xl mx-auto">
+                    Audit. Align. Restore.
                  </h2>
                  <div class="flex flex-col md:flex-row gap-10 justify-center items-center mt-20">
                      <a href="mailto:mckaymichaelk@gmail.com" class="px-14 py-6 bg-surface text-on-surface font-header font-bold uppercase tracking-[0.3em] text-[10px] hover:bg-white transition-all">
@@ -414,51 +425,156 @@
 
     <!-- SCRIPTS -->
     <script>
+        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Observer);
+
         document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('section');
-            const dots = document.querySelectorAll('.dot');
+            const sections = gsap.utils.toArray('section');
+            const dots = gsap.utils.toArray('.dot');
             const progressBar = document.getElementById('progress-bar');
-            
-            const observerOptions = { root: null, threshold: 0.6 };
+            let currentIndex = -1;
+            let animating = false;
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        sections.forEach(s => s.classList.remove('active'));
-                        entry.target.classList.add('active');
-                        
-                        const index = Array.from(sections).indexOf(entry.target);
-                        const progress = ((index + 1) / sections.length) * 100;
-                        progressBar.style.width = `${progress}%`;
-
-                        dots.forEach((dot, i) => {
-                            dot.classList.toggle('active', i === index);
+            // --- SPLIT TEXT HELPER ---
+            function splitText(el) {
+                el.childNodes.forEach(node => {
+                    if (node.nodeType === 3) { // Text node
+                        const words = node.textContent.split(/(\s+)/);
+                        const fragment = document.createDocumentFragment();
+                        words.forEach(word => {
+                            if (word.trim() === '') {
+                                fragment.appendChild(document.createTextNode(word));
+                            } else {
+                                const parent = document.createElement('span');
+                                parent.className = 'split-parent';
+                                const child = document.createElement('span');
+                                child.className = 'split-child inline-block';
+                                child.textContent = word;
+                                parent.appendChild(child);
+                                fragment.appendChild(parent);
+                            }
                         });
+                        node.replaceWith(fragment);
+                    } else if (node.nodeType === 1 && !node.classList.contains('split-parent')) {
+                        splitText(node);
                     }
                 });
-            }, observerOptions);
+            }
 
-            sections.forEach(section => observer.observe(section));
+            // Initialize split text
+            sections.forEach(section => {
+                const titles = section.querySelectorAll('h1, h2');
+                titles.forEach(title => splitText(title));
+            });
 
+            // Set initial states
+            gsap.set('section', { yPercent: 100, autoAlpha: 0 });
+            gsap.set('.split-child', { yPercent: 100 });
+            gsap.set('.slide-content > *:not(h1):not(h2), .slide-content img', { opacity: 0, y: 30 });
+            gsap.set('.editorial-line', { width: 0 });
+
+            function gotoSection(index, direction) {
+                if (index < 0 || index >= sections.length || animating) return;
+                animating = true;
+
+                const prevIndex = currentIndex;
+                currentIndex = index;
+                const section = sections[index];
+                const prevSection = sections[prevIndex];
+
+                // Update UI (Dots & Progress)
+                const progress = ((index + 1) / sections.length) * 100;
+                gsap.to(progressBar, { width: `${progress}%`, duration: 0.5 });
+                dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+
+                const tl = gsap.timeline({
+                    onComplete: () => {
+                        animating = false;
+                    }
+                });
+
+                // 1. Position the next section
+                gsap.set(section, { 
+                    zIndex: 10, 
+                    autoAlpha: 1, 
+                    yPercent: direction > 0 ? 100 : -100 
+                });
+
+                // 2. Animate out the previous section if it exists
+                if (prevSection) {
+                    tl.to(prevSection, {
+                        yPercent: direction > 0 ? -30 : 30, // Subtle move out
+                        scale: 0.9,
+                        autoAlpha: 0,
+                        duration: 1.2,
+                        ease: "power2.inOut"
+                    }, 0);
+                    prevSection.classList.remove('active');
+                }
+
+                // 3. Animate in the new section
+                tl.to(section, {
+                    yPercent: 0,
+                    scale: 1,
+                    duration: 1.2,
+                    ease: "power2.inOut",
+                    onStart: () => section.classList.add('active')
+                }, 0);
+
+                // 4. Content Animations
+                const splitChildren = section.querySelectorAll('.split-child');
+                const otherContent = section.querySelectorAll('.slide-content > *:not(h1):not(h2), .slide-content img');
+                const lines = section.querySelectorAll('.editorial-line');
+
+                // Reset content states for re-entry
+                gsap.set(splitChildren, { yPercent: 100, autoAlpha: 0 });
+                gsap.set(otherContent, { opacity: 0, y: 30 });
+                gsap.set(lines, { width: 0 });
+
+                tl.to(splitChildren, {
+                    yPercent: 0,
+                    autoAlpha: 1,
+                    duration: 1.2,
+                    stagger: 0.03,
+                    ease: "power4.out"
+                }, "-=0.6");
+
+                tl.to(otherContent, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    stagger: 0.1,
+                    ease: "power3.out"
+                }, "-=1.0");
+
+                tl.to(lines, {
+                    width: "100%",
+                    duration: 1.2,
+                    ease: "power4.inOut"
+                }, "-=1.0");
+            }
+
+            // Create Observer
+            Observer.create({
+                type: "wheel,touch,pointer",
+                wheelSpeed: -1,
+                onDown: () => !animating && gotoSection(currentIndex - 1, -1),
+                onUp: () => !animating && gotoSection(currentIndex + 1, 1),
+                tolerance: 10,
+                preventDefault: true
+            });
+
+            // Dot Click Event
             dots.forEach((dot, i) => {
                 dot.addEventListener('click', (e) => {
                     e.preventDefault();
-                    sections[i].scrollIntoView({ behavior: 'smooth' });
-                });
-            });
-
-            gsap.utils.toArray('section img').forEach(img => {
-                gsap.to(img, {
-                    y: -50,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: img.parentElement,
-                        start: "top bottom",
-                        end: "bottom top",
-                        scrub: true
+                    if (i !== currentIndex) {
+                        gotoSection(i, i > currentIndex ? 1 : -1);
                     }
                 });
             });
+
+            // Initial Section
+            gotoSection(0, 1);
         });
     </script>
 </body>

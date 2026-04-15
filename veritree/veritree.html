@@ -382,7 +382,7 @@
                     <div class="flex items-center gap-4 px-8 py-6 border-r border-on-surface/10">
                         <i class="ph ph-graduation-cap text-2xl text-primary/70 flex-shrink-0"></i>
                         <div>
-                            <p class="font-header font-bold text-xl tracking-tighter text-on-surface">90%</p>
+                            <p class="font-header font-bold text-[10px] uppercase tracking-widest text-on-surface mt-1">90%</p>
                             <p class="font-header font-bold text-[10px] uppercase tracking-widest text-on-surface/80 mt-0.5">Academic Average</p>
                         </div>
                     </div>
@@ -470,7 +470,7 @@
         <section id="slide-6" class="bg-surface">
             <div class="container mx-auto px-10 md:px-24">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-                    <div                           <span class="block font-header font-bold text-[10px] uppercase tracking-widest text-primary/60 mb-8">06</span>
+                    <div><span class="block font-header font-bold text-[10px] uppercase tracking-widest text-primary/60 mb-8">06</span>
                          <h2 class="font-header font-bold text-4xl md:text-6xl text-on-surface leading-[0.9] tracking-tighter mb-10 text-balance max-w-md">
                             Sponsorship Strategy Lead.
                          </h2>
@@ -584,7 +584,7 @@
                         <p class="font-header font-bold text-sm uppercase tracking-[0.3em] text-white/60">Thank You</p>
                     </div>
                     <div class="slide-content" style="transition-delay: 0.2s;">
-                        <video src="../assets/video/landscape-me.mp4" autoplay loop class="w-full aspect-square object-cover shadow-2xl" alt="">
+                        <video src="../assets/video/landscape-me.mp4" autoplay loop muted class="w-full aspect-square object-cover shadow-2xl" alt="">
                       
                     </div>
                 </div>
@@ -740,6 +740,19 @@
                 onUp: () => !animating && gotoSection(currentIndex - 1, -1),
                 tolerance: 10,
                 preventDefault: true
+            });
+
+            // Keyboard Navigation
+            document.addEventListener('keydown', (e) => {
+                if (animating) return; // Prevent spamming keys during transitions
+
+                if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                    // Go backward
+                    gotoSection(currentIndex - 1, -1);
+                } else if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+                    // Go forward
+                    gotoSection(currentIndex + 1, 1);
+                }
             });
 
             dots.forEach((dot, i) => {

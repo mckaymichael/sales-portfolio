@@ -20,7 +20,7 @@ I took a job in sales, which surprised me. It turned out I am quite good at conv
 
 Slide 6
 
-And finally, Enactus BCIT. This is where I'm currently at. I'm the Sponsorship Strategy Lead, and I'm currently developing the skills for strategic outbound outreach, partnership development, securing capital, and relationship management. This role got me excited about becoming a business development representative. I could convince other people to participate in something that truly matters.
+And finally, Enactus BCIT. This is where I'm currently at. I'm the Sponsorship Strategy Lead, and I'm developing the skills for strategic outbound outreach, partnership development, securing capital, and relationship management. This role got me excited about becoming a business development representative. I could convince other people to participate in something that truly matters.
 
 Slide 7 - Verification is the Sale
 

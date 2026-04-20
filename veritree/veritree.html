@@ -303,6 +303,23 @@
         .kb-6 {
             animation: kb6 9s ease-in-out infinite;
         }
+
+        /* Notes Drawer Styles */
+        #notes-drawer {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        #notes-drawer.open {
+            transform: translate(-50%, 0);
+        }
+
+        #notes-drawer.open #notes-caret {
+            transform: rotate(180deg);
+        }
+
+        .shadow-2xl-up {
+            box-shadow: 0 -10px 50px -12px rgba(0, 0, 0, 0.5);
+        }
     </style>
 </head>
 
@@ -539,7 +556,7 @@
                 </div>
 
                 <!-- Bottom: Accolades bar — consistent 4-column design -->
-                <div class="slide-content grid grid-cols-4 border-t border-on-surface/10 bg-surface"
+                <div class="slide-content grid grid-cols-4 border-t border-on-surface/10 bg-surface pb-12"
                     style="transition-delay: 0.4s;">
                     <div class="flex items-center gap-4 px-8 py-6 border-r border-on-surface/10">
                         <i class="ph ph-graduation-cap text-2xl text-primary/70 flex-shrink-0"></i>
@@ -835,6 +852,20 @@
 
     </div>
 
+    <!-- Speaker Notes Drawer -->
+    <div id="notes-drawer" class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl z-[2000] translate-y-[calc(100%-40px)]">
+        <div id="notes-handle" class="bg-secondary-dark text-surface px-6 py-2 rounded-t-xl cursor-pointer flex items-center justify-between shadow-2xl-up border-x border-t border-white/10">
+            <div class="flex items-center gap-2">
+                <i class="ph ph-chat-centered-text text-lg"></i>
+                <span class="font-header font-bold text-[10px] uppercase tracking-[0.2em]">Speaker Notes</span>
+            </div>
+            <i class="ph ph-caret-up transition-transform duration-500 text-lg" id="notes-caret"></i>
+        </div>
+        <div id="notes-content" class="bg-secondary-dark/95 backdrop-blur-md text-surface/90 p-6 h-[140px] overflow-y-auto border-x border-white/10">
+            <p id="notes-text" class="font-body leading-relaxed"></p>
+        </div>
+    </div>
+
     <!-- SCRIPTS -->
     <!-- GSAP loaded here (bottom of body) to guarantee all plugins are ready before inline code runs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -850,6 +881,49 @@
             const progressBar = document.getElementById('progress-bar');
             let currentIndex = 0;
             let animating = false;
+
+            // --- SPEAKER NOTES DATA ---
+            const slideScripts = {
+                0: "Hello everyone, my name is Michael McKay.",
+                1: "Three years ago, I saw firsthand what we lose when sustainability stops mattering — a forest fire burned my dad's business to the ground. Over 41,000 hectares scorched, 8,000 people evacuated from their homes, and over $720M in damages across the region. That's what brought me to Veritree, a service that helps businesses track their environmental impact easily, and why I want to be the next Enterprise Business Development Representative.",
+                2: "There wasn't much I could do about the fire, but it motivated me to address bigger problems like climate change, that would help the whole world. Being in school led me to Enactus BCIT, a student led club that helps students build social enterprises that address the Sustainable Development Goals. I discovered that sustainability is ripe with new ideas and I want to be at the cutting edge of new technology like Veritree's software that helps build a sustainable world.",
+                3: "Passion is not enough to help solve wicked problems, though. What it did was show me what skills I needed to build. Since the fall, I have focused on building my skills as a leader, communicator, innovator, salesperson, and networker. My experience has been a great teacher in my personal development.",
+                4: "I've excelled in school. Maintained a 90% average, joined the BCIT Student Association to help advocate for students, joined Enactus BCIT to build innovative solutions for a sustainable world, and took the Peak Leadership Program to push myself to become the best that I can be as a team member, friend, and leader.",
+                5: "I took a job in sales, which surprised me. It turned out I am quite good at conveying value, overcoming objections, and persuasion. In my role, I was consistently exceeding the average quota for the day, which eventually lead me to training others, and helping them improve on their sales skills, which I really enjoyed because I learn a lot from teaching others.",
+                6: "And finally, Enactus BCIT. This is where I'm currently at. I'm the Sponsorship Strategy Lead, and I'm developing the skills for strategic outbound outreach, partnership development, securing capital, and relationship management. This role got me excited about becoming a business development representative. I could convince other people to participate in something that truly matters.",
+                7: "I really like the problem that Veritree is solving. Allowing businesses to show real proof of their impact on the world through verified data puts them well-beyond just a company that plants trees. They help companies move toward B Corp certification, raise the environmental standards for nature-based solutions, and reduce the pressure on businesses to prove their environmental commitments are genuine.",
+                8: "I believe that my background in sales, and sponsorship acquistion fits the BDR role because I've got the confidence to approach people, state my case, and educate them on the value that Veritree brings to their company. Thank you."
+            };
+
+            const notesDrawer = document.getElementById('notes-drawer');
+            const notesText = document.getElementById('notes-text');
+            const notesHandle = document.getElementById('notes-handle');
+
+            function updateNotes(index) {
+                if (notesText && slideScripts[index]) {
+                    // Animate out
+                    gsap.to(notesText, {
+                        opacity: 0,
+                        y: 10,
+                        duration: 0.3,
+                        ease: "power2.in",
+                        onComplete: () => {
+                            notesText.textContent = slideScripts[index];
+                            // Animate in
+                            gsap.to(notesText, {
+                                opacity: 1,
+                                y: 0,
+                                duration: 0.5,
+                                ease: "power2.out"
+                            });
+                        }
+                    });
+                }
+            }
+
+            notesHandle.addEventListener('click', () => {
+                notesDrawer.classList.toggle('open');
+            });
 
             // --- SPLIT TEXT HELPER ---
             function splitText(el) {
@@ -899,8 +973,9 @@
             if (allOthers.length) gsap.set(allOthers, { opacity: 0, y: 30 });
             if (allLines.length) gsap.set(allLines, { width: 0 });
 
-            // Initial reveal
+            // Initial reveal and notes setup
             const revealFirst = () => {
+                updateNotes(0);
                 const tl = gsap.timeline();
                 const split = sections[0].querySelectorAll('.split-child');
                 const others = sections[0].querySelectorAll('.slide-content > *:not(h1):not(h2), .slide-content img');
@@ -936,6 +1011,7 @@
                 const progress = ((index + 1) / sections.length) * 100;
                 if (progressBar) gsap.to(progressBar, { width: `${progress}%`, duration: 0.5 });
                 dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+                updateNotes(index);
 
                 const tl = gsap.timeline({
                     delay: 0.2,

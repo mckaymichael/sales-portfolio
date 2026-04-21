@@ -5,5 +5,42 @@
   "buildCommand": null,
   "installCommand": null,
   "outputDirectory": ".",
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/pages/impact.html",
+      "destination": "/impact.html",
+      "permanent": true
+    },
+    {
+      "source": "/pages/gallery.html",
+      "destination": "/gallery.html",
+      "permanent": true
+    },
+    {
+      "source": "/pages/infinite-game.html",
+      "destination": "/infinite-game.html",
+      "permanent": true
+    },
+    {
+      "source": "/pages/code-of-ethics.html",
+      "destination": "/code-of-ethics.html",
+      "permanent": true
+    },
+    {
+      "source": "/pages/shuswap-gallery.html",
+      "destination": "/shuswap-gallery.html",
+      "permanent": true
+    },
+    {
+      "source": "/pages/about.html",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/veritree/veritree.html",
+      "destination": "/veritree.html",
+      "permanent": true
+    }
+  ]
 }

@@ -38,6 +38,26 @@
       "permanent": true
     },
     {
+      "source": "/pages/sitemap.html",
+      "destination": "/sitemap.html",
+      "permanent": true
+    },
+    {
+      "source": "/pages/project-template.html",
+      "destination": "/project-template.html",
+      "permanent": true
+    },
+    {
+      "source": "/pages/index.html",
+      "destination": "/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/pages/veritree.html",
+      "destination": "/veritree.html",
+      "permanent": true
+    },
+    {
       "source": "/veritree/veritree.html",
       "destination": "/veritree.html",
       "permanent": true

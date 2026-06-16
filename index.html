@@ -797,13 +797,13 @@
                     <div>
                         <h3 class="font-header font-bold text-[10px] uppercase tracking-[0.3em] text-white/40 mb-8">Ready to Lead As</h3>
                         <div class="flex flex-col">
-                            <a href="veritree.html" class="group border-t border-white/10 py-5 flex flex-row justify-between items-start gap-4 cursor-pointer">
+                            <div class="group border-t border-white/10 py-5 flex flex-row justify-between items-start gap-4 cursor-default">
                                 <div class="flex-1">
                                     <p class="font-header font-bold text-step-1 text-white/80 group-hover:text-white transition-colors tracking-tight leading-snug">Enterprise Business Development Representative</p>
                                     <p class="font-body italic text-sm text-white/0 group-hover:text-white/50 transition-all duration-500 max-h-0 group-hover:max-h-20 overflow-hidden leading-relaxed mt-0 group-hover:mt-3">A dedicated focus on high-value partnerships and building scalable revenue pipelines.</p>
                                 </div>
                                 <i class="ph ph-arrow-right text-lg text-white/20 transition-all duration-500 group-hover:rotate-90 group-hover:text-white group-hover:opacity-100 mt-1"></i>
-                            </a>
+                            </div>
                             <div class="group border-t border-b border-white/10 py-5 flex flex-row justify-between items-start gap-4 cursor-default">
                                 <div class="flex-1">
                                     <p class="font-header font-bold text-step-1 text-white/80 group-hover:text-white transition-colors tracking-tight leading-snug">Growth &amp; Impact Strategist</p>
@@ -838,7 +838,7 @@
     </main>
 
     <!-- Leap of Faith Popup -->
-    <div id="veritree-popup" class="fixed bottom-8 left-8 z-[60] hidden md:block">
+    <div id="veritree-popup" class="fixed bottom-8 right-8 z-[60] hidden md:block">
         <!-- Initial Pill -->
         <div id="popup-trigger" class="flex items-center gap-3 bg-secondary-dark text-white px-5 py-3 rounded-[4px] cursor-pointer shadow-2xl border border-white/10 hover:bg-secondary transition-all duration-300 opacity-0 translate-y-10">
             <div class="w-2 h-2 rounded-full bg-tertiary-fixed animate-pulse"></div>
@@ -846,7 +846,7 @@
         </div>
 
         <!-- Expanded Card (hidden initially) -->
-        <div id="popup-card" class="absolute bottom-0 left-0 w-[400px] bg-secondary-dark text-white p-8 rounded-default shadow-2xl border border-white/10 opacity-0 overflow-hidden translate-y-4 pointer-events-none origin-bottom-left scale-95">
+        <div id="popup-card" class="absolute bottom-0 right-0 w-[400px] bg-secondary-dark text-white p-8 rounded-default shadow-2xl border border-white/10 opacity-0 overflow-hidden translate-y-4 pointer-events-none origin-bottom-right scale-95">
             <button id="close-popup" aria-label="Close" class="absolute top-4 right-4 text-white/40 hover:text-white transition-colors">
                 <i class="ph ph-x-circle text-2xl"></i>
             </button>
@@ -918,13 +918,13 @@
                     // 2. Expand card with clip-path
                     tl.fromTo(card, 
                         { 
-                            clipPath: "circle(0% at 0% 100%)", 
+                            clipPath: "circle(0% at 100% 100%)", 
                             opacity: 1,
                             scale: 0.95,
                             pointerEvents: "none"
                         },
                         { 
-                            clipPath: "circle(150% at 0% 100%)", 
+                            clipPath: "circle(150% at 100% 100%)", 
                             opacity: 1,
                             scale: 1,
                             duration: 0.8, 
@@ -947,7 +947,7 @@
                     const tl = gsap.timeline();
 
                     tl.to(card, { 
-                        clipPath: "circle(0% at 0% 100%)", 
+                        clipPath: "circle(0% at 100% 100%)", 
                         opacity: 0,
                         scale: 0.95,
                         duration: 0.5, 
